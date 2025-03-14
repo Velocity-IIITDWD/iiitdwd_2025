@@ -955,7 +955,7 @@ export type AllSanitySchemaTypes =
 export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: ./src/sanity/lib/queries.ts
 // Variable: GetFacultyDetails
-// Query: *[_type == "faculty" && facultyId == $id] {    "id": facultyId,    "photo": content.card.photo,    content  }
+// Query: *[_type == "faculty" && facultyId == $id] {  "id": facultyId,  "photo": content.card.photo,  content}
 export type GetFacultyDetailsResult = Array<{
   id: string | null;
   photo: string | null;
@@ -980,16 +980,466 @@ export type GetFacultyDetailsResult = Array<{
   } | null;
 }>;
 // Variable: GetAllFaculties
-// Query: *[_type == "faculty"] {    "id": facultyId  }
+// Query: *[_type == "faculty"] {  "id": facultyId}
 export type GetAllFacultiesResult = Array<{
   id: string | null;
+}>;
+// Variable: queryFaculty
+// Query: *[_type == "faculty"]
+export type QueryFacultyResult = Array<{
+  _id: string;
+  _type: 'faculty';
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  facultyId?: string;
+  content?: {
+    head?: {
+      name?: string;
+      profile_pdf?: string;
+    };
+    card?: {
+      photo?: string;
+      PhD?: string;
+      designation?: string;
+      department?: string;
+      mail_id?: string;
+      cabin_number?: string;
+      position?: Array<string>;
+    };
+    body?: {
+      profile_text?: string;
+      interest_areas?: Array<string>;
+    };
+  };
+}>;
+// Variable: GetAllVisitors
+// Query: *[_type == "visitor"] {  title,  profiles[] {    title,    content,    imageURL  }}
+export type GetAllVisitorsResult = Array<{
+  title: string | null;
+  profiles: Array<{
+    title: string | null;
+    content: Array<string> | null;
+    imageURL: string | null;
+  }> | null;
+}>;
+// Variable: GetAllStaff
+// Query: *[_type == "staff"] {  title,  profiles[] {    title,    content,    imageURL  }}
+export type GetAllStaffResult = Array<{
+  title: string | null;
+  profiles: Array<{
+    title: string | null;
+    content: Array<string> | null;
+    imageURL: string | null;
+  }> | null;
+}>;
+// Variable: GetAllSenate
+// Query: *[_type == "senate"] {  title,  profiles[] {    title,    content,    imageURL  }}
+export type GetAllSenateResult = Array<{
+  title: string | null;
+  profiles: Array<{
+    title: string | null;
+    content: Array<string> | null;
+    imageURL: string | null;
+  }> | null;
+}>;
+// Variable: GetFormerDirector
+// Query: *[_type == "formerDirector"] {  title,  profiles[] {    title,    content,    imageURL  }}
+export type GetFormerDirectorResult = Array<{
+  title: string | null;
+  profiles: Array<{
+    title: string | null;
+    content: Array<string> | null;
+    imageURL: string | null;
+  }> | null;
+}>;
+// Variable: GetChairperson
+// Query: *[_type == "chairPerson"] {  title,  profiles[] {    title,    content,    imageURL  }}
+export type GetChairpersonResult = Array<{
+  title: string | null;
+  profiles: Array<{
+    title: string | null;
+    content: Array<string> | null;
+    imageURL: string | null;
+  }> | null;
+}>;
+// Variable: GetBoard
+// Query: *[_type == "boardOfGovernor"] {  title,  profiles[] {    title,    content,    imageURL  }}
+export type GetBoardResult = Array<{
+  title: string | null;
+  profiles: Array<{
+    title: string | null;
+    content: Array<string> | null;
+    imageURL: string | null;
+  }> | null;
+}>;
+// Variable: GetFormerBoard
+// Query: *[_type == "formerBoardOfGovernor"] {  title,  profiles[] {    title,    content,    imageURL  }}
+export type GetFormerBoardResult = Array<{
+  title: string | null;
+  profiles: Array<{
+    title: string | null;
+    content: Array<string> | null;
+    imageURL: string | null;
+  }> | null;
+}>;
+// Variable: GetAnnouncements
+// Query: *[_type == "announcement"]{  link,  month,  new,  text,  year,  date,}
+export type GetAnnouncementsResult = Array<{
+  link: string | null;
+  month: string | null;
+  new: boolean | null;
+  text: string | null;
+  year: string | null;
+  date: string | null;
+}>;
+// Variable: GetLinks
+// Query: *[_type == "linksStructure"]
+export type GetLinksResult = Array<{
+  _id: string;
+  _type: 'linksStructure';
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  id?: number;
+  type?: string;
+  links?: Array<{
+    link?: string;
+    displayText?: string;
+    _key: string;
+  }>;
+}>;
+// Variable: GetDescription
+// Query: *[_type == "descriptionStructure"]
+export type GetDescriptionResult = Array<{
+  _id: string;
+  _type: 'descriptionStructure';
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  id?: number;
+  heading?: string;
+  description?: string;
+}>;
+// Variable: GetAbout
+// Query: *[_type == "about"]{  coreValues[] {    id,    text,  },}
+export type GetAboutResult = Array<{
+  coreValues: Array<{
+    id: string | null;
+    text: string | null;
+  }> | null;
+}>;
+// Variable: GetResearch
+// Query: *[_type == "researchProfiles"] {  title,  profiles[] {    title,    content,    imageURL  }}
+export type GetResearchResult = Array<{
+  title: string | null;
+  profiles: Array<{
+    title: string | null;
+    content: Array<string> | null;
+    imageURL: string | null;
+  }> | null;
+}>;
+// Variable: GetResearchAdvertisement
+// Query: *[_type == "research_advertisement"]{  time,  lastDate,  generalInstructions,  applicationForm}
+export type GetResearchAdvertisementResult = Array<{
+  time: string | null;
+  lastDate: string | null;
+  generalInstructions: string | null;
+  applicationForm: string | null;
+}>;
+// Variable: GetCampusData
+// Query: *[_type == "campusData"] {  title,  href,  imageUrl}
+export type GetCampusDataResult = Array<{
+  title: string | null;
+  href: string | null;
+  imageUrl: string | null;
+}>;
+// Variable: GetFacilities
+// Query: *[_type == "facility"] {  title,  blockName,  items,  imageUrl}
+export type GetFacilitiesResult = Array<{
+  title: string | null;
+  blockName: string | null;
+  items: Array<string> | null;
+  imageUrl: string | null;
+}>;
+// Variable: GetKrcData
+// Query: *[_type == "krcData"] {  title,  description,  accessInfo,  buttonText,  link}
+export type GetKrcDataResult = Array<{
+  title: string | null;
+  description: string | null;
+  accessInfo: string | null;
+  buttonText: string | null;
+  link: string | null;
+}>;
+// Variable: GetKrcDataTel
+// Query: *[_type == "krcDataTel"] {  title,  description,  accessInfo,  buttonText,  link}
+export type GetKrcDataTelResult = Array<{
+  title: string | null;
+  description: string | null;
+  accessInfo: string | null;
+  buttonText: string | null;
+  link: string | null;
+}>;
+// Variable: GetKrcDataTelFull
+// Query: *[_type == "krcDataTelFull"] {  heading,  card[] {    title,    description,    accessInfo,    buttonText,    link  }}
+export type GetKrcDataTelFullResult = Array<{
+  heading: string | null;
+  card: Array<{
+    title: string | null;
+    description: string | null;
+    accessInfo: string | null;
+    buttonText: string | null;
+    link: string | null;
+  }> | null;
+}>;
+// Variable: GetContactInfo
+// Query: *[_type == "contactData"][0] {  generalQueries[]->{      name,      designation,      contactNumber,      category->{          category      }  },  hostelRelatedQueries[]->{      name,      designation,      contactNumber,      category->{          category      }  },  academicQueries[]->{      name,      designation,      contactNumber,      category->{          category      }  },  careerGuidanceCell[]->{      name,      designation,      contactNumber,      category->{          category      }  },  feeRelatedQueries[]->{      name,      designation,      contactNumber,      category->{          category      }  },  scholarshipLoansQueries[]->{      name,      designation,      contactNumber,      category->{          category      }  }}
+export type GetContactInfoResult = {
+  generalQueries: Array<{
+    name: string | null;
+    designation: string | null;
+    contactNumber: string | null;
+    category: {
+      category: string | null;
+    } | null;
+  }> | null;
+  hostelRelatedQueries: Array<{
+    name: string | null;
+    designation: string | null;
+    contactNumber: string | null;
+    category: {
+      category: string | null;
+    } | null;
+  }> | null;
+  academicQueries: Array<{
+    name: string | null;
+    designation: string | null;
+    contactNumber: string | null;
+    category: {
+      category: string | null;
+    } | null;
+  }> | null;
+  careerGuidanceCell: Array<{
+    name: string | null;
+    designation: string | null;
+    contactNumber: string | null;
+    category: {
+      category: string | null;
+    } | null;
+  }> | null;
+  feeRelatedQueries: Array<{
+    name: string | null;
+    designation: string | null;
+    contactNumber: string | null;
+    category: {
+      category: string | null;
+    } | null;
+  }> | null;
+  scholarshipLoansQueries: Array<{
+    name: string | null;
+    designation: string | null;
+    contactNumber: string | null;
+    category: {
+      category: string | null;
+    } | null;
+  }> | null;
+} | null;
+// Variable: queryCarousel
+// Query: *[_type == "mainCarouselImage"]
+export type QueryCarouselResult = Array<{
+  _id: string;
+  _type: 'mainCarouselImage';
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  url?: string;
+  caption?: string;
+  link?: string;
+}>;
+// Variable: queryEvents
+// Query: *[_type == "event"]
+export type QueryEventsResult = Array<{
+  _id: string;
+  _type: 'event';
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  id?: string;
+  href?: string;
+  text?: string;
+  timestamp?: string;
+  allImage?: Array<string>;
+  details?: {
+    startDate?: string;
+    endDate?: string;
+    ticketPrice?: string;
+  };
+  venue?: {
+    place?: string;
+    street?: string;
+    city?: string;
+  };
+  organiser?: {
+    name?: string;
+    designation?: string;
+    contact?: string;
+  };
+  aboutEvent?: string;
+}>;
+// Variable: queryEventIds
+// Query: *[_type == "event"] {"eventId": id}
+export type QueryEventIdsResult = Array<{
+  eventId: string | null;
+}>;
+// Variable: queryEventById
+// Query: *[_type == "event" && id == $id][0]
+export type QueryEventByIdResult = {
+  _id: string;
+  _type: 'event';
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  id?: string;
+  href?: string;
+  text?: string;
+  timestamp?: string;
+  allImage?: Array<string>;
+  details?: {
+    startDate?: string;
+    endDate?: string;
+    ticketPrice?: string;
+  };
+  venue?: {
+    place?: string;
+    street?: string;
+    city?: string;
+  };
+  organiser?: {
+    name?: string;
+    designation?: string;
+    contact?: string;
+  };
+  aboutEvent?: string;
+} | null;
+// Variable: queryGallery
+// Query: *[_type == "gallery"]
+export type QueryGalleryResult = Array<{
+  _id: string;
+  _type: 'gallery';
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  url?: string;
+  caption?: string;
+}>;
+// Variable: queryPrograms
+// Query: *[_type == "program"]
+export type QueryProgramsResult = Array<never>;
+// Variable: queryReport
+// Query: *[_type == "annualReport"]
+export type QueryReportResult = Array<{
+  _id: string;
+  _type: 'annualReport';
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  displayText?: string;
+  issueUrl?: string;
+  previewImg?: string;
+}>;
+// Variable: queryJobs
+// Query: *[_type == "job"]
+export type QueryJobsResult = Array<{
+  _id: string;
+  _type: 'job';
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  title?: string;
+  category?: 'faculty' | 'others' | 'staff';
+  details?: string;
+  lastDate?: string;
+  generalInstructions?: string;
+  application?: string;
+  extraInfo?: Array<{
+    text?: string;
+    link?: string;
+    _key: string;
+  }>;
+}>;
+// Variable: queryTenders
+// Query: *[_type == "tender"]
+export type QueryTendersResult = Array<{
+  _id: string;
+  _type: 'tender';
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  title?: string;
+  cancelled?: boolean;
+  corrections?: Array<{
+    title?: string;
+    link?: string;
+    _key: string;
+  }>;
+  documents?: Array<{
+    title?: string;
+    link?: string;
+    _key: string;
+  }>;
+  link?: string;
+  publishDate?: string;
+  submissionDeadline?: string;
+  updatedAt?: number;
+}>;
+// Variable: queryNirfReports
+// Query: *[_type == "nirf"]
+export type QueryNirfReportsResult = Array<{
+  _id: string;
+  _type: 'nirf';
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  year?: number;
+  overallReport?: string;
+  engineeringReport?: string;
 }>;
 
 // Query TypeMap
 import '@sanity/client';
 declare module '@sanity/client' {
   interface SanityQueries {
-    '*[_type == "faculty" && facultyId == $id] {\n    "id": facultyId,\n    "photo": content.card.photo,\n    content\n  }': GetFacultyDetailsResult;
-    '*[_type == "faculty"] {\n    "id": facultyId\n  }': GetAllFacultiesResult;
+    '*[_type == "faculty" && facultyId == $id] {\n  "id": facultyId,\n  "photo": content.card.photo,\n  content\n}': GetFacultyDetailsResult;
+    '*[_type == "faculty"] {\n  "id": facultyId\n}': GetAllFacultiesResult;
+    '*[_type == "faculty"]': QueryFacultyResult;
+    '*[_type == "visitor"] {\n  title,\n  profiles[] {\n    title,\n    content,\n    imageURL\n  }\n}': GetAllVisitorsResult;
+    '*[_type == "staff"] {\n  title,\n  profiles[] {\n    title,\n    content,\n    imageURL\n  }\n}': GetAllStaffResult;
+    '*[_type == "senate"] {\n  title,\n  profiles[] {\n    title,\n    content,\n    imageURL\n  }\n}': GetAllSenateResult;
+    '*[_type == "formerDirector"] {\n  title,\n  profiles[] {\n    title,\n    content,\n    imageURL\n  }\n}': GetFormerDirectorResult;
+    '*[_type == "chairPerson"] {\n  title,\n  profiles[] {\n    title,\n    content,\n    imageURL\n  }\n}': GetChairpersonResult;
+    '*[_type == "boardOfGovernor"] {\n  title,\n  profiles[] {\n    title,\n    content,\n    imageURL\n  }\n}': GetBoardResult;
+    '*[_type == "formerBoardOfGovernor"] {\n  title,\n  profiles[] {\n    title,\n    content,\n    imageURL\n  }\n}': GetFormerBoardResult;
+    '*[_type == "announcement"]{\n  link,\n  month,\n  new,\n  text,\n  year,\n  date,\n}': GetAnnouncementsResult;
+    '*[_type == "linksStructure"]': GetLinksResult;
+    '*[_type == "descriptionStructure"]': GetDescriptionResult;
+    '*[_type == "about"]{\n  coreValues[] {\n    id,\n    text,\n  },\n}': GetAboutResult;
+    '*[_type == "researchProfiles"] {\n  title,\n  profiles[] {\n    title,\n    content,\n    imageURL\n  }\n}': GetResearchResult;
+    '*[_type == "research_advertisement"]{\n  time,\n  lastDate,\n  generalInstructions,\n  applicationForm\n}': GetResearchAdvertisementResult;
+    '*[_type == "campusData"] {\n  title,\n  href,\n  imageUrl\n}\n': GetCampusDataResult;
+    '*[_type == "facility"] {\n  title,\n  blockName,\n  items,\n  imageUrl\n}': GetFacilitiesResult;
+    '*[_type == "krcData"] {\n  title,\n  description,\n  accessInfo,\n  buttonText,\n  link\n}\n': GetKrcDataResult;
+    '*[_type == "krcDataTel"] {\n  title,\n  description,\n  accessInfo,\n  buttonText,\n  link\n}\n': GetKrcDataTelResult;
+    '*[_type == "krcDataTelFull"] {\n  heading,\n  card[] {\n    title,\n    description,\n    accessInfo,\n    buttonText,\n    link\n  }\n}': GetKrcDataTelFullResult;
+    '*[_type == "contactData"][0] {\n  generalQueries[]->{\n      name,\n      designation,\n      contactNumber,\n      category->{\n          category\n      }\n  },\n  hostelRelatedQueries[]->{\n      name,\n      designation,\n      contactNumber,\n      category->{\n          category\n      }\n  },\n  academicQueries[]->{\n      name,\n      designation,\n      contactNumber,\n      category->{\n          category\n      }\n  },\n  careerGuidanceCell[]->{\n      name,\n      designation,\n      contactNumber,\n      category->{\n          category\n      }\n  },\n  feeRelatedQueries[]->{\n      name,\n      designation,\n      contactNumber,\n      category->{\n          category\n      }\n  },\n  scholarshipLoansQueries[]->{\n      name,\n      designation,\n      contactNumber,\n      category->{\n          category\n      }\n  }\n}': GetContactInfoResult;
+    '*[_type == "mainCarouselImage"]': QueryCarouselResult;
+    '*[_type == "event"]': QueryEventsResult;
+    '*[_type == "event"] {"eventId": id}': QueryEventIdsResult;
+    '*[_type == "event" && id == $id][0]': QueryEventByIdResult;
+    '*[_type == "gallery"]': QueryGalleryResult;
+    '*[_type == "program"]': QueryProgramsResult;
+    '*[_type == "annualReport"]': QueryReportResult;
+    '*[_type == "job"]': QueryJobsResult;
+    '*[_type == "tender"]': QueryTendersResult;
+    '*[_type == "nirf"]': QueryNirfReportsResult;
   }
 }
