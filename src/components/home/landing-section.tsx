@@ -1,11 +1,5 @@
 'use client';
-import {
-  ArrowRightIcon,
-  BookOpen,
-  Building,
-  GraduationCap,
-  Users
-} from 'lucide-react';
+import { BookOpen, Building, GraduationCap, Users } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { Card, CardContent } from '../ui/card';
 import {
@@ -15,6 +9,7 @@ import {
   CarouselNext,
   CarouselPrevious
 } from '../ui/carousel';
+import { StarBorder } from '../ui/star-border';
 
 interface FeatureCardProps {
   icon: React.ReactNode;
@@ -93,22 +88,14 @@ export default function LandingSection() {
           Quick Links:
         </div>
         <div className="flex gap-1 md:gap-4 max-md:flex-col w-full max-md:max-w-[260px] items-center">
-          <button className="flex gap-4 uppercase max-md:w-full max-md:justify-between text-sm text-bold text-white bg-primary rounded px-4 md:px-6 py-2 items-center">
+          {/* <button className="flex gap-4 uppercase max-md:w-full max-md:justify-between text-sm text-bold text-white bg-primary rounded px-4 md:px-6 py-2 items-center">
             Academics
             <ArrowRightIcon size={18} />
-          </button>
-          <button className="flex gap-4 uppercase max-md:w-full max-md:justify-between text-sm text-bold text-white bg-primary rounded px-4 md:px-6 py-2 items-center">
-            Admissions
-            <ArrowRightIcon size={18} />
-          </button>
-          <button className="flex gap-4 uppercase max-md:w-full max-md:justify-between text-sm text-bold text-white bg-primary rounded px-4 md:px-6 py-2 items-center">
-            Campus
-            <ArrowRightIcon size={18} />
-          </button>
-          <button className="flex gap-4 uppercase max-md:w-full max-md:justify-between text-sm text-bold text-white bg-primary rounded px-4 md:px-6 py-2 items-center">
-            Culture
-            <ArrowRightIcon size={18} />
-          </button>
+          </button> */}
+          <StarBorder>Academics</StarBorder>
+          <StarBorder>Admissions</StarBorder>
+          <StarBorder>Campus</StarBorder>
+          <StarBorder>Culture</StarBorder>
         </div>
         {/* {features.map((feature, index) => (
           <FeatureCard
