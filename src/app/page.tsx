@@ -1,6 +1,8 @@
 import Alumni from '@/components/home/alumni';
 import LandingSection from '@/components/home/landing-section';
 import Notification from '@/components/home/notification';
+import SocialMedia from '@/components/home/social-media';
+import ToTop from '@/components/to-top';
 // import { get } from '@/sanity/lib/client';
 // import { GetAllFaculties } from '@/sanity/lib/queries';
 // import { GetAllFacultiesResult } from '@/sanity/types';
@@ -11,10 +13,12 @@ export default async function Home() {
   // console.log(data);
 
   return (
-    <div className="min-h-screen">
+    <main className="min-h-screen">
       <LandingSection />
       <Notification />
       <Alumni />
-    </div>
+      <SocialMedia />
+      <ToTop />
+    </main>
   );
 }

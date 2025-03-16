@@ -1,4 +1,11 @@
 'use client';
+import {
+  ArrowRightIcon,
+  BookOpen,
+  Building,
+  GraduationCap,
+  Users
+} from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { Card, CardContent } from '../ui/card';
 import {
@@ -9,6 +16,24 @@ import {
   CarouselPrevious
 } from '../ui/carousel';
 
+interface FeatureCardProps {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+}
+
+const FeatureCard = ({ icon, title, description }: FeatureCardProps) => {
+  return (
+    <div className="flex items-center p-4 transition-all rounded-lg cursor-pointer">
+      <div className="p-2 mb-4">{icon}</div>
+      <div className="">
+        <h3 className="text-lg font-semibold text-white mb-1">{title}</h3>
+        <p className="text-gray-500 text-center text-sm">{description}</p>
+      </div>
+    </div>
+  );
+};
+
 export default function LandingSection() {
   const [height, setHeight] = useState('100vh');
 
@@ -17,6 +42,29 @@ export default function LandingSection() {
     const headerHeight = document.getElementById('header')?.clientHeight || 0;
     setHeight(`calc(100vh - ${topBarHeight + headerHeight}px)`);
   }, []);
+
+  const features = [
+    {
+      icon: <GraduationCap className="w-12 h-12 text-white" />,
+      title: 'Academics',
+      description: 'Leading the pack'
+    },
+    {
+      icon: <BookOpen className="w-12 h-12 text-white" />,
+      title: 'Admissions',
+      description: 'Your future starts here'
+    },
+    {
+      icon: <Building className="w-12 h-12 text-white" />,
+      title: 'Campus',
+      description: 'To Nurture Greatness'
+    },
+    {
+      icon: <Users className="w-12 h-12 text-white" />,
+      title: 'Culture',
+      description: 'The University Way'
+    }
+  ];
 
   return (
     <div style={{ height }} className="flex relative flex-col items-center">
@@ -39,8 +87,38 @@ export default function LandingSection() {
       </Carousel>
       <div
         id="quick-links"
-        className="w-lg bg-gray-600 h-10 -translate-y-1/2"
-      ></div>
+        className="w-fit uppercase flex max-md:flex-col max-md:w-full items-center gap-4 py-4"
+      >
+        <div className="hidden md:block whitespace-nowrap text-gray-500">
+          Quick Links:
+        </div>
+        <div className="flex gap-1 md:gap-4 max-md:flex-col w-full max-md:max-w-[260px] items-center">
+          <button className="flex gap-4 uppercase max-md:w-full max-md:justify-between text-sm text-bold text-white bg-primary rounded px-4 md:px-6 py-2 items-center">
+            Academics
+            <ArrowRightIcon size={18} />
+          </button>
+          <button className="flex gap-4 uppercase max-md:w-full max-md:justify-between text-sm text-bold text-white bg-primary rounded px-4 md:px-6 py-2 items-center">
+            Admissions
+            <ArrowRightIcon size={18} />
+          </button>
+          <button className="flex gap-4 uppercase max-md:w-full max-md:justify-between text-sm text-bold text-white bg-primary rounded px-4 md:px-6 py-2 items-center">
+            Campus
+            <ArrowRightIcon size={18} />
+          </button>
+          <button className="flex gap-4 uppercase max-md:w-full max-md:justify-between text-sm text-bold text-white bg-primary rounded px-4 md:px-6 py-2 items-center">
+            Culture
+            <ArrowRightIcon size={18} />
+          </button>
+        </div>
+        {/* {features.map((feature, index) => (
+          <FeatureCard
+            key={index}
+            icon={feature.icon}
+            title={feature.title}
+            description={feature.description}
+          />
+        ))} */}
+      </div>
     </div>
   );
 }
