@@ -113,6 +113,9 @@
   --animate-marquee: marquee-reverse var(--duration, 30s) linear infinite;
   --animate-marquee-reverse: marquee var(--duration, 30s) linear infinite;
 
+  --animate-star-movement-bottom: star-movement-bottom linear infinite alternate;
+  --animate-star-movement-top: star-movement-top linear infinite alternate;
+
   @keyframes marquee {
     100% {
       transform: translateX(-50%);
@@ -122,6 +125,28 @@
   @keyframes marquee-reverse {
     0% {
       transform: translateX(-50%);
+    }
+  }
+
+  @keyframes star-movement-bottom {
+    0% {
+      transform: translate(0%, 0%);
+      opacity: 1;
+    }
+    100% {
+      transform: translate(-100%, 0%);
+      opacity: 0;
+    }
+  }
+
+  @keyframes star-movement-top {
+    0% {
+      transform: translate(0%, 0%);
+      opacity: 1;
+    }
+    100% {
+      transform: translate(100%, 0%);
+      opacity: 0;
     }
   }
 }
