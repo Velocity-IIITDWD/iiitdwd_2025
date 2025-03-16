@@ -9,6 +9,7 @@ import {
 } from '@/components/ui/navigation-menu';
 import { navMenuItems } from '@/data/routes';
 import { motion } from 'framer-motion';
+import { Command, Search } from 'lucide-react';
 import Link from 'next/link';
 
 export default function DesktopHeader() {
@@ -132,6 +133,15 @@ export default function DesktopHeader() {
             </NavigationMenuItem>
           );
         })}
+        {/* <NavigationMenuItem>
+          <NavigationMenuLink>
+            <Command /> K
+          </NavigationMenuLink>
+        </NavigationMenuItem> */}
+        <button className="text-gray-600 hover:text-primary rounded-full bg-accent px-2 py-1 flex items-center text-sm">
+          <Search size={14} className="mr-3" />
+          <Command size={14} className="mr-1" />K
+        </button>
       </NavigationMenuList>
     </NavigationMenu>
   );

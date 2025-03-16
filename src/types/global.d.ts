@@ -17,3 +17,11 @@ export type SubmenuItem = {
   hideOnMobile?: boolean;
   hideOnDesktop?: boolean;
 };
+
+export interface AnnouncementCardProps {
+  type?: 'normal' | 'important';
+  title: string;
+  content: string;
+  date: string;
+  isNew?: boolean;
+}

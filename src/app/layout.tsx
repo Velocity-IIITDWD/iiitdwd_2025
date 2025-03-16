@@ -1,6 +1,6 @@
+import Footer from '@/components/Footer';
 import Header from '@/components/Header';
-import { SidebarInset, SidebarProvider } from '@/components/ui/sidebar';
-import { Metadata } from 'next';
+import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
 
@@ -29,13 +29,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <SidebarProvider defaultOpen={false}>
-          <SidebarInset>
-            <Header />
-            {children}
-          </SidebarInset>
-        </SidebarProvider>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} flex flex-col relative`}
+      >
+        {/* <SidebarProvider defaultOpen={false}> */}
+        {/* <SidebarInset> */}
+        <Header />
+        {children}
+        <Footer />
+        {/* </SidebarInset> */}
+        {/* </SidebarProvider> */}
       </body>
     </html>
   );
