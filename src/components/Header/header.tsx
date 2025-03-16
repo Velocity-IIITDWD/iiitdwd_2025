@@ -9,10 +9,12 @@ import {
 } from '@/components/ui/navigation-menu';
 import { navMenuItems } from '@/data/routes';
 import { motion } from 'framer-motion';
+import { useKBar } from 'kbar';
 import { Command, Search } from 'lucide-react';
 import Link from 'next/link';
 
 export default function DesktopHeader() {
+  const { query } = useKBar();
   function onNavChange() {
     setTimeout(() => {
       const triggers = document.querySelectorAll(
@@ -138,9 +140,19 @@ export default function DesktopHeader() {
             <Command /> K
           </NavigationMenuLink>
         </NavigationMenuItem> */}
-        <button className="text-gray-600 hover:text-primary rounded-full bg-accent px-2 py-1 flex items-center text-sm">
+        <button
+          className="text-gray-600 hover:text-primary rounded-full bg-accent px-2 py-1 flex items-center text-sm cursor-pointer"
+          onClick={() => {
+            query.toggle();
+          }}
+        >
           <Search size={14} className="mr-3" />
-          <Command size={14} className="mr-1" />K
+          {navigator.platform.toLowerCase().includes('mac') ? (
+            <Command size={14} className="mr-1" />
+          ) : (
+            <span className="mr-1">Ctrl</span>
+          )}
+          K
         </button>
       </NavigationMenuList>
     </NavigationMenu>
