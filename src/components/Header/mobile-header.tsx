@@ -1,49 +1,33 @@
+'use client';
+
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger
 } from '@/components/ui/collapsible';
+import type { HeaderMain } from '@/types/header';
 import { motion } from 'framer-motion';
 import { ChevronDown, ChevronRight } from 'lucide-react';
 import Link from 'next/link';
 
 // Import your menu data
-import { MenuLevel1, MenuLevel2, MenuLevel3 } from '@/data/routes';
-import { Dispatch, SetStateAction } from 'react';
+import { navigationData } from '@/data/routes';
+
 export default function MobileHeader({
-  setIsMenuOpen
+  toggleMenu
 }: {
-  setIsMenuOpen: Dispatch<SetStateAction<boolean>>;
+  toggleMenu: () => void;
 }) {
-  // Check if a Level1 item has children
-  const hasChildren = (group: number) => {
-    return MenuLevel2.some((item) => item.group === group);
-  };
-
-  // Get Level2 items for a specific group
-  const getLevel2Items = (group: number) => {
-    return MenuLevel2.filter((item) => item.group === group);
-  };
-
-  // Check if a Level2 item has children
-  const hasSubChildren = (group: number, subGroup: number) => {
-    return MenuLevel3.some(
-      (item) => item.group === group && item.subGroup === subGroup
-    );
-  };
-
-  // Get Level3 items for a specific group and subGroup
-  const getLevel3Items = (group: number, subGroup: number) => {
-    return MenuLevel3.filter(
-      (item) => item.group === group && item.subGroup === subGroup
-    );
+  // Helper function to check if an item has children
+  const hasChildren = (item: any) => {
+    return item.items && item.items.length > 0;
   };
 
   return (
-    <div className="py-4 pt-4 md:pt-10 px-4 h-[calc(100vh-6.5rem)] overflow-y-auto">
+    <div className="py-4 flex flex-col justify-between pt-4 md:pt-10 px-4 h-[calc(100vh-6.5rem)] overflow-y-auto">
       <nav className="flex flex-col space-y-1">
-        {MenuLevel1?.map((item, index) => {
-          if (hasChildren(item?.group!)) {
+        {navigationData.map((item: HeaderMain, index) => {
+          if (hasChildren(item)) {
             // Level 1 item with children
             return (
               <motion.div
@@ -51,66 +35,61 @@ export default function MobileHeader({
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{
-                  delay: (index * 0.4) / MenuLevel1.length
+                  delay: (index * 0.4) / navigationData.length
                 }}
                 className="border-b border-gray-100"
               >
                 <Collapsible className="w-full">
                   <CollapsibleTrigger className="flex items-center justify-between w-full py-3 px-2 text-left font-medium text-primary hover:bg-gray-50 rounded-md">
-                    {item?.text}
+                    {item.title}
                     <ChevronDown className="h-4 w-4 text-gray-500" />
                   </CollapsibleTrigger>
-                  <CollapsibleContent className="pl-4">
-                    <div className="flex flex-col space-y-1 py-2">
-                      {getLevel2Items(item?.group!)?.map(
-                        (subItem, subIndex) => {
-                          if (
-                            hasSubChildren(subItem?.group, subItem?.subGroup!)
-                          ) {
-                            // Level 2 item with children
-                            return (
-                              <Collapsible
-                                key={`level2-${subIndex}`}
-                                className="w-full"
-                              >
-                                <CollapsibleTrigger className="flex items-center justify-between w-full py-2 px-2 text-left text-primary hover:bg-gray-50 rounded-md">
-                                  {subItem?.text}
-                                  <ChevronRight className="h-4 w-4 text-gray-500" />
-                                </CollapsibleTrigger>
-                                <CollapsibleContent className="pl-4">
-                                  <div className="flex flex-col space-y-1 py-1">
-                                    {getLevel3Items(
-                                      subItem?.group,
-                                      subItem?.subGroup!
-                                    )?.map((thirdItem, thirdIndex) => (
+                  <CollapsibleContent className="">
+                    <div className="flex flex-col py-2">
+                      {item?.items!.map((subItem, subIndex) => {
+                        if (hasChildren(subItem)) {
+                          // Level 2 item with children
+                          return (
+                            <Collapsible
+                              key={`level2-${subIndex}`}
+                              className="w-full"
+                            >
+                              <CollapsibleTrigger className="flex items-center justify-between w-full py-2 pl-6 text-left text-primary border-l hover:border-primary">
+                                {subItem.title}
+                                <ChevronRight className="h-4 w-4 text-gray-500" />
+                              </CollapsibleTrigger>
+                              <CollapsibleContent className="">
+                                <div className="flex flex-col">
+                                  {subItem.items!.map(
+                                    (thirdItem, thirdIndex) => (
                                       <Link
                                         key={`level3-${thirdIndex}`}
-                                        href={thirdItem?.href}
-                                        className="py-2 px-2 text-primary hover:bg-gray-50 rounded-md"
-                                        onClick={() => setIsMenuOpen(false)}
+                                        href={thirdItem.href}
+                                        className="py-2 pl-12 text-primary border-l hover:border-primary"
+                                        onClick={toggleMenu}
                                       >
-                                        {thirdItem?.text}
+                                        {thirdItem.title}
                                       </Link>
-                                    ))}
-                                  </div>
-                                </CollapsibleContent>
-                              </Collapsible>
-                            );
-                          } else {
-                            // Level 2 item without children
-                            return (
-                              <Link
-                                key={`level2-simple-${subIndex}`}
-                                href={subItem?.href}
-                                className="py-2 px-2 text-primary hover:bg-gray-50 rounded-md"
-                                onClick={() => setIsMenuOpen(false)}
-                              >
-                                {subItem?.text}
-                              </Link>
-                            );
-                          }
+                                    )
+                                  )}
+                                </div>
+                              </CollapsibleContent>
+                            </Collapsible>
+                          );
+                        } else {
+                          // Level 2 item without children
+                          return (
+                            <Link
+                              key={`level2-simple-${subIndex}`}
+                              href={subItem.href}
+                              className="py-2 pl-6 border-l hover:border-primary -left-1 text-primary"
+                              onClick={toggleMenu}
+                            >
+                              {subItem.title}
+                            </Link>
+                          );
                         }
-                      )}
+                      })}
                     </div>
                   </CollapsibleContent>
                 </Collapsible>
@@ -127,11 +106,11 @@ export default function MobileHeader({
                 className="border-b border-gray-100"
               >
                 <Link
-                  href={item?.href}
+                  href={item.href}
                   className="flex items-center w-full py-3 px-2 text-left font-medium text-primary hover:bg-gray-50 rounded-md"
-                  onClick={() => setIsMenuOpen(false)}
+                  onClick={toggleMenu}
                 >
-                  {item?.text}
+                  {item.title}
                 </Link>
               </motion.div>
             );
@@ -144,10 +123,16 @@ export default function MobileHeader({
           <a href="#" className="text-slate-600 hover:text-primary">
             AIMS
           </a>
-          <a href="#" className="text-slate-600 hover:text-primary">
+          <a
+            href="/administration/disclosures/rti"
+            className="text-slate-600 hover:text-primary"
+          >
             RTI
           </a>
-          <a href="#" className="text-slate-600 hover:text-primary">
+          <a
+            href="/academics/nirf"
+            className="text-slate-600 hover:text-primary"
+          >
             NIRF
           </a>
           <a href="#" className="text-slate-600 hover:text-primary">

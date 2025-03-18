@@ -2,16 +2,15 @@
 
 import { Button } from '@/components/ui/button';
 import { AnimatePresence, motion } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
+import { Mail, Menu, X } from 'lucide-react';
 import Image from 'next/image';
-import { useState } from 'react';
-import DesktopHeader from './header';
+import { useEffect, useState } from 'react';
+import DesktopHeader from './desktop-header';
 import MobileHeader from './mobile-header';
-
-// Import collapsible components
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen((prev) => {
@@ -25,15 +24,34 @@ function Header() {
     });
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <>
-      {/* Top info bar */}
       <div
         id="top-bar"
-        className="bg-primary text-slate-400 text-xs w-full flex justify-between max-md:justify-end px-4 md:px-16 py-2"
+        className="bg-primary text-slate-400 text-xs w-full flex justify-between max-md:justify-end px-4 md:px-8 py-2"
       >
-        <div className="max-xl:hidden">info@iiitdwd.ac.in</div>
-        <div className="flex gap-2 flex-wrap">
+        <div className="max-xl:hidden">
+          <span className="flex gap-2">
+            <Mail size={16} />
+            info@iiitdwd.ac.in
+          </span>
+        </div>
+        <div className="flex gap-3 flex-wrap">
           <div>AIMS</div>
           <div>RTI</div>
           <div>NIRF</div>
@@ -42,9 +60,11 @@ function Header() {
       </div>
       <header
         id="header"
-        className="flex flex-col z-[50] bg-white sticky top-0 left-0"
+        className={`flex flex-col z-[50] bg-white sticky top-0 left-0 transition-all duration-300 ${
+          isScrolled ? 'shadow-md' : ''
+        }`}
       >
-        <div className="flex shadow-lg z-[1] text-primary w-full justify-center max-xl:justify-between px-4 gap-10 py-2 max-xl:items-center md:py-4">
+        <div className="flex shadow-lg z-[1] text-primary w-full justify-between items-center px-4 gap-10 py-2 max-xl:items-center">
           <Image
             src={'/Logo.png'}
             width={0}
@@ -53,16 +73,30 @@ function Header() {
             style={{ height: '4rem', width: 'auto' }}
             alt="IIIT Dharwad Logo"
           />
-          <div className="max-xl:hidden">
-            <div>भारतीय सूचना प्रौद्योगिकी</div>
-            <div>संस्थान, धारवाड़</div>
-          </div>
-          <div className="max-xl:hidden">
-            <div>ಭಾರತೀಯ ಮಾಹಿತಿ ತಂತ್ರಜ್ಞಾನ</div>
-            <div>ಸಂಸ್ಥೆ, ಧಾರವಾಡ</div>
+
+          <div
+            className={`transition-opacity w-fit duration-300 flex-grow ${
+              isScrolled ? 'opacity-0 max-xl:hidden' : 'opacity-100'
+            }`}
+          >
+            <div className="text-end max-xl:hidden">
+              <div>ಭಾರತೀಯ ಮಾಹಿತಿ ತಂತ್ರಜ್ಞಾನ ಸಂಸ್ಥೆ, ಧಾರವಾಡ</div>
+              <div>भारतीय सूचना प्रौद्योगिकी संस्थान, धारवाड़</div>
+              <div>Indian Institute of Information Technology, Dharwad</div>
+            </div>
           </div>
 
-          {/* Menu trigger button for mobile */}
+          {/* Desktop header that appears on scroll */}
+          <div
+            className={`max-xl:hidden transition-all w-full duration-300 ${
+              isScrolled
+                ? 'opacity-100 max-w-2xl'
+                : 'opacity-0 max-w-0 overflow-hidden'
+            }`}
+          >
+            <DesktopHeader />
+          </div>
+
           <Button
             variant="ghost"
             className="xl:hidden p-2"
@@ -76,19 +110,18 @@ function Header() {
             )}
           </Button>
         </div>
-        <div className="flex z-[-1] max-xl:hidden sticky justify-center bg-white w-full h-fit border-b">
-          <div className="flex flex-row items-center justify-start relative py-1">
-            <DesktopHeader />
-          </div>
-        </div>
-      </header>
 
-      {/* Desktop navigation - visible on large screens */}
-      {/* <div className="flex max-xl:hidden sticky justify-center bg-white w-full h-fit border-b z-[5]">
-        <div className="flex flex-row items-center justify-start relative py-1">
+        {/* Bottom nav bar that hides on scroll */}
+        <div
+          className={`flex z-[-1] max-xl:hidden sticky left-0 justify-center !shadow-none bg-white w-full h-fit border-b transition-all duration-300 ${
+            isScrolled
+              ? 'opacity-0 max-h-0 py-0 overflow-hidden'
+              : 'opacity-100 py-1 max-h-16'
+          }`}
+        >
           <DesktopHeader />
         </div>
-      </div> */}
+      </header>
 
       {/* Animated mobile menu - appears from top */}
       <AnimatePresence>

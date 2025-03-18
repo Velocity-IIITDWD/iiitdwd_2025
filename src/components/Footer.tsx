@@ -17,23 +17,23 @@ import Link from 'next/link';
 
 export default function Footer() {
   return (
-    <footer className='bg-[url("/Alumni_Background.JPG")] text-sm flex flex-col bg-cover bg-center py-24 px-5 md:px-13 relative'>
+    <footer className='bg-[url("/Alumni_Background.JPG")] text-sm flex flex-col bg-cover bg-center py-24 px-5 lg:px-13 relative'>
       <div className="h-full absolute top-0 left-0 w-full bg-black opacity-90 z-[1]" />
       <div className="flex flex-col z-[2] text-[#a7a8b2] max-w-7xl mx-auto w-full">
-        <div className="md:w-4/5 flex-none md:p-3">
+        <div className="lg:w-4/5 flex-none lg:p-3">
           <div className="flex pb-12">
-            <div className="flex-1 flex max-md:flex-col text-sm justify-between md:items-end md:p-3">
+            <div className="flex-1 flex max-lg:flex-col text-sm justify-between lg:items-end lg:p-3">
               <Image
                 src={'/FooterLogo.png'}
                 width={0}
                 height={0}
                 sizes="100%"
                 // style={{ height: '100%', width: 'auto' }}
-                className="h-44 md:h-48 w-fit"
+                className="h-44 lg:h-48 w-fit"
                 alt="IIIT Dharwad Logo"
               />
 
-              <div className="space-y-4 md:w-1/2 md:p-3">
+              <div className="space-y-4 lg:w-1/2 lg:p-3">
                 <p className="underline hover:no-underline">
                   IIIT Dharwad Campus, Ittigatti Road, Near Sattur Colony,
                   Dharwad 580009
@@ -44,15 +44,15 @@ export default function Footer() {
                 </div>
               </div>
 
-              <div className="md:hidden block space-y-4 md:p-3 mt-4">
+              <div className="lg:hidden block space-y-4 lg:p-3 mt-4">
                 <button className="bg-black border text-base font-semibold w-full px-4 py-4 rounded flex justify-between items-center border-white text-white">
                   Explore
                   <ArrowRightIcon />
                 </button>
               </div>
             </div>
-            <div className="flex-1 items-end flex md:p-3">
-              <div className="space-y-4 md:w-1/2 max-md:pl-6 md:p-3">
+            <div className="flex-1 items-end flex lg:p-3">
+              <div className="space-y-4 lg:w-1/2 max-lg:pl-6 lg:p-3">
                 <div className="font-bold text-base text-white">FOLLOW US</div>
                 <div className="flex gap-4 flex-wrap">
                   <Instagram size={20} />
@@ -61,7 +61,7 @@ export default function Footer() {
                   <Twitter size={20} />
                 </div>
               </div>
-              <div className="hidden md:block space-y-4 w-1/2 p-3">
+              <div className="hidden lg:block space-y-4 w-1/2 p-3">
                 <button className="bg-black border text-base font-semibold w-full px-4 py-4 rounded flex justify-between items-center border-white text-white">
                   Explore
                   <ArrowRightIcon />
