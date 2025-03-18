@@ -1,16 +1,35 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
-import { AnimatePresence, motion } from 'framer-motion';
+import {
+  AnimatePresence,
+  motion,
+  useScroll,
+  useTransform
+} from 'framer-motion';
 import { Mail, Menu, X } from 'lucide-react';
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
+import { useRef, useState } from 'react';
 import DesktopHeader from './desktop-header';
 import MobileHeader from './mobile-header';
 
-function Header() {
+function AnimatedHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
+  const headerRef = useRef(null);
+
+  // Using Framer Motion's useScroll hook
+  const { scrollY } = useScroll();
+
+  const imageHeight = useTransform(scrollY, [0, 50], ['6.5rem', '5rem']);
+  const menuTop = useTransform(scrollY, [0, 50], ['8rem', '5rem']);
+  // Transform values based on scroll position
+  const textOpacity = useTransform(scrollY, [0, 50], [1, 0]);
+  const textY = useTransform(scrollY, [0, 50], ['0%', '-100%']);
+
+  // DesktopHeader position transitions
+  const desktopHeaderX = useTransform(scrollY, [0, 50], ['50%', '0%']);
+  const desktopHeaderRight = useTransform(scrollY, [0, 50], ['50%', '0%']);
+  const dektopBottom = useTransform(scrollY, [0, 50], ['0.7rem', '1.5rem']);
 
   const toggleMenu = () => {
     setIsMenuOpen((prev) => {
@@ -23,21 +42,6 @@ function Header() {
       return newState;
     });
   };
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 0) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
 
   return (
     <>
@@ -58,48 +62,54 @@ function Header() {
           <div>Students Fee Portal</div>
         </div>
       </div>
-      <header
+      <motion.header
+        ref={headerRef}
         id="header"
-        className={`flex flex-col z-[50] bg-white sticky top-0 left-0 transition-all duration-300 ${
-          isScrolled ? 'shadow-md' : ''
-        }`}
+        className="flex z-[50] text-primary w-full justify-between shadow-[0_5px_10px_rgb(0,0,0,0.12)] items-center px-4 gap-10 pb-2 max-xl:items-center bg-white sticky top-0 left-0"
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.5 }}
       >
-        <div className="flex shadow-lg z-[1] text-primary w-full justify-between items-center px-4 gap-10 py-2 max-xl:items-center">
+        {/* Logo - always on the left */}
+        <motion.div
+          style={{
+            height: imageHeight,
+            width: '100%'
+          }}
+        >
           <Image
-            src={'/Logo.png'}
+            src={'/Logo1.png'}
             width={0}
             height={0}
             sizes="100%"
-            style={{ height: '4rem', width: 'auto' }}
+            style={{ height: '100%', width: 'auto' }}
             alt="IIIT Dharwad Logo"
           />
+        </motion.div>
 
-          <div
-            className={`transition-opacity w-fit duration-300 flex-grow ${
-              isScrolled ? 'opacity-0 max-xl:hidden' : 'opacity-100'
-            }`}
-          >
-            <div className="text-end max-xl:hidden">
+        {/* Right side container */}
+        <motion.div className="flex flex-col w-full relative">
+          {/* Text section - disappears on scroll */}
+          <motion.div className="self-end overflow-hidden">
+            <motion.div
+              style={{
+                opacity: textOpacity,
+                translateY: textY
+              }}
+              className="text-end max-xl:hidden ease-in"
+            >
               <div>ಭಾರತೀಯ ಮಾಹಿತಿ ತಂತ್ರಜ್ಞಾನ ಸಂಸ್ಥೆ, ಧಾರವಾಡ</div>
               <div>भारतीय सूचना प्रौद्योगिकी संस्थान, धारवाड़</div>
               <div>Indian Institute of Information Technology, Dharwad</div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
-          {/* Desktop header that appears on scroll */}
-          <div
-            className={`max-xl:hidden transition-all w-full duration-300 ${
-              isScrolled
-                ? 'opacity-100 max-w-2xl'
-                : 'opacity-0 max-w-0 overflow-hidden'
-            }`}
-          >
-            <DesktopHeader />
-          </div>
+          {/* Desktop Header - moves from bottom center to right */}
 
+          {/* Mobile menu button */}
           <Button
             variant="ghost"
-            className="xl:hidden p-2"
+            className="xl:hidden p-2 self-end"
             onClick={toggleMenu}
             aria-label="Toggle menu"
           >
@@ -109,19 +119,21 @@ function Header() {
               <Menu className="h-6 w-6" />
             )}
           </Button>
-        </div>
+        </motion.div>
 
-        {/* Bottom nav bar that hides on scroll */}
-        <div
-          className={`flex z-[-1] max-xl:hidden sticky left-0 justify-center !shadow-none bg-white w-full h-fit border-b transition-all duration-300 ${
-            isScrolled
-              ? 'opacity-0 max-h-0 py-0 overflow-hidden'
-              : 'opacity-100 py-1 max-h-16'
-          }`}
+        <motion.div
+          className="absolute xl:flex xl:justify-center"
+          style={{
+            translateX: desktopHeaderX,
+            // translateY: desktopHeaderY,
+            //   width: desktopHeaderWidth,
+            right: desktopHeaderRight,
+            bottom: dektopBottom
+          }}
         >
           <DesktopHeader />
-        </div>
-      </header>
+        </motion.div>
+      </motion.header>
 
       {/* Animated mobile menu - appears from top */}
       <AnimatePresence>
@@ -131,9 +143,12 @@ function Header() {
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.4, ease: 'easeInOut' }}
-            className="xl:hidden fixed top-[6.5rem] left-0 right-0 bg-white shadow-lg z-[5] overflow-hidden"
+            style={{
+              top: menuTop
+            }}
+            className="xl:hidden fixed left-0 right-0 bg-white shadow-lg z-[1000] overflow-hidden"
           >
-            <MobileHeader setIsMenuOpen={setIsMenuOpen} />
+            <MobileHeader toggleMenu={toggleMenu} />
           </motion.div>
         )}
       </AnimatePresence>
@@ -141,4 +156,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default AnimatedHeader;

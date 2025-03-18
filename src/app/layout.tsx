@@ -1,5 +1,5 @@
 import Footer from '@/components/Footer';
-import AnimatedHeader from '@/components/header/animated-navbar';
+import Header from '@/components/header';
 import type { Metadata } from 'next';
 import './globals.css';
 import KBar from './providers/kbar';
@@ -21,13 +21,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={`font-grotesk flex flex-col relative`}>
         <KBar>
-          {/* <SidebarProvider defaultOpen={false}> */}
-          {/* <SidebarInset> */}
-          <AnimatedHeader />
+          <Header />
           {children}
           <Footer />
-          {/* </SidebarInset> */}
-          {/* </SidebarProvider> */}
         </KBar>
       </body>
     </html>
