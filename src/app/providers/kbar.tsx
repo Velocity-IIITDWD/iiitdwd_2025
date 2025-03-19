@@ -51,7 +51,7 @@ export default function CustomKBarProvider({
   return (
     <KBarProvider actions={generateActions()}>
       <KBarPortal>
-        <KBarPositioner className="z-50">
+        <KBarPositioner className="z-50 bg-black/15">
           <KBarAnimator className="max-w-[600px] w-full rounded-lg overflow-hidden shadow-lg bg-white border border-gray-200">
             <KBarSearch
               className="w-full py-3 px-4 text-base outline-none border-none bg-white"
