@@ -33,11 +33,7 @@ export default function FacultyProfile({
   className,
   keyPositions = ''
 }: FacultyProfileProps) {
-  const positions = Array.isArray(keyPositions)
-    ? keyPositions
-    : keyPositions
-      ? keyPositions.split(',').map((p) => p.trim())
-      : [];
+  const positions = Array.isArray(keyPositions) ? keyPositions : [keyPositions];
 
   if (variant === 'minimal') {
     return (
