@@ -1,7 +1,14 @@
 'use client';
 import SectionHeading from '@/components/layout/section-heading';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { useEffect, useState } from 'react';
+import { Card, CardContent } from '@/components/ui/card';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious
+} from '@/components/ui/carousel';
+import Autoplay from 'embla-carousel-autoplay';
 
 export interface AnnouncementItem {
   id: string;
@@ -96,100 +103,10 @@ export default function NotificationSection() {
     }
   ];
 
-  const [newsCurrentSlide, setNewsCurrentSlide] = useState(0);
-  const [announcementCurrentSlide, setAnnouncementCurrentSlide] = useState(0);
-  const [isNewsHovered, setIsNewsHovered] = useState(false);
-  const [isAnnouncementHovered, setIsAnnouncementHovered] = useState(false);
-
   const regularNewsItems = newsItems.filter((item) => !item.isPinned);
   const regularAnnouncementItems = announcementItems.filter(
     (item) => !item.isPinned
   );
-
-  useEffect(() => {
-    const newsInterval = setInterval(() => {
-      if (!isNewsHovered && regularNewsItems.length > 2) {
-        setNewsCurrentSlide((prev) => (prev + 1) % regularNewsItems.length);
-      }
-    }, 5000);
-
-    const announcementInterval = setInterval(() => {
-      if (!isAnnouncementHovered && regularAnnouncementItems.length > 2) {
-        setAnnouncementCurrentSlide(
-          (prev) => (prev + 1) % regularAnnouncementItems.length
-        );
-      }
-    }, 5000);
-
-    return () => {
-      clearInterval(newsInterval);
-      clearInterval(announcementInterval);
-    };
-  }, [
-    isNewsHovered,
-    isAnnouncementHovered,
-    regularNewsItems.length,
-    regularAnnouncementItems.length
-  ]);
-
-  const handlePrevNews = () => {
-    setNewsCurrentSlide((prev) =>
-      prev === 0 ? regularNewsItems.length - 1 : prev - 1
-    );
-  };
-
-  const handleNextNews = () => {
-    setNewsCurrentSlide((prev) => (prev + 1) % regularNewsItems.length);
-  };
-
-  const handlePrevAnnouncement = () => {
-    setAnnouncementCurrentSlide((prev) =>
-      prev === 0 ? regularAnnouncementItems.length - 1 : prev - 1
-    );
-  };
-
-  const handleNextAnnouncement = () => {
-    setAnnouncementCurrentSlide(
-      (prev) => (prev + 1) % regularAnnouncementItems.length
-    );
-  };
-
-  const renderInfiniteCarousel = (
-    items: AnnouncementItem[],
-    currentSlide: number
-  ) => {
-    if (items.length <= 2) return null;
-
-    const itemsToShow = [];
-    for (let i = 0; i < 4; i++) {
-      const index = (currentSlide + i) % items.length;
-      itemsToShow.push(items[index]);
-    }
-
-    const carouselWidth = `${items.length * 50}%`;
-    const translateX = `-${(currentSlide * 50) % 100}%`;
-
-    return (
-      <div className="overflow-hidden mt-4 relative">
-        <div
-          className="flex transition-transform duration-500 ease-in-out"
-          style={{
-            width: carouselWidth,
-            transform: `translateX(${translateX})`
-          }}
-        >
-          {itemsToShow.map((item, idx) => (
-            <div key={`${item.id}-${idx}`} className="w-1/2 px-2 flex-shrink-0">
-              <div className="text-gray-500 mb-1">{item.date}</div>
-              <h3 className="text-gray-700 font-medium hover:text-blue-600 cursor-pointer">
-                {item.title}
-              </h3>
-            </div>
-          ))}
-        </div>
-      </div>
-    );
-  };
 
   const pinnedNewsItems = newsItems.filter((item) => item.isPinned).slice(0, 2);
   const pinnedAnnouncementItems = announcementItems
@@ -200,11 +117,7 @@ export default function NotificationSection() {
     <div className="max-w-7xl mx-auto mb-10 px-4 py-8">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* News Section */}
-        <div
-          className="relative"
-          onMouseEnter={() => setIsNewsHovered(true)}
-          onMouseLeave={() => setIsNewsHovered(false)}
-        >
+        <div className="relative">
           <SectionHeading title="News and Updates" />
 
           {/* First show pinned items in a 2-row grid */}
@@ -223,42 +136,48 @@ export default function NotificationSection() {
           </div>
 
           {/* Then infinite scroll carousel for remaining items */}
-          {renderInfiniteCarousel(regularNewsItems, newsCurrentSlide)}
+          <Carousel
+            className="w-full mt-4"
+            plugins={[
+              Autoplay({
+                delay: 3000
+              })
+            ]}
+          >
+            <CarouselContent>
+              {regularNewsItems.map((item, index) => (
+                <CarouselItem key={index}>
+                  <div className="p-1">
+                    <Card className="border-none shadow-none py-0">
+                      <CardContent className="flex flex-col px-2">
+                        <div className="text-gray-500 mb-1">{item.date}</div>
+                        <h3 className="text-gray-700 font-medium hover:text-blue-600 cursor-pointer">
+                          {item.title}
+                        </h3>
+                      </CardContent>
+                    </Card>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
 
-          <div className="flex justify-between items-center mt-6">
-            <a
-              href="#"
-              className="text-blue-600 hover:underline flex items-center"
-            >
-              View all News <span className="ml-2">→</span>
-            </a>
-            {regularNewsItems.length > 2 && (
+            <div className="flex justify-between items-center mt-6">
+              <a
+                href="#"
+                className="text-blue-600 hover:underline flex items-center"
+              >
+                View all News <span className="ml-2">→</span>
+              </a>
               <div className="flex space-x-2">
-                <button
-                  onClick={handlePrevNews}
-                  className="p-1 border rounded-md hover:bg-gray-100"
-                  aria-label="Previous news"
-                >
-                  <ChevronLeft size={18} />
-                </button>
-                <button
-                  onClick={handleNextNews}
-                  className="p-1 border rounded-md hover:bg-gray-100"
-                  aria-label="Next news"
-                >
-                  <ChevronRight size={18} />
-                </button>
+                <CarouselPrevious className="relative left-0 !top-0 !translate-none" />
+                <CarouselNext className="relative right-0 !top-0 !translate-none" />
               </div>
-            )}
-          </div>
+            </div>
+          </Carousel>
         </div>
 
         {/* Announcements Section */}
-        <div
-          className="relative"
-          onMouseEnter={() => setIsAnnouncementHovered(true)}
-          onMouseLeave={() => setIsAnnouncementHovered(false)}
-        >
+        <div className="relative">
           <SectionHeading title="Announcements" />
 
           {/* First show pinned items in a 2-row grid */}
@@ -277,37 +196,44 @@ export default function NotificationSection() {
           </div>
 
           {/* Then infinite scroll carousel for remaining items */}
-          {renderInfiniteCarousel(
-            regularAnnouncementItems,
-            announcementCurrentSlide
-          )}
+          <Carousel
+            className="w-full mt-4"
+            plugins={[
+              Autoplay({
+                delay: 3000
+              })
+            ]}
+          >
+            <CarouselContent>
+              {regularAnnouncementItems.map((item, index) => (
+                <CarouselItem key={index}>
+                  <div className="p-1">
+                    <Card className="border-none shadow-none py-0">
+                      <CardContent className="flex flex-col px-2">
+                        <div className="text-gray-500 mb-1">{item.date}</div>
+                        <h3 className="text-gray-700 font-medium hover:text-blue-600 cursor-pointer">
+                          {item.title}
+                        </h3>
+                      </CardContent>
+                    </Card>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
 
-          <div className="flex justify-between items-center mt-6">
-            <a
-              href="#"
-              className="text-blue-600 hover:underline flex items-center"
-            >
-              View all Announcements <span className="ml-2">→</span>
-            </a>
-            {regularAnnouncementItems.length > 2 && (
+            <div className="flex justify-between items-center mt-6">
+              <a
+                href="#"
+                className="text-blue-600 hover:underline flex items-center"
+              >
+                View all Announcements <span className="ml-2">→</span>
+              </a>
               <div className="flex space-x-2">
-                <button
-                  onClick={handlePrevAnnouncement}
-                  className="p-1 border rounded-md hover:bg-gray-100"
-                  aria-label="Previous announcement"
-                >
-                  <ChevronLeft size={18} />
-                </button>
-                <button
-                  onClick={handleNextAnnouncement}
-                  className="p-1 border rounded-md hover:bg-gray-100"
-                  aria-label="Next announcement"
-                >
-                  <ChevronRight size={18} />
-                </button>
+                <CarouselPrevious className="relative left-0 !top-0 !translate-none" />
+                <CarouselNext className="relative right-0 !top-0 !translate-none" />
               </div>
-            )}
-          </div>
+            </div>
+          </Carousel>
         </div>
       </div>
     </div>

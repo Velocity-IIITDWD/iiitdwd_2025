@@ -10,7 +10,7 @@ const navigationData: NavigationItem[] = [
     title: 'Institute',
     href: '/institute',
     items: [
-      { title: 'About Us', href: '/institute/about' },
+      { title: 'About Us', href: '/about' },
       { title: 'Academic office', href: '/institute/academic-office' },
       { title: 'Admission', href: '/institute/admission' },
       {
