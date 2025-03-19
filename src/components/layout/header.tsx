@@ -13,23 +13,21 @@ import { useRef, useState } from 'react';
 import DesktopHeader from './desktop-header';
 import MobileHeader from './mobile-header';
 
-function AnimatedHeader() {
+function AnimatedNavbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const headerRef = useRef(null);
 
-  // Using Framer Motion's useScroll hook
   const { scrollY } = useScroll();
 
   const imageHeight = useTransform(scrollY, [0, 50], ['6.5rem', '5rem']);
   const menuTop = useTransform(scrollY, [0, 50], ['8rem', '5rem']);
-  // Transform values based on scroll position
+
   const textOpacity = useTransform(scrollY, [0, 50], [1, 0]);
   const textY = useTransform(scrollY, [0, 50], ['0%', '-100%']);
 
-  // DesktopHeader position transitions
   const desktopHeaderX = useTransform(scrollY, [0, 50], ['50%', '0%']);
   const desktopHeaderRight = useTransform(scrollY, [0, 50], ['50%', '0%']);
-  const dektopBottom = useTransform(scrollY, [0, 50], ['0.7rem', '1.5rem']);
+  const desktopBottom = useTransform(scrollY, [0, 50], ['0.7rem', '1.5rem']);
 
   const toggleMenu = () => {
     setIsMenuOpen((prev) => {
@@ -125,10 +123,8 @@ function AnimatedHeader() {
           className="absolute xl:flex xl:justify-center"
           style={{
             translateX: desktopHeaderX,
-            // translateY: desktopHeaderY,
-            //   width: desktopHeaderWidth,
             right: desktopHeaderRight,
-            bottom: dektopBottom
+            bottom: desktopBottom
           }}
         >
           <DesktopHeader />
@@ -156,4 +152,4 @@ function AnimatedHeader() {
   );
 }
 
-export default AnimatedHeader;
+export default AnimatedNavbar;

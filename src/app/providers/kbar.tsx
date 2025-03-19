@@ -1,6 +1,7 @@
 'use client';
 
-import { navMenuItems } from '@/data/routes';
+import data from '@/data/navigation';
+import { type NavigationItem } from '@/types/navigation';
 import {
   KBarAnimator,
   KBarPortal,
@@ -22,31 +23,31 @@ const generateActions = () => {
 
   const actions: Action[] = [];
 
-  const processMenuItem = (item: any, parentSection?: string) => {
+  const processMenuItem = (item: NavigationItem, parentSection?: string) => {
     actions.push({
       id: item.href,
-      name: item.text,
-      subtitle: item.subText,
+      name: item.title,
       section: parentSection || 'Main Menu',
       perform: () => (window.location.pathname = item.href)
     });
 
-    if (item.subGroups) {
-      item.subGroups.forEach((group: any) => {
-        const sectionName = group.title || item.text;
-        group.items.forEach((subItem: any) => {
-          processMenuItem(subItem, sectionName);
-        });
+    if (item.items) {
+      item.items.forEach((subItem) => {
+        processMenuItem(subItem, item.title);
       });
     }
   };
 
-  navMenuItems.forEach((item) => processMenuItem(item));
+  data.forEach((item) => processMenuItem(item));
 
   return actions;
 };
 
-export default function KBar({ children }: { children: React.ReactNode }) {
+export default function CustomKBarProvider({
+  children
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <KBarProvider actions={generateActions()}>
       <KBarPortal>

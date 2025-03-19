@@ -1,7 +1,7 @@
 'use client';
+import { Marquee } from '@/components/ui/marquee';
 import { ArrowRightIcon } from 'lucide-react';
 import { useEffect, useState } from 'react';
-import { Marquee } from '../ui/marquee';
 
 export default function LandingSection() {
   const [height, setHeight] = useState('100vh');
@@ -52,10 +52,6 @@ export default function LandingSection() {
           Quick Links:
         </div>
         <div className="flex gap-1 md:gap-4 max-md:flex-col w-full max-md:max-w-[260px] items-center">
-          {/* <StarBorder>Academics</StarBorder>
-          <StarBorder>Admissions</StarBorder>
-          <StarBorder>Campus</StarBorder>
-          <StarBorder>Culture</StarBorder> */}
           <button className="flex gap-4 uppercase max-md:w-full max-md:justify-between text-sm text-bold text-white bg-primary rounded px-4 md:px-6 py-2 items-center">
             Academics
             <ArrowRightIcon size={18} />

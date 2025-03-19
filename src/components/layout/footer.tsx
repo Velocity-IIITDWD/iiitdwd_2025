@@ -4,7 +4,7 @@ import {
   AccordionItem,
   AccordionTrigger
 } from '@/components/ui/accordion';
-import { FooterLinks } from '@/data/footer-links';
+import { footerLinks } from '@/data/footer-links';
 import {
   ArrowRightIcon,
   Instagram,
@@ -28,7 +28,6 @@ export default function Footer() {
                 width={0}
                 height={0}
                 sizes="100%"
-                // style={{ height: '100%', width: 'auto' }}
                 className="h-44 lg:h-48 w-fit"
                 alt="IIIT Dharwad Logo"
               />
@@ -73,7 +72,7 @@ export default function Footer() {
           {/* Mobile and tablet view with shadcn Accordions */}
           <div className="block lg:hidden">
             <Accordion type="multiple" className="w-full">
-              {FooterLinks.map((group, index) => (
+              {footerLinks.map((group, index) => (
                 <AccordionItem
                   key={index}
                   value={`item-${index}`}
@@ -103,7 +102,7 @@ export default function Footer() {
 
           {/* Desktop view - Grid */}
           <div className="hidden lg:grid lg:grid-cols-4 gap-8">
-            {FooterLinks.map((group, index) => (
+            {footerLinks.map((group, index) => (
               <div key={index} className="space-y-4">
                 <h2 className="text-lg font-medium text-white tracking-wider">
                   {group.title}

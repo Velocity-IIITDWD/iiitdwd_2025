@@ -8,8 +8,8 @@ import {
   MenubarSubTrigger,
   MenubarTrigger
 } from '@/components/ui/menubar';
-import { navigationData } from '@/data/routes';
-import { SubmenuGroup } from '@/types/header';
+import navigationData from '@/data/navigation';
+import { NavigationItem } from '@/types/navigation';
 import { motion } from 'framer-motion';
 import { useKBar } from 'kbar';
 import { Command, Search } from 'lucide-react';
@@ -17,7 +17,8 @@ import Link from 'next/link';
 
 export default function DesktopHeader() {
   const { query } = useKBar();
-  const renderMenuItems = (items: SubmenuGroup[]) => {
+
+  const renderMenuItems = (items: NavigationItem[]) => {
     return items.map((item, index) => {
       if (item.items && item.items.length > 0) {
         return (
@@ -52,7 +53,7 @@ export default function DesktopHeader() {
                           >
                             {subItem.items.map(
                               (
-                                nestedItem: SubmenuGroup,
+                                nestedItem: NavigationItem,
                                 nestedIndex: number
                               ) => (
                                 <MenubarItem key={nestedIndex} asChild>
@@ -87,6 +88,7 @@ export default function DesktopHeader() {
       }
     });
   };
+
   return (
     <Menubar className="border-b max-xl:hidden border-none px-2 lg:px-4">
       {navigationData.map((item, index) => (

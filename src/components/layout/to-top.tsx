@@ -4,16 +4,12 @@ import { useEffect, useState } from 'react';
 
 export default function ToTop() {
   const [isVisible, setIsVisible] = useState(false);
-  const [isBottom, setIsBottom] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
       const windowHeight = window.innerHeight;
-      const documentHeight = document.documentElement.scrollHeight;
-
       setIsVisible(scrollPosition > windowHeight / 4);
-      // setIsBottom(scrollPosition >= documentHeight - windowHeight);
     };
 
     window.addEventListener('scroll', handleScroll);

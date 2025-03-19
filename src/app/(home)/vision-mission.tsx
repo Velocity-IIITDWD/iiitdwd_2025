@@ -40,11 +40,6 @@ export default function VisionMission() {
     <section className="flex flex-col md:flex-row overflow-hidden">
       {/* Left side - Image section */}
       <div className="w-full md:w-2/5 relative bg-black">
-        {/* <img
-          src="/api/placeholder/500/600"
-          alt="IT Academy Building"
-          className="w-full h-full object-cover opacity-80"
-        /> */}
         <div className="bg-gray-400 max-md:h-44 h-full w-full" />
         <div className="absolute inset-0 flex items-center justify-center">
           <button className="bg-white rounded-full p-4 shadow-lg hover:bg-gray-100 transition-colors">
@@ -59,9 +54,7 @@ export default function VisionMission() {
         </div>
       </div>
 
-      {/* Right side - Content section */}
       <div className="w-full md:w-3/5">
-        {/* Tabs */}
         <div className="flex border-b">
           {Object.keys(tabContent).map((tab) => (
             <button
@@ -78,12 +71,7 @@ export default function VisionMission() {
           ))}
         </div>
 
-        {/* Tab content */}
         <div className="p-8 bg-gray-100 min-h-64">
-          {/* <h2 className="text-2xl font-bold text-primary mb-6 border-l-4 border-primary pl-4">
-            {tabContent[activeTab]?.title}
-          </h2> */}
-
           {activeTab === 'vision' && (
             <p className="text-lg text-gray-800 leading-relaxed font-medium">
               {tabContent.vision.content}

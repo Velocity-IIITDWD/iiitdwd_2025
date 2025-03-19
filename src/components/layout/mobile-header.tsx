@@ -5,20 +5,17 @@ import {
   CollapsibleContent,
   CollapsibleTrigger
 } from '@/components/ui/collapsible';
-import type { HeaderMain } from '@/types/header';
+import navigationData from '@/data/navigation';
+import { NavigationItem } from '@/types/navigation';
 import { motion } from 'framer-motion';
 import { ChevronDown, ChevronRight } from 'lucide-react';
 import Link from 'next/link';
-
-// Import your menu data
-import { navigationData } from '@/data/routes';
 
 export default function MobileHeader({
   toggleMenu
 }: {
   toggleMenu: () => void;
 }) {
-  // Helper function to check if an item has children
   const hasChildren = (item: any) => {
     return item.items && item.items.length > 0;
   };
@@ -26,9 +23,8 @@ export default function MobileHeader({
   return (
     <div className="py-4 flex flex-col justify-between pt-4 md:pt-10 px-4 h-[calc(100vh-6.5rem)] overflow-y-auto">
       <nav className="flex flex-col space-y-1">
-        {navigationData.map((item: HeaderMain, index) => {
+        {navigationData.map((item: NavigationItem, index) => {
           if (hasChildren(item)) {
-            // Level 1 item with children
             return (
               <motion.div
                 key={`level1-${index}`}
@@ -48,7 +44,6 @@ export default function MobileHeader({
                     <div className="flex flex-col py-2">
                       {item?.items!.map((subItem, subIndex) => {
                         if (hasChildren(subItem)) {
-                          // Level 2 item with children
                           return (
                             <Collapsible
                               key={`level2-${subIndex}`}
@@ -77,7 +72,6 @@ export default function MobileHeader({
                             </Collapsible>
                           );
                         } else {
-                          // Level 2 item without children
                           return (
                             <Link
                               key={`level2-simple-${subIndex}`}
@@ -96,7 +90,6 @@ export default function MobileHeader({
               </motion.div>
             );
           } else {
-            // Level 1 item without children
             return (
               <motion.div
                 key={`level1-simple-${index}`}

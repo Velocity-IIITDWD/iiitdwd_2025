@@ -1,8 +1,8 @@
-import Footer from '@/components/Footer';
-import Header from '@/components/header';
+import Footer from '@/components/layout/footer';
+import Header from '@/components/layout/header';
 import type { Metadata } from 'next';
 import './globals.css';
-import KBar from './providers/kbar';
+import KBarProvider from './providers/kbar';
 
 export const metadata: Metadata = {
   title: {
@@ -20,11 +20,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`font-grotesk flex flex-col relative`}>
-        <KBar>
+        <KBarProvider>
           <Header />
           {children}
           <Footer />
-        </KBar>
+        </KBarProvider>
       </body>
     </html>
   );
