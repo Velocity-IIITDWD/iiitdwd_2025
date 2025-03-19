@@ -47,45 +47,45 @@ const navigationData: NavigationItem[] = [
     items: [
       {
         title: 'Governing Bodies',
-        href: '/administration/governing-bodies',
+        href: '/governing-bodies',
         items: [
           {
             title: 'Board of Governers',
-            href: '/administration/governing-bodies/board'
+            href: '/governing-bodies/board'
           },
-          { title: 'Senate', href: '/administration/governing-bodies/senate' },
+          { title: 'Senate', href: '/governing-bodies/senate' },
           {
             title: 'Financial Committee',
-            href: '/administration/governing-bodies/financial'
+            href: '/governing-bodies/financial'
           },
           {
             title: 'Building and Works Committee',
-            href: '/administration/governing-bodies/building'
+            href: '/governing-bodies/building'
           }
         ]
       },
-      { title: 'Visitors', href: '/administration/visitors' },
-      { title: 'Chairperson', href: '/administration/chairperson' },
-      { title: 'Director', href: '/administration/director' },
-      { title: 'Registrar', href: '/administration/registrar' },
-      { title: 'Deans', href: '/administration/deans' },
-      { title: 'HoDs', href: '/administration/hods' },
-      { title: 'Faculty', href: '/administration/faculty' },
+      { title: 'Visitors', href: '/visitors' },
+      { title: 'Chairperson', href: '/chairperson' },
+      { title: 'Director', href: '/director' },
+      { title: 'Registrar', href: '/registrar' },
+      { title: 'Deans', href: '/deans' },
+      { title: 'HoDs', href: '/hods' },
+      { title: 'Faculty', href: '/faculty' },
       {
         title: 'Achievements - faculty only',
-        href: '/administration/achievements'
+        href: '/achievements'
       },
       {
         title: 'Administrative staff / officers',
-        href: '/administration/staff'
+        href: '/staff'
       },
       {
         title: 'Public disclosures',
-        href: '/administration/disclosures',
+        href: '/disclosures',
         items: [
-          { title: 'RTI', href: '/administration/disclosures/rti' },
-          { title: 'IPR', href: '/administration/disclosures/ipr' },
-          { title: 'IT Policy', href: '/administration/disclosures/it-policy' }
+          { title: 'RTI', href: '/disclosures/rti' },
+          { title: 'IPR', href: '/disclosures/ipr' },
+          { title: 'IT Policy', href: '/disclosures/it-policy' }
         ]
       }
     ]
