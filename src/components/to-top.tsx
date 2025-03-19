@@ -12,10 +12,8 @@ export default function ToTop() {
       const windowHeight = window.innerHeight;
       const documentHeight = document.documentElement.scrollHeight;
 
-      setIsVisible(scrollPosition > windowHeight / 2);
-      setIsBottom(
-        scrollPosition + windowHeight >= documentHeight - windowHeight
-      );
+      setIsVisible(scrollPosition > windowHeight / 4);
+      // setIsBottom(scrollPosition >= documentHeight - windowHeight);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -25,9 +23,9 @@ export default function ToTop() {
   return (
     <button
       id="to-top"
-      className={`fixed bottom-20 right-20 p-5 text-white rounded-full bg-primary z-[999] transition-transform duration-200 translate-y-[300%] ${
+      className={`fixed bottom-5 border border-white md:bottom-20 right-5 md:right-20 p-5 text-white rounded-full bg-primary z-[999] transition-transform duration-200 translate-y-[300%] ${
         isVisible ? '!translate-y-0' : ''
-      } ${isBottom ? '!relative float-right' : ''}`}
+      }`}
       aria-label="Back to Top Button"
       onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
     >

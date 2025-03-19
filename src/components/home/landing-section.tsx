@@ -1,33 +1,7 @@
 'use client';
-import { BookOpen, Building, GraduationCap, Users } from 'lucide-react';
+import { ArrowRightIcon } from 'lucide-react';
 import { useEffect, useState } from 'react';
-import { Card, CardContent } from '../ui/card';
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious
-} from '../ui/carousel';
-import { StarBorder } from '../ui/star-border';
-
-interface FeatureCardProps {
-  icon: React.ReactNode;
-  title: string;
-  description: string;
-}
-
-const FeatureCard = ({ icon, title, description }: FeatureCardProps) => {
-  return (
-    <div className="flex items-center p-4 transition-all rounded-lg cursor-pointer">
-      <div className="p-2 mb-4">{icon}</div>
-      <div className="">
-        <h3 className="text-lg font-semibold text-white mb-1">{title}</h3>
-        <p className="text-gray-500 text-center text-sm">{description}</p>
-      </div>
-    </div>
-  );
-};
+import { Marquee } from '../ui/marquee';
 
 export default function LandingSection() {
   const [height, setHeight] = useState('100vh');
@@ -38,48 +12,38 @@ export default function LandingSection() {
     setHeight(`calc(100vh - ${topBarHeight + headerHeight}px)`);
   }, []);
 
-  const features = [
-    {
-      icon: <GraduationCap className="w-12 h-12 text-white" />,
-      title: 'Academics',
-      description: 'Leading the pack'
-    },
-    {
-      icon: <BookOpen className="w-12 h-12 text-white" />,
-      title: 'Admissions',
-      description: 'Your future starts here'
-    },
-    {
-      icon: <Building className="w-12 h-12 text-white" />,
-      title: 'Campus',
-      description: 'To Nurture Greatness'
-    },
-    {
-      icon: <Users className="w-12 h-12 text-white" />,
-      title: 'Culture',
-      description: 'The University Way'
-    }
-  ];
-
   return (
-    <div style={{ height }} className="flex relative flex-col items-center">
-      <Carousel className="w-full flex-1">
-        <CarouselContent className="h-full">
-          {Array.from({ length: 5 }).map((_, index) => (
-            <CarouselItem key={index}>
-              <div className="p-1 h-full">
-                <Card className="h-full">
-                  <CardContent className="flex h-full items-center justify-center p-6">
-                    <span className="text-4xl font-semibold">{index + 1}</span>
-                  </CardContent>
-                </Card>
-              </div>
-            </CarouselItem>
-          ))}
-        </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
-      </Carousel>
+    <div className="flex relative flex-col items-center">
+      <div className="flex-1 flex flex-col w-full">
+        <div className="relative flex-1 flex w-full flex-col items-center justify-center overflow-hidden">
+          <Marquee className="!mt-0">
+            <div className="h-[calc(20vw-1.5px)] w-[calc(33vw-2.67px)] md:h-36 md:w-64 shadow"></div>
+            <div className="h-[calc(20vw-1.5px)] w-[calc(33vw-2.67px)] md:h-36 md:w-64 shadow"></div>
+            <div className="h-[calc(20vw-1.5px)] w-[calc(33vw-2.67px)] md:h-36 md:w-64 shadow"></div>
+            <div className="h-[calc(20vw-1.5px)] w-[calc(33vw-2.67px)] md:h-36 md:w-64 shadow"></div>
+            <div className="h-[calc(20vw-1.5px)] w-[calc(33vw-2.67px)] md:h-36 md:w-64 shadow"></div>
+            <div className="h-[calc(20vw-1.5px)] w-[calc(33vw-2.67px)] md:h-36 md:w-64 shadow"></div>
+            <div className="h-[calc(20vw-1.5px)] w-[calc(33vw-2.67px)] md:h-36 md:w-64 shadow"></div>
+          </Marquee>
+          <Marquee className="!mt-0 -left-18">
+            <div className="h-[calc(20vw-1.5px)] w-[calc(33vw-2.67px)] md:h-36 md:w-64 shadow"></div>
+            <div className="h-[calc(20vw-1.5px)] w-[calc(33vw-2.67px)] md:h-36 md:w-64 shadow"></div>
+            <div className="h-[calc(20vw-1.5px)] w-[calc(33vw-2.67px)] md:h-36 md:w-64 shadow"></div>
+            <div className="h-[calc(20vw-1.5px)] w-[calc(33vw-2.67px)] md:h-36 md:w-64 shadow"></div>
+            <div className="h-[calc(20vw-1.5px)] w-[calc(33vw-2.67px)] md:h-36 md:w-64 shadow"></div>
+            <div className="h-[calc(20vw-1.5px)] w-[calc(33vw-2.67px)] md:h-36 md:w-64 shadow"></div>
+            <div className="h-[calc(20vw-1.5px)] w-[calc(33vw-2.67px)] md:h-36 md:w-64 shadow"></div>
+          </Marquee>
+        </div>
+        <div className="px-13 py-12 font-grotesk">
+          <div className="mx-auto max-w-[1344px] w-full">
+            <div className="text-[clamp(2.2rem,10vw,5.4rem)] uppercase text-center leading-[0.9] font-bold">
+              Creating thinkers and leaders in technology to positively impact
+              society
+            </div>
+          </div>
+        </div>
+      </div>
       <div
         id="quick-links"
         className="w-fit uppercase flex max-md:flex-col max-md:w-full items-center gap-4 py-4"
@@ -88,23 +52,27 @@ export default function LandingSection() {
           Quick Links:
         </div>
         <div className="flex gap-1 md:gap-4 max-md:flex-col w-full max-md:max-w-[260px] items-center">
-          {/* <button className="flex gap-4 uppercase max-md:w-full max-md:justify-between text-sm text-bold text-white bg-primary rounded px-4 md:px-6 py-2 items-center">
-            Academics
-            <ArrowRightIcon size={18} />
-          </button> */}
-          <StarBorder>Academics</StarBorder>
+          {/* <StarBorder>Academics</StarBorder>
           <StarBorder>Admissions</StarBorder>
           <StarBorder>Campus</StarBorder>
-          <StarBorder>Culture</StarBorder>
+          <StarBorder>Culture</StarBorder> */}
+          <button className="flex gap-4 uppercase max-md:w-full max-md:justify-between text-sm text-bold text-white bg-primary rounded px-4 md:px-6 py-2 items-center">
+            Academics
+            <ArrowRightIcon size={18} />
+          </button>
+          <button className="flex gap-4 uppercase max-md:w-full max-md:justify-between text-sm text-bold text-white bg-primary rounded px-4 md:px-6 py-2 items-center">
+            Admissions
+            <ArrowRightIcon size={18} />
+          </button>
+          <button className="flex gap-4 uppercase max-md:w-full max-md:justify-between text-sm text-bold text-white bg-primary rounded px-4 md:px-6 py-2 items-center">
+            Campus
+            <ArrowRightIcon size={18} />
+          </button>
+          <button className="flex gap-4 uppercase max-md:w-full max-md:justify-between text-sm text-bold text-white bg-primary rounded px-4 md:px-6 py-2 items-center">
+            Culture
+            <ArrowRightIcon size={18} />
+          </button>
         </div>
-        {/* {features.map((feature, index) => (
-          <FeatureCard
-            key={index}
-            icon={feature.icon}
-            title={feature.title}
-            description={feature.description}
-          />
-        ))} */}
       </div>
     </div>
   );

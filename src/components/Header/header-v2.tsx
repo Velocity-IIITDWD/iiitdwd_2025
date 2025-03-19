@@ -13,7 +13,7 @@ import { useKBar } from 'kbar';
 import { Command, Search } from 'lucide-react';
 import Link from 'next/link';
 
-export default function DesktopHeader() {
+export default function DesktopHeaderV2() {
   const { query } = useKBar();
   function onNavChange() {
     setTimeout(() => {
@@ -141,7 +141,7 @@ export default function DesktopHeader() {
           </NavigationMenuLink>
         </NavigationMenuItem> */}
         <button
-          className="text-gray-600 hover:text-primary rounded-full bg-accent px-2 py-1 flex items-center text-sm cursor-pointer"
+          className="text-gray-600 hover:text-primary rounded-full bg-tertiary/20 px-2 py-1 flex items-center text-sm cursor-pointer"
           onClick={() => {
             query.toggle();
           }}
