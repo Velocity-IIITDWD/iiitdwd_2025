@@ -1,8 +1,17 @@
 'use client';
+import Background from '@/assets/layout/Alumni_Background.webp';
 import SectionHeading from '@/components/layout/section-heading';
-import aboutPageSections from '@/data/about';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger
+} from '@/components/ui/accordion';
+import aboutPageSections, { carouselData } from '@/data/about';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
+import ImageCarousel from './carousel';
 
 export default function AboutPage() {
   const [activeSection, setActiveSection] = useState<number>(0);
@@ -41,11 +50,19 @@ export default function AboutPage() {
 
   return (
     <main>
-      <div className="w-full relative bg-[url('/Alumni_Background.jpg')] bg-cover h-screen px-2 md:px-4 lg:px-12 xl:px-16 py-16">
+      <div className="w-full relative min-h-screen py-16">
+        <Image
+          className="h-full w-full object-cover absolute top-0 left-0"
+          height={0}
+          width={0}
+          sizes={'100%'}
+          src={Background}
+          alt={'Main Background'}
+        />
         <div className="absolute top-0 left-0 w-full h-full bg-black/70 z-[1]" />
 
-        <div className="flex max-md:flex-col relative z-[2]">
-          <div className="flex flex-col gap-6 text-white flex-1">
+        <div className="grid grid-cols-1 md:grid-cols-2 relative z-[2] gap-10 items-center h-full">
+          <div className="flex flex-col pl-4 md:pl-8 lg:pl-12 xl:pl-16 gap-6 text-white flex-1">
             <SectionHeading reverse title="About Us" free />
             <div className="font-semibold leading-[1.1] text-[clamp(2.2rem,10vw,4.5rem)]">
               Shaping the Future of Technology
@@ -55,13 +72,14 @@ export default function AboutPage() {
               Information Technology.
             </div>
           </div>
-          <div className="flex-1"></div>
+
+          <ImageCarousel slides={carouselData} />
         </div>
       </div>
 
       <div className="bg-black py-20">
         <section className="container mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="max-md:hidden grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Left Sidebar */}
             <div className="space-y-8 pr-10 relative">
               <SectionHeading
@@ -125,6 +143,23 @@ export default function AboutPage() {
               })}
             </div>
           </div>
+
+          <Accordion type="single" className="md:hidden" collapsible>
+            {aboutPageSections?.map((section, index) => (
+              <AccordionItem key={index} value={`item-${index}`}>
+                <AccordionTrigger>
+                  <h3 className="text-white text-[clamp(1.5rem,6vw,2rem)] font-semibold cursor-pointer">
+                    {section.title}
+                  </h3>
+                </AccordionTrigger>
+                <AccordionContent>
+                  <div className="text-gray-300 text-base leading-7">
+                    {section.content}
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
         </section>
       </div>
     </main>

@@ -74,7 +74,7 @@ function AnimatedNavbar() {
         id="top-bar"
         className="bg-primary text-slate-400 text-xs w-full flex justify-between max-md:justify-end px-4 md:px-8 py-2"
       >
-        <div className="max-xl:hidden">
+        <div className="max-md:hidden">
           <span className="flex gap-2">
             <Mail size={16} />
             info@iiitdwd.ac.in
@@ -117,7 +117,7 @@ function AnimatedNavbar() {
             <div className="flex items-center space-x-4">
               {/* Text section - disappears on scroll */}
               <motion.div
-                className="flex flex-col max-md:hidden text-center text-primary md:text-right"
+                className="flex flex-col max-xl:hidden text-center text-primary md:text-right"
                 variants={textVariants}
                 animate={isScrolled ? 'scrolled' : 'initial'}
                 transition={{ duration: 0.8, ease: 'easeInOut' }}
@@ -135,7 +135,7 @@ function AnimatedNavbar() {
 
               {/* Desktop Header - moves from bottom center to right */}
               <motion.div
-                className="absolute xl:flex xl:justify-center"
+                className="absolute max-xl:hidden"
                 variants={desktopHeaderVariants}
                 initial="initial"
                 animate={isScrolled ? 'scrolled' : 'initial'}
@@ -144,8 +144,22 @@ function AnimatedNavbar() {
                 <DesktopHeader />
               </motion.div>
 
+              {/* For xl and larger screens - animated version */}
+
+              {/* For screens smaller than xl - static in end position */}
+              <motion.div
+                className="absolute xl:hidden"
+                style={{
+                  x: '0%',
+                  right: '0%',
+                  bottom: '1.5rem'
+                }}
+              >
+                <DesktopHeader />
+              </motion.div>
+
               {/* Mobile menu button */}
-              <div className="xl:hidden">
+              <div className="md:hidden">
                 <Button
                   variant="ghost"
                   size="icon"

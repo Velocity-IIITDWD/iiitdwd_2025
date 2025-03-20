@@ -1,6 +1,7 @@
 'use client';
 import { Marquee } from '@/components/ui/marquee';
 import { ArrowRightIcon } from 'lucide-react';
+import Image from 'next/image';
 
 export default function LandingSection({ data }: { data: string[] }) {
   const half = Math.ceil(data.length / 2);
@@ -13,21 +14,27 @@ export default function LandingSection({ data }: { data: string[] }) {
         <div className="relative flex-1 flex w-full flex-col items-center justify-center overflow-hidden">
           <Marquee className="!mt-0">
             {firstHalf?.map((src, index) => (
-              <img
+              <Image
                 key={index}
                 src={`https://iiitdwd.ac.in${src}`}
                 alt={`Image ${index + 1}`}
                 className="h-[calc(20vw-1.5px)] w-[calc(33vw-2.67px)] md:h-36 md:w-64 shadow"
+                height={0}
+                width={0}
+                sizes={'100%'}
               />
             ))}
           </Marquee>
           <Marquee className="!mt-0 pr-[calc(33vw-2.67px)] md:pr-64">
             {secondHalf.map((src, index) => (
-              <img
+              <Image
                 key={index}
                 src={`https://iiitdwd.ac.in${src}`}
                 alt={`Image ${index + 1}`}
                 className="h-[calc(20vw-1.5px)] w-[calc(33vw-2.67px)] md:h-36 md:w-64 shadow"
+                height={0}
+                width={0}
+                sizes={'100%'}
               />
             ))}
           </Marquee>

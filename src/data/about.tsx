@@ -152,3 +152,48 @@ const aboutPageSections: AboutSection[] = [
 ];
 
 export default aboutPageSections;
+
+export const carouselData = [
+  {
+    title: 'Vision',
+    content: (
+      <p className="text-xs md:text-sm">
+        To be a globally renowned academy of information technology for societal
+        development.
+      </p>
+    )
+  },
+  {
+    title: 'Our Mission',
+    content: (
+      <div className="flex flex-col gap-3 text-xs md:text-sm">
+        <p>
+          To produce globally competent information technology professionals
+          with the right mix of professional skills and ethical, societal and
+          environmental concerns.
+        </p>
+        <p>
+          To solve local problems using global technologies and solve global
+          problems using local technologies across disciplines.
+        </p>
+        <p>
+          To project the nation to the forefront of information technology
+          research and development.
+        </p>
+      </div>
+    )
+  },
+  {
+    title: 'Core Values',
+    content: (
+      <ul className="text-xs md:text-sm flex flex-col gap-2 items-center ">
+        <li className="border rounded-full px-4 w-full py-1">Integrity</li>
+        <li className="border rounded-full px-4 w-full py-1">Service</li>
+        <li className="border rounded-full px-4 w-full py-1">Positivity</li>
+        <li className="border rounded-full px-4 w-full py-1">
+          Commitment and Passion for Technology
+        </li>
+      </ul>
+    )
+  }
+];
