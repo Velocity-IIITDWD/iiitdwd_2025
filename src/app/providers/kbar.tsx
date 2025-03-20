@@ -89,7 +89,19 @@ function RenderResults() {
   );
 }
 
-function ResultItem({ action, active }: { action: any; active: boolean }) {
+function ResultItem({
+  action,
+  active
+}: {
+  action: {
+    id: string;
+    name: string;
+    subtitle?: string;
+    section?: string | { name: string };
+    perform?: (currentActionImpl: any) => any;
+  };
+  active: boolean;
+}) {
   return (
     <div
       style={{ padding: '12px 16px' }}

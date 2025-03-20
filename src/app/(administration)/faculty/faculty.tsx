@@ -45,7 +45,7 @@ export default function FacultySearchPage({
     }
 
     setFilteredFaculty(filtered);
-  }, [searchQuery]);
+  }, [searchQuery, facultyData]);
 
   return (
     <div className="w-full mx-auto min-h-screen p-6 md:px-20">

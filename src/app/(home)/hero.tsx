@@ -1,17 +1,8 @@
 'use client';
 import { Marquee } from '@/components/ui/marquee';
 import { ArrowRightIcon } from 'lucide-react';
-import { useEffect, useState } from 'react';
 
 export default function LandingSection() {
-  const [height, setHeight] = useState('100vh');
-
-  useEffect(() => {
-    const topBarHeight = document.getElementById('top-bar')?.clientHeight || 0;
-    const headerHeight = document.getElementById('header')?.clientHeight || 0;
-    setHeight(`calc(100vh - ${topBarHeight + headerHeight}px)`);
-  }, []);
-
   return (
     <div className="flex relative flex-col items-center">
       <div className="flex-1 flex flex-col w-full">
