@@ -75,7 +75,7 @@ export default function SocialSidebar({
     <div
       className={`fixed ${
         position === 'left' ? 'left-0' : 'right-0'
-      } flex top-1/2 -translate-y-1/2 z-[100] transition duration-300 ${
+      } flex top-1/2 -translate-y-1/2 z-[100] max-md:hidden transition duration-300 ${
         positionClasses.container
       }`}
     >

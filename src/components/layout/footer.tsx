@@ -1,4 +1,4 @@
-import Background from '@/assets/layout/Alumni_Background.png';
+import Background from '@/assets/layout/Alumni_Background.webp';
 import FooterLogo from '@/assets/layout/FooterLogo.png';
 import {
   Accordion,
