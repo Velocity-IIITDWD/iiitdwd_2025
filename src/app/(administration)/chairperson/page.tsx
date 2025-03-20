@@ -3,7 +3,7 @@ import Profile from '../director/profile';
 export default async function Page() {
   return (
     <Profile
-      image="http://localhost:3000/images/Sridhar%20Vembu.webp"
+      image="https://iiitdwd.ac.in/images/Sridhar%20Vembu.webp"
       email="chairperson@iiitdwd.ac.in"
       name="Dr. Sridhar Vembu"
       position="Chairperson, IIIT Dharwad"
