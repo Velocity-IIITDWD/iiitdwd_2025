@@ -1,45 +1,59 @@
 'use client';
 import { Marquee } from '@/components/ui/marquee';
 import { ArrowRightIcon } from 'lucide-react';
+import Image from 'next/image';
 
-export default function LandingSection() {
+export default function LandingSection({ data }: { data: string[] }) {
+  const half = Math.ceil(data.length / 2);
+  const firstHalf = data.slice(0, half);
+  const secondHalf = data.slice(half);
+
   return (
     <div className="flex relative flex-col items-center">
       <div className="flex-1 flex flex-col w-full">
         <div className="relative flex-1 flex w-full flex-col items-center justify-center overflow-hidden">
           <Marquee className="!mt-0">
-            <div className="h-[calc(20vw-1.5px)] w-[calc(33vw-2.67px)] md:h-36 md:w-64 shadow"></div>
-            <div className="h-[calc(20vw-1.5px)] w-[calc(33vw-2.67px)] md:h-36 md:w-64 shadow"></div>
-            <div className="h-[calc(20vw-1.5px)] w-[calc(33vw-2.67px)] md:h-36 md:w-64 shadow"></div>
-            <div className="h-[calc(20vw-1.5px)] w-[calc(33vw-2.67px)] md:h-36 md:w-64 shadow"></div>
-            <div className="h-[calc(20vw-1.5px)] w-[calc(33vw-2.67px)] md:h-36 md:w-64 shadow"></div>
-            <div className="h-[calc(20vw-1.5px)] w-[calc(33vw-2.67px)] md:h-36 md:w-64 shadow"></div>
-            <div className="h-[calc(20vw-1.5px)] w-[calc(33vw-2.67px)] md:h-36 md:w-64 shadow"></div>
+            {firstHalf?.map((src, index) => (
+              <Image
+                key={index}
+                src={`https://iiitdwd.ac.in${src}`}
+                alt={`Image ${index + 1}`}
+                className="h-[calc(20vw-1.5px)] w-[calc(33vw-2.67px)] md:h-36 md:w-64 shadow"
+                height={0}
+                width={0}
+                sizes={'100%'}
+              />
+            ))}
           </Marquee>
-          <Marquee className="!mt-0 -left-18">
-            <div className="h-[calc(20vw-1.5px)] w-[calc(33vw-2.67px)] md:h-36 md:w-64 shadow"></div>
-            <div className="h-[calc(20vw-1.5px)] w-[calc(33vw-2.67px)] md:h-36 md:w-64 shadow"></div>
-            <div className="h-[calc(20vw-1.5px)] w-[calc(33vw-2.67px)] md:h-36 md:w-64 shadow"></div>
-            <div className="h-[calc(20vw-1.5px)] w-[calc(33vw-2.67px)] md:h-36 md:w-64 shadow"></div>
-            <div className="h-[calc(20vw-1.5px)] w-[calc(33vw-2.67px)] md:h-36 md:w-64 shadow"></div>
-            <div className="h-[calc(20vw-1.5px)] w-[calc(33vw-2.67px)] md:h-36 md:w-64 shadow"></div>
-            <div className="h-[calc(20vw-1.5px)] w-[calc(33vw-2.67px)] md:h-36 md:w-64 shadow"></div>
+          <Marquee className="!mt-0 pr-[calc(33vw-2.67px)] md:pr-64">
+            {secondHalf.map((src, index) => (
+              <Image
+                key={index}
+                src={`https://iiitdwd.ac.in${src}`}
+                alt={`Image ${index + 1}`}
+                className="h-[calc(20vw-1.5px)] w-[calc(33vw-2.67px)] md:h-36 md:w-64 shadow"
+                height={0}
+                width={0}
+                sizes={'100%'}
+              />
+            ))}
           </Marquee>
         </div>
-        <div className="px-13 py-12 font-grotesk">
-          <div className="mx-auto max-w-[1344px] w-full">
-            <div className="text-[clamp(2.2rem,10vw,5.4rem)] uppercase text-center leading-[0.9] font-bold">
-              Creating thinkers and leaders in technology to positively impact
-              society
+        <div className=" px-5 md:px-13 py-12 font-grotesk">
+          <div className="mx-auto max-w-6xl w-full">
+            <div className="text-[clamp(2rem,10vw,3.3rem)] uppercase text-center leading-[1] font-bold">
+              <div>Creating thinkers and leaders</div>
+              <div>in technology to positively</div>
+              <div>impact society</div>
             </div>
           </div>
         </div>
       </div>
       <div
         id="quick-links"
-        className="w-fit uppercase flex max-md:flex-col max-md:w-full items-center gap-4 py-4"
+        className="w-fit uppercase my-10 flex max-md:flex-col max-md:w-full items-center gap-4 py-4"
       >
-        <div className="hidden md:block whitespace-nowrap text-gray-500">
+        <div className="hidden text-sm md:block whitespace-nowrap text-gray-500">
           Quick Links:
         </div>
         <div className="flex gap-1 md:gap-4 max-md:flex-col w-full max-md:max-w-[260px] items-center">

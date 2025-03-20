@@ -17,8 +17,14 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'www.iiitdwd.ac.in',
         pathname: '/**'
+      },
+      {
+        hostname: 'cdn.sanity.io',
+        port: '',
+        pathname: '/**'
       }
-    ]
+    ],
+    domains: ['avatar.vercel.sh']
   },
   trailingSlash: true
 };

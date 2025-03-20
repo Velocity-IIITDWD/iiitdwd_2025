@@ -25,7 +25,7 @@
   --popover-foreground: oklch(0.145 0 0);
   --primary: oklch(23.73% 0.0707 255.79); /* #041E3F*/
   --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(54.99% 0.0343 245.44); /* #CCE70B*/
+  --secondary: oklch(62.79% 0.0289 242.99); /* #CCE70B*/
   --secondary-foreground: oklch(0.205 0 0);
   --muted: oklch(0.97 0 0);
   --muted-foreground: oklch(0.556 0 0);
@@ -86,6 +86,7 @@
 }
 
 @theme inline {
+  --breakpoint-xl: 82rem;
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -171,6 +172,7 @@
 @layer base {
   * {
     @apply border-border outline-ring/50;
+    /* border: 1px dotted red; */
   }
   body {
     @apply bg-background text-foreground;
@@ -191,5 +193,140 @@
 
   ::selection {
     @apply bg-tertiary/40;
+  }
+
+  /* Embla css */
+  .embla {
+    margin: auto;
+    --slide-spacing: 1rem;
+    --slide-size: 100%;
+  }
+  .embla__viewport {
+    overflow: hidden;
+  }
+  .embla__container {
+    display: flex;
+    touch-action: pan-y pinch-zoom;
+    margin-left: calc(var(--slide-spacing) * -1);
+  }
+  .embla__slide {
+    transform: translate3d(0, 0, 0);
+    flex: 0 0 var(--slide-size);
+    min-width: 0;
+    padding-left: var(--slide-spacing);
+  }
+  .embla__slide__number {
+    box-shadow: inset 0 0 0 0.2rem var(--detail-medium-contrast);
+    border-radius: 1.8rem;
+    font-size: 4rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    user-select: none;
+  }
+  .embla__controls {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    justify-content: space-between;
+    gap: 1.2rem;
+    margin-top: 1.8rem;
+  }
+  .embla__buttons {
+    display: flex;
+    gap: 0.6rem;
+    align-items: center;
+  }
+  .embla__button {
+    -webkit-tap-highlight-color: rgba(var(--text-high-contrast-rgb-value), 0.5);
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    touch-action: manipulation;
+    display: inline-flex;
+    text-decoration: none;
+    cursor: pointer;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    box-shadow: inset 0 0 0 0.2rem var(--detail-medium-contrast);
+    width: 3.6rem;
+    height: 3.6rem;
+    z-index: 1;
+    border-radius: 50%;
+    color: var(--text-body);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .embla__button:disabled {
+    color: var(--detail-high-contrast);
+  }
+  .embla__button__svg {
+    width: 35%;
+    height: 35%;
+  }
+  .embla__play {
+    -webkit-tap-highlight-color: rgba(var(--text-high-contrast-rgb-value), 0.5);
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    touch-action: manipulation;
+    display: inline-flex;
+    text-decoration: none;
+    cursor: pointer;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    box-shadow: inset 0 0 0 0.2rem var(--detail-medium-contrast);
+    border-radius: 1.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-self: flex-end;
+    color: var(--text-body);
+    font-weight: 700;
+    font-size: 1.4rem;
+  }
+  .embla__progress {
+    border-radius: 0.9rem;
+    position: relative;
+    height: 0.6rem;
+    width: 4rem;
+    overflow: hidden;
+  }
+
+  .embla__progress__bar {
+    background-color: currentColor;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  .embla__progress--hidden {
+    opacity: 0;
+  }
+
+  .embla__progress--hidden .embla__progress__bar {
+    animation-play-state: paused;
+  }
+
+  @keyframes autoplay-progress {
+    0% {
+      transform: translate3d(0, 0, 0);
+    }
+    100% {
+      transform: translate3d(100%, 0, 0);
+    }
+  }
+
+  .embla__controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
   }
 }

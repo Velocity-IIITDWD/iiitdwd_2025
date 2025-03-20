@@ -10,7 +10,7 @@ export const BentoGrid = ({
   return (
     <div
       className={cn(
-        'mx-auto grid max-w-7xl grid-cols-1 gap-4 md:auto-rows-[18rem]',
+        'mx-auto grid max-w-7xl h-full grid-cols-1 gap-4 grid-rows-[1fr_1fr]',
         className
       )}
     >
@@ -21,50 +21,38 @@ export const BentoGrid = ({
 
 export const BentoGridItem = ({
   className,
-  titleClassName,
-  descriptionClassName,
   title,
-  description,
-  header,
+  content1,
+  content2,
   icon
 }: {
   className?: string;
-  titleClassName?: string;
-  descriptionClassName?: string;
   title?: string | React.ReactNode;
-  description?: string | React.ReactNode;
-  header?: React.ReactNode;
+  content1?: string | React.ReactNode;
+  content2?: string | React.ReactNode;
   icon?: React.ReactNode;
 }) => {
   return (
     <div
       className={cn(
-        'group/bento shadow-input row-span-1 flex flex-col justify-end space-y-4 rounded-xl border border-neutral-200 bg-white p-4 transition duration-200 hover:shadow-xl dark:border-white/[0.2] dark:bg-black dark:shadow-none',
+        'group relative w-full sm:h-[350px] flex flex-col gap-5 lg:flex-row focus:outline-none focus:border-none focus:ring-brand-600 focus:ring-2 focus:rounded-xl',
         className
       )}
     >
-      {header}
-      {(icon || title || description) && (
-        <div className="transition duration-200 z-[2] group-hover/bento:translate-x-2">
-          {icon}
-          <div
-            className={cn(
-              'mt-2 mb-2 font-sans font-bold text-neutral-600',
-              titleClassName
-            )}
-          >
-            {title}
-          </div>
-          <div
-            className={cn(
-              'font-sans text-xs font-normal text-neutral-600',
-              descriptionClassName
-            )}
-          >
-            {description}
+      <div className="group/panel rounded-lg md:rounded-xl border border-secondary/10 p-px bg-gradient-to-b from-secondary/10 to-tertiary/30 transition-all hover:shadow-md flex items-center justify-center hover:border-secondary/30 hover:!bg-white relative w-full h-full">
+        <div className="z-10 rounded-[7px] md:rounded-[11px] relative overflow-hidden flex-1 flex flex-row sm:flex-col gap-4 items-start sm:items-center lg:items-start justify-between bg-surface-75 w-full h-full text-foreground-lighter [&_strong]:!font-normal [&_strong]:!text-foreground p-4 sm:py-6">
+          <div className="relative z-10 h-full w-full mx-auto gap-2 sm:gap-4 flex flex-col items-start sm:items-center text-left sm:text-center lg:mx-0 lg:pl-2 lg:items-start lg:text-left">
+            <div className="flex items-center gap-2 text-foreground">
+              {icon}
+              <h2>{title}</h2>
+            </div>
+            <div className="flex-1 flex flex-col text-gray-500 justify-between gap-2 text-sm [&_strong]:!text-primary">
+              {content1}
+              {content2}
+            </div>
           </div>
         </div>
-      )}
+      </div>
     </div>
   );
 };

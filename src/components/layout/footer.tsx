@@ -1,3 +1,5 @@
+import Background from '@/assets/layout/Alumni_Background.webp';
+import FooterLogo from '@/assets/layout/FooterLogo.png';
 import {
   Accordion,
   AccordionContent,
@@ -17,14 +19,22 @@ import Link from 'next/link';
 
 export default function Footer() {
   return (
-    <footer className='bg-[url("/Alumni_Background.JPG")] text-sm flex flex-col bg-cover bg-center py-24 px-5 lg:px-13 relative'>
+    <footer className="text-sm flex flex-col bg-cover bg-center py-24 px-5 lg:px-13 relative">
+      <Image
+        src={Background}
+        width={0}
+        height={0}
+        sizes="100%"
+        className="h-full w-full object-cover absolute top-0 left-0 z-0"
+        alt="Footer Background"
+      />
       <div className="h-full absolute top-0 left-0 w-full bg-black opacity-90 z-[1]" />
       <div className="flex flex-col z-[2] text-[#a7a8b2] max-w-7xl mx-auto w-full">
         <div className="lg:w-4/5 flex-none lg:p-3">
           <div className="flex pb-12">
             <div className="flex-1 flex max-lg:flex-col text-sm justify-between lg:items-end lg:p-3">
               <Image
-                src={'/FooterLogo.png'}
+                src={FooterLogo}
                 width={0}
                 height={0}
                 sizes="100%"

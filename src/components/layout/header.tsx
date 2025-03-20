@@ -1,11 +1,12 @@
 'use client';
 
+import Logo from '@/assets/layout/Logo1.png';
 import { Button } from '@/components/ui/button';
 import {
   AnimatePresence,
   motion,
-  useScroll,
-  useTransform
+  useMotionValueEvent,
+  useScroll
 } from 'framer-motion';
 import { Mail, Menu, X } from 'lucide-react';
 import Image from 'next/image';
@@ -15,19 +16,19 @@ import MobileHeader from './mobile-header';
 
 function AnimatedNavbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const headerRef = useRef(null);
-
   const { scrollY } = useScroll();
 
-  const imageHeight = useTransform(scrollY, [0, 50], ['6.5rem', '5rem']);
-  const menuTop = useTransform(scrollY, [0, 50], ['8rem', '5rem']);
-
-  const textOpacity = useTransform(scrollY, [0, 50], [1, 0]);
-  const textY = useTransform(scrollY, [0, 50], ['0%', '-100%']);
-
-  const desktopHeaderX = useTransform(scrollY, [0, 50], ['50%', '0%']);
-  const desktopHeaderRight = useTransform(scrollY, [0, 50], ['50%', '0%']);
-  const desktopBottom = useTransform(scrollY, [0, 50], ['0.7rem', '1.5rem']);
+  // Use useMotionValueEvent to detect when scroll passes threshold
+  useMotionValueEvent(scrollY, 'change', (latest) => {
+    // Only trigger state change when crossing the threshold
+    if (latest > 50 && !isScrolled) {
+      setIsScrolled(true);
+    } else if (latest <= 50 && isScrolled) {
+      setIsScrolled(false);
+    }
+  });
 
   const toggleMenu = () => {
     setIsMenuOpen((prev) => {
@@ -41,13 +42,39 @@ function AnimatedNavbar() {
     });
   };
 
+  // Animation variants for the desktop header
+  const desktopHeaderVariants = {
+    initial: {
+      x: '50%',
+      right: '50%',
+      bottom: '0.7rem'
+    },
+    scrolled: {
+      x: '0%',
+      right: '0%',
+      bottom: '1.5rem'
+    }
+  };
+
+  // Animation variants for the logo
+  const logoVariants = {
+    initial: { height: '6.5rem' },
+    scrolled: { height: '5rem' }
+  };
+
+  // Animation variants for the text
+  const textVariants = {
+    initial: { opacity: 1, y: '0%' },
+    scrolled: { opacity: 0, y: '-100%' }
+  };
+
   return (
     <>
       <div
         id="top-bar"
         className="bg-primary text-slate-400 text-xs w-full flex justify-between max-md:justify-end px-4 md:px-8 py-2"
       >
-        <div className="max-xl:hidden">
+        <div className="max-md:hidden">
           <span className="flex gap-2">
             <Mail size={16} />
             info@iiitdwd.ac.in
@@ -62,87 +89,125 @@ function AnimatedNavbar() {
       </div>
       <motion.header
         ref={headerRef}
-        id="header"
-        className="flex z-[50] text-primary w-full justify-between shadow-[0_5px_10px_rgb(0,0,0,0.12)] items-center px-4 gap-10 pb-2 max-xl:items-center bg-white sticky top-0 left-0"
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
-        transition={{ duration: 0.5 }}
+        className="sticky top-0 left-0 right-0 z-50 bg-white shadow-md"
       >
-        {/* Logo - always on the left */}
-        <motion.div
-          style={{
-            height: imageHeight,
-            width: '100%'
-          }}
-        >
-          <Image
-            src={'/Logo1.png'}
-            width={0}
-            height={0}
-            sizes="100%"
-            style={{ height: '100%', width: 'auto' }}
-            alt="IIIT Dharwad Logo"
-          />
-        </motion.div>
+        <div className="w-full px-4">
+          <div className="flex items-center justify-between">
+            {/* Logo Section */}
+            <div className="flex items-center">
+              <motion.div
+                className="relative"
+                variants={logoVariants}
+                initial="initial"
+                animate={isScrolled ? 'scrolled' : 'initial'}
+                transition={{ duration: 0.8, ease: 'easeInOut' }}
+              >
+                <Image
+                  src={Logo}
+                  alt="IIIT Dharwad Logo"
+                  width={0}
+                  height={0}
+                  sizes="100%"
+                  className="object-contain h-full w-auto"
+                />
+              </motion.div>
+            </div>
 
-        {/* Right side container */}
-        <motion.div className="flex flex-col w-full relative">
-          {/* Text section - disappears on scroll */}
-          <motion.div className="self-end overflow-hidden">
-            <motion.div
-              style={{
-                opacity: textOpacity,
-                translateY: textY
-              }}
-              className="text-end max-xl:hidden ease-in"
-            >
-              <div>ಭಾರತೀಯ ಮಾಹಿತಿ ತಂತ್ರಜ್ಞಾನ ಸಂಸ್ಥೆ, ಧಾರವಾಡ</div>
-              <div>भारतीय सूचना प्रौद्योगिकी संस्थान, धारवाड़</div>
-              <div>Indian Institute of Information Technology, Dharwad</div>
-            </motion.div>
-          </motion.div>
+            {/* Right side container */}
+            <div className="flex items-center space-x-4">
+              {/* Text section - disappears on scroll */}
+              <motion.div
+                className="flex flex-col max-xl:hidden w-full text-center text-primary md:text-right"
+                variants={textVariants}
+                animate={isScrolled ? 'scrolled' : 'initial'}
+                transition={{ duration: 0.8, ease: 'easeInOut' }}
+              >
+                <span className="text-xs md:text-sm">
+                  ಭಾರತೀಯ ಮಾಹಿತಿ ತಂತ್ರಜ್ಞಾನ ಸಂಸ್ಥೆ, ಧಾರವಾಡ
+                </span>
+                <span className="text-xs md:text-sm">
+                  भारतीय सूचना प्रौद्योगिकी संस्थान, धारवाड़
+                </span>
+                <span className="text-xs md:text-sm font-medium">
+                  Indian Institute of Information Technology, Dharwad
+                </span>
+              </motion.div>
 
-          {/* Desktop Header - moves from bottom center to right */}
+              {/* Desktop Header - moves from bottom center to right */}
+              <motion.div
+                className="absolute max-xl:hidden"
+                variants={desktopHeaderVariants}
+                initial="initial"
+                animate={isScrolled ? 'scrolled' : 'initial'}
+                transition={{ duration: 0.8, ease: 'easeInOut' }}
+              >
+                <DesktopHeader />
+              </motion.div>
 
-          {/* Mobile menu button */}
-          <Button
-            variant="ghost"
-            className="xl:hidden p-2 self-end"
-            onClick={toggleMenu}
-            aria-label="Toggle menu"
-          >
-            {isMenuOpen ? (
-              <X className="h-6 w-6" />
-            ) : (
-              <Menu className="h-6 w-6" />
-            )}
-          </Button>
-        </motion.div>
+              {/* For xl and larger screens - animated version */}
 
-        <motion.div
-          className="absolute xl:flex xl:justify-center"
-          style={{
-            translateX: desktopHeaderX,
-            right: desktopHeaderRight,
-            bottom: desktopBottom
-          }}
-        >
-          <DesktopHeader />
-        </motion.div>
+              {/* For screens smaller than xl - static in end position */}
+              <motion.div
+                className="absolute xl:hidden"
+                style={{
+                  x: '0%',
+                  right: '0%',
+                  bottom: '1.5rem'
+                }}
+              >
+                <DesktopHeader />
+              </motion.div>
+
+              {/* Mobile menu button */}
+              <div className="md:hidden">
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  onClick={toggleMenu}
+                  aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+                >
+                  <AnimatePresence mode="wait" initial={false}>
+                    {isMenuOpen ? (
+                      <motion.div
+                        key="close"
+                        initial={{ opacity: 0, rotate: -90 }}
+                        animate={{ opacity: 1, rotate: 0 }}
+                        exit={{ opacity: 0, rotate: 90 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        <X size={24} />
+                      </motion.div>
+                    ) : (
+                      <motion.div
+                        key="menu"
+                        initial={{ opacity: 0, rotate: 90 }}
+                        animate={{ opacity: 1, rotate: 0 }}
+                        exit={{ opacity: 0, rotate: -90 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        <Menu size={24} />
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
       </motion.header>
 
       {/* Animated mobile menu - appears from top */}
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: 'auto', opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.4, ease: 'easeInOut' }}
+            className="fixed inset-0 bg-white z-40 pt-20 pb-6 px-4 overflow-y-auto"
+            initial={{ y: '-100%' }}
+            animate={{ y: 0 }}
+            exit={{ y: '-100%' }}
+            transition={{ type: 'spring', stiffness: 300, damping: 30 }}
             style={{
-              top: menuTop
+              top: isScrolled ? '5rem' : '8rem'
             }}
-            className="xl:hidden fixed left-0 right-0 bg-white shadow-lg z-[1000] overflow-hidden"
           >
             <MobileHeader toggleMenu={toggleMenu} />
           </motion.div>
