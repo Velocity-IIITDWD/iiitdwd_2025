@@ -3,6 +3,7 @@ import { z } from 'zod';
 
 export const env = createEnv({
   server: {
+    // SANITY_TOKEN: z.string(),
     SANITY_DATASET: z.string(),
     SANITY_PROJECT_ID: z.string()
   },
