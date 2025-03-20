@@ -143,12 +143,12 @@ export default function AboutPage() {
             {aboutPageSections?.map((section, index) => (
               <AccordionItem key={index} value={`item-${index}`}>
                 <AccordionTrigger>
-                  <h3 className="text-white text-[clamp(1.5rem,6vw,2rem)] font-semibold cursor-pointer">
+                  <h3 className="text-primary text-[clamp(1.5rem,6vw,2rem)] font-semibold cursor-pointer">
                     {section.title}
                   </h3>
                 </AccordionTrigger>
                 <AccordionContent>
-                  <div className="text-gray-300 text-base leading-7">
+                  <div className="text-[#303030] text-base leading-7">
                     {section.content}
                   </div>
                 </AccordionContent>
