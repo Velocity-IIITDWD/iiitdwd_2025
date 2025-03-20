@@ -26,7 +26,11 @@ export function AdminFacultyProfile({
       <div className="flex flex-col md:flex-row gap-8">
         <div className="flex-shrink-0">
           <Image
-            src={imageUrl || '/placeholder-person.svg'}
+            src={
+              imageUrl?.startsWith('/images')
+                ? `https://iiitdwd.ac.in${imageUrl}`
+                : imageUrl || '/placeholder-person.svg'
+            }
             alt={name}
             width={300}
             height={300}

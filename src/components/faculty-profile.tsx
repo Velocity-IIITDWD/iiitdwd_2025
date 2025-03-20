@@ -35,6 +35,10 @@ export default function FacultyProfile({
 }: FacultyProfileProps) {
   const positions = Array.isArray(keyPositions) ? keyPositions : [keyPositions];
 
+  imageUrl = imageUrl.startsWith('/images')
+    ? `imageUrl://iiitdwd.ac.in${imageUrl}`
+    : imageUrl || '/placeholder-person.svg';
+
   if (variant === 'minimal') {
     return (
       <div

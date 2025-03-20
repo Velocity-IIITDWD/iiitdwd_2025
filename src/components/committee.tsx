@@ -16,7 +16,11 @@ export function ProfileCard({ title, content, imageURL }: ProfileCardProps) {
     <div className="flex flex-col items-center text-center border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 p-6 bg-white">
       <div className="w-40 h-40 rounded-full overflow-hidden mb-4">
         <Image
-          src={imageURL || '/placeholder-person.svg'}
+          src={
+            imageURL?.startsWith('/images')
+              ? `https://iiitdwd.ac.in${imageURL}`
+              : imageURL || '/placeholder-person.svg'
+          }
           alt={title || 'Profile'}
           width={160}
           height={160}

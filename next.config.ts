@@ -20,19 +20,7 @@ const nextConfig: NextConfig = {
       }
     ]
   },
-  trailingSlash: true,
-  async rewrites() {
-    return [
-      {
-        source: '/images/:path*',
-        destination: 'https://iiitdwd.ac.in/images/:path*'
-      },
-      {
-        source: '/docs/:path*',
-        destination: 'https://iiitdwd.ac.in/docs/:path*'
-      }
-    ];
-  }
+  trailingSlash: true
 };
 
 export default nextConfig;
