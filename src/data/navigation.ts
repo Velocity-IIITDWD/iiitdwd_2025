@@ -45,28 +45,19 @@ const navigationData: NavigationItem[] = [
     title: 'Administration',
     href: '/administration',
     items: [
-      {
-        title: 'Governing Bodies',
-        href: '/governing-bodies',
-        items: [
-          {
-            title: 'Board of Governers',
-            href: '/governing-bodies/board'
-          },
-          { title: 'Senate', href: '/governing-bodies/senate' },
-          {
-            title: 'Financial Committee',
-            href: '/governing-bodies/financial'
-          },
-          {
-            title: 'Building and Works Committee',
-            href: '/governing-bodies/building'
-          }
-        ]
-      },
       { title: 'Visitor', href: '/visitor' },
       { title: 'Chairperson', href: '/chairperson' },
+      {
+        title: 'Board of Governors',
+        href: '/governing-bodies/board'
+      },
       { title: 'Director', href: '/director' },
+      { title: 'The Senate', href: '/governing-bodies/senate' },
+      { title: 'Finance Committee', href: '/governing-bodies/financial' },
+      {
+        title: 'Building & Works Committee',
+        href: '/governing-bodies/building'
+      },
       { title: 'Registrar', href: '/registrar' },
       { title: 'Deans', href: '/deans' },
       { title: 'Head of Departments', href: '/hods' },
@@ -76,14 +67,6 @@ const navigationData: NavigationItem[] = [
         href: '/cgc',
         meta: { disableLayout: false }
       },
-      // {
-      //   title: 'Achievements - faculty only',
-      //   href: '/achievements'
-      // },
-      // {
-      //   title: 'Administrative staff / officers',
-      //   href: '/staff'
-      // },
       {
         title: 'Public disclosures',
         href: '/disclosures',
