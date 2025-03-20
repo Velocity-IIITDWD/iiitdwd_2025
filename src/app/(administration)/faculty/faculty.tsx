@@ -5,7 +5,7 @@ import { QueryFacultyResult } from '@/sanity/types';
 import { Search, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
-export default function FacultySearchPage({
+function FacultySearchPage({
   facultyData
 }: {
   facultyData: QueryFacultyResult;
@@ -115,3 +115,7 @@ export default function FacultySearchPage({
     </div>
   );
 }
+
+FacultySearchPage.disableHero = true;
+
+export default FacultySearchPage;

@@ -28,7 +28,7 @@ export default function FacultyProfile({
   email,
   office,
   website,
-  imageUrl = '/placeholder.svg?height=100&width=100',
+  imageUrl = '/placeholder-person.svg',
   variant = 'default',
   className,
   keyPositions = ''
@@ -46,7 +46,7 @@ export default function FacultyProfile({
         <div className="flex-shrink-0 w-10 h-10 rounded-full border-2 border-[rgb(4,30,63)]/30 group-hover:border-[rgb(4,30,63)]/50 shadow-sm transition-all duration-300 overflow-hidden">
           <div className="w-full h-full relative">
             <Image
-              src={imageUrl || '/placeholder.svg'}
+              src={imageUrl || '/placeholder-person.svg'}
               alt={name}
               fill
               className="object-cover"
@@ -97,7 +97,7 @@ export default function FacultyProfile({
             <div className="w-full h-full relative">
               <div className="absolute inset-0 bg-gradient-to-br from-[rgb(4,30,63)]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
               <Image
-                src={imageUrl || '/placeholder.svg'}
+                src={imageUrl || '/placeholder-person.svg'}
                 alt={name}
                 fill
                 className="object-cover"
@@ -134,7 +134,7 @@ export default function FacultyProfile({
           </div>
         </div>
         <div className="mt-4 flex flex-col gap-2 border-t pt-3">
-          {email && (
+          {email && email !== '-' && (
             <div className="flex items-center gap-3 text-sm">
               <Mail className="h-4 w-4 text-[#7a8b99]" />
               <a
@@ -145,7 +145,7 @@ export default function FacultyProfile({
               </a>
             </div>
           )}
-          {office && (
+          {office && office !== '?' && (
             <div className="flex items-center gap-3 text-sm">
               <MapPin className="h-4 w-4 text-[#7a8b99]" />
               <span className="text-[#7a8b99]">{office}</span>
@@ -172,7 +172,7 @@ export default function FacultyProfile({
             <div className="w-full h-full relative">
               <div className="absolute inset-0 bg-gradient-to-br from-[rgb(4,30,63)]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
               <Image
-                src={imageUrl || '/placeholder.svg'}
+                src={imageUrl || '/placeholder-person.svg'}
                 alt={name}
                 fill
                 className="object-cover"
@@ -239,7 +239,7 @@ export default function FacultyProfile({
         )}
 
         <div className="border-t pt-4 mt-1">
-          {email && (
+          {email && email !== '-' && (
             <div className="flex items-center gap-3 py-2">
               <Mail className="h-5 w-5 text-[#7a8b99]" />
               <a
@@ -250,7 +250,7 @@ export default function FacultyProfile({
               </a>
             </div>
           )}
-          {office && (
+          {office && office !== '?' && (
             <div className="flex items-center gap-3 py-2">
               <MapPin className="h-5 w-5 text-[#7a8b99]" />
               <span className="text-[#7a8b99]">{office}</span>
@@ -261,13 +261,19 @@ export default function FacultyProfile({
               <LinkIcon className="h-5 w-5 text-[#7a8b99]" />
               <a
                 href={
-                  website.startsWith('http') ? website : `https://${website}`
+                  website.startsWith('/docs')
+                    ? `https://iiitdwd.ac.in${website}`
+                    : website.startsWith('http')
+                      ? website
+                      : `https://${website}`
                 }
                 target="_blank"
                 rel="noopener noreferrer"
                 className="transition-colors duration-300 text-[#7a8b99] hover:text-[rgb(4,30,63)]"
               >
-                {website.replace(/^https?:\/\//, '')}
+                {website.endsWith('.pdf')
+                  ? 'View Profile'
+                  : website.replace(/^https?:\/\//, '')}
               </a>
             </div>
           )}

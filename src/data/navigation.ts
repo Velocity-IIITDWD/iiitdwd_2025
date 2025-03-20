@@ -64,29 +64,30 @@ const navigationData: NavigationItem[] = [
           }
         ]
       },
-      { title: 'Visitors', href: '/visitors' },
+      { title: 'Visitor', href: '/visitor' },
       { title: 'Chairperson', href: '/chairperson' },
       { title: 'Director', href: '/director' },
       { title: 'Registrar', href: '/registrar' },
       { title: 'Deans', href: '/deans' },
-      { title: 'HoDs', href: '/hods' },
-      { title: 'Faculty', href: '/faculty' },
+      { title: 'Head of Departments', href: '/hods' },
+      { title: 'Faculty', href: '/faculty', meta: { disableLayout: false } },
       {
-        title: 'Achievements - faculty only',
-        href: '/achievements'
+        title: 'Career Guidance Cell',
+        href: '/cgc',
+        meta: { disableLayout: false }
       },
-      {
-        title: 'Administrative staff / officers',
-        href: '/staff'
-      },
+      // {
+      //   title: 'Achievements - faculty only',
+      //   href: '/achievements'
+      // },
+      // {
+      //   title: 'Administrative staff / officers',
+      //   href: '/staff'
+      // },
       {
         title: 'Public disclosures',
         href: '/disclosures',
-        items: [
-          { title: 'RTI', href: '/disclosures/rti' },
-          { title: 'IPR', href: '/disclosures/ipr' },
-          { title: 'IT Policy', href: '/disclosures/it-policy' }
-        ]
+        items: [{ title: 'RTI', href: 'https://iiitdwd.ac.in/pdfs/RTI.pdf' }]
       }
     ]
   },
