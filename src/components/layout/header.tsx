@@ -117,7 +117,7 @@ function AnimatedNavbar() {
             <div className="flex items-center space-x-4">
               {/* Text section - disappears on scroll */}
               <motion.div
-                className="flex flex-col max-xl:hidden text-center text-primary md:text-right"
+                className="flex flex-col max-xl:hidden w-full text-center text-primary md:text-right"
                 variants={textVariants}
                 animate={isScrolled ? 'scrolled' : 'initial'}
                 transition={{ duration: 0.8, ease: 'easeInOut' }}
@@ -128,7 +128,7 @@ function AnimatedNavbar() {
                 <span className="text-xs md:text-sm">
                   भारतीय सूचना प्रौद्योगिकी संस्थान, धारवाड़
                 </span>
-                <span className="text-sm md:text-base font-semibold">
+                <span className="text-xs md:text-sm font-medium">
                   Indian Institute of Information Technology, Dharwad
                 </span>
               </motion.div>

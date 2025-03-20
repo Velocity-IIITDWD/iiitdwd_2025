@@ -45,48 +45,32 @@ const navigationData: NavigationItem[] = [
     title: 'Administration',
     href: '/administration',
     items: [
-      {
-        title: 'Governing Bodies',
-        href: '/governing-bodies',
-        items: [
-          {
-            title: 'Board of Governers',
-            href: '/governing-bodies/board'
-          },
-          { title: 'Senate', href: '/governing-bodies/senate' },
-          {
-            title: 'Financial Committee',
-            href: '/governing-bodies/financial'
-          },
-          {
-            title: 'Building and Works Committee',
-            href: '/governing-bodies/building'
-          }
-        ]
-      },
-      { title: 'Visitors', href: '/visitors' },
+      { title: 'Visitor', href: '/visitor' },
       { title: 'Chairperson', href: '/chairperson' },
+      {
+        title: 'Board of Governors',
+        href: '/governing-bodies/board'
+      },
       { title: 'Director', href: '/director' },
+      { title: 'The Senate', href: '/governing-bodies/senate' },
+      { title: 'Finance Committee', href: '/governing-bodies/financial' },
+      {
+        title: 'Building & Works Committee',
+        href: '/governing-bodies/building'
+      },
       { title: 'Registrar', href: '/registrar' },
       { title: 'Deans', href: '/deans' },
-      { title: 'HoDs', href: '/hods' },
-      { title: 'Faculty', href: '/faculty' },
+      { title: 'Head of Departments', href: '/hods' },
+      { title: 'Faculty', href: '/faculty', meta: { disableLayout: false } },
       {
-        title: 'Achievements - faculty only',
-        href: '/achievements'
-      },
-      {
-        title: 'Administrative staff / officers',
-        href: '/staff'
+        title: 'Career Guidance Cell',
+        href: '/cgc',
+        meta: { disableLayout: false }
       },
       {
         title: 'Public disclosures',
         href: '/disclosures',
-        items: [
-          { title: 'RTI', href: '/disclosures/rti' },
-          { title: 'IPR', href: '/disclosures/ipr' },
-          { title: 'IT Policy', href: '/disclosures/it-policy' }
-        ]
+        items: [{ title: 'RTI', href: 'https://iiitdwd.ac.in/pdfs/RTI.pdf' }]
       }
     ]
   },

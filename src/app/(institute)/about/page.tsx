@@ -1,5 +1,5 @@
 'use client';
-import Background from '@/assets/layout/Alumni_Background.webp';
+import Background from '@/assets/campus_0.webp';
 import SectionHeading from '@/components/layout/section-heading';
 import {
   Accordion,
@@ -77,17 +77,12 @@ export default function AboutPage() {
         </div>
       </div>
 
-      <div className="bg-black py-20">
+      <div className=" py-20">
         <section className="container mx-auto px-6">
           <div className="max-md:hidden grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Left Sidebar */}
             <div className="space-y-8 pr-10 relative">
-              <SectionHeading
-                className="mb-10"
-                title="I want to learn"
-                reverse
-                free
-              />
+              <SectionHeading className="mb-10" title="I want to learn" free />
               {aboutPageSections.map((section, index) => (
                 <div key={index}>
                   <h3
@@ -96,7 +91,7 @@ export default function AboutPage() {
                     }}
                     className={`${
                       index === activeSection && 'after:w-full'
-                    } flex flex-col items-center after:bg-tertiary after:h-[2px] w-fit after:w-0 after:transition-all hover:after:w-full text-white text-[clamp(1.5rem,6vw,2rem)] font-semibold cursor-pointer`}
+                    } flex flex-col items-center after:bg-tertiary after:h-[2px] w-fit after:w-0 after:transition-all hover:after:w-full text-primary text-[clamp(1.5rem,6vw,2rem)] font-semibold cursor-pointer`}
                     onClick={() => setActiveSection(index)} // Trigger active section change
                   >
                     {section.title}
@@ -108,9 +103,9 @@ export default function AboutPage() {
             </div>
 
             {/* Right Content */}
-            <div className="pl-10 border-l-2 border-white relative flex flex-col">
+            <div className="pl-10 border-l-2 border-primary relative flex flex-col">
               <motion.div
-                className="absolute w-6 h-6 left-0 -translate-x-1/2 rotate-45 bg-black border-r-2 border-t-2 border-[#c4bfc0] transition-all duration-300 ease-in-out"
+                className="absolute w-6 h-6 left-0 -translate-x-1/2 rotate-45 bg-white border-r-2 border-t-2 border-primary transition-all duration-300 ease-in-out"
                 animate={{
                   top: arrowPosition - 12 // Center the arrow (half of its height)
                 }}
@@ -130,10 +125,10 @@ export default function AboutPage() {
                       transition={{ duration: 1.5 }}
                       className="space-y-4 flex flex-col"
                     >
-                      <h3 className="text-white text-[2rem] leading-6 font-semibold mb-4">
+                      <h3 className="text-primary text-[2rem] leading-6 font-semibold mb-4">
                         {section.heading}
                       </h3>
-                      <div className="text-gray-300 text-base leading-7">
+                      <div className="text-[#303030] text-base leading-7">
                         {section.content}
                       </div>
                     </motion.div>

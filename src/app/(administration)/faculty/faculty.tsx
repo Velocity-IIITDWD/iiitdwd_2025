@@ -5,7 +5,7 @@ import { QueryFacultyResult } from '@/sanity/types';
 import { Search, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
-export default function FacultySearchPage({
+function FacultySearchPage({
   facultyData
 }: {
   facultyData: QueryFacultyResult;
@@ -103,9 +103,7 @@ export default function FacultySearchPage({
             department={faculty.content?.card?.department}
             education={faculty.content?.card?.PhD}
             email={faculty.content?.card?.mail_id}
-            imageUrl={
-              'https://www.iiitdwd.ac.in/' + faculty.content?.card?.photo
-            }
+            imageUrl={faculty.content?.card?.photo}
             keyPositions={faculty.content?.card?.position}
             office={faculty.content?.card?.cabin_number}
             website={faculty.content?.head?.profile_pdf}
@@ -115,3 +113,7 @@ export default function FacultySearchPage({
     </div>
   );
 }
+
+FacultySearchPage.disableHero = true;
+
+export default FacultySearchPage;

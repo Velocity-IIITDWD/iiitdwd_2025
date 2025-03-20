@@ -40,10 +40,11 @@ export default function LandingSection({ data }: { data: string[] }) {
           </Marquee>
         </div>
         <div className=" px-5 md:px-13 py-12 font-grotesk">
-          <div className="mx-auto max-w-[1344px] w-full">
-            <div className="text-[clamp(2rem,10vw,4.6rem)] uppercase text-center leading-[0.9] font-bold">
-              Creating thinkers and leaders in technology to positively impact
-              society
+          <div className="mx-auto max-w-6xl w-full">
+            <div className="text-[clamp(2rem,10vw,3.3rem)] uppercase text-center leading-[1] font-bold">
+              <div>Creating thinkers and leaders</div>
+              <div>in technology to positively</div>
+              <div>impact society</div>
             </div>
           </div>
         </div>
