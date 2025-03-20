@@ -6,7 +6,18 @@ const nextConfig: NextConfig = {
   eslint: {
     ignoreDuringBuilds: true
   },
-  images: { unoptimized: true }
+  images: {
+    unoptimized: true,
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'cdn.sanity.io',
+        port: '',
+        pathname: '/**'
+      }
+    ],
+    domains: ['avatar.vercel.sh']
+  }
 };
 
 export default nextConfig;

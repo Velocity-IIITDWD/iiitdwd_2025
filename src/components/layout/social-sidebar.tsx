@@ -32,7 +32,7 @@ export default function SocialSidebar({
     switch (platform) {
       case 'twitter':
         return (
-          <div className="w-sm h-fit">
+          <div className="w-[300px] h-fit">
             <a
               className="twitter-timeline"
               href="https://twitter.com/dharwad_iiit?ref_src=twsrc%5Etfw"
@@ -47,7 +47,7 @@ export default function SocialSidebar({
           </div>
         );
       case 'linkedin':
-        return <div className="w-sm aspect-square bg-white border"></div>;
+        return <div className="w-[300px] aspect-[2/3] bg-white border"></div>;
       default:
         return null;
     }
@@ -73,7 +73,9 @@ export default function SocialSidebar({
 
   return (
     <div
-      className={`fixed ${position === 'left' ? 'left-0' : 'right-0'} flex top-1/2 -translate-y-1/2 z-[100] transition duration-300 ${
+      className={`fixed ${
+        position === 'left' ? 'left-0' : 'right-0'
+      } flex top-1/2 -translate-y-1/2 z-[100] transition duration-300 ${
         positionClasses.container
       }`}
     >

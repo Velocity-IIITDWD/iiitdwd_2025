@@ -19,7 +19,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`font-grotesk flex flex-col relative`}>
+      <body
+        className={`font-grotesk flex flex-col relative w-full overflow-x-hidden`}
+      >
         <KBarProvider>
           <Header />
           {children}

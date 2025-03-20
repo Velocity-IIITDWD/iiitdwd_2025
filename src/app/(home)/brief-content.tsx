@@ -1,85 +1,128 @@
 import { BentoGrid, BentoGridItem } from '@/components/ui/bento-grid';
+import { IconTableColumn, IconTrendingUp } from '@tabler/icons-react';
 import {
-  IconFileBroken,
-  IconSignature,
-  IconTableColumn
-} from '@tabler/icons-react';
+  Check,
+  GraduationCap,
+  Handshake,
+  Lightbulb,
+  Telescope
+} from 'lucide-react';
 
 export default function BriefContent() {
-  const Skeleton = () => (
-    <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl dark:bg-dot-white/[0.2] bg-dot-black/[0.2] [mask-image:radial-gradient(ellipse_at_center,white,transparent)]  border border-transparent dark:border-white/[0.2] bg-neutral-100 dark:bg-black"></div>
-  );
-
   const items = [
     {
       title: 'About Us',
-      header: (
-        <div className="flex-1 z-[2]">
-          IIIT Dharwad is a premier technical institute established as an
-          Institute of National Importance. Our vision is to be globally
-          recognized for excellence in IT education, research, and innovation.
-          <h5 className="text-sm mt-2">Founded: 2015</h5>
+      content1: (
+        <div className="max-w-[300px]">
+          <strong>IIIT Dharwad</strong> is a premier technical institute
+          established as an Institute of <strong>National Importance</strong>.
         </div>
       ),
-      className:
-        'md:col-span-2 bg-[url("/Alumni_Background.jpg")] bg-cover text-white bg-center relative after:z-[1] after:block after:top-0 after:left-0 after:w-full after:h-full after:absolute after:bg-black/80 overflow-hidden',
+
+      content2: (
+        <ul className="max-w-[300px] text-primary">
+          <li className="flex gap-2">
+            <Check size={18} />
+            Strong industry collaborations
+          </li>
+          <li className="flex gap-2">
+            <Check size={18} />
+            Modern campus facilities
+          </li>
+          <li className="flex gap-2">
+            <Check size={18} />
+            Research-driven environment
+          </li>
+        </ul>
+      ),
+      className: 'col-span-6 md:col-span-12 xl:col-span-6',
       icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
       titleClassName: 'text-white'
     },
     {
       title: 'Discover and Explore',
-      description:
+      content1:
         "Explore our vibrant campus in North Karnataka's educational hub with state-of-the-art facilities and dynamic student community.",
-      header: <Skeleton />,
-      className: 'col-span-1',
-      icon: <IconFileBroken className="h-4 w-4 text-neutral-500" />
+      className: 'col-span-6 xl:col-span-3',
+      icon: <Telescope className="h-4 w-4 text-neutral-500" />
     },
     {
       title: 'Join Us',
-      description:
+      content1:
         'Join IIIT Dharwad, an Institute of National Importance offering programs in Computer Science, Electronics & Communication Engineering, and Data Science.',
-      header: <Skeleton />,
-      className: 'col-span-1',
-      icon: <IconSignature className="h-4 w-4 text-neutral-500" />
+      className: 'col-span-6 xl:col-span-3',
+      icon: <GraduationCap className="h-4 w-4 text-neutral-500" />
     },
     {
-      title: '₹18.6 LPA',
-      description: 'Average Package',
-      className: 'col-span-1',
-      icon: <IconFileBroken className="h-4 w-4 text-neutral-500" />
+      title: 'Collaborations & MoUs',
+      content1: (
+        <div>
+          IIIT Dharwad has established <strong>key MoUs</strong> with leading
+          industries and institutions, fostering research, innovation, and
+          global partnerships.
+        </div>
+      ),
+      className: 'col-span-6 xl:col-span-3',
+      icon: <Handshake className="h-4 w-4 text-neutral-500" />
     },
     {
-      title: '₹42 LPA',
-      description: 'Highest Package',
-      className: 'col-span-1',
-      icon: <IconSignature className="h-4 w-4 text-neutral-500" />
+      title: 'Research & Innovation',
+      content1: (
+        <div>
+          IIIT Dharwad fosters <strong>cutting-edge research</strong> in AI,
+          IoT, and emerging technologies, collaborating with top institutes and
+          industries.
+        </div>
+      ),
+      className: 'col-span-6 xl:col-span-3',
+      icon: <Lightbulb className="h-4 w-4 text-neutral-500" />
     },
     {
-      title: '98%',
-      description: 'Placement Rate',
-      className: 'col-span-1',
-      icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />
-    },
-    {
-      title: '120+',
-      description: 'Recruiting Companies',
-      className: 'col-span-1',
-      icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />
+      title: 'Placements',
+      content1: (
+        <div className="max-w-[300px]">
+          IIIT Dharwad has a <strong>strong placement record</strong>, with top
+          companies hiring graduates with excellent packages.
+        </div>
+      ),
+
+      content2: (
+        <ul className="max-w-[300px] text-primary grid grid-cols-2 gap-4">
+          <li>
+            <strong>98%</strong>
+            <div className="text-xs text-gray-400">Placement Rate</div>
+          </li>
+          <li>
+            <strong>₹12 LPA</strong>
+            <div className="text-xs text-gray-400">Highest Package</div>
+          </li>
+          <li>
+            <strong>₹7 LPA</strong>
+            <div className="text-xs text-gray-400">Average Package</div>
+          </li>
+          <li>
+            <strong>50+</strong>
+            <div className="text-xs text-gray-400">Top Recruiters</div>
+          </li>
+        </ul>
+      ),
+      className: 'col-span-6 md:col-span-12 xl:col-span-6',
+      icon: <IconTrendingUp className="h-4 w-4 text-neutral-500" />,
+      titleClassName: 'text-white'
     }
   ];
 
   return (
-    <div className="w-full bg-tertiary/20 py-4">
-      <BentoGrid className="sm:py-18 container relative mx-auto px-6 py-16 md:py-24 lg:px-16 lg:py-24 xl:px-20 !pt-0 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-2 md:gap-4 xl:gap-3 2xl:gap-6 xl:grid-cols-4">
+    <div className="w-full flex min-h-screen h-full py-4 my-10">
+      <BentoGrid className="sm:py-18 container relative mx-auto px-6 py-16 md:py-24 lg:px-16 lg:py-24 xl:px-20 !pt-0 grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-4 xl:gap-3 2xl:gap-6 md:grid-cols-12">
         {items.map((item, i) => (
           <BentoGridItem
             key={i}
             title={item.title}
-            description={item.description}
-            header={item.header}
+            content1={item.content1}
+            content2={item?.content2 || ''}
             className={item.className}
             icon={item.icon}
-            titleClassName={item?.titleClassName || ''}
           />
         ))}
       </BentoGrid>
