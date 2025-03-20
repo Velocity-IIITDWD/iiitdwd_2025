@@ -10,14 +10,6 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-<<<<<<< HEAD
-        hostname: 'cdn.sanity.io',
-        port: '',
-        pathname: '/**'
-      }
-    ],
-    domains: ['avatar.vercel.sh']
-=======
         hostname: 'iiitdwd.ac.in',
         pathname: '/**'
       },
@@ -25,8 +17,14 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'www.iiitdwd.ac.in',
         pathname: '/**'
+      },
+      {
+        hostname: 'cdn.sanity.io',
+        port: '',
+        pathname: '/**'
       }
-    ]
+    ],
+    domains: ['avatar.vercel.sh']
   },
   trailingSlash: true,
   async rewrites() {
@@ -40,7 +38,6 @@ const nextConfig: NextConfig = {
         destination: 'https://iiitdwd.ac.in/docs/:path*'
       }
     ];
->>>>>>> 3a8f3f8c2aa464e594301caffd9216937b1c0586
   }
 };
 
