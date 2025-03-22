@@ -33,7 +33,7 @@ export default function AboutPage() {
         </div>
       </div>
 
-      <div className="bg-tertiary/20 py-4">
+      <div className="bg-[#b4c5e4]/40 py-4">
         <div className="container mx-auto px-4 md:px-8">
           <nav className="flex items-center text-sm md:text-base">
             <Link href="/" className="text-gray-700 hover:text-gray-900">

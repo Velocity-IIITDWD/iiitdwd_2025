@@ -16,7 +16,7 @@ const JourneySection = () => {
     <div className="mx-auto container px-4 md:px-8 py-16 md:py-24">
       <div className="container mx-auto relative">
         <div className="absolute z-[-2] w-[3px] [mask:linear-gradient(0deg,transparent,white_20%,white_80%,transparent)]  h-full bg-tertiary/20">
-          <div className="fixed left-auto top-0 right-auto bottom-[50vh] z-[-1] w-[3px] h-[50vh] bg-[#cfb991]"></div>
+          <div className="fixed left-auto top-0 right-auto bottom-[50vh] z-[-1] w-[3px] h-[50vh] bg-[#f18f01]"></div>
         </div>
 
         <h1 className="text-center text-xl font-bold tracking-tight mb-16">
@@ -58,7 +58,7 @@ const JourneySection = () => {
 
                   <Button
                     variant="outline"
-                    className="bg-[#cfb991] hover:bg-primary hover:text-white text-primary rounded h-12 border-0 px-6"
+                    className="bg-[#f18f01] hover:bg-primary hover:text-white text-primary rounded h-12 border-0 px-6"
                   >
                     LEARN MORE <ChevronRight className="ml-2 h-4 w-4" />
                   </Button>
@@ -91,7 +91,7 @@ const JourneySection = () => {
 
                 <Button
                   variant="outline"
-                  className="bg-[#cfb991] hover:bg-primary hover:text-white text-primary rounded h-12 border-0 px-6"
+                  className="bg-[#f18f01] hover:bg-primary hover:text-white text-primary rounded h-12 border-0 px-6"
                 >
                   SCHEDULE A VISIT <ChevronRight className="ml-2 h-4 w-4" />
                 </Button>
@@ -116,7 +116,7 @@ const JourneySection = () => {
 
                 <Button
                   variant="outline"
-                  className="bg-[#cfb991] hover:bg-primary hover:text-white text-primary rounded h-12 border-0 px-6"
+                  className="bg-[#f18f01] hover:bg-primary hover:text-white text-primary rounded h-12 border-0 px-6"
                 >
                   EXPLORE FINANCIAL AID{' '}
                   <ChevronRight className="ml-2 h-4 w-4" />

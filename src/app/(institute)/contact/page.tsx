@@ -4,7 +4,7 @@ import Link from 'next/link';
 export default function Page() {
   return (
     <main>
-      <div className="bg-tertiary/20 py-4">
+      <div className="bg-[#b4c5e4]/40 py-4">
         <div className="container mx-auto px-4 md:px-8">
           <nav className="flex items-center text-sm md:text-base">
             <Link href="/" className="text-gray-700">
@@ -29,14 +29,14 @@ export default function Page() {
           For directions, transportation options, and campus access details,
           visit our{' '}
           <Link
-            className="text-[#8e6f3e] underline"
+            className="text-[#d2820a] underline"
             href={'/institute/campus/how-to-reach/'}
           >
             How to Reach Us
           </Link>{' '}
           page. To check office timings and availability, refer to our{' '}
           <Link
-            className="text-[#8e6f3e] underline"
+            className="text-[#d2820a] underline"
             href={'/institute/campus/working-hours/'}
           >
             Working Hours
@@ -47,7 +47,7 @@ export default function Page() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-8 md:my-16">
           <div className="flex flex-col gap-4 md:gap-8">
-            <h2 className="text-xl md:text-2xl lg:text-4xl font-semibold text-[#8e6f3e]">
+            <h2 className="text-xl md:text-2xl lg:text-4xl font-semibold text-[#d2820a]">
               Main University Address
             </h2>
 
@@ -58,7 +58,7 @@ export default function Page() {
           </div>
 
           <div className="flex flex-col gap-4 md:gap-8">
-            <h2 className="text-xl md:text-2xl lg:text-4xl font-semibold text-[#8e6f3e]">
+            <h2 className="text-xl md:text-2xl lg:text-4xl font-semibold text-[#d2820a]">
               Main University Phone
             </h2>
 
@@ -93,7 +93,7 @@ export default function Page() {
                 Email:
                 <a
                   href="mailto:contact@iiitdwd.ac.in"
-                  className="text-[#8e6f3e] underline"
+                  className="text-[#d2820a] underline"
                 >
                   contact@iiitdwd.ac.in
                 </a>
@@ -112,7 +112,7 @@ export default function Page() {
                 Email:
                 <a
                   href="mailto:contact@iiitdwd.ac.in"
-                  className="text-[#8e6f3e] underline"
+                  className="text-[#d2820a] underline"
                 >
                   contact@iiitdwd.ac.in
                 </a>
@@ -131,7 +131,7 @@ export default function Page() {
                 Email:
                 <a
                   href="mailto:cgc@iiitdwd.ac.in"
-                  className="text-[#8e6f3e] underline"
+                  className="text-[#d2820a] underline"
                 >
                   cgc@iiitdwd.ac.in
                 </a>
@@ -149,7 +149,7 @@ export default function Page() {
                 Undergraduate (UG):
                 <a
                   href="mailto:contact@iiitdwd.ac.in"
-                  className="text-[#8e6f3e] underline"
+                  className="text-[#d2820a] underline"
                 >
                   contact@iiitdwd.ac.in
                 </a>
@@ -158,7 +158,7 @@ export default function Page() {
                 Ph.D.:
                 <a
                   href="mailto:contact@iiitdwd.ac.in"
-                  className="text-[#8e6f3e] underline"
+                  className="text-[#d2820a] underline"
                 >
                   contact@iiitdwd.ac.in
                 </a>
@@ -176,7 +176,7 @@ export default function Page() {
                 Email:
                 <a
                   href="mailto:cgcoffice@iiitdwd.ac.in"
-                  className="text-[#8e6f3e] underline"
+                  className="text-[#d2820a] underline"
                 >
                   cgcoffice@iiitdwd.ac.in
                 </a>
@@ -195,7 +195,7 @@ export default function Page() {
                 Email:
                 <a
                   href="mailto:contact@iiitdwd.ac.in"
-                  className="text-[#8e6f3e] underline"
+                  className="text-[#d2820a] underline"
                 >
                   contact@iiitdwd.ac.in
                 </a>
@@ -224,7 +224,7 @@ export default function Page() {
                 Email:
                 <a
                   href="mailto:contact@iiitdwd.ac.in"
-                  className="text-[#8e6f3e] underline"
+                  className="text-[#d2820a] underline"
                 >
                   contact@iiitdwd.ac.in
                 </a>
@@ -242,7 +242,7 @@ export default function Page() {
                 Email:
                 <a
                   href="mailto:contact@iiitdwd.ac.in"
-                  className="text-[#8e6f3e] underline"
+                  className="text-[#d2820a] underline"
                 >
                   contact@iiitdwd.ac.in
                 </a>
@@ -260,7 +260,7 @@ export default function Page() {
                 Email:
                 <a
                   href="mailto:contact@iiitdwd.ac.in"
-                  className="text-[#8e6f3e] underline"
+                  className="text-[#d2820a] underline"
                 >
                   contact@iiitdwd.ac.in
                 </a>

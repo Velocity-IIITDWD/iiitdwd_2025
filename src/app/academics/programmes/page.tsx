@@ -26,7 +26,7 @@ export default function ProgrammesPage() {
   }, []);
   return (
     <main className="px-4 md:px-8 pt-16 flex flex-col items-center gap-5 md:gap-10 lg:gap-14">
-      <SectionHeading title="Programmes" className="w-fit" free />
+      <SectionHeading title="Programmes" className="w-fit" free reverse />
 
       <div className="flex flex-col items-center">
         <h2 className="text-2xl md:text-3xl lg:text-5xl font-bold">
@@ -74,7 +74,7 @@ export default function ProgrammesPage() {
                   Stay on schedule and upto date throughout the year.
                 </span>
               </div>
-              <ArrowRightCircle color="#CFB991" size={30} />
+              <ArrowRightCircle color="#f18f01" size={30} />
             </div>
           </Link>
 
@@ -92,7 +92,7 @@ export default function ProgrammesPage() {
                   Stay on schedule and upto date throughout the year.
                 </span>
               </div>
-              <ArrowRightCircle color="#CFB991" size={30} />
+              <ArrowRightCircle color="#f18f01" size={30} />
             </div>
           </Link>
 
@@ -110,7 +110,7 @@ export default function ProgrammesPage() {
                   Stay on schedule and upto date throughout the year.
                 </span>
               </div>
-              <ArrowRightCircle color="#CFB991" size={30} />
+              <ArrowRightCircle color="#f18f01" size={30} />
             </div>
           </Link>
         </div>

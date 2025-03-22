@@ -51,7 +51,12 @@ export default function DetailSection() {
         <div className="max-md:hidden grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Left Sidebar */}
           <div className="space-y-8 pr-10 relative">
-            <SectionHeading className="mb-10" title="I want to learn" free />
+            <SectionHeading
+              className="mb-10"
+              title="I want to learn"
+              free
+              reverse
+            />
             {aboutPageSections.map((section, index) => (
               <div key={index}>
                 <h3

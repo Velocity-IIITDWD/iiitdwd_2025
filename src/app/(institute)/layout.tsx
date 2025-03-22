@@ -72,7 +72,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         </div>
       </div>
 
-      <div className="bg-tertiary/20 py-4">
+      <div className="bg-[#b4c5e4]/40 py-4">
         <div className="container px-6 md:px-20">
           <nav className="flex items-center text-sm md:text-base">
             <Link href="/" className="text-gray-700 hover:text-gray-900">
