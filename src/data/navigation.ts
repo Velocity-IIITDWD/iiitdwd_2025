@@ -81,19 +81,13 @@ const navigationData: NavigationItem[] = [
     href: '/academics',
     items: [
       { title: 'Programmes', href: '/academics/programmes' },
-      { title: 'Calendar', href: '/academics/calendar' },
+      // { title: 'Calendar', href: '/academics/calendar' },
       { title: 'Departments', href: '/academics/departments' },
-      {
-        title: 'Admission',
-        href: '/academics/admission',
-        items: [
-          { title: 'Procedure', href: '/academics/admission/procedure' },
-          { title: 'Fee structure', href: '/academics/admission/fees' },
-          { title: 'Scholarships', href: '/academics/admission/scholarships' }
-        ]
-      },
       { title: 'Research', href: '/academics/research' },
-      { title: 'Curriculum', href: '/academics/curriculum' },
+      {
+        title: 'Curriculum',
+        href: 'https://iiitdwd.ac.in/docs/Curricula_16May23.pdf'
+      },
       { title: 'Convocation / Conclave', href: '/academics/convocation' },
       { title: 'NIRF', href: '/academics/nirf' },
       { title: 'Online', href: '/academics/online' }
