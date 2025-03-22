@@ -10,9 +10,12 @@ const navigationData: NavigationItem[] = [
     title: 'Institute',
     href: '/institute',
     items: [
-      { title: 'About Us', href: '/about' },
-      { title: 'Academic office', href: '/institute/academic-office' },
-      { title: 'Admission', href: '/institute/admission' },
+      {
+        title: 'About Us',
+        href: '/about',
+        meta: { disableLayout: true }
+      },
+      { title: 'Admission', href: '/admission', meta: { disableLayout: true } },
       {
         title: 'Campus',
         href: '/institute/campus',
@@ -26,10 +29,9 @@ const navigationData: NavigationItem[] = [
           { title: 'Video of campus', href: '/institute/campus/video' }
         ]
       },
-      { title: 'Institute brochure', href: '/institute/brochure' },
       { title: 'Events / Awards', href: '/institute/events-awards' },
-      { title: 'Contact', href: '/institute/contact' },
-      { title: 'Gallery - virtual tour', href: '/institute/gallery' },
+      { title: 'Contact', href: '/contact', meta: { disableLayout: true } },
+      { title: 'Gallery', href: '/institute/gallery' },
       {
         title: 'Careers',
         href: '/institute/careers',
@@ -119,7 +121,7 @@ const navigationData: NavigationItem[] = [
       { title: 'Anti ragging', href: '/student-life/anti-ragging' },
       { title: 'Alumni', href: '/student-life/alumni' },
       {
-        title: 'Achievements - students specific',
+        title: 'Achievements',
         href: '/student-life/achievements'
       }
     ]

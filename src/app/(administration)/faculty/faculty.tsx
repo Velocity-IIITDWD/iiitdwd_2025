@@ -48,7 +48,7 @@ function FacultySearchPage({
   }, [searchQuery, facultyData]);
 
   return (
-    <div className="w-full mx-auto min-h-screen p-6 md:px-20">
+    <div className="min-h-screen px-4 md:px-8 container mx-auto py-10">
       <div className="mb-8 w-full">
         <div className="flex items-start w-full">
           <div className="relative flex-1">
@@ -93,7 +93,7 @@ function FacultySearchPage({
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {filteredFaculty.map((faculty, index) => (
           <FacultyProfile
             key={index}

@@ -62,9 +62,11 @@ export function AdminFacultyProfileGrid({
   highlightPosition?: boolean;
 }) {
   return (
-    <div className="container mx-auto px-4">
+    <div className="container mx-auto px-4 md:px-8">
       <div
-        className={`grid grid-cols-1 ${gridCols > 1 ? 'lg:grid-cols-2 gap-6' : ''}`}
+        className={`grid grid-cols-1 ${
+          gridCols > 1 ? 'lg:grid-cols-2 gap-6' : ''
+        }`}
       >
         {list.map((faculty, index) => (
           <div key={index}>

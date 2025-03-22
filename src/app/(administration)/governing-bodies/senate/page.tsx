@@ -7,7 +7,7 @@ export default async function Page() {
   const data = await get<GetAllSenateResult>(GetAllSenate);
 
   return (
-    <main className="p-6 md:px-20">
+    <main className="container px-4 md:px-8 mx-auto">
       <DynamicProfileSections sections={data} />
     </main>
   );

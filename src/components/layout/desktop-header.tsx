@@ -59,7 +59,7 @@ export default function DesktopHeader() {
                                 nestedIndex: number
                               ) => (
                                 <MenubarItem key={nestedIndex} asChild>
-                                  <Link href={nestedItem.href}>
+                                  <Link href={nestedItem.href!}>
                                     {nestedItem.title}
                                   </Link>
                                 </MenubarItem>
@@ -72,7 +72,7 @@ export default function DesktopHeader() {
                   } else {
                     return (
                       <MenubarItem key={subIndex} asChild>
-                        <Link href={subItem.href}>{subItem.title}</Link>
+                        <Link href={subItem.href!}>{subItem.title}</Link>
                       </MenubarItem>
                     );
                   }
@@ -84,7 +84,7 @@ export default function DesktopHeader() {
       } else {
         return (
           <MenubarItem key={index} asChild>
-            <Link href={item.href}>{item.title}</Link>
+            <Link href={item.href!}>{item.title}</Link>
           </MenubarItem>
         );
       }
@@ -104,7 +104,12 @@ export default function DesktopHeader() {
             onMouseEnter={() => setOpenMenu(item.title)}
             // onMouseLeave={() => setOpenMenu('')} // keep this commented because it will immediately close the menu when the mouse leaves the trigger making it unsable to move the cursor to the menu items
           >
-            <Link href={item?.href}>{item.title}</Link>
+            {item?.href ? (
+              <Link href={item?.href}>{item.title}</Link>
+            ) : (
+              item.title
+            )}
+            {/* <Link href={item?.href}>{item.title}</Link> */}
           </MenubarTrigger>
           {item.items && item.items.length > 0 && (
             <MenubarContent
