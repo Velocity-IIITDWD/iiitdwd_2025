@@ -30,7 +30,7 @@ const JourneySection = () => {
 
           {/* Section 1 */}
           <JourneyComponent id="major">
-            <section className="flex flex-col md:flex-row gap-8 w-full">
+            <section className="flex max-md:px-6 flex-col md:flex-row gap-8 w-full">
               <div className="flex-1">
                 <h3 className="text-base font-bold text-gray-700 mb-4">
                   Find Your Program
@@ -72,7 +72,7 @@ const JourneySection = () => {
           </JourneyComponent>
 
           <JourneyComponent id="visit">
-            <section className="flex flex-col md:flex-row gap-8">
+            <section className="flex max-md:px-6 flex-col md:flex-row gap-8 w-full">
               <div className="flex-1 order-2 md:order-1">
                 <div className="bg-gray-300 w-full aspect-[3/2]" />
               </div>
@@ -101,7 +101,7 @@ const JourneySection = () => {
 
           {/* Section 3 */}
           <JourneyComponent id="tuition">
-            <section className="flex flex-col md:flex-row gap-8">
+            <section className="flex max-md:px-6 flex-col md:flex-row gap-8 w-full">
               <div className="flex-1">
                 <h3 className="text-base font-bold text-gray-700 mb-4">
                   Review Tuition and Aid

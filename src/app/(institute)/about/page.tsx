@@ -53,6 +53,15 @@ export default function AboutPage() {
 
       <DetailSection />
       <VisionMissionValues />
+      {/* https://www.youtube.com/embed/_QLrIgjopCg?si=GrjaKptEy4LEp2uW&autoplay=0 */}
+      <div className="w-full bg-tertiary/30 py-10">
+        <iframe
+          className="aspect-video container mx-auto rounded"
+          src={
+            'https://www.youtube.com/embed/_QLrIgjopCg?si=GrjaKptEy4LEp2uW&autoplay=0'
+          }
+        />
+      </div>
     </main>
   );
 }

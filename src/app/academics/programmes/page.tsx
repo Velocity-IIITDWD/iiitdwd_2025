@@ -25,7 +25,7 @@ export default function ProgrammesPage() {
     return () => clearInterval(interval);
   }, []);
   return (
-    <main className="px-4 md:px-8 py-16 flex flex-col items-center gap-5 md:gap-10 lg:gap-14">
+    <main className="px-4 md:px-8 pt-16 flex flex-col items-center gap-5 md:gap-10 lg:gap-14">
       <SectionHeading title="Programmes" className="w-fit" free />
 
       <div className="flex flex-col items-center">
@@ -54,8 +54,6 @@ export default function ProgrammesPage() {
         We&apos;re driven by our meaningful land-grant mission to provide an
         education that propels our state, nation and world forward.
       </div>
-      {/* Reduce width for mobile */}
-      {/* <div className="w-[90%] sm:w-full"> */}
       <ProgramCards />
 
       <div className="container px-4 md:px-8 mx-auto py-8 md:py-16 flex flex-col items-center">
@@ -66,7 +64,7 @@ export default function ProgrammesPage() {
             href="https://iiitdwd.ac.in/docs/Academic_Calendar_year_1_2024-25.pdf"
             className="relative focus:outline-none focus:border-none focus:ring-brand-600 focus:ring-2 hover:shadow-md cursor-pointer overflow-clip flex rounded-lg border w-full border-tertiary/20 bg-gradient-to-b from-secondary/10 to-tertiary/30 hover:border-secondary/30"
           >
-            <div className="h-24 w-40 relative bg-gray-300" />
+            <div className="h-24 w-40 relative bg-gray-300 max-md:hidden" />
             <div className="w-full flex items-center p-4">
               <div className="flex flex-col justify-center flex-1 gap-1">
                 <span className="text-lg md:text-xl font-semibold">
@@ -84,7 +82,7 @@ export default function ProgrammesPage() {
             href="https://iiitdwd.ac.in/docs/Academic_Calendar_year_234_2024-25.pdf"
             className="relative focus:outline-none focus:border-none focus:ring-brand-600 focus:ring-2 hover:shadow-md cursor-pointer overflow-clip flex rounded-lg border w-full border-tertiary/20 bg-gradient-to-b from-secondary/10 to-tertiary/30 hover:border-secondary/30"
           >
-            <div className="h-24 w-40 relative bg-gray-300" />
+            <div className="h-24 w-40 relative bg-gray-300 max-md:hidden" />
             <div className="w-full flex items-center p-4">
               <div className="flex flex-col justify-center flex-1 gap-1">
                 <span className="text-lg md:text-xl font-semibold">
@@ -102,7 +100,7 @@ export default function ProgrammesPage() {
             href="https://iiitdwd.ac.in/docs/Curricula_16May23.pdf"
             className="relative focus:outline-none focus:border-none focus:ring-brand-600 focus:ring-2 hover:shadow-md cursor-pointer overflow-clip flex rounded-lg border w-full border-tertiary/20 bg-gradient-to-b from-secondary/10 to-tertiary/30 hover:border-secondary/30"
           >
-            <div className="h-24 w-40 relative bg-gray-300" />
+            <div className="h-24 w-40 relative bg-gray-300 max-md:hidden" />
             <div className="w-full flex items-center p-4">
               <div className="flex flex-col justify-center flex-1 gap-1">
                 <span className="text-lg md:text-xl font-semibold">

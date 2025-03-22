@@ -8,7 +8,7 @@ import JourneySection from './journey-section';
 export default function AdmissionPage() {
   return (
     <main>
-      <div className="w-full relative h-[calc(100vh-6rem)] py-16 flex">
+      <div className="w-full relative max-md:min-h-[calc(100vh-6rem)] max-md:h-full h-[calc(100vh-6rem)] py-16 flex">
         <Image
           className="h-full w-full object-cover absolute top-0 left-0"
           height={0}
