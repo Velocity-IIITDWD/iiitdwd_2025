@@ -31,7 +31,7 @@ const ProgramCard: React.FC<ProgramCardProps> = ({
       className="relative h-full flex flex-col bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl group cursor-pointer"
     >
       {/* Underline effect on hover */}
-      <div className="absolute bottom-0 left-1/2 w-0 h-[4px] bg-[#3B4D61] transition-all duration-300 ease-in-out group-hover:w-full group-hover:left-0"></div>
+      <div className="absolute bottom-0 left-1/2 w-0 h-[4px] bg-primary transition-all duration-300 ease-in-out group-hover:w-full group-hover:left-0"></div>
 
       <div className="relative h-50 w-full bg-gray-200" />
       <div className="p-6 flex flex-col justify-between h-full flex-1">
@@ -39,7 +39,7 @@ const ProgramCard: React.FC<ProgramCardProps> = ({
           <h2 className="text-2xl font-bold mb-2">{title}</h2>
           <p className="text-gray-700 mb-4">{description}</p>
         </div>
-        <div className="inline-flex items-center bg-primary text-white px-4 py-2 rounded font-medium transition-all duration-300 group-hover:bg-[#d3bc8d] group-hover:text-primary">
+        <div className="inline-flex items-center bg-primary text-white px-4 py-2 rounded font-medium transition-all duration-300 group-hover:bg-[#f18f01] group-hover:text-primary">
           EXPLORE
           <ArrowRight className="ml-2 w-6 h-6 stroke-[3] transition-transform duration-300 ease-in-out group-hover:translate-x-1" />
         </div>

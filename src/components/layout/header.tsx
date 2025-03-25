@@ -131,6 +131,9 @@ function AnimatedNavbar() {
                 <span className="text-xs md:text-sm font-medium">
                   Indian Institute of Information Technology, Dharwad
                 </span>
+                <div className="text-xs font-light">
+                  [Institute of National Importance by An Act of Parliament]
+                </div>
               </motion.div>
 
               {/* Desktop Header - moves from bottom center to right */}

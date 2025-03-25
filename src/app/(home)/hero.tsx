@@ -41,7 +41,7 @@ export default function LandingSection({ data }: { data: string[] }) {
         </div>
         <div className=" px-5 md:px-13 py-12 font-grotesk">
           <div className="mx-auto max-w-6xl w-full">
-            <div className="text-[clamp(2rem,10vw,3.3rem)] uppercase text-center leading-[1] font-bold">
+            <div className="text-[clamp(2rem,10vw,3.3rem)] uppercase text-center leading-[1.2] font-bold">
               <div>Creating thinkers and leaders</div>
               <div>in technology to positively</div>
               <div>impact society</div>

@@ -43,7 +43,7 @@ export function ProfileCard({ title, content, imageURL }: ProfileCardProps) {
 export function ProfileSection({ title, profiles }: ProfileSectionProps) {
   return (
     <div className="py-8">
-      <SectionHeading title={title || ''} />
+      <SectionHeading title={title || 'Building & Works Committee'} />
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {profiles?.map((profile, index) => (
           <ProfileCard key={index} {...profile} />

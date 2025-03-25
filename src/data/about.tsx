@@ -30,9 +30,8 @@ const aboutPageSections: AboutSection[] = [
     content: (
       <>
         <p>IIIT Dharwad is led by a team of experienced professionals:</p>
-        <ul className="list-[square] pl-4 mt-4">
-          <li className="mb-4">Director: [Name]</li>
-          <li className="mb-4">Deans: [Names]</li>
+        <ul className="list-[square] pl-4 mt-3">
+          <li className="mb-4">Director: Dr. Prasana Mahadev</li>
           <li className="mb-4">Key Administrative Personnel</li>
         </ul>
         <p>
@@ -47,16 +46,16 @@ const aboutPageSections: AboutSection[] = [
     heading: 'Programs',
     content: (
       <ul className="list-[square] pl-4">
-        <li className="mb-4">
+        <li className="mb-3">
           <strong>B.Tech in Computer Science & Engineering:</strong> Focus on
           computing, software development, and systems design.
         </li>
-        <li className="mb-4">
+        <li className="mb-3">
           <strong>B.Tech in Electronics & Communication Engineering:</strong>{' '}
           Emphasis on electronic systems, communication technologies, and signal
           processing.
         </li>
-        <li className="mb-4">
+        <li className="mb-3 ">
           <strong>B.Tech in Data Science & AI:</strong> Specialization in data
           analytics, machine learning, and AI applications.
         </li>
@@ -73,13 +72,13 @@ const aboutPageSections: AboutSection[] = [
           various domains:
         </p>
         <ul className="list-[square] pl-4">
-          <li className="mb-4">
+          <li className="mb-3">
             Ongoing projects in AI, cybersecurity, and IoT.
           </li>
-          <li className="mb-4">
+          <li className="mb-3">
             Dedicated research centers and state-of-the-art laboratories.
           </li>
-          <li className="mb-4">
+          <li className="mb-3">
             Collaboration with top universities and industries.
           </li>
         </ul>
@@ -96,9 +95,9 @@ const aboutPageSections: AboutSection[] = [
           opportunities for personal and professional growth.
         </p>
         <ul className="list-[square] pl-4">
-          <li className="mb-4">Student clubs and organizations</li>
-          <li className="mb-4">Annual technical and cultural fests</li>
-          <li className="mb-4">
+          <li className="mb-3">Student clubs and organizations</li>
+          <li className="mb-3">Annual technical and cultural fests</li>
+          <li className="mb-3">
             Modern facilities including hostels, libraries, and sports complexes
           </li>
         </ul>
@@ -115,11 +114,11 @@ const aboutPageSections: AboutSection[] = [
           research opportunities:
         </p>
         <ul className="list-[square] pl-4">
-          <li className="mb-4">Upcoming tech park with startup incubation.</li>
-          <li className="mb-4">
+          <li className="mb-3">Upcoming tech park with startup incubation.</li>
+          <li className="mb-3">
             Internship and placement programs with top IT firms.
           </li>
-          <li className="mb-4">
+          <li className="mb-3">
             Joint research initiatives with leading technology companies.
           </li>
         </ul>
@@ -133,15 +132,15 @@ const aboutPageSections: AboutSection[] = [
       <>
         <p>Ready to be a part of IIIT Dharwad?</p>
         <ul className="list-[square] pl-4">
-          <li className="mb-4">
+          <li className="mb-3">
             <strong>Admissions:</strong> Learn about eligibility and application
             processes.
           </li>
-          <li className="mb-4">
+          <li className="mb-3">
             <strong>Campus Tour:</strong> Schedule a visit or explore our
             virtual tour.
           </li>
-          <li className="mb-4">
+          <li className="mb-3">
             <strong>Contact Us:</strong> Reach out for more details and
             inquiries.
           </li>

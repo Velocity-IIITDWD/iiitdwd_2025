@@ -3,7 +3,7 @@ import financeCommittee from '@/data/finance-committee';
 
 export default async function Page() {
   return (
-    <main className="p-6 md:px-20">
+    <main className="container px-4 md:px-8 mx-auto">
       <DynamicProfileSections sections={financeCommittee} />
     </main>
   );
