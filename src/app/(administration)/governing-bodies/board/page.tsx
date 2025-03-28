@@ -7,7 +7,7 @@ export default async function Page() {
   const data = await get<GetBoardResult>(GetBoard);
 
   return (
-    <main className="container px-4 md:px-8 mx-auto">
+    <main className="px-6 md:px-20">
       <DynamicProfileSections sections={data} />
     </main>
   );

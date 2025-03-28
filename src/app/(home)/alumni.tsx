@@ -76,8 +76,8 @@ export default function AlumniSection() {
           <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t from-white"></div>
         </div>
 
-        <Link href="/alumni" className="mt-10">
-          <Button>View All</Button>
+        <Link href="/alumni-testimonials" className="mt-10">
+          <Button className="cursor-pointer">View All</Button>
         </Link>
       </div>
     </div>

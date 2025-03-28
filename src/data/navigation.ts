@@ -15,7 +15,6 @@ const navigationData: NavigationItem[] = [
         href: '/about',
         meta: { disableLayout: true }
       },
-      { title: 'Admission', href: '/admission', meta: { disableLayout: true } },
       {
         title: 'Campus',
         href: '/institute/campus',
@@ -30,17 +29,35 @@ const navigationData: NavigationItem[] = [
         ]
       },
       { title: 'Events / Awards', href: '/institute/events-awards' },
-      { title: 'Contact', href: '/contact', meta: { disableLayout: true } },
+      { title: 'Contact', href: '/contact' },
       { title: 'Gallery', href: '/institute/gallery' },
       {
         title: 'Careers',
-        href: '/institute/careers',
-        items: [
-          { title: 'Teaching', href: '/institute/careers/teaching' },
-          { title: 'Non-teaching', href: '/institute/careers/non-teaching' }
-        ]
+        href: '/careers'
       },
-      { title: 'Tenders', href: '/institute/tenders' }
+      { title: 'Tenders', href: '/tenders' }
+    ]
+  },
+  {
+    title: 'Admissions',
+    href: '/admission',
+    items: [
+      {
+        title: 'B.Tech',
+        href: '/admission/b-tech'
+      },
+      {
+        title: 'M.Tech',
+        href: '/admission/m-tech'
+      },
+      {
+        title: 'Phd',
+        href: '/admission/phd'
+      },
+      {
+        title: 'Fees',
+        href: '/admission/fees'
+      }
     ]
   },
   {
@@ -112,8 +129,10 @@ const navigationData: NavigationItem[] = [
       { title: 'NSS', href: '/student-life/nss' },
       { title: 'NCC', href: '/student-life/ncc' },
       { title: 'Sports and games', href: '/student-life/sports' },
-      { title: 'Anti ragging', href: '/student-life/anti-ragging' },
-      { title: 'Alumni', href: '/student-life/alumni' },
+      {
+        title: 'Anti ragging',
+        href: 'https://iiitdwd.ac.in/docs/Anti_Ragging_Information.pdf'
+      },
       {
         title: 'Achievements',
         href: '/student-life/achievements'
@@ -123,7 +142,30 @@ const navigationData: NavigationItem[] = [
   {
     title: 'Placements',
     href: '/placements',
-    items: []
+    items: [
+      { title: 'Why Recruit Us?', href: '/placements/why-recruit' },
+      // { title: 'Placement Procedures', href: '/placements/procedures' },
+      {
+        title: 'Placement Brochure',
+        href: '/placements/brochure'
+      },
+      {
+        title: 'Placement Statistics',
+        href: '/placements/statistics'
+      },
+      { title: 'Our Recruiters', href: '/placements/recruiters' },
+      // { title: 'Batch Graduating 2025-26', href: '/placements/batch-2025-26' },
+      // { title: 'Internships', href: '/placements/internships' },
+      { title: 'Industry Outreach', href: '/placements/industry-outreach' },
+      { title: 'Our Startups', href: '/placements/startups' },
+      // { title: 'Startup Fair 2024', href: '/placements/startup-fair-2024' },
+      { title: 'Higher Studies', href: '/placements/higher-studies' },
+      {
+        title: 'Alumni Testimonials',
+        href: '/alumni-testimonials'
+      },
+      { title: 'Contact T&P', href: '/placements/contact' }
+    ]
   }
 ];
 
