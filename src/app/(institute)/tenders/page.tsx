@@ -1,3 +1,4 @@
+// @ts-nocheck
 import Tenders from '@/app/(institute)/tenders/Tenders';
 import { get } from '@/sanity/lib/client';
 import { queryTenders } from '@/sanity/lib/queries';

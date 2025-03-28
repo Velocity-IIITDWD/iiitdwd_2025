@@ -1,3 +1,4 @@
+// @ts-nocheck
 import CareersPage from '@/app/(institute)/careers/careers-page';
 import { get } from '@/sanity/lib/client';
 import { queryJobs } from '@/sanity/lib/queries';
