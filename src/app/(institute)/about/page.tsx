@@ -21,7 +21,7 @@ export default function AboutPage() {
         />
         <div className="absolute top-0 left-0 w-full h-full bg-black/70 z-[1]" />
 
-        <div className="z-[2] container px-4 md:px-8 mx-auto flex flex-col gap-3 text-white">
+        <div className="z-[2] px-6 md:px-20 flex flex-col gap-3 text-white">
           <SectionHeading reverse title="About Us" free />
           <div className="font-semibold leading-[1.1] text-[clamp(2rem,10vw,3.5rem)]">
             Shaping the Future of Technology
@@ -33,8 +33,8 @@ export default function AboutPage() {
         </div>
       </div>
 
-      <div className="bg-[#b4c5e4]/40 py-4">
-        <div className="container mx-auto px-4 md:px-8">
+      <div className="bg-secondary/20 py-4">
+        <div className="px-6 md:px-20">
           <nav className="flex items-center text-sm md:text-base">
             <Link href="/" className="text-gray-700 hover:text-gray-900">
               Home
@@ -56,7 +56,7 @@ export default function AboutPage() {
       {/* https://www.youtube.com/embed/_QLrIgjopCg?si=GrjaKptEy4LEp2uW&autoplay=0 */}
       <div className="w-full bg-tertiary/30 py-10">
         <iframe
-          className="aspect-video container mx-auto rounded"
+          className="aspect-video px-6 md:px-20 w-full rounded overflow-hidden"
           src={
             'https://www.youtube.com/embed/_QLrIgjopCg?si=GrjaKptEy4LEp2uW&autoplay=0'
           }

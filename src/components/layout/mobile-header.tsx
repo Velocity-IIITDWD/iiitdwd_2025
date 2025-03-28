@@ -7,8 +7,8 @@ import {
 } from '@/components/ui/collapsible';
 import navigationData from '@/data/navigation';
 import { NavigationItem } from '@/types/navigation';
-import { motion } from 'framer-motion';
 import { ChevronDown, ChevronRight } from 'lucide-react';
+import { motion } from 'motion/react';
 import Link from 'next/link';
 
 export default function MobileHeader({
@@ -113,24 +113,16 @@ export default function MobileHeader({
 
       <div className="mt-6 pt-4 border-t border-gray-200">
         <div className="flex flex-col space-y-3 text-sm">
-          <a href="#" className="text-slate-600 hover:text-primary">
-            AIMS
-          </a>
-          <a
-            href="/administration/disclosures/rti"
-            className="text-slate-600 hover:text-primary"
+          <Link href={'https://aims.iiitdwd.ac.in/aims/'}>AIMS</Link>
+          <Link href={''}>RTI</Link>
+          <Link href={'/nirf'}>NIRF</Link>
+          <Link
+            href={
+              'https://www.onlinesbi.sbi/sbicollect/icollecthome.htm?corpID=873279'
+            }
           >
-            RTI
-          </a>
-          <a
-            href="/academics/nirf"
-            className="text-slate-600 hover:text-primary"
-          >
-            NIRF
-          </a>
-          <a href="#" className="text-slate-600 hover:text-primary">
             Students Fee Portal
-          </a>
+          </Link>
         </div>
       </div>
     </div>

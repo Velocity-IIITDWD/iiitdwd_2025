@@ -55,8 +55,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   }
 
   return (
-    <div className="flex flex-col min-h-screen">
-      <div className="relative w-full h-[70vh]">
+    <div className="flex flex-col min-h-screen text-justify">
+      <div className="relative w-full h-[60vh]">
         <Image
           src={Campus0}
           alt="National Institute of Technology Karnataka, Surathkal campus entrance"
@@ -65,15 +65,15 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           priority
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/30" />
-        <div className="z-10 relative container mx-auto flex h-full pb-15 px-4 md:px-8 items-end">
+        <div className="absolute bottom-16 px-6 md:px-20 z-10">
           <h1 className="text-4xl md:text-6xl font-bold text-white">
             {currentTitle}
           </h1>
         </div>
       </div>
 
-      <div className="bg-[#b4c5e4]/40 py-4">
-        <div className="container px-4 md:px-8 mx-auto">
+      <div className="bg-secondary/20 py-4">
+        <div className="px-6 md:px-20">
           <nav className="flex items-center text-sm md:text-base">
             <Link href="/" className="text-gray-700 hover:text-gray-900">
               Home

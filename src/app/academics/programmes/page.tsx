@@ -1,8 +1,8 @@
 'use client';
 import ProgramCards from '@/components/academics-components/programCards';
 import SectionHeading from '@/components/layout/section-heading';
-import { AnimatePresence, motion } from 'framer-motion';
 import { ArrowRightCircle } from 'lucide-react';
+import { AnimatePresence, motion } from 'motion/react';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
