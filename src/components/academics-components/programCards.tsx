@@ -56,22 +56,22 @@ const ProgramCards: React.FC<ProgramCardsProps> = ({ programs }) => {
   // Default programs if none are provided
   const defaultPrograms: Program[] = [
     {
-      title: 'Majors',
+      title: 'Graduate Programs',
       description:
-        'Choose from over 200 undergraduate programs that dive into your interests.',
-      link: '/academics/majors'
+        "Explore top ranked master's, doctoral and professional degrees.",
+      link: '/academics/departments'
     },
     {
       title: 'Online Programs',
       description:
         'Find the rigorous training the university is known for online.',
-      link: '/academics/online-programs'
+      link: 'https://online.iiitdwd.ac.in/'
     },
     {
-      title: 'Graduate Programs',
+      title: 'Minors',
       description:
-        "Explore top ranked master's, doctoral and professional degrees.",
-      link: '/academics/graduate-programs'
+        'Choose from over 200 undergraduate programs that dive into your interests.',
+      link: ''
     },
     {
       title: 'Course Catalog',

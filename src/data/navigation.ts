@@ -19,18 +19,16 @@ const navigationData: NavigationItem[] = [
         title: 'Campus',
         href: '/institute/campus',
         items: [
-          { title: 'Working hours', href: '/institute/campus/working-hours' },
-          { title: 'How to reach', href: '/institute/campus/how-to-reach' },
+          { title: 'How to reach', href: '/how-to-reach' },
           {
-            title: 'Amenities / facilities',
-            href: '/institute/campus/amenities'
+            title: 'Amenities',
+            href: '/amenities'
           },
-          { title: 'Video of campus', href: '/institute/campus/video' }
+          { title: 'Video of campus', href: '/campus-video' }
         ]
       },
-      { title: 'Events / Awards', href: '/institute/events-awards' },
+      { title: 'Events / Awards', href: '/events' },
       { title: 'Contact', href: '/contact' },
-      { title: 'Gallery', href: '/institute/gallery' },
       {
         title: 'Careers',
         href: '/careers'
@@ -41,6 +39,7 @@ const navigationData: NavigationItem[] = [
   {
     title: 'Admissions',
     href: '/admission',
+    meta: { disableLayout: true },
     items: [
       {
         title: 'B.Tech',
@@ -80,7 +79,6 @@ const navigationData: NavigationItem[] = [
       { title: 'Registrar', href: '/registrar' },
       { title: 'Deans', href: '/deans' },
       { title: 'Head of Departments', href: '/hods' },
-      { title: 'Faculty', href: '/faculty', meta: { disableLayout: false } },
       {
         title: 'Career Guidance Cell',
         href: '/cgc',
@@ -100,6 +98,7 @@ const navigationData: NavigationItem[] = [
       { title: 'Programmes', href: '/academics/programmes' },
       // { title: 'Calendar', href: '/academics/calendar' },
       { title: 'Departments', href: '/academics/departments' },
+      { title: 'Faculty', href: '/faculty', meta: { disableLayout: false } },
       { title: 'Research', href: '/academics/research' },
       {
         title: 'Curriculum',
@@ -107,7 +106,7 @@ const navigationData: NavigationItem[] = [
       },
       { title: 'Convocation / Conclave', href: '/academics/convocation' },
       { title: 'NIRF', href: '/academics/nirf' },
-      { title: 'Online', href: '/academics/online' }
+      { title: 'Online', href: 'https://online.iiitdwd.ac.in/' }
     ]
   },
   {

@@ -52,14 +52,6 @@ export default function PresidentialVisitor() {
                   <MapPin className="h-5 w-5 text-primary" />
                   <span>Rashtrapati Bhavan, New Delhi, India</span>
                 </div>
-                <div className="flex items-center gap-3">
-                  <Phone className="h-5 w-5 text-primary" />
-                  <span>Telephone: 91-11-23015321</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <Printer className="h-5 w-5 text-primary" />
-                  <span>Fax: 91-11-23017290 / 91-11-23017824 (O)</span>
-                </div>
               </div>
             </div>
           </div>

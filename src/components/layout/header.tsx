@@ -34,11 +34,11 @@ function AnimatedNavbar() {
   const toggleMenu = () => {
     setIsMenuOpen((prev) => {
       const newState = !prev;
-      if (newState) {
-        document.documentElement.style.overflow = 'hidden';
-      } else {
-        document.documentElement.style.overflow = '';
-      }
+      // if (newState) {
+      //   document.documentElement.style.overflow = 'hidden';
+      // } else {
+      //   document.documentElement.style.overflow = '';
+      // }
       return newState;
     });
   };
@@ -57,7 +57,7 @@ function AnimatedNavbar() {
     <>
       <div
         id="top-bar"
-        className="bg-primary text-slate-400 text-xs w-full flex justify-between max-md:justify-end px-4 md:px-8 py-2"
+        className="bg-primary text-slate-400 z-50 text-xs w-full flex justify-between max-md:justify-end px-4 md:px-8 py-2"
       >
         <div className="max-md:hidden">
           <a
@@ -85,7 +85,7 @@ function AnimatedNavbar() {
         ref={headerRef}
         initial={{ height: '7rem' }}
         animate={{ height: isScrolled ? '5rem' : '7rem' }}
-        className="fixed top-0 flex items-center left-0 w-full right-0 z-50 bg-white shadow-md overflow-hidden"
+        className="sticky top-0 flex items-center left-0 w-full right-0 z-50 bg-white shadow-md overflow-hidden"
       >
         <motion.div
           className="absolute left-4"
@@ -189,11 +189,18 @@ function AnimatedNavbar() {
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
-            className="fixed inset-0 bg-white z-40 pt-20 pb-6 px-4 overflow-y-auto"
+            className={`fixed inset-0 bg-white z-40 ${
+              isScrolled ? '' : ''
+            } md:pt-20 pb-6 px-4 overflow-y-auto`}
             initial={{ y: '-100%' }}
             animate={{ y: 0 }}
             exit={{ y: '-100%' }}
-            // transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+            transition={{
+              type: 'spring',
+              stiffness: 300,
+              damping: 30,
+              visualDuration: 0.8
+            }}
             style={{
               top: isScrolled ? '5rem' : '7rem'
             }}

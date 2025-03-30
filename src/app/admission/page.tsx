@@ -5,7 +5,7 @@ import Link from 'next/link';
 import HeroSection from './hero-section';
 import JourneySection from './journey-section';
 
-export default function AdmissionPage() {
+export default function Page() {
   return (
     <main>
       <div className="w-full relative max-md:min-h-[calc(100vh-6rem)] max-md:h-full h-[calc(100vh-6rem)] py-16 flex">

@@ -8,12 +8,14 @@ import {
   SelectValue
 } from '@/components/ui/select';
 
+import { useState } from 'react';
 import { ChevronRight } from 'lucide-react';
 
 import Link from 'next/link';
 import JourneyComponent from './journey-component';
 
 const JourneySection = () => {
+  const [selectedProgram, setSelectedProgram] = useState('b-tech');
   return (
     <div className="mx-auto container px-4 md:px-8 py-16 md:py-24">
       <div className="container mx-auto relative">
@@ -45,7 +47,8 @@ const JourneySection = () => {
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4 items-start">
-                  <Select>
+                  <Select onValueChange={(value) => setSelectedProgram(value)} defaultValue="b-tech">
+
                     <SelectTrigger className="w-full sm:w-64 border-2 rounded !h-12">
                       <SelectValue placeholder="B.Tech Students" />
                     </SelectTrigger>
@@ -59,7 +62,7 @@ const JourneySection = () => {
                   </Select>
 
                   <Link
-                    href={`/academics/programmes`}
+                    href={`/admission/${selectedProgram}`}
                     className="bg-main flex items-center hover:bg-primary hover:text-white text-primary rounded h-12 border-0 px-6"
                   >
                     LEARN MORE <ChevronRight className="ml-2 h-4 w-4" />

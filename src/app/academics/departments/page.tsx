@@ -1,40 +1,125 @@
 'use client';
-import SectionHeading from '@/components/layout/section-heading';
+
+import bTechCSEProgramData from '@/data/academics/cse-data';
+import bTechDSAIProgramData from '@/data/academics/dsai-data';
+import bTechECEProgramData from '@/data/academics/ece-data';
+import Link from 'next/link';
 import { useState } from 'react';
+import MainContent from './main-content';
+export default function Page() {
+  const [selectedDepartment, setSelectedDepartment] = useState<string>('cse');
 
-export default function ProgrammesPage() {
-  const [selectedDepartment, setSelectedDepartment] = useState(0);
+  const departments = {
+    cse: bTechCSEProgramData,
+    ece: bTechECEProgramData,
+    dsai: bTechDSAIProgramData
+  };
 
-  const departments = [
-    'Computer Science and Engineering',
-    'Electronics and Communication Engineering',
-    'Data Science and Artifical Intelligence'
-  ];
+  const currentDept =
+    departments[selectedDepartment as keyof typeof departments];
 
   return (
-    <main className="w-full px-4 md:px-8 lg:px-14 py-3 md:py-6 lg:py-10">
-      <SectionHeading
-        title="Departments"
-        className="w-fit mx-auto"
-        free
-        reverse
-      />
+    <div className="flex px-6 md:px-20 py-10 md:py-20">
+      {/* Left sidebar */}
+      <div className="w-64 bg-white border-r sticky top-4 border-gray-200 p-4">
+        <h2 className="text-xl font-bold mb-6">Academic Programs</h2>
 
-      <div className="w-full flex max-md:flex-col">
-        {departments.map((department, index) => (
-          <div
-            key={index}
-            className={`border-secondary/30 w-full text-center py-3 px-4 md:px-6 text-sm md:text-base text-gray-500 max-md:border-l-4 max-md:border-b-noneborder-b-4 hover:text-primary font-light cursor-pointer transition-all duration-300 ${
-              selectedDepartment === index
-                ? '!border-main font-semibold text-primary max-md:!text-base !text-xl'
-                : ''
-            }`}
-            onClick={() => setSelectedDepartment(index)}
-          >
-            {department}
+        <div className="space-y-6">
+          <div>
+            <h3 className="text-lg font-medium text-gray-700 mb-3">
+              Departments
+            </h3>
+            <ul className="text-sm">
+              <li>
+                <button
+                  onClick={() => setSelectedDepartment('cse')}
+                  className={`w-full border-l-2 text-left px-3 py-2 rounded-r ${
+                    selectedDepartment === 'cse' &&
+                    'bg-gray-100 border-l-main font-medium'
+                  }`}
+                >
+                  Computer Science and Engineering
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => setSelectedDepartment('ece')}
+                  className={`w-full border-l-2 text-left px-3 py-2 rounded-r ${
+                    selectedDepartment === 'ece' &&
+                    'bg-gray-100 border-l-main font-medium'
+                  }`}
+                >
+                  Electronics and Communication Engineering
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => setSelectedDepartment('dsai')}
+                  className={`w-full border-l-2 text-left px-3 py-2 rounded-r ${
+                    selectedDepartment === 'dsai' &&
+                    'bg-gray-100 border-l-main font-medium'
+                  }`}
+                >
+                  Data Science and Artificial Intelligence
+                </button>
+              </li>
+            </ul>
           </div>
-        ))}
+
+          <div>
+            <h3 className="text-lg font-medium text-gray-700 mb-3">
+              Resources
+            </h3>
+            <ul className="space-y-2">
+              <li>
+                <Link
+                  href={`/faculty?department=${selectedDepartment}`}
+                  className="block px-3 py-2 hover:bg-gray-100 rounded"
+                >
+                  Faculty
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/academics/research"
+                  className="block px-3 py-2 hover:bg-gray-100 rounded"
+                >
+                  Research
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/amenities"
+                  className="block px-3 py-2 hover:bg-gray-100 rounded"
+                >
+                  Amenities
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="mt-8 pt-4 border-t">
+          <button className="flex items-center text-gray-600 hover:text-gray-800">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5 mr-2"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fillRule="evenodd"
+                d="M10.707 3.293a1 1 0 010 1.414L7.414 8H15a1 1 0 110 2H7.414l3.293 3.293a1 1 0 01-1.414 1.414l-5-5a1 1 0 010-1.414l5-5a1 1 0 011.414 0z"
+                clipRule="evenodd"
+              />
+            </svg>
+            Back to Top
+          </button>
+        </div>
       </div>
-    </main>
+
+      {/* Main content */}
+      <MainContent currentDept={currentDept} />
+    </div>
   );
 }

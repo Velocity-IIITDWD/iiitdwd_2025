@@ -6,7 +6,6 @@ import { QueryJobsResult } from '@/sanity/types';
 
 export default async function Page() {
   const data = await get<QueryJobsResult>(queryJobs);
-  console.log(data);
 
   return <CareersPage Fulldata={data} />;
 }

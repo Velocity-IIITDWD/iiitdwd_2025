@@ -41,7 +41,6 @@ export const footerLinks = [
       // { text: 'Scholarships', href: '/admissions/scholarships' },
       { text: 'Placements', href: '/placements' },
       { text: 'Faculty', href: '/faculty' },
-      { text: 'Campus', href: '/campus' }
     ]
   },
   {
@@ -52,11 +51,11 @@ export const footerLinks = [
       { text: 'Virtual Tour', href: '/gallery' },
       { text: 'Careers', href: '/careers' },
       { text: 'Tenders', href: '/tenders' },
+      { text: 'Campus', href: '/campus' },
       {
         text: 'Public Disclosures',
         href: '/administration/public-disclosures'
       },
-      { text: 'How to Reach', href: '/institute/campus/how-to-reach' }
     ]
   }
 ];
