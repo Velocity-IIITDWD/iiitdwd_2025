@@ -48,7 +48,7 @@ function FacultySearchPage({
   }, [searchQuery, facultyData]);
 
   return (
-    <div className="min-h-screen px-4 md:px-8 container mx-auto py-10">
+    <div className="min-h-screen px-6 md:px-20 py-10">
       <div className="mb-8 w-full">
         <div className="flex items-start w-full">
           <div className="relative flex-1">

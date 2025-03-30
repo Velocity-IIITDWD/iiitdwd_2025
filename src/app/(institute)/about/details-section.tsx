@@ -7,7 +7,7 @@ import {
   AccordionTrigger
 } from '@/components/ui/accordion';
 import aboutPageSections from '@/data/about';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import { useEffect, useRef, useState } from 'react';
 
 export default function DetailSection() {
@@ -46,8 +46,8 @@ export default function DetailSection() {
   };
 
   return (
-    <div className=" py-20">
-      <section className="container mx-auto px-6">
+    <div className="py-20">
+      <section className="px-6 md:px-20">
         <div className="max-md:hidden grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Left Sidebar */}
           <div className="space-y-8 pr-10 relative">

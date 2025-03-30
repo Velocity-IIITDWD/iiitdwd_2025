@@ -10,9 +10,9 @@ import {
 } from '@/components/ui/menubar';
 import navigationData from '@/data/navigation';
 import { NavigationItem } from '@/types/navigation';
-import { motion } from 'framer-motion';
 import { useKBar } from 'kbar';
 import { Command, Search } from 'lucide-react';
+import { motion } from 'motion/react';
 import Link from 'next/link';
 import { useState } from 'react';
 
@@ -96,26 +96,25 @@ export default function DesktopHeader() {
       className="border-b max-md:hidden border-none px-2"
       value={openMenu}
       onValueChange={setOpenMenu}
+      // onMouseLeave={() => setOpenMenu('')}
     >
       {navigationData.map((item, index) => (
         <MenubarMenu key={index} value={item.title}>
           <MenubarTrigger
             className="font-medium"
             onMouseEnter={() => setOpenMenu(item.title)}
-            // onMouseLeave={() => setOpenMenu('')} // keep this commented because it will immediately close the menu when the mouse leaves the trigger making it unsable to move the cursor to the menu items
           >
             {item?.href ? (
               <Link href={item?.href}>{item.title}</Link>
             ) : (
               item.title
             )}
-            {/* <Link href={item?.href}>{item.title}</Link> */}
           </MenubarTrigger>
           {item.items && item.items.length > 0 && (
             <MenubarContent
               asChild
               onMouseEnter={() => setOpenMenu(item.title)}
-              // onMouseLeave={() => setOpenMenu('')}  // keep this commented because it will immediately close the menu when the mouse leaves the trigger making it unsable to move the cursor to the menu items
+              // onMouseLeave={() => setOpenMenu('')}
             >
               <motion.div
                 initial={{ height: 0, opacity: 0 }}

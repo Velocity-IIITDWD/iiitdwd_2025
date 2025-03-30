@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 export default function PresidentialVisitor() {
   return (
-    <div className=" bg-gray-50 p-4 md:p-8 flex flex-col items-center justify-center">
+    <div className="bg-gray-50 p-4 md:p-8 flex flex-col items-center justify-center">
       <div className="w-full max-w-4xl">
         <div className="text-center mb-8">
           <h1 className="text-2xl md:text-4xl font-bold text-gray-900 mb-2">
@@ -51,14 +51,6 @@ export default function PresidentialVisitor() {
                 <div className="flex items-center gap-3">
                   <MapPin className="h-5 w-5 text-primary" />
                   <span>Rashtrapati Bhavan, New Delhi, India</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <Phone className="h-5 w-5 text-primary" />
-                  <span>Telephone: 91-11-23015321</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <Printer className="h-5 w-5 text-primary" />
-                  <span>Fax: 91-11-23017290 / 91-11-23017824 (O)</span>
                 </div>
               </div>
             </div>

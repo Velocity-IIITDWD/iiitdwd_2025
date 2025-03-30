@@ -39,7 +39,7 @@ const ProgramCard: React.FC<ProgramCardProps> = ({
           <h2 className="text-2xl font-bold mb-2">{title}</h2>
           <p className="text-gray-700 mb-4">{description}</p>
         </div>
-        <div className="inline-flex items-center bg-primary text-white px-4 py-2 rounded font-medium transition-all duration-300 group-hover:bg-[#f18f01] group-hover:text-primary">
+        <div className="inline-flex items-center bg-primary text-amber-50 px-4 py-2 rounded font-medium transition-all duration-300 group-hover:bg-main">
           EXPLORE
           <ArrowRight className="ml-2 w-6 h-6 stroke-[3] transition-transform duration-300 ease-in-out group-hover:translate-x-1" />
         </div>
@@ -56,22 +56,22 @@ const ProgramCards: React.FC<ProgramCardsProps> = ({ programs }) => {
   // Default programs if none are provided
   const defaultPrograms: Program[] = [
     {
-      title: 'Majors',
+      title: 'Graduate Programs',
       description:
-        'Choose from over 200 undergraduate programs that dive into your interests.',
-      link: '/academics/majors'
+        "Explore top ranked master's, doctoral and professional degrees.",
+      link: '/academics/departments'
     },
     {
       title: 'Online Programs',
       description:
         'Find the rigorous training the university is known for online.',
-      link: '/academics/online-programs'
+      link: 'https://online.iiitdwd.ac.in/'
     },
     {
-      title: 'Graduate Programs',
+      title: 'Minors',
       description:
-        "Explore top ranked master's, doctoral and professional degrees.",
-      link: '/academics/graduate-programs'
+        'Choose from over 200 undergraduate programs that dive into your interests.',
+      link: ''
     },
     {
       title: 'Course Catalog',

@@ -1,3 +1,4 @@
+'use client';
 import { Button } from '@/components/ui/button';
 import {
   Select,
@@ -8,15 +9,18 @@ import {
 } from '@/components/ui/select';
 
 import { ChevronRight } from 'lucide-react';
+import { useState } from 'react';
 
+import Link from 'next/link';
 import JourneyComponent from './journey-component';
 
 const JourneySection = () => {
+  const [selectedProgram, setSelectedProgram] = useState('b-tech');
   return (
     <div className="mx-auto container px-4 md:px-8 py-16 md:py-24">
       <div className="container mx-auto relative">
         <div className="absolute z-[-2] w-[3px] [mask:linear-gradient(0deg,transparent,white_20%,white_80%,transparent)]  h-full bg-tertiary/20">
-          <div className="fixed left-auto top-0 right-auto bottom-[50vh] z-[-1] w-[3px] h-[50vh] bg-[#f18f01]"></div>
+          <div className="fixed left-auto top-0 right-auto bottom-[50vh] z-[-1] w-[3px] h-[50vh] bg-main"></div>
         </div>
 
         <h1 className="text-center text-xl font-bold tracking-tight mb-16">
@@ -43,7 +47,10 @@ const JourneySection = () => {
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4 items-start">
-                  <Select>
+                  <Select
+                    onValueChange={(value) => setSelectedProgram(value)}
+                    defaultValue="b-tech"
+                  >
                     <SelectTrigger className="w-full sm:w-64 border-2 rounded !h-12">
                       <SelectValue placeholder="B.Tech Students" />
                     </SelectTrigger>
@@ -56,12 +63,12 @@ const JourneySection = () => {
                     </SelectContent>
                   </Select>
 
-                  <Button
-                    variant="outline"
-                    className="bg-[#f18f01] hover:bg-primary hover:text-white text-primary rounded h-12 border-0 px-6"
+                  <Link
+                    href={`/admission/${selectedProgram}`}
+                    className="bg-main flex items-center hover:bg-primary text-amber-50 transition-colors rounded h-12 border-0 px-6"
                   >
                     LEARN MORE <ChevronRight className="ml-2 h-4 w-4" />
-                  </Button>
+                  </Link>
                 </div>
               </div>
 
@@ -91,7 +98,7 @@ const JourneySection = () => {
 
                 <Button
                   variant="outline"
-                  className="bg-[#f18f01] hover:bg-primary hover:text-white text-primary rounded h-12 border-0 px-6"
+                  className="bg-main hover:bg-primary !text-amber-50 transition-colors rounded h-12 border-0 px-6"
                 >
                   SCHEDULE A VISIT <ChevronRight className="ml-2 h-4 w-4" />
                 </Button>
@@ -116,7 +123,7 @@ const JourneySection = () => {
 
                 <Button
                   variant="outline"
-                  className="bg-[#f18f01] hover:bg-primary hover:text-white text-primary rounded h-12 border-0 px-6"
+                  className="bg-main hover:bg-primary !text-amber-50 transition-colors rounded h-12 border-0 px-6"
                 >
                   EXPLORE FINANCIAL AID{' '}
                   <ChevronRight className="ml-2 h-4 w-4" />

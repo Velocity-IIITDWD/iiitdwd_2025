@@ -1,4 +1,3 @@
-import SocialSidebar from '@/components/layout/social-sidebar';
 import ToTop from '@/components/layout/to-top';
 import { get } from '@/sanity/lib/client';
 import { queryEvents } from '@/sanity/lib/queries';
@@ -21,8 +20,8 @@ export default async function HomePage() {
       <MainCarousel />
       <AlumniSection />
       <ToTop />
-      <SocialSidebar platform="twitter" position="right" />
-      <SocialSidebar platform="linkedin" position="left" />
+      {/* <SocialSidebar platform="twitter" position="right" /> */}
+      {/* <SocialSidebar platform="linkedin" position="left" /> */}
     </main>
   );
 }
