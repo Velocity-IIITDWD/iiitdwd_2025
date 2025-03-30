@@ -1,6 +1,6 @@
 'use client';
 import { Badge } from '@/components/ui/badge';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/card';
 import {
   Table,
   TableBody,
@@ -31,11 +31,11 @@ export default function ContentTypes({
 
         <TabsContent value="disciplineCore">
           <Card>
-            <CardHeader className="bg-blue-50">
+            {/* <CardHeader className="bg-blue-50">
               <CardTitle className="text-blue-800">
                 Discipline Core Courses
               </CardTitle>
-            </CardHeader>
+            </CardHeader> */}
             <CardContent>
               <Table>
                 <TableCaption>
@@ -59,7 +59,7 @@ export default function ContentTypes({
                       <TableCell>
                         <Badge
                           variant="outline"
-                          className="bg-blue-50 text-blue-800"
+                          className="bg-amber-50 text-amber-800"
                         >
                           {course.credits} credits
                         </Badge>
@@ -75,11 +75,11 @@ export default function ContentTypes({
 
         <TabsContent value="disciplineElective">
           <Card>
-            <CardHeader className="bg-purple-50">
+            {/* <CardHeader className="bg-purple-50">
               <CardTitle className="text-purple-800">
                 Discipline Elective Courses
               </CardTitle>
-            </CardHeader>
+            </CardHeader> */}
             <CardContent>
               <div className="overflow-x-auto">
                 <Table>
@@ -105,7 +105,7 @@ export default function ContentTypes({
                         <TableCell>
                           <Badge
                             variant="outline"
-                            className="bg-purple-50 text-purple-800 w-full"
+                            className="bg-amber-50 text-amber-800"
                           >
                             {course.credits} credits
                           </Badge>
@@ -121,11 +121,11 @@ export default function ContentTypes({
 
         <TabsContent value="engineeringCore">
           <Card>
-            <CardHeader className="bg-green-50">
+            {/* <CardHeader className="bg-green-50">
               <CardTitle className="text-green-800">
                 Engineering Core Courses
               </CardTitle>
-            </CardHeader>
+            </CardHeader> */}
             <CardContent>
               <Table>
                 <TableCaption>
@@ -149,7 +149,7 @@ export default function ContentTypes({
                       <TableCell>
                         <Badge
                           variant="outline"
-                          className="bg-green-50 text-green-800"
+                          className="bg-amber-50 text-amber-800"
                         >
                           {course.credits} credits
                         </Badge>
@@ -165,11 +165,11 @@ export default function ContentTypes({
 
         <TabsContent value="mathsStats">
           <Card>
-            <CardHeader className="bg-amber-50">
+            {/* <CardHeader className="bg-amber-50">
               <CardTitle className="text-amber-800">
                 Mathematics & Statistics Courses
               </CardTitle>
-            </CardHeader>
+            </CardHeader> */}
             <CardContent>
               <Table>
                 <TableCaption>

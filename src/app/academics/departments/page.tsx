@@ -35,7 +35,7 @@ export default function Page() {
                   onClick={() => setSelectedDepartment('cse')}
                   className={`w-full border-l-2 text-left px-3 py-2 rounded-r ${
                     selectedDepartment === 'cse' &&
-                    'bg-gray-100 border-l-main font-medium'
+                    'bg-amber-50 border-l-main font-medium'
                   }`}
                 >
                   Computer Science and Engineering
@@ -46,7 +46,7 @@ export default function Page() {
                   onClick={() => setSelectedDepartment('ece')}
                   className={`w-full border-l-2 text-left px-3 py-2 rounded-r ${
                     selectedDepartment === 'ece' &&
-                    'bg-gray-100 border-l-main font-medium'
+                    'bg-amber-50 border-l-main font-medium'
                   }`}
                 >
                   Electronics and Communication Engineering
@@ -57,7 +57,7 @@ export default function Page() {
                   onClick={() => setSelectedDepartment('dsai')}
                   className={`w-full border-l-2 text-left px-3 py-2 rounded-r ${
                     selectedDepartment === 'dsai' &&
-                    'bg-gray-100 border-l-main font-medium'
+                    'bg-amber-50 border-l-main font-medium'
                   }`}
                 >
                   Data Science and Artificial Intelligence

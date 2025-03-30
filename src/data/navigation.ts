@@ -98,7 +98,11 @@ const navigationData: NavigationItem[] = [
       { title: 'Programmes', href: '/academics/programmes' },
       // { title: 'Calendar', href: '/academics/calendar' },
       { title: 'Departments', href: '/academics/departments' },
-      { title: 'Faculty', href: '/faculty', meta: { disableLayout: false } },
+      {
+        title: 'Faculty',
+        href: '/academics/faculty',
+        meta: { disableLayout: false }
+      },
       { title: 'Research', href: '/academics/research' },
       {
         title: 'Curriculum',

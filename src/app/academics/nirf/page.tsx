@@ -41,7 +41,6 @@ const parameters = [
 
 export default async function Page() {
   const nirfReports = await get<QueryNirfReportsResult>(queryNirfReports);
-  console.log(nirfReports);
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
       <div className="container mx-auto py-10 px-4">

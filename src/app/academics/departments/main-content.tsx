@@ -1,4 +1,5 @@
 'use client';
+import { Badge } from '@/components/ui/badge';
 import {
   Select,
   SelectContent,
@@ -49,7 +50,7 @@ export default function MainContent({
               <p className="font-medium text-lg hover:text-main transition-colors">
                 {currentDept.hod}
               </p>
-              <p className="text-gray-600 hover:text-main transition-colors">
+              <p className="text-gray-600 hover:text-amber-900 transition-colors">
                 {currentDept.email}
               </p>
             </div>
@@ -84,19 +85,30 @@ export default function MainContent({
                 >
                   <TableCell className="w-full">{category.name}</TableCell>
                   <TableCell className="whitespace-nowrap">
-                    <span className="inline-flex items-center w-full justify-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800">
+                    <Badge
+                      variant="outline"
+                      className="bg-gray-50 text-primary w-full h-full"
+                    >
+                      {' '}
                       {category.credits}
-                    </span>
+                    </Badge>
                   </TableCell>
                   <TableCell className="whitespace-nowrap">
-                    <span className="inline-flex items-center w-full justify-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800">
+                    <Badge
+                      variant="outline"
+                      className="bg-gray-100 text-primary w-full h-full"
+                    >
+                      {' '}
                       {category.percentageOfTotal}%
-                    </span>
+                    </Badge>
                   </TableCell>
                   <TableCell className="whitespace-nowrap">
-                    <span className="inline-flex items-center w-full justify-center px-3 py-1 rounded-full text-sm font-medium bg-purple-100 text-purple-800">
+                    <Badge
+                      variant="outline"
+                      className="bg-amber-50 text-main w-full h-full"
+                    >
                       {category.recommendedPercentage}%
-                    </span>
+                    </Badge>
                   </TableCell>
                 </TableRow>
               ))}
@@ -151,9 +163,12 @@ export default function MainContent({
                   >
                     <TableCell>{course.name}</TableCell>
                     <TableCell>
-                      <span className="inline-flex items-center px-4 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
-                        {course.credit}
-                      </span>
+                      <Badge
+                        variant="outline"
+                        className="bg-amber-50 text-amber-800"
+                      >
+                        {course.credit} credits
+                      </Badge>
                     </TableCell>
                   </TableRow>
                 )
@@ -163,9 +178,13 @@ export default function MainContent({
                   Semester Credits:
                 </TableCell>
                 <TableCell>
-                  <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-semibold bg-main/10 text-main">
-                    {currentDept.SemesterData[selectedSemester].totalCredits}
-                  </span>
+                  <Badge
+                    variant="outline"
+                    className="border-none text-amber-900"
+                  >
+                    {currentDept.SemesterData[selectedSemester].totalCredits}{' '}
+                    credits
+                  </Badge>
                 </TableCell>
               </TableRow>
             </TableBody>

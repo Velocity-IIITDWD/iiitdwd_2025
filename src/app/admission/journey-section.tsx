@@ -8,8 +8,8 @@ import {
   SelectValue
 } from '@/components/ui/select';
 
-import { useState } from 'react';
 import { ChevronRight } from 'lucide-react';
+import { useState } from 'react';
 
 import Link from 'next/link';
 import JourneyComponent from './journey-component';
@@ -47,8 +47,10 @@ const JourneySection = () => {
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4 items-start">
-                  <Select onValueChange={(value) => setSelectedProgram(value)} defaultValue="b-tech">
-
+                  <Select
+                    onValueChange={(value) => setSelectedProgram(value)}
+                    defaultValue="b-tech"
+                  >
                     <SelectTrigger className="w-full sm:w-64 border-2 rounded !h-12">
                       <SelectValue placeholder="B.Tech Students" />
                     </SelectTrigger>
@@ -63,7 +65,7 @@ const JourneySection = () => {
 
                   <Link
                     href={`/admission/${selectedProgram}`}
-                    className="bg-main flex items-center hover:bg-primary hover:text-white text-primary rounded h-12 border-0 px-6"
+                    className="bg-main flex items-center hover:bg-primary text-amber-50 transition-colors rounded h-12 border-0 px-6"
                   >
                     LEARN MORE <ChevronRight className="ml-2 h-4 w-4" />
                   </Link>
@@ -96,7 +98,7 @@ const JourneySection = () => {
 
                 <Button
                   variant="outline"
-                  className="bg-main hover:bg-primary hover:text-white text-primary rounded h-12 border-0 px-6"
+                  className="bg-main hover:bg-primary !text-amber-50 transition-colors rounded h-12 border-0 px-6"
                 >
                   SCHEDULE A VISIT <ChevronRight className="ml-2 h-4 w-4" />
                 </Button>
@@ -121,7 +123,7 @@ const JourneySection = () => {
 
                 <Button
                   variant="outline"
-                  className="bg-main hover:bg-primary hover:text-white text-primary rounded h-12 border-0 px-6"
+                  className="bg-main hover:bg-primary !text-amber-50 transition-colors rounded h-12 border-0 px-6"
                 >
                   EXPLORE FINANCIAL AID{' '}
                   <ChevronRight className="ml-2 h-4 w-4" />

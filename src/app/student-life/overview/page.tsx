@@ -1,7 +1,7 @@
 'use client';
-import ClubsSection from './clubsSection';
-import DualFeatureSection from './dualFeatureSection';
-import HeroSection from './heroSection';
+import ClubsSection from '../clubsSection';
+import DualFeatureSection from '../dualFeatureSection';
+import HeroSection from '../heroSection';
 
 export default function StudentLifePage() {
   return (

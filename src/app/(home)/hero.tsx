@@ -57,19 +57,19 @@ export default function LandingSection({ data }: { data: string[] }) {
           Quick Links:
         </div>
         <div className="flex gap-1 md:gap-4 max-md:flex-col w-full max-md:max-w-[260px] items-center">
-          <button className="flex gap-4 uppercase max-md:w-full max-md:justify-between text-sm text-bold text-white bg-primary rounded px-4 md:px-6 py-2 items-center">
+          <button className="flex gap-4 uppercase max-md:w-full max-md:justify-between text-sm text-bold text-amber-50 hover:bg-primary transition-colors bg-main rounded px-4 md:px-6 py-2 items-center">
             Academics
             <ArrowRightIcon size={18} />
           </button>
-          <button className="flex gap-4 uppercase max-md:w-full max-md:justify-between text-sm text-bold text-white bg-primary rounded px-4 md:px-6 py-2 items-center">
+          <button className="flex gap-4 uppercase max-md:w-full max-md:justify-between text-sm text-bold text-amber-50 hover:bg-primary transition-colors bg-main rounded px-4 md:px-6 py-2 items-center">
             Admissions
             <ArrowRightIcon size={18} />
           </button>
-          <button className="flex gap-4 uppercase max-md:w-full max-md:justify-between text-sm text-bold text-white bg-primary rounded px-4 md:px-6 py-2 items-center">
+          <button className="flex gap-4 uppercase max-md:w-full max-md:justify-between text-sm text-bold text-amber-50 hover:bg-primary transition-colors bg-main rounded px-4 md:px-6 py-2 items-center">
             Campus
             <ArrowRightIcon size={18} />
           </button>
-          <button className="flex gap-4 uppercase max-md:w-full max-md:justify-between text-sm text-bold text-white bg-primary rounded px-4 md:px-6 py-2 items-center">
+          <button className="flex gap-4 uppercase max-md:w-full max-md:justify-between text-sm text-bold text-amber-50 hover:bg-primary transition-colors bg-main rounded px-4 md:px-6 py-2 items-center">
             Culture
             <ArrowRightIcon size={18} />
           </button>
