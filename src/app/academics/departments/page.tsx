@@ -19,9 +19,9 @@ export default function Page() {
     departments[selectedDepartment as keyof typeof departments];
 
   return (
-    <div className="flex px-6 md:px-20 py-10 md:py-20">
+    <div className="flex max-md:flex-col px-6 md:px-20 py-10 md:py-20">
       {/* Left sidebar */}
-      <div className="w-64 bg-white border-r sticky top-4 border-gray-200 p-4">
+      <div className="w-full md:w-64 bg-white max-md:border-b md:border-r border-gray-200 p-4">
         <h2 className="text-xl font-bold mb-6">Academic Programs</h2>
 
         <div className="space-y-6">

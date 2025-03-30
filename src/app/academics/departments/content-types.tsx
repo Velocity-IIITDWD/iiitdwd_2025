@@ -20,7 +20,7 @@ export default function ContentTypes({
   return (
     <div className="space-y-8">
       <Tabs defaultValue="disciplineCore" className="w-full">
-        <TabsList className="grid grid-cols-2 md:grid-cols-4 mb-4">
+        <TabsList className="grid grid-cols-2 md:grid-cols-4 mb-4 h-fit">
           <TabsTrigger value="disciplineCore">Discipline Core</TabsTrigger>
           <TabsTrigger value="disciplineElective">
             Discipline Elective

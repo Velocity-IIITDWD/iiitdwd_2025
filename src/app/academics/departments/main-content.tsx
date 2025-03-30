@@ -26,7 +26,7 @@ export default function MainContent({
   const [selectedSemester, setSelectedSemester] = useState(0);
 
   return (
-    <div className="flex-1 p-8">
+    <div className="flex-1 pt-8 md:p-8">
       <h1 className="text-3xl font-bold mb-4 hover:text-main transition-colors">
         Academic Programs in {currentDept?.name}
       </h1>
