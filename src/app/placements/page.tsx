@@ -741,8 +741,6 @@ function Page() {
           </div>
         </motion.div>
       </motion.div>
-
-      {/* Past Recruiters Section - Add this after the placement procedure section */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
