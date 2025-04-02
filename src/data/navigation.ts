@@ -146,28 +146,28 @@ const navigationData: NavigationItem[] = [
     title: 'Placements',
     href: '/placements',
     items: [
-      { title: 'Why Recruit Us?', href: '/placements/why-recruit' },
+      { title: 'Why Recruit Us?', href: '/placements/#why-recruit-us' },
       // { title: 'Placement Procedures', href: '/placements/procedures' },
       {
         title: 'Placement Brochure',
-        href: '/placements/brochure'
+        href: 'https://iiitdwd.ac.in/docs/brochure_cgc.pdf'
       },
       {
         title: 'Placement Statistics',
-        href: '/placements/statistics'
+        href: '/placements/#placement-statistics'
       },
-      { title: 'Our Recruiters', href: '/placements/recruiters' },
+      { title: 'Our Recruiters', href: '/placements/#previous-recruiters' },
       // { title: 'Batch Graduating 2025-26', href: '/placements/batch-2025-26' },
       // { title: 'Internships', href: '/placements/internships' },
-      { title: 'Industry Outreach', href: '/placements/industry-outreach' },
-      { title: 'Our Startups', href: '/placements/startups' },
+      // { title: 'Industry Outreach', href: '/placements/industry-outreach' },
+      // { title: 'Our Startups', href: '/placements/startups' },
       // { title: 'Startup Fair 2024', href: '/placements/startup-fair-2024' },
-      { title: 'Higher Studies', href: '/placements/higher-studies' },
+      { title: 'Higher Studies', href: '/placements/#higher-studies' },
       {
         title: 'Alumni Testimonials',
         href: '/alumni-testimonials'
       },
-      { title: 'Contact T&P', href: '/placements/contact' }
+      { title: 'Contact T&P', href: '/placements/#contact' }
     ]
   }
 ];
