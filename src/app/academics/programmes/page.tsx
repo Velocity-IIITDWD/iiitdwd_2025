@@ -68,7 +68,7 @@ export default function ProgrammesPage() {
             <div className="w-full flex items-center p-4">
               <div className="flex flex-col justify-center flex-1 gap-1">
                 <span className="text-lg md:text-xl font-semibold">
-                  Acdemic Calendar (1st Year)
+                  Academic Calendar (1st Year)
                 </span>
                 <span className="text-sm">
                   Stay on schedule and upto date throughout the year.
@@ -86,7 +86,7 @@ export default function ProgrammesPage() {
             <div className="w-full flex items-center p-4">
               <div className="flex flex-col justify-center flex-1 gap-1">
                 <span className="text-lg md:text-xl font-semibold">
-                  Acdemic Calendar 2024-25
+                  Academic Calendar 2024-25
                 </span>
                 <span className="text-sm">
                   Stay on schedule and upto date throughout the year.
