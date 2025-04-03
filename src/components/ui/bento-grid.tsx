@@ -39,7 +39,7 @@ export const BentoGridItem = ({
         className
       )}
     >
-      <div className="group/panel rounded-lg md:rounded-xl border border-secondary/10 p-px bg-gradient-to-b from-secondary/10 to-tertiary/30 transition-all hover:shadow-md flex items-center justify-center hover:border-secondary/30 hover:!bg-white relative w-full h-full">
+      <div className="group/panel rounded-lg md:rounded-xl border border-main/30 p-px bg-gradient-to-b from-secondary/30 to-secondary/70 transition-all hover:shadow-md flex items-center justify-center relative w-full h-full">
         <div className="z-10 rounded-[7px] md:rounded-[11px] relative overflow-hidden flex-1 flex flex-row sm:flex-col gap-4 items-start sm:items-center lg:items-start justify-between bg-surface-75 w-full h-full text-foreground-lighter [&_strong]:!font-normal [&_strong]:!text-foreground p-4 sm:py-6">
           <div className="relative z-10 h-full w-full mx-auto gap-2 sm:gap-4 flex flex-col items-start sm:items-center text-left sm:text-center lg:mx-0 lg:pl-2 lg:items-start lg:text-left">
             <div className="flex items-center gap-2 text-foreground">

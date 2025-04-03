@@ -16,7 +16,7 @@ export default function SectionHeading({
       className={cn(
         free ? 'border-none' : 'border-t-[2px]',
         'mb-6 ml-[10px]',
-        reverse ? 'border-t-main' : 'border-t-primary',
+        reverse ? 'border-t-main' : 'border-t-main',
         'w-full relative',
         className
       )}
@@ -26,7 +26,7 @@ export default function SectionHeading({
           'uppercase font-semibold z-[1] before:-z-[1] -top-[2px] w-fit before:-left-[5px] before:h-full before:absolute before:top-0',
           reverse
             ? 'text-amber-50 before:bg-main'
-            : 'text-white before:bg-primary',
+            : 'text-white before:bg-main',
           'before:w-[calc(100%+10px)] px-6 py-2 relative before:skew-x-[-15deg]'
         )}
       >

@@ -42,7 +42,7 @@ export default function ContentTypes({
                   Core courses required for the discipline
                 </TableCaption>
                 <TableHeader>
-                  <TableRow>
+                  <TableRow className="bg-secondary/70 hover:bg-secondary/80 transition-colors">
                     <TableHead className="w-[50px]">ID</TableHead>
                     <TableHead>Course Name</TableHead>
                     <TableHead className="w-[150px]">Credits</TableHead>
@@ -59,7 +59,7 @@ export default function ContentTypes({
                       <TableCell>
                         <Badge
                           variant="outline"
-                          className="bg-amber-50 text-amber-800"
+                          className="bg-amber-50 text-[#0b442d]"
                         >
                           {course.credits} credits
                         </Badge>
@@ -87,7 +87,7 @@ export default function ContentTypes({
                     Elective courses available for the discipline
                   </TableCaption>
                   <TableHeader>
-                    <TableRow>
+                    <TableRow className="bg-secondary/70 hover:bg-secondary/80 transition-colors">
                       <TableHead className="w-[50px]">ID</TableHead>
                       <TableHead>Course Name</TableHead>
                       <TableHead className="w-[150px] text-center">
@@ -132,7 +132,7 @@ export default function ContentTypes({
                   Core engineering courses required for the program
                 </TableCaption>
                 <TableHeader>
-                  <TableRow>
+                  <TableRow className="bg-secondary/70 hover:bg-secondary/80 transition-colors">
                     <TableHead className="w-[50px]">ID</TableHead>
                     <TableHead>Course Name</TableHead>
                     <TableHead className="w-[150px]">Credits</TableHead>
@@ -176,7 +176,7 @@ export default function ContentTypes({
                   Mathematics and Statistics courses required for the program
                 </TableCaption>
                 <TableHeader>
-                  <TableRow>
+                  <TableRow className="bg-secondary/70 hover:bg-secondary/80 transition-colors">
                     <TableHead className="w-[50px]">ID</TableHead>
                     <TableHead>Course Name</TableHead>
                     <TableHead className="w-[150px]">Credits</TableHead>

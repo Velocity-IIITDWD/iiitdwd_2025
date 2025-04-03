@@ -19,9 +19,9 @@ export default function Page() {
     departments[selectedDepartment as keyof typeof departments];
 
   return (
-    <div className="flex max-md:flex-col px-6 md:px-20 py-10 md:py-20">
+    <div className="flex max-md:flex-col px-4 md:px-8 container mx-auto py-10 md:py-20">
       {/* Left sidebar */}
-      <div className="w-full md:w-64 bg-white max-md:border-b md:border-r border-gray-200 p-4">
+      <div className="w-full md:w-64 bg-background max-md:border-b md:border-r border-gray-200 p-4">
         <h2 className="text-xl font-bold mb-6">Academic Programs</h2>
 
         <div className="space-y-6">
@@ -35,7 +35,7 @@ export default function Page() {
                   onClick={() => setSelectedDepartment('cse')}
                   className={`w-full border-l-2 text-left px-3 py-2 rounded-r ${
                     selectedDepartment === 'cse' &&
-                    'bg-amber-50 border-l-main font-medium'
+                    'bg-secondary/40 border-l-main font-medium'
                   }`}
                 >
                   Computer Science and Engineering
@@ -46,7 +46,7 @@ export default function Page() {
                   onClick={() => setSelectedDepartment('ece')}
                   className={`w-full border-l-2 text-left px-3 py-2 rounded-r ${
                     selectedDepartment === 'ece' &&
-                    'bg-amber-50 border-l-main font-medium'
+                    'bg-secondary/40 border-l-main font-medium'
                   }`}
                 >
                   Electronics and Communication Engineering
@@ -57,7 +57,7 @@ export default function Page() {
                   onClick={() => setSelectedDepartment('dsai')}
                   className={`w-full border-l-2 text-left px-3 py-2 rounded-r ${
                     selectedDepartment === 'dsai' &&
-                    'bg-amber-50 border-l-main font-medium'
+                    'bg-secondary/40 border-l-main font-medium'
                   }`}
                 >
                   Data Science and Artificial Intelligence
@@ -74,7 +74,7 @@ export default function Page() {
               <li>
                 <Link
                   href={`/faculty?department=${selectedDepartment}`}
-                  className="block px-3 py-2 hover:bg-gray-100 rounded"
+                  className="block px-3 py-2 hover:bg-secondary/40 rounded"
                 >
                   Faculty
                 </Link>
@@ -82,7 +82,7 @@ export default function Page() {
               <li>
                 <Link
                   href="/academics/research"
-                  className="block px-3 py-2 hover:bg-gray-100 rounded"
+                  className="block px-3 py-2 hover:bg-secondary/40 rounded"
                 >
                   Research
                 </Link>
@@ -90,7 +90,7 @@ export default function Page() {
               <li>
                 <Link
                   href="/amenities"
-                  className="block px-3 py-2 hover:bg-gray-100 rounded"
+                  className="block px-3 py-2 hover:bg-secondary/40 rounded"
                 >
                   Amenities
                 </Link>

@@ -164,7 +164,7 @@ export default function FacultyProfile({
   return (
     <div
       className={cn(
-        'p-5 border rounded-lg bg-white shadow-sm hover:shadow transition-all duration-300 relative overflow-hidden group',
+        'p-5 border rounded-lg bg-secondary/50 shadow-sm hover:shadow transition-all duration-300 relative overflow-hidden group',
         className
       )}
     >
@@ -173,7 +173,7 @@ export default function FacultyProfile({
       <div className="flex flex-col gap-5 relative justify-between h-full">
         <div className="flex flex-col gap-5 relative">
           <div className="flex items-center gap-4">
-            <div className="flex-shrink-0 w-24 h-24 rounded-full border-3 border-primary/30 group-hover:border-primary/50 shadow-md transition-all duration-500 group-hover:shadow-lg overflow-hidden">
+            <div className="flex-shrink-0 w-24 h-24 rounded-full border-2 border-main/80 group-hover:border-primary/50 shadow-md transition-all duration-500 group-hover:shadow-lg overflow-hidden">
               <div className="w-full h-full relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
                 <Image
@@ -239,7 +239,7 @@ export default function FacultyProfile({
                 {areasOfInterest.map((area, index) => (
                   <div
                     key={index}
-                    className="px-3 py-1 bg-[#f8f9fa] rounded-full text-xs border border-[#e0e4e9] hover:bg-[#f0f2f5] hover:border-[#ccd4e0] hover:shadow-sm transition-all duration-300 text-primary"
+                    className="px-3 py-1 bg-secondary/70 rounded-full text-xs border hover:shadow-sm transition-all duration-300 text-primary"
                   >
                     {area}
                   </div>

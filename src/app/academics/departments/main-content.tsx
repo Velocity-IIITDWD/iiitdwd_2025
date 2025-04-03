@@ -34,7 +34,7 @@ export default function MainContent({
       <div className="mb-12">
         <p className="text-lg mb-6">{currentDept?.description}</p>
 
-        <div className="bg-gradient-to-br from-gray-50 to-gray-100 shadow-md p-6 rounded-lg mb-8 hover:shadow-lg transition-all duration-300">
+        <div className="bg-gradient-to-br from-secondary/30 to-secondary/70 shadow-md p-6 rounded-lg mb-8 hover:shadow-lg transition-all duration-300">
           <h3 className="text-xl font-semibold mb-3 text-main">
             Department Head
           </h3>
@@ -62,9 +62,9 @@ export default function MainContent({
         </h2>
 
         <div className="overflow-x-auto rounded-lg shadow-md mb-4 ">
-          <Table className="bg-white">
+          <Table className="bg-background">
             <TableHeader>
-              <TableRow className="bg-gradient-to-r from-gray-100 to-gray-200 hover:from-gray-200 hover:to-gray-300 transition-colors">
+              <TableRow className="bg-secondary/70 hover:bg-secondary/80 transition-colors">
                 <TableHead className="text-left w-full">Name</TableHead>
                 <TableHead className="text-center whitespace-nowrap">
                   Credits
@@ -81,7 +81,7 @@ export default function MainContent({
               {currentDept.courseCategories.map((category, index) => (
                 <TableRow
                   key={index}
-                  className="hover:bg-gray-50 transition-colors"
+                  className="hover:bg-secondary/20 transition-colors"
                 >
                   <TableCell className="w-full">{category.name}</TableCell>
                   <TableCell className="whitespace-nowrap">
@@ -147,9 +147,9 @@ export default function MainContent({
         </div>
 
         <div className="overflow-x-auto rounded-lg shadow-md">
-          <Table className="bg-white">
+          <Table className="bg-background">
             <TableHeader>
-              <TableRow className="bg-gradient-to-r from-gray-100 to-gray-200 hover:from-gray-200 hover:to-gray-300 transition-colors">
+              <TableRow className="bg-secondary/70 hover:bg-secondary/80 transition-colors">
                 <TableHead className="text-left">Course Name</TableHead>
                 <TableHead className="text-left">Credits</TableHead>
               </TableRow>
@@ -159,7 +159,7 @@ export default function MainContent({
                 (course, index) => (
                   <TableRow
                     key={index}
-                    className="hover:bg-gray-50 transition-colors"
+                    className="hover:bg-secondary/20 transition-colors"
                   >
                     <TableCell>{course.name}</TableCell>
                     <TableCell>
@@ -173,7 +173,7 @@ export default function MainContent({
                   </TableRow>
                 )
               )}
-              <TableRow className="bg-gradient-to-r from-gray-100 to-gray-200">
+              <TableRow className="bg-secondary/50">
                 <TableCell className="font-medium text-gray-700">
                   Semester Credits:
                 </TableCell>
@@ -191,7 +191,7 @@ export default function MainContent({
           </Table>
         </div>
 
-        <div className="mt-4 text-sm text-gray-600 bg-gray-50 p-3 rounded-md hover:bg-gray-100 transition-colors">
+        <div className="mt-4 text-sm text-main bg-secondary p-3 rounded-md transition-colors">
           <p>Credit Format: Lecture-Tutorial-Practical-Project-Total</p>
         </div>
       </div>

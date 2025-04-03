@@ -84,7 +84,7 @@ function FacultySearchPage({
   };
 
   return (
-    <div className="min-h-screen px-6 md:px-20 py-10">
+    <div className="min-h-screen px-4 md:px-8 container mx-auto py-10">
       <div className="mb-8 w-full space-y-4">
         {/* Search and Filter Controls */}
         <div className="flex flex-col md:flex-row gap-4 w-full">

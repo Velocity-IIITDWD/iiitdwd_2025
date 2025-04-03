@@ -1,17 +1,17 @@
 import { Badge } from '@/components/ui/badge';
 import { Card } from '@/components/ui/card';
-import { MapPin, Phone, Printer } from 'lucide-react';
+import { MapPin } from 'lucide-react';
 import Image from 'next/image';
 
 export default function PresidentialVisitor() {
   return (
-    <div className="bg-gray-50 p-4 md:p-8 flex flex-col items-center justify-center">
+    <div className="bg-background p-4 md:p-8 flex flex-col items-center justify-center">
       <div className="w-full max-w-4xl">
         <div className="text-center mb-8">
-          <h1 className="text-2xl md:text-4xl font-bold text-gray-900 mb-2">
+          <h1 className="text-2xl md:text-4xl font-bold text-main mb-2">
             Distinguished Visitor
           </h1>
-          <div className="h-1 w-24 bg-primary mx-auto"></div>
+          <div className="h-1 w-24 bg-main mx-auto"></div>
         </div>
 
         <Card className="overflow-hidden border-none shadow-xl bg-white p-0 ">

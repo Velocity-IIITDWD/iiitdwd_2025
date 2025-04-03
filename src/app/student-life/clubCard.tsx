@@ -26,7 +26,7 @@ export default function ClubCard({
         <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all duration-300"></div>
       </div>
       <h2 className="text-3xl font-bold text-main">{title}</h2>
-      <p className="text-gray-300">{description}</p>
+      <p className="text-black">{description}</p>
       <Link
         href={link}
         className="group bg-main text-amber-50 px-6 py-2 rounded-full flex items-center gap-2 transition-all duration-300"

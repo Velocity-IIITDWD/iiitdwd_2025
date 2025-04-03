@@ -47,7 +47,7 @@ export default function DetailSection() {
 
   return (
     <div className="py-20">
-      <section className="px-6 md:px-20">
+      <section className="px-4 md:px-8 container mx-auto">
         <div className="max-md:hidden grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Left Sidebar */}
           <div className="space-y-8 pr-10 relative">
@@ -79,7 +79,7 @@ export default function DetailSection() {
           {/* Right Content */}
           <div className="pl-10 border-l-2 border-primary relative flex flex-col">
             <motion.div
-              className="absolute w-6 h-6 left-0 -translate-x-1/2 rotate-45 bg-white border-r-2 border-t-2 border-primary transition-all duration-300 ease-in-out"
+              className="absolute w-6 h-6 left-0 -translate-x-1/2 rotate-45 bg-background border-r-2 border-t-2 border-primary transition-all duration-300 ease-in-out"
               animate={{
                 top: arrowPosition - 12 // Center the arrow (half of its height)
               }}

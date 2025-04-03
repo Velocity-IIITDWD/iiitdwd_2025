@@ -28,7 +28,7 @@ export default function Profile({
   signaturePosition
 }: ProfilePageProps) {
   return (
-    <div className="w-full py-10 px-6 md:px-20">
+    <div className="w-full py-10 px-4 md:px-8 container mx-auto">
       <div className="flex flex-col md:flex-row gap-8">
         <div className="flex flex-col gap-4">
           {image && (

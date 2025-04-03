@@ -1,6 +1,3 @@
 export default function Page() {
-  return (
-    <section className="px-6 md:px-20">
-    </section>
-  )
+  return <section className="px-4 md:px-8 container mx-auto"></section>;
 }

@@ -94,11 +94,11 @@ export default function CareersPage({ Fulldata }: { Fulldata: Jobs[] }) {
   }, []);
 
   return (
-    <section className="flex flex-col w-full h-fit items-center mb-8 px-6 md:px-20">
+    <section className="flex flex-col w-full h-fit items-center mb-8 px-4 md:px-8 container mx-auto">
       {/* Filters */}
       <div className="w-full flex flex-col items-end">
         <h1 className="heading-text w-full">Careers</h1>
-        <div className="flex flex-col max-md:w-full items-center rounded text-muted-foreground bg-muted lg:flex-row gap-4 w-fit my-2">
+        <div className="flex flex-col max-md:w-full items-center rounded text-main bg-secondary/50 border lg:flex-row gap-4 w-fit my-2">
           <Select defaultValue="all" onValueChange={setCategory}>
             <SelectTrigger className="rounded-sm w-full max-w-sm self-end border-none shadow-none lg:self-auto">
               <SelectValue placeholder="Filter by category" />
@@ -142,7 +142,7 @@ export default function CareersPage({ Fulldata }: { Fulldata: Jobs[] }) {
 
         {/* Large screen table */}
         <Table>
-          <TableHeader className="bg-primary">
+          <TableHeader className="bg-main">
             <TableRow>
               <TableHead className="text-white">No.</TableHead>
               <TableHead className="text-white">
@@ -162,14 +162,16 @@ export default function CareersPage({ Fulldata }: { Fulldata: Jobs[] }) {
             {filteredJobs.map((job, index) => (
               <TableRow
                 key={index}
-                className={index % 2 === 0 ? 'bg-secondary/8' : 'bg-white'}
+                className={
+                  index % 2 === 0 ? 'bg-secondary/10' : 'bg-secondary/30'
+                }
               >
                 <TableCell>{index + 1}.</TableCell>
                 <TableCell>
                   <div className="flex flex-col gap-2 flex-1">
                     <span className="text-primary">{job.title}</span>
                     {job.details && (
-                      <div className="pr-4 text-wrap text-secondary text-justify">
+                      <div className="pr-4 text-wrap text-main/60 text-justify">
                         {job.details}
                       </div>
                     )}

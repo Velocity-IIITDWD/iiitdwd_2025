@@ -73,7 +73,7 @@ export default function AlumniSection() {
             ))}
           </div>
           {/* <div className="pointer-events-none absolute inset-x-0 top-0 h-1/5 bg-gradient-to-b from-color1"></div> */}
-          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t from-white"></div>
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t from-background"></div>
         </div>
 
         <Link href="/alumni-testimonials" className="mt-10">

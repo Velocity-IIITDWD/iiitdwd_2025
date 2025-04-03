@@ -85,7 +85,7 @@ function AnimatedNavbar() {
         ref={headerRef}
         initial={{ height: '7rem' }}
         animate={{ height: isScrolled ? '5rem' : '7rem' }}
-        className="sticky top-0 flex items-center left-0 w-full right-0 z-50 bg-white shadow-md overflow-hidden"
+        className="sticky top-0 flex items-center left-0 w-full right-0 z-50 !bg-background shadow-md overflow-hidden"
       >
         <motion.div
           className="absolute left-4"
@@ -189,7 +189,7 @@ function AnimatedNavbar() {
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
-            className={`fixed inset-0 bg-white z-40 ${
+            className={`fixed inset-0 bg-background z-40 ${
               isScrolled ? '' : ''
             } md:pt-20 pb-6 px-4 overflow-y-auto`}
             initial={{ y: '-100%' }}
@@ -202,7 +202,7 @@ function AnimatedNavbar() {
               visualDuration: 0.8
             }}
             style={{
-              top: isScrolled ? '5rem' : '7rem'
+              top: isScrolled ? '5rem' : '8rem'
             }}
           >
             <MobileHeader toggleMenu={toggleMenu} />

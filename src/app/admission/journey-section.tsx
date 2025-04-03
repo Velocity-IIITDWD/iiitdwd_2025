@@ -65,7 +65,7 @@ const JourneySection = () => {
 
                   <Link
                     href={`/admission/${selectedProgram}`}
-                    className="bg-main flex items-center hover:bg-primary text-amber-50 transition-colors rounded h-12 border-0 px-6"
+                    className="bg-main flex items-center hover:bg-main/90 text-white transition-colors rounded h-12 border-0 px-6"
                   >
                     LEARN MORE <ChevronRight className="ml-2 h-4 w-4" />
                   </Link>
@@ -98,7 +98,7 @@ const JourneySection = () => {
 
                 <Button
                   variant="outline"
-                  className="bg-main hover:bg-primary !text-amber-50 transition-colors rounded h-12 border-0 px-6"
+                  className="bg-main flex items-center hover:bg-main/90 text-white hover:text-white transition-colors rounded h-12 border-0 px-6"
                 >
                   SCHEDULE A VISIT <ChevronRight className="ml-2 h-4 w-4" />
                 </Button>
@@ -123,7 +123,7 @@ const JourneySection = () => {
 
                 <Button
                   variant="outline"
-                  className="bg-main hover:bg-primary !text-amber-50 transition-colors rounded h-12 border-0 px-6"
+                  className="bg-main flex items-center hover:bg-main/90 text-white hover:text-white transition-colors rounded h-12 border-0 px-6"
                 >
                   EXPLORE FINANCIAL AID{' '}
                   <ChevronRight className="ml-2 h-4 w-4" />
