@@ -19,7 +19,7 @@ const JourneySection = () => {
   return (
     <div className="mx-auto container px-4 md:px-8 py-16 md:py-24">
       <div className="container mx-auto relative">
-        <div className="absolute z-[-2] w-[3px] [mask:linear-gradient(0deg,transparent,white_20%,white_80%,transparent)]  h-full bg-tertiary/20">
+        <div className="absolute z-[-2] w-[3px] [mask:linear-gradient(0deg,transparent,white_20%,white_80%,transparent)]  h-full bg-tertiary/30">
           <div className="fixed left-auto top-0 right-auto bottom-[50vh] z-[-1] w-[3px] h-[50vh] bg-main"></div>
         </div>
 
@@ -36,7 +36,7 @@ const JourneySection = () => {
           <JourneyComponent id="major">
             <section className="flex max-md:px-6 flex-col md:flex-row gap-8 w-full">
               <div className="flex-1">
-                <h3 className="text-base font-bold text-gray-700 mb-4">
+                <h3 className="text-base font-bold text-main mb-4">
                   Find Your Program
                 </h3>
                 <h2 className="text-5xl font-bold mb-8">
@@ -85,7 +85,7 @@ const JourneySection = () => {
               </div>
 
               <div className="flex-1 order-1 md:order-2">
-                <h3 className="text-base font-bold text-gray-700 mb-4">
+                <h3 className="text-base font-bold text-main mb-4">
                   Visit IIIT Dharwad
                 </h3>
                 <h2 className="text-5xl font-bold mb-8">
@@ -110,7 +110,7 @@ const JourneySection = () => {
           <JourneyComponent id="tuition">
             <section className="flex max-md:px-6 flex-col md:flex-row gap-8 w-full">
               <div className="flex-1">
-                <h3 className="text-base font-bold text-gray-700 mb-4">
+                <h3 className="text-base font-bold text-main mb-4">
                   Review Tuition and Aid
                 </h3>
                 <h2 className="text-5xl font-bold mb-8">

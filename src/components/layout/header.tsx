@@ -85,7 +85,7 @@ function AnimatedNavbar() {
         ref={headerRef}
         initial={{ height: '7rem' }}
         animate={{ height: isScrolled ? '5rem' : '7rem' }}
-        className="sticky top-0 flex items-center left-0 w-full right-0 z-50 !bg-background shadow-md overflow-hidden"
+        className="sticky top-0 flex items-center left-0 w-full right-0 z-50 !bg-white shadow-md overflow-hidden"
       >
         <motion.div
           className="absolute left-4"

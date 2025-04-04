@@ -22,7 +22,7 @@ export default function Page() {
         <HeroSection />
       </div>
 
-      <div className="bg-secondary py-4">
+      <div className="bg-white py-4">
         <div className="container mx-auto px-4 md:px-8">
           <nav className="flex items-center text-sm md:text-base">
             <Link href="/" className="text-gray-700 hover:text-gray-900">

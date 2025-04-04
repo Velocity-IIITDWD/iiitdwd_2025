@@ -71,16 +71,10 @@ const bTechECEProgramData: BTechECEProgram = {
       recommendedPercentage: 14
     },
     {
-      name: 'Open Elective',
+      name: 'Open elective / Projects',
       credits: 40,
       percentageOfTotal: 28.6,
       recommendedPercentage: 27
-    },
-    {
-      name: 'Projects',
-      credits: 0,
-      percentageOfTotal: 0,
-      recommendedPercentage: 0
     },
     {
       name: 'Humanities and Social Sciences',

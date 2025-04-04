@@ -39,14 +39,14 @@ export default function HowToReach() {
           <CardContent>
             <div className="grid md:grid-cols-2 gap-6">
               <div>
-                <h3 className="font-medium mb-2">Address</h3>
+                <h3 className="font-medium text-main mb-2">Address</h3>
                 <p className="text-gray-700 dark:text-gray-300">
                   Indian Institute of Information Technology Dharwad,
                   <br />
                   Ittigatti Rd, near Sattur Colony, Karnataka 580009
                 </p>
                 <div className="mt-4">
-                  <h3 className="font-medium mb-2">Contact</h3>
+                  <h3 className="font-medium text-main mb-2">Contact</h3>
                   <p className="text-gray-700 dark:text-gray-300">
                     Phone: +91-836-2250879
                     <br />
@@ -95,7 +95,9 @@ export default function HowToReach() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <div>
-                  <h3 className="font-semibold text-lg">Hubballi Airport</h3>
+                  <h3 className="font-semibold text-main text-lg">
+                    Hubballi Airport
+                  </h3>
                   <p className="text-gray-700 dark:text-gray-300">
                     The nearest airport is Hubballi Airport, approximately 30 km
                     from IIIT Dharwad campus. Direct flights are available from
@@ -137,7 +139,7 @@ export default function HowToReach() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <div>
-                  <h3 className="font-semibold text-lg">
+                  <h3 className="font-semibold text-main text-lg">
                     Dharwad Railway Station
                   </h3>
                   <p className="text-gray-700 dark:text-gray-300">
@@ -168,7 +170,7 @@ export default function HowToReach() {
                   </div>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-lg">
+                  <h3 className="font-semibold text-main text-lg">
                     Hubballi Railway Station
                   </h3>
                   <p className="text-gray-700 dark:text-gray-300">
@@ -221,7 +223,7 @@ export default function HowToReach() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <div>
-                  <h3 className="font-semibold text-lg">
+                  <h3 className="font-semibold text-main text-lg">
                     State Transport Buses
                   </h3>
                   <p className="text-gray-700 dark:text-gray-300">
@@ -232,7 +234,9 @@ export default function HowToReach() {
                   </p>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-lg">Private Buses</h3>
+                  <h3 className="font-semibold text-main text-lg">
+                    Private Buses
+                  </h3>
                   <p className="text-gray-700 dark:text-gray-300">
                     Several private operators run comfortable AC and non-AC
                     sleeper and seater buses to Dharwad from major cities. These
@@ -240,7 +244,9 @@ export default function HowToReach() {
                   </p>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-lg">Local Transport</h3>
+                  <h3 className="font-semibold text-main text-lg">
+                    Local Transport
+                  </h3>
                   <p className="text-gray-700 dark:text-gray-300">
                     From Dharwad bus stand, you can take an auto-rickshaw or
                     city bus to reach the IIIT Dharwad campus.
@@ -260,7 +266,9 @@ export default function HowToReach() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <div>
-                  <h3 className="font-semibold text-lg">From Bangalore</h3>
+                  <h3 className="font-semibold text-main text-lg">
+                    From Bangalore
+                  </h3>
                   <p className="text-gray-700 dark:text-gray-300">
                     Dharwad is well-connected to Bangalore via NH-48 (earlier
                     NH-4). The distance is approximately 430 km and takes around
@@ -270,14 +278,16 @@ export default function HowToReach() {
                   </p>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-lg">From Mumbai</h3>
+                  <h3 className="font-semibold text-main text-lg">
+                    From Mumbai
+                  </h3>
                   <p className="text-gray-700 dark:text-gray-300">
                     The distance from Mumbai to Dharwad is approximately 550 km
                     via NH-48. The journey takes around 10-11 hours by car.
                   </p>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-lg">From Goa</h3>
+                  <h3 className="font-semibold text-main text-lg">From Goa</h3>
                   <p className="text-gray-700 dark:text-gray-300">
                     Dharwad is about 150 km from Goa via NH-748. The journey
                     takes approximately 3-4 hours by car.
@@ -304,14 +314,18 @@ export default function HowToReach() {
           <CardContent>
             <div className="grid md:grid-cols-2 gap-4">
               <div className="p-4 border rounded-lg">
-                <h3 className="font-semibold text-lg">Dharwad City</h3>
+                <h3 className="font-semibold text-main text-lg">
+                  Dharwad City
+                </h3>
                 <p className="text-gray-700 dark:text-gray-300">
                   Various hotels and guest houses are available in Dharwad city
                   center, approximately 7 km from the campus.
                 </p>
               </div>
               <div className="p-4 border rounded-lg">
-                <h3 className="font-semibold text-lg">Hubballi City</h3>
+                <h3 className="font-semibold text-main text-lg">
+                  Hubballi City
+                </h3>
                 <p className="text-gray-700 dark:text-gray-300">
                   More accommodation options are available in Hubballi city,
                   approximately 20 km from the campus, including 3-star and

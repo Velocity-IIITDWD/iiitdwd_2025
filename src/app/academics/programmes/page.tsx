@@ -57,12 +57,14 @@ export default function ProgrammesPage() {
       <ProgramCards />
 
       <div className="container px-4 md:px-8 mx-auto py-8 md:py-16 flex flex-col items-center">
-        <div className="text-lg text-primary">More Resources</div>
+        <div className="text-2xl font-semibold text-main mb-10">
+          More Resources
+        </div>
 
-        <div className="flex flex-col gap-4 md:gap-8 w-full py-20">
+        <div className="flex flex-col gap-4 md:gap-6 w-full">
           <Link
             href="https://iiitdwd.ac.in/docs/Academic_Calendar_year_1_2024-25.pdf"
-            className="relative focus:outline-none focus:border-none focus:ring-brand-600 focus:ring-2 hover:shadow-md cursor-pointer overflow-clip flex rounded-lg border w-full border-tertiary/20 bg-gradient-to-b from-secondary/20 to-secondary/70 hover:border-secondary/30"
+            className="relative focus:outline-none focus:border-none focus:ring-brand-600 focus:ring-2 hover:shadow-md cursor-pointer overflow-clip flex rounded-lg border w-full border-gray-400 bg-white hover:border-gray-500"
           >
             <div className="h-24 w-40 relative bg-gray-300 max-md:hidden" />
             <div className="w-full flex items-center p-4">
@@ -74,13 +76,13 @@ export default function ProgrammesPage() {
                   Stay on schedule and upto date throughout the year.
                 </span>
               </div>
-              <ArrowRightCircle color="#f18f01" size={30} />
+              <ArrowRightCircle className="text-main" size={30} />
             </div>
           </Link>
 
           <Link
             href="https://iiitdwd.ac.in/docs/Academic_Calendar_year_234_2024-25.pdf"
-            className="relative focus:outline-none focus:border-none focus:ring-brand-600 focus:ring-2 hover:shadow-md cursor-pointer overflow-clip flex rounded-lg border w-full border-tertiary/20 bg-gradient-to-b from-secondary/20 to-secondary/70 hover:border-secondary/30"
+            className="relative focus:outline-none focus:border-none focus:ring-brand-600 focus:ring-2 hover:shadow-md cursor-pointer overflow-clip flex rounded-lg border w-full border-gray-400 bg-white hover:border-gray-500"
           >
             <div className="h-24 w-40 relative bg-gray-300 max-md:hidden" />
             <div className="w-full flex items-center p-4">
@@ -92,13 +94,13 @@ export default function ProgrammesPage() {
                   Stay on schedule and upto date throughout the year.
                 </span>
               </div>
-              <ArrowRightCircle color="#f18f01" size={30} />
+              <ArrowRightCircle className="text-main" size={30} />
             </div>
           </Link>
 
           <Link
             href="https://iiitdwd.ac.in/docs/Curricula_16May23.pdf"
-            className="relative focus:outline-none focus:border-none focus:ring-brand-600 focus:ring-2 hover:shadow-md cursor-pointer overflow-clip flex rounded-lg border w-full border-tertiary/20 bg-gradient-to-b from-secondary/20 to-secondary/70 hover:border-secondary/30"
+            className="relative focus:outline-none focus:border-none focus:ring-brand-600 focus:ring-2 hover:shadow-md cursor-pointer overflow-clip flex rounded-lg border w-full border-gray-400 bg-white hover:border-gray-500"
           >
             <div className="h-24 w-40 relative bg-gray-300 max-md:hidden" />
             <div className="w-full flex items-center p-4">
@@ -110,7 +112,7 @@ export default function ProgrammesPage() {
                   Stay on schedule and upto date throughout the year.
                 </span>
               </div>
-              <ArrowRightCircle color="#f18f01" size={30} />
+              <ArrowRightCircle className="text-main" size={30} />
             </div>
           </Link>
         </div>

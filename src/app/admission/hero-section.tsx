@@ -26,20 +26,20 @@ export default function HeroSection() {
       <div className="font-semibold leading-[1.1] text-[clamp(1.7rem,10vw,4rem)] max-w-5xl text-center">
         See Where One Small Step Can Take You
       </div>
-      <div className="text-base md:text-xl max-w-4xl text-slate-200">
+      <div className="text-base md:text-xl max-w-4xl text-white">
         We&apos;re here to help you learn more about becoming a Boilermaker —
         from admissions and exploring majors and programs to finding information
         about tuition reviews. Every part of the process is explained.
       </div>
 
-      <div className="flex gap-10 max-md:flex-col w-full mt-10 items-center">
+      {/* <div className="flex gap-10 max-md:flex-col w-full mt-10 items-center">
         <div className="whitespace-nowrap font-semibold">Jump To:</div>
         <ul className="w-full z-[1] relative flex max-md:flex-col max-md:gap-5 justify-between items-center after:-z-[1] after:content-[''] after:max-md:hidden after:absolute after:h-full after:w-full after:top-1/2 after:transform after:-translate-y-1/2 after:bg-center after:bg-[length:10px_2px] after:bg-repeat-x after:[background-image:linear-gradient(to_right,#fff_20%,rgba(255,255,255,0)_0%)]">
           <JumpLink title="Find your major" link="major" />
           <JumpLink title="visit us" link="visit" />
           <JumpLink title="review tuition" link="tuition" />
         </ul>
-      </div>
+      </div> */}
     </div>
   );
 }

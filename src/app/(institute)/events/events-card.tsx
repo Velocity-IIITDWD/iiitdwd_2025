@@ -45,7 +45,7 @@ const EventCard = ({ event }: EventCardProps) => {
   };
 
   return (
-    <Card className="overflow-hidden max-w-md group hover:-translate-y-2 transition-all duration-300 hover:shadow-xl border bg-secondary/50 rounded-lg shadow-sm py-0 gap-0">
+    <Card className="overflow-hidden max-w-md group hover:-translate-y-2 transition-all duration-300 hover:shadow-xl border bg-white rounded-lg shadow-sm py-0 gap-0">
       <div className="relative h-64 flex-none w-full">
         <div className="absolute h-full w-full group-hover:bg-main/20 z-[2] bg-none transition-colors duration-300" />
         {event.allImage && event.allImage.length > 0 ? (

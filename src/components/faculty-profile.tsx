@@ -164,7 +164,7 @@ export default function FacultyProfile({
   return (
     <div
       className={cn(
-        'p-5 border rounded-lg bg-secondary/50 shadow-sm hover:shadow transition-all duration-300 relative overflow-hidden group',
+        'p-5 border rounded-lg bg-gradient-to-b from-white/70 to-white shadow-sm hover:shadow transition-all duration-300 relative overflow-hidden group',
         className
       )}
     >

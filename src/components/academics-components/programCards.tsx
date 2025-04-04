@@ -28,7 +28,7 @@ const ProgramCard: React.FC<ProgramCardProps> = ({
   return (
     <Link
       href={link}
-      className="relative h-full flex flex-col bg-secondary/79 rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl group cursor-pointer"
+      className="relative h-full flex flex-col bg-white border border-gray-300 rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl group cursor-pointer"
     >
       {/* Underline effect on hover */}
       <div className="absolute bottom-0 left-1/2 w-0 h-[4px] bg-main transition-all duration-300 ease-in-out group-hover:w-full group-hover:left-0"></div>

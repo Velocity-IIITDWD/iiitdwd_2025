@@ -124,7 +124,7 @@ function FacultySearchPage({
             </div>
             <input
               type="text"
-              className="block w-full pl-10 pr-10 py-3 border border-gray-200 rounded-lg focus:ring-blue-900 focus:border-blue-900 outline-none transition-colors"
+              className="block w-full pl-10 pr-10 py-3 border bg-white border-gray-200 rounded-lg focus:ring-blue-900 focus:border-blue-900 outline-none transition-colors"
               placeholder="Search by name, position, or research area..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}

@@ -33,7 +33,7 @@ export default function AboutPage() {
         </div>
       </div>
 
-      <div className="bg-secondary py-4">
+      <div className="bg-white py-4">
         <div className="px-4 md:px-8 container mx-auto">
           <nav className="flex items-center text-sm md:text-base">
             <Link href="/" className="text-gray-700 hover:text-gray-900">
@@ -54,7 +54,7 @@ export default function AboutPage() {
       <DetailSection />
       <VisionMissionValues />
       {/* https://www.youtube.com/embed/_QLrIgjopCg?si=GrjaKptEy4LEp2uW&autoplay=0 */}
-      <div className="w-full bg-secondary/50 py-10">
+      <div className="w-full bg-background py-10">
         <iframe
           className="aspect-video px-4 md:px-8 container mx-auto w-full rounded overflow-hidden"
           src={

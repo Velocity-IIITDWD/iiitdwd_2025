@@ -21,7 +21,7 @@ export const AlumniCard = ({
       href={`/testimonial/${_id}`}
       className={cn(
         'relative cursor-pointer rounded-lg border w-full p-4',
-        'border-main/20 bg-gradient-to-b from-secondary/30 to-secondary/70'
+        'border-gray-400 bg-gradient-to-b from-white/70 to-white'
       )}
     >
       <div className="flex flex-row items-center gap-2">
@@ -42,7 +42,7 @@ export const AlumniCard = ({
           </p>
         </div>
       </div>
-      <blockquote className="mt-2 text-sm w-full text-left text-main/50">
+      <blockquote className="mt-2 text-sm w-full text-left text-gray-600">
         {testimonial}
       </blockquote>
     </Link>

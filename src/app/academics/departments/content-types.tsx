@@ -59,7 +59,7 @@ export default function ContentTypes({
                       <TableCell>
                         <Badge
                           variant="outline"
-                          className="bg-amber-50 text-[#0b442d]"
+                          className="bg-main/15 text-main"
                         >
                           {course.credits} credits
                         </Badge>
@@ -105,7 +105,7 @@ export default function ContentTypes({
                         <TableCell>
                           <Badge
                             variant="outline"
-                            className="bg-amber-50 text-amber-800"
+                            className="bg-main/15 text-main"
                           >
                             {course.credits} credits
                           </Badge>
@@ -149,7 +149,7 @@ export default function ContentTypes({
                       <TableCell>
                         <Badge
                           variant="outline"
-                          className="bg-amber-50 text-amber-800"
+                          className="bg-main/15 text-main"
                         >
                           {course.credits} credits
                         </Badge>
@@ -193,7 +193,7 @@ export default function ContentTypes({
                       <TableCell>
                         <Badge
                           variant="outline"
-                          className="bg-amber-50 text-amber-800"
+                          className="bg-main/15 text-main"
                         >
                           {course.credits} credits
                         </Badge>

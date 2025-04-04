@@ -71,16 +71,10 @@ const bTechDSAIProgramData: BTechDSAIProgram = {
       recommendedPercentage: 14
     },
     {
-      name: 'Open elective',
+      name: 'Open elective / Projects',
       credits: 40,
       percentageOfTotal: 28.6,
       recommendedPercentage: 27
-    },
-    {
-      name: 'Projects',
-      credits: 10.5,
-      percentageOfTotal: 7.5,
-      recommendedPercentage: 8
     },
     {
       name: 'Humanities and Social Sciences',
