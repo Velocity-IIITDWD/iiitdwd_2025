@@ -21,7 +21,7 @@ export const AlumniCard = ({
       href={`/testimonial/${_id}`}
       className={cn(
         'relative cursor-pointer rounded-lg border w-full p-4',
-        'border-tertiary/20 bg-gradient-to-b from-secondary/10 to-tertiary/30'
+        'border-gray-400 bg-gradient-to-b from-white/70 to-white'
       )}
     >
       <div className="flex flex-row items-center gap-2">
@@ -33,18 +33,16 @@ export const AlumniCard = ({
           alt={name}
         />
         <div className="flex flex-col">
-          <figcaption className="text-sm font-medium text-primary">
+          <figcaption className="text-sm font-medium text-main">
             {name}
           </figcaption>
-          <p className="text-xs font-medium text-secondary text-left">
+          <p className="text-xs font-medium text-main/70 text-left">
             {designation}{' '}
-            <span className="text-secondary pl-4">
-              Batch - {graduationYear}
-            </span>
+            <span className="text-main/70 pl-4">Batch - {graduationYear}</span>
           </p>
         </div>
       </div>
-      <blockquote className="mt-2 text-sm w-full text-left text-gray-500">
+      <blockquote className="mt-2 text-sm w-full text-left text-gray-600">
         {testimonial}
       </blockquote>
     </Link>

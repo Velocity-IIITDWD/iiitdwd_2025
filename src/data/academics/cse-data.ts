@@ -71,13 +71,7 @@ const bTechCSEProgramData: BTechCSEProgram = {
       recommendedPercentage: 14
     },
     {
-      name: 'Open elective',
-      credits: 0,
-      percentageOfTotal: 0,
-      recommendedPercentage: 0
-    },
-    {
-      name: 'Projects',
+      name: 'Open elective / Projects',
       credits: 40,
       percentageOfTotal: 28.6,
       recommendedPercentage: 27

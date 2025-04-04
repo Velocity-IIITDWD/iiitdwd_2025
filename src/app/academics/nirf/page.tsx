@@ -42,7 +42,7 @@ const parameters = [
 export default async function Page() {
   const nirfReports = await get<QueryNirfReportsResult>(queryNirfReports);
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
+    <div className="min-h-screen bg-background">
       <div className="container mx-auto py-10 px-4">
         {/* Hero Section */}
         <div className="text-center mb-12">
@@ -52,7 +52,7 @@ export default async function Page() {
           <h2 className="text-2xl md:text-3xl font-semibold text-primary mb-6">
             National Institutional Ranking Framework
           </h2>
-          <div className="max-w-3xl mx-auto bg-white p-6 rounded-xl shadow-md text-gray-700 leading-relaxed">
+          <div className="max-w-3xl mx-auto bg-white p-6 border rounded-xl shadow-md text-gray-700 leading-relaxed">
             <p className="mb-4">
               The National Institutional Ranking Framework (NIRF) was approved
               by the MHRD and launched by Honourable Minister of Human Resource
@@ -113,7 +113,7 @@ export default async function Page() {
                     onClick={() => setActiveYear(report.year)}
                     className={
                       activeYear === report.year
-                        ? 'bg-primary hover:bg-primary/90'
+                        ? 'bg-main hover:bg-main/90'
                         : ''
                     }
                   >
@@ -164,7 +164,7 @@ export default async function Page() {
             {parameters.map((param, idx) => (
               <Card
                 key={idx}
-                className="shadow-md hover:shadow-lg transition-all duration-300 border-0"
+                className="shadow-md hover:shadow-lg transition-all duration-300 border"
               >
                 <CardHeader className="pb-2">
                   <div className="flex justify-center text-primary mb-2">
@@ -186,13 +186,13 @@ export default async function Page() {
 
         {/* Reports Section */}
         <div className="mb-12">
-          <div className="bg-white p-6 rounded-xl shadow-lg">
+          <div className="bg-white p-6 rounded-xl shadow-lg border">
             <h2 className="text-3xl font-bold text-primary mb-6 text-center">
               NIRF Reports
             </h2>
 
             <Tabs defaultValue="2023" className="w-full">
-              <TabsList className="w-full flex flex-wrap mb-8">
+              <TabsList className="w-full flex flex-wrap mb-8 border">
                 {nirfReports.map((report) => (
                   <TabsTrigger
                     key={report.year}
@@ -215,7 +215,7 @@ export default async function Page() {
                       target="_blank"
                       className="w-full"
                     >
-                      <Button className="w-full bg-primary hover:bg-primary/90 hover:shadow-lg transition-all flex justify-between group">
+                      <Button className="w-full bg-main hover:bg-main/90 hover:shadow-lg transition-all flex justify-between group">
                         <span>NIRF Overall Report {report.year}</span>
                         <FileText className="transition-transform group-hover:scale-110" />
                       </Button>
@@ -226,7 +226,7 @@ export default async function Page() {
                       target="_blank"
                       className="w-full"
                     >
-                      <Button className="w-full bg-primary hover:bg-primary/90 hover:shadow-lg transition-all flex justify-between group">
+                      <Button className="w-full bg-main hover:bg-main/90 hover:shadow-lg transition-all flex justify-between group">
                         <span>NIRF Engineering Report {report.year}</span>
                         <FileText className="transition-transform group-hover:scale-110" />
                       </Button>
@@ -281,7 +281,7 @@ export default async function Page() {
                 </div>
 
                 <div className="text-center max-w-2xl">
-                  <Badge className="mb-4 bg-primary">
+                  <Badge className="mb-4 bg-main">
                     Continuous Improvement
                   </Badge>
                   <p className="text-gray-600">

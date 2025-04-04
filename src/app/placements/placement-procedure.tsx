@@ -58,12 +58,12 @@ const TimelineStep = ({ step, index }: { step: StepType; index: number }) => {
         initial="hidden"
         animate={isVisible ? 'visible' : 'hidden'}
         variants={fadeInUp}
-        className="bg-white p-4 inline-flex items-center"
+        className="bg-background p-4 inline-flex items-center"
       >
-        <div className="bg-amber-50 border rounded-full p-3 mr-4">
+        <div className="bg-main/10 border rounded-full p-3 mr-4">
           {step.icon}
         </div>
-        <span className="font-medium">{step.iconLabel}</span>
+        <span className="font-medium text-main">{step.iconLabel}</span>
       </motion.div>
     </Card>
   );
@@ -74,7 +74,7 @@ const TimelineStep = ({ step, index }: { step: StepType; index: number }) => {
       className="relative mb-10 md:mb-16 grid max-md:grid-rows-3 items-center max-md:gap-5 md:grid-cols-[1fr_48px_1fr]"
     >
       <div
-        className={`w-full text-center max-md:order-2 max-md:bg-white ${
+        className={`w-full text-center max-md:order-2 max-md:bg-background ${
           index % 2 === 0
             ? 'order-0 pr-0 md:pr-8 md:text-right'
             : 'order-2 pl-0 md:pl-8 md:text-left'
@@ -188,7 +188,7 @@ const PlacementProcedure = () => {
 
       <div className="relative">
         {/* Vertical timeline line */}
-        <div className="absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-0.5 bg-gray-200"></div>
+        <div className="absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-0.5 bg-main/50"></div>
 
         {/* Timeline steps */}
         {steps.map((step, index) => (
@@ -210,7 +210,7 @@ const PlacementProcedure = () => {
           >
             <Award className="text-white" size={20} />
           </motion.div>
-          <div className="text-center bg-white max-w-md mx-auto px-4">
+          <div className="text-center bg-background max-w-md mx-auto px-4">
             <h3 className="text-xl font-bold mb-3 text-main">
               Placement Procedure Ends
             </h3>

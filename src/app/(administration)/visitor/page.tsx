@@ -1,22 +1,22 @@
 import { Badge } from '@/components/ui/badge';
 import { Card } from '@/components/ui/card';
-import { MapPin, Phone, Printer } from 'lucide-react';
+import { MapPin } from 'lucide-react';
 import Image from 'next/image';
 
 export default function PresidentialVisitor() {
   return (
-    <div className="bg-gray-50 p-4 md:p-8 flex flex-col items-center justify-center">
+    <div className="bg-background p-4 md:p-8 flex flex-col items-center justify-center">
       <div className="w-full max-w-4xl">
         <div className="text-center mb-8">
-          <h1 className="text-2xl md:text-4xl font-bold text-gray-900 mb-2">
+          <h1 className="text-2xl md:text-4xl font-bold text-main mb-2">
             Distinguished Visitor
           </h1>
-          <div className="h-1 w-24 bg-primary mx-auto"></div>
+          <div className="h-1 w-24 bg-main mx-auto"></div>
         </div>
 
         <Card className="overflow-hidden border-none shadow-xl bg-white p-0 ">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="md:col-span-1 bg-primary/90 p-6 flex flex-col items-center justify-center">
+            <div className="md:col-span-1 bg-main p-6 flex flex-col items-center justify-center">
               <div className="relative w-48 h-48 md:w-full md:h-64 mb-4">
                 <div className="absolute inset-0 rounded-full border-4 border-white shadow-lg overflow-hidden">
                   <Image
@@ -38,7 +38,7 @@ export default function PresidentialVisitor() {
                 <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-1">
                   Smt. Droupadi Murmu
                 </h2>
-                <p className="text-lg md:text-xl text-blue-800 font-medium">
+                <p className="text-lg md:text-xl text-main font-medium">
                   The Hon&apos;ble President of India
                 </p>
                 <p className="text-base text-gray-600 mt-4 italic">

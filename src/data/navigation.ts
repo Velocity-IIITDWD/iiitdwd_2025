@@ -76,7 +76,7 @@ const navigationData: NavigationItem[] = [
         title: 'Building & Works Committee',
         href: '/governing-bodies/building'
       },
-      { title: 'Registrar', href: '/registrar' },
+      // { title: 'Registrar', href: '/registrar' },
       { title: 'Deans', href: '/deans' },
       { title: 'Head of Departments', href: '/hods' },
       {
@@ -129,9 +129,9 @@ const navigationData: NavigationItem[] = [
           { title: 'Cultural club', href: '/student-life/clubs/cultural' }
         ]
       },
-      { title: 'NSS', href: '/student-life/nss' },
-      { title: 'NCC', href: '/student-life/ncc' },
-      { title: 'Sports and games', href: '/student-life/sports' },
+      // { title: 'NSS', href: '/student-life/nss' },
+      // { title: 'NCC', href: '/student-life/ncc' },
+      // { title: 'Sports and games', href: '/student-life/sports' },
       {
         title: 'Anti ragging',
         href: 'https://iiitdwd.ac.in/docs/Anti_Ragging_Information.pdf'

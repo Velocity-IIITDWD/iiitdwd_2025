@@ -43,7 +43,7 @@ function TabsContentContent({ tabsData: tabsData }: TabsContentContentProps) {
       {tabsData.map(({ name, data }) => (
         <TabsContent value={name} key={name}>
           <Table>
-            <TableHeader className="bg-primary">
+            <TableHeader className="bg-main">
               <TableRow>
                 <TableHead className="text-white">No.</TableHead>
                 <TableHead className="text-white">Details</TableHead>
@@ -60,12 +60,14 @@ function TabsContentContent({ tabsData: tabsData }: TabsContentContentProps) {
               {data.map((tender, index) => (
                 <TableRow
                   key={index}
-                  className={index % 2 === 0 ? 'bg-secondary/8' : 'bg-white'}
+                  className={
+                    index % 2 === 0 ? 'bg-secondary/10' : 'bg-secondary/30'
+                  }
                 >
                   <TableCell>{index + 1}.</TableCell>
                   <TableCell>
                     <div className="flex flex-col gap-2">
-                      <span>{tender.title}</span>
+                      <span className="text-main">{tender.title}</span>
                       <div className="flex gap-x-3 gap-y-2 font-normal flex-wrap">
                         {tender.documents?.map((doc, index) => (
                           <span className="inline-block underline" key={index}>
@@ -162,7 +164,7 @@ export default function Tenders({ active, archive }: TendersProps) {
   ];
 
   return (
-    <section className="flex flex-col w-full px-6 md:px-20">
+    <section className="flex flex-col w-full px-4 md:px-8 container mx-auto">
       <h1 className="heading-text">Tenders</h1>
       <div className="flex w-full">
         <TabData

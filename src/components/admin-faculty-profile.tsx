@@ -62,7 +62,7 @@ export function AdminFacultyProfileGrid({
   highlightPosition?: boolean;
 }) {
   return (
-    <div className="px-6 md:px-20">
+    <div className="px-4 md:px-8 container mx-auto">
       <div
         className={`grid grid-cols-1 ${
           gridCols > 1 ? 'lg:grid-cols-2 gap-6' : ''

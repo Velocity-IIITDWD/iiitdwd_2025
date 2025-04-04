@@ -8,7 +8,7 @@ export default function HeroSection() {
         <div className="h-full flex flex-col lg:block">
           <div className="relative lg:absolute left-0 top-0 w-full lg:w-[60%] h-auto lg:h-full z-10 flex items-center p-8 lg:p-0">
             <div className="max-w-xl mx-auto lg:mx-0 lg:ml-12 xl:ml-24 space-y-8">
-              <div className="inline-block bg-black px-5 py-2 rounded-full">
+              <div className="inline-block bg-main px-5 py-2 rounded-full">
                 <span className="text-white font-medium text-sm tracking-wide">
                   LIFE AT IIIT DHARWAD
                 </span>

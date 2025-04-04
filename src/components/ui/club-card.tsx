@@ -75,7 +75,7 @@ export function ClubCard({
           }
         }}
       >
-        <Card className="overflow-hidden border-0 shadow-lg transition-all duration-300 group-hover:shadow-2xl bg-white">
+        <Card className="overflow-hidden p-0 border shadow-lg transition-all duration-300 group-hover:shadow-2xl bg-white">
           <div className="relative h-48 w-full overflow-hidden">
             <Image
               src={imageUrl}
