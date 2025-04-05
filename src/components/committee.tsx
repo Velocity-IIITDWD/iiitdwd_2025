@@ -29,10 +29,10 @@ export function ProfileCard({ title, content, imageURL }: ProfileCardProps) {
         />
       </div>
       <div className="px-4 py-6 text-left w-full">
-        <h3 className="text-xl font-bold text-main mb-1">{title || ''}</h3>
+        <h3 className="text-title-2 font-bold text-main mb-1">{title || ''}</h3>
         <div className="space-y-1">
           {content?.map((line, index) => (
-            <p key={index} className="text-gray-600 text-sm">
+            <p key={index} className="text-gray-600 text-body font-normal">
               {line}
             </p>
           ))}

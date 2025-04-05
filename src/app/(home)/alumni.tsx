@@ -54,7 +54,7 @@ export default function AlumniSection() {
   return (
     <div className="relative">
       <div className="z-[2] relative py-10 w-full flex flex-col items-center">
-        <div className="mt-4 w-full text-primary text-center px-2 max-sm:px-4 font-semibold text-[clamp(1.5rem,4vw,2.6rem)] leading-[1.3]">
+        <div className="mt-4 w-full text-primary text-center px-2 max-sm:px-4 font-semibold text-large-title">
           <h1 className="">Explore inspiring journeys and achievements</h1>
           <h2>from our thriving alumni community.</h2>
         </div>

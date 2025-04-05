@@ -17,7 +17,7 @@ export default function SectionHeading({
         className={cn(
           'uppercase font-semibold z-[1] before:-z-[1] -top-[2px] w-fit rounded-full',
           reverse ? 'text-amber-50 bg-main' : 'text-white bg-main',
-          'before:w-[calc(100%+10px)] px-6 py-2 relative'
+          'before:w-[calc(100%+10px)] px-6 py-2 relative mb-6'
         )}
       >
         {title}

@@ -15,13 +15,13 @@ const HigherStudiesContact = () => {
       {/* Higher Studies Section */}
       <div id="higher-studies" className="mb-12">
         <Card className="shadow-lg border-main border overflow-hidden">
-          <CardHeader className="bg-main text-white">
+          <CardHeader className="bg-main text-white py-2 gap-0">
             <CardTitle className="text-2xl text-white font-bold">
               Higher Studies
             </CardTitle>
           </CardHeader>
-          <CardContent className="pt-6 pb-4 text-gray-500">
-            <p className="text-lg">
+          <CardContent className="pb-4 text-gray-500">
+            <p className="text-title-3">
               The institute helps students create a strong base that helps them
               accelerate their academic development, enabling them to pursue
               higher studies in top institutes in the country and abroad.
@@ -32,8 +32,8 @@ const HigherStudiesContact = () => {
 
       {/* Contact Section */}
       <div id="contact">
-        <h2 className="text-3xl font-bold text-main mb-6">Contact</h2>
-        <p className="mb-8 text-lg">
+        <h2 className="text-large-title font-bold text-main mb-6">Contact</h2>
+        <p className="mb-8 text-title-3">
           For any inquiries or if you would like to participate in recruitment
           activities at IIIT Dharwad, please contact the Career Guidance Cell
           (CGC) via email at{' '}
@@ -64,14 +64,14 @@ const HigherStudiesContact = () => {
                     MV
                   </AvatarFallback>
                 </Avatar>
-                <div>
-                  <h3 className="font-semibold text-lg">
+                <div className="text-title-3">
+                  <h3 className="font-semibold text-main text-title-2">
                     Dr. Manjunath K Vanahalli
                   </h3>
                   <p className="text-gray-600">Asst. Professor</p>
-                  <div className="flex items-center mt-2 text-main ">
+                  <div className="flex items-center mt-2 text-main">
                     <Mail className="h-4 w-4 mr-2" />
-                    <Link href="mailto:cgc@iiitdwd.ac.in">
+                    <Link href="mailto:cgc@iiitdwd.ac.in" className="text-body">
                       cgc@iiitdwd.ac.in
                     </Link>
                   </div>
@@ -93,28 +93,38 @@ const HigherStudiesContact = () => {
                     UD
                   </AvatarFallback>
                 </Avatar>
-                <div>
-                  <h3 className="font-semibold text-lg">Mr. Ujwal Doddamani</h3>
-                  <div className="flex items-center mt-2 text-main ">
+                <div className="text-title-3">
+                  <h3 className="font-semibold text-main text-title-2">
+                    Mr. Ujwal Doddamani
+                  </h3>
+                  <div className="flex items-center mt-2 text-main">
                     <Mail className="h-4 w-4 mr-2" />
-                    <Link href="mailto:cgcoffice@iiitdwd.ac.in">
+                    <Link
+                      href="mailto:cgcoffice@iiitdwd.ac.in"
+                      className="text-body"
+                    >
                       cgcoffice@iiitdwd.ac.in
                     </Link>
                   </div>
-                  <div className="flex items-center mt-1 text-main ">
+                  <div className="flex items-center mt-1 text-main">
                     <Mail className="h-4 w-4 mr-2" />
-                    <Link href="mailto:ujwal@iiitdwd.ac.in">
+                    <Link
+                      href="mailto:ujwal@iiitdwd.ac.in"
+                      className="text-body"
+                    >
                       ujwal@iiitdwd.ac.in
                     </Link>
                   </div>
-                  <div className="flex items-center mt-1 text-main ">
+                  <div className="flex items-center mt-1 text-main">
                     <Phone className="h-4 w-4 mr-2" />
-                    <Link href="tel:+919886376600">+91 9886376600</Link>
+                    <Link href="tel:+919886376600" className="text-body">
+                      +91 9886376600
+                    </Link>
                   </div>
                 </div>
               </div>
             </CardContent>
-            <CardFooter className="pt-0 text-sm text-gray-600">
+            <CardFooter className="pt-0 !text-subheadline text-gray-600">
               Feel free to reach out to Mr. Ujwal Doddamani for further
               assistance.
             </CardFooter>

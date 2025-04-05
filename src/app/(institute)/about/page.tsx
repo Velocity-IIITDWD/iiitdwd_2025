@@ -21,21 +21,21 @@ export default function AboutPage() {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/30" />
 
-        <div className="z-[2] px-4 md:px-8 container mx-auto flex flex-col gap-3 text-white">
+        <div className="z-[2] w-[87.5vw] max-w-[1680px] mx-auto flex flex-col gap-3 text-white">
           <SectionHeading reverse title="About Us" free />
-          <div className="font-semibold leading-[1.1] text-[clamp(2rem,10vw,3.5rem)]">
+          <div className="font-semibold text-main-title">
             Shaping the Future of Technology
           </div>
-          <div className="text-[clamp(1.5rem,5vw,1.5rem)] text-slate-200">
+          <div className="text-title-1 font-medium text-slate-200">
             Empowering the next generation of innovators and leaders in
             Information Technology.
           </div>
         </div>
       </div>
 
-      <div className="bg-white py-4">
-        <div className="px-4 md:px-8 container mx-auto">
-          <nav className="flex items-center text-sm md:text-base">
+      <div className="bg-white py-4 text-title-3 font-medium">
+        <div className="w-[87.5vw] max-w-[1680px] mx-auto">
+          <nav className="flex items-center text-title-3">
             <Link href="/" className="text-gray-700 hover:text-gray-900">
               Home
             </Link>
@@ -45,7 +45,7 @@ export default function AboutPage() {
                 Institute
               </span>
               <ChevronRight className="h-4 w-4 mx-1 text-gray-400" />
-              <span className="text-primary font-medium">About Us</span>
+              <span className="text-main font-semibold">About Us</span>
             </div>
           </nav>
         </div>
@@ -56,7 +56,7 @@ export default function AboutPage() {
       {/* https://www.youtube.com/embed/_QLrIgjopCg?si=GrjaKptEy4LEp2uW&autoplay=0 */}
       <div className="w-full bg-background py-10">
         <iframe
-          className="aspect-video px-4 md:px-8 container mx-auto w-full rounded overflow-hidden"
+          className="aspect-video w-[87.5vw] max-w-[1680px] mx-auto rounded overflow-hidden"
           src={
             'https://www.youtube.com/embed/_QLrIgjopCg?si=GrjaKptEy4LEp2uW&autoplay=0'
           }

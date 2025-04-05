@@ -1,5 +1,4 @@
 'use client';
-import SectionHeading from '@/components/layout/section-heading';
 import { Card, CardContent } from '@/components/ui/card';
 import {
   Carousel,
@@ -115,12 +114,10 @@ export default function NotificationSection() {
 
   return (
     <div className="max-w-7xl mx-auto mb-10 px-4 py-8">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {/* News Section */}
-        <div className="relative">
+      {/* News Section */}
+      {/* <div className="relative">
           <SectionHeading title="News and Updates" />
 
-          {/* First show pinned items in a 2-row grid */}
           <div className="grid grid-cols-1 gap-4 mb-4">
             {pinnedNewsItems.map((item) => (
               <div key={item.id}>
@@ -134,8 +131,6 @@ export default function NotificationSection() {
               </div>
             ))}
           </div>
-
-          {/* Then infinite scroll carousel for remaining items */}
           <Carousel
             className="w-full mt-4"
             plugins={[
@@ -174,67 +169,68 @@ export default function NotificationSection() {
               </div>
             </div>
           </Carousel>
-        </div>
+        </div> */}
 
-        {/* Announcements Section */}
-        <div className="relative">
-          <SectionHeading title="Announcements" />
-
-          {/* First show pinned items in a 2-row grid */}
-          <div className="grid grid-cols-1 gap-4 mb-4">
-            {pinnedAnnouncementItems.map((item) => (
-              <div key={item.id}>
-                <div className="text-gray-500 mb-1">{item.date}</div>
-                <div className="flex items-start">
-                  <span className="text-green-500 mr-2 mt-1">📌</span>
-                  <h3 className="text-gray-700 font-medium hover:text-blue-600 cursor-pointer">
-                    {item.title}
-                  </h3>
-                </div>
+      {/* Announcements Section */}
+      <div className="relative">
+        {/* First show pinned items in a 2-row grid */}
+        <div className="grid grid-cols-1 gap-4 mb-4">
+          {pinnedAnnouncementItems.map((item) => (
+            <div key={item.id}>
+              <div className="text-gray-500 mb-1 text-body text-left">
+                {item.date}
               </div>
-            ))}
-          </div>
-
-          {/* Then infinite scroll carousel for remaining items */}
-          <Carousel
-            className="w-full mt-4"
-            plugins={[
-              Autoplay({
-                delay: 3000
-              })
-            ]}
-          >
-            <CarouselContent>
-              {regularAnnouncementItems.map((item, index) => (
-                <CarouselItem key={index}>
-                  <div className="p-1">
-                    <Card className="border-none shadow-none py-0">
-                      <CardContent className="flex flex-col px-2">
-                        <div className="text-gray-500 mb-1">{item.date}</div>
-                        <h3 className="text-gray-700 font-medium hover:text-blue-600 cursor-pointer">
-                          {item.title}
-                        </h3>
-                      </CardContent>
-                    </Card>
-                  </div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-
-            <div className="flex justify-between items-center mt-6">
-              <a
-                href="#"
-                className="text-blue-600 hover:underline flex items-center"
-              >
-                View all Announcements <span className="ml-2">→</span>
-              </a>
-              <div className="flex space-x-2">
-                <CarouselPrevious className="relative left-0 !top-0 !translate-none" />
-                <CarouselNext className="relative right-0 !top-0 !translate-none" />
+              <div className="flex items-start">
+                <span className="text-green-500 mr-2 mt-1">📌</span>
+                <h3 className="text-gray-700 text-title-3 font-medium hover:text-blue-600 cursor-pointer">
+                  {item.title}
+                </h3>
               </div>
             </div>
-          </Carousel>
+          ))}
         </div>
+
+        {/* Then infinite scroll carousel for remaining items */}
+        <Carousel
+          className="w-full mt-4"
+          plugins={[
+            Autoplay({
+              delay: 3000
+            })
+          ]}
+        >
+          <CarouselContent>
+            {regularAnnouncementItems.map((item, index) => (
+              <CarouselItem key={index}>
+                <div className="p-1">
+                  <Card className="border-none shadow-none py-0">
+                    <CardContent className="flex flex-col px-2 text-left">
+                      <div className="text-gray-500 mb-1 text-body">
+                        {item.date}
+                      </div>
+                      <h3 className="text-gray-700 text-title-3 font-medium hover:text-blue-600 cursor-pointer">
+                        {item.title}
+                      </h3>
+                    </CardContent>
+                  </Card>
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+
+          <div className="flex justify-between items-center mt-6">
+            <a
+              href="#"
+              className="text-blue-600 hover:underline flex text-body items-center"
+            >
+              View all Announcements <span className="ml-2">→</span>
+            </a>
+            <div className="flex space-x-2">
+              <CarouselPrevious className="relative left-0 !top-0 !translate-none" />
+              <CarouselNext className="relative right-0 !top-0 !translate-none" />
+            </div>
+          </div>
+        </Carousel>
       </div>
     </div>
   );

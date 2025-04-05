@@ -134,7 +134,7 @@ export default function DesktopHeader() {
       ))}
 
       <button
-        className="text-gray-600 hover:text-primary rounded-full bg-tertiary/20 px-2 py-1 flex items-center text-sm cursor-pointer"
+        className="text-gray-600 hover:text-primary rounded-full bg-tertiary/20 px-2 py-1 flex items-center text-body cursor-pointer"
         onClick={() => {
           query.toggle();
         }}

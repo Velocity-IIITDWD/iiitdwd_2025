@@ -38,11 +38,12 @@ const TimelineStep = ({ step, index }: { step: StepType; index: number }) => {
       initial="hidden"
       animate={isVisible ? 'visible' : 'hidden'}
       variants={fadeInUp}
+      className="text-title-3"
     >
-      <h3 className="text-xl font-bold mb-3 text-main">{step.title}</h3>
+      <h3 className="text-title-1 font-bold mb-3 text-main">{step.title}</h3>
       <p className="text-gray-600">{step.description}</p>
       {step.listItems && (
-        <ul className="text-gray-600 list-disc mt-2">
+        <ul className="text-gray-600 list-disc mt-2 text-right">
           {step.listItems.map((item, i) => (
             <li key={i}>{item}</li>
           ))}
@@ -58,12 +59,14 @@ const TimelineStep = ({ step, index }: { step: StepType; index: number }) => {
         initial="hidden"
         animate={isVisible ? 'visible' : 'hidden'}
         variants={fadeInUp}
-        className="bg-background p-4 inline-flex items-center"
+        className="bg-white p-4 inline-flex items-center"
       >
         <div className="bg-main/10 border rounded-full p-3 mr-4">
           {step.icon}
         </div>
-        <span className="font-medium text-main">{step.iconLabel}</span>
+        <span className="font-medium text-title-2 text-main">
+          {step.iconLabel}
+        </span>
       </motion.div>
     </Card>
   );
@@ -71,7 +74,7 @@ const TimelineStep = ({ step, index }: { step: StepType; index: number }) => {
   return (
     <div
       ref={ref}
-      className="relative mb-10 md:mb-16 grid max-md:grid-rows-3 items-center max-md:gap-5 md:grid-cols-[1fr_48px_1fr]"
+      className="relative mb-10 md:mb-16 grid max-md:grid-rows-3 w-full items-center max-md:gap-5 md:grid-cols-[1fr_48px_1fr]"
     >
       <div
         className={`w-full text-center max-md:order-2 max-md:bg-background ${
@@ -119,37 +122,43 @@ const PlacementProcedure = () => {
     },
     {
       id: 2,
-      title: 'CGC Chairman',
+      title: 'Company Workflow',
       description:
-        'The CGC Chairman provides SRF (Student Recruitment Form) through the web portal.',
+        'The company submits Job description, job details, and campus visit dates.',
       icon: <UserCheck className="text-main" size={24} />,
       iconLabel: 'Company Workflow'
     },
     {
       id: 3,
-      title: 'Company/Organization',
-      description:
-        'The company submits SRF, job description, job details, and campus visit dates.',
+      title: 'Company Details Submission',
+      description: 'Pre placement talk is conducted.',
       icon: <Building className="text-main" size={24} />,
       iconLabel: 'Company Details Submission'
     },
     {
       id: 4,
-      title: 'PPT & Interviews',
+      title: 'Assessments',
       description:
-        'Companies conduct presentations and interviews on campus during their scheduled visit.',
+        'Online/Offline test, GDs, interviews are conducted as per the mutually agreed dates by the institute and the company.',
       icon: <Calendar className="text-main" size={24} />,
-      iconLabel: 'Campus Visit'
+      iconLabel: 'Assessments'
     },
     {
       id: 5,
-      title: 'Selected Students List',
+      title: 'Selection Announcement',
       description: 'Companies provide a list of selected students to the CGC.',
       icon: <Users className="text-main" size={24} />,
       iconLabel: 'Selection Announcement'
     },
     {
       id: 6,
+      title: 'Campus Visit',
+      description: 'Selected Students List.',
+      icon: <Users className="text-main" size={24} />,
+      iconLabel: 'Campus Visit'
+    },
+    {
+      id: 7,
       title: 'Result Declaration',
       description: 'Results are declared in two ways:',
       icon: <FileText className="text-main" size={24} />,
@@ -166,24 +175,16 @@ const PlacementProcedure = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
-      className="pt-20 pb-16 container mx-auto px-4"
+      className="pt-20 pb-16 w-[87.5vw] max-w-[1680px] mx-auto"
       id="placement-procedure"
     >
       <motion.h1
         initial={{ y: -30 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.6, type: 'spring', stiffness: 100 }}
-        className="text-4xl md:text-5xl font-bold text-center text-primary mb-16 relative"
+        className="text-main-title font-bold text-center text-primary mb-16 relative"
       >
-        <span className="relative inline-block">
-          PLACEMENT PROCEDURE
-          <motion.div
-            initial={{ width: 0 }}
-            animate={{ width: '100%' }}
-            transition={{ delay: 0.8, duration: 0.6 }}
-            className="absolute h-1 bg-main bottom-0 left-0"
-          />
-        </span>
+        <span className="relative inline-block">PLACEMENT PROCEDURE</span>
       </motion.h1>
 
       <div className="relative">
@@ -211,7 +212,7 @@ const PlacementProcedure = () => {
             <Award className="text-white" size={20} />
           </motion.div>
           <div className="text-center bg-background max-w-md mx-auto px-4">
-            <h3 className="text-xl font-bold mb-3 text-main">
+            <h3 className="text-title-1 font-bold mb-3 text-main">
               Placement Procedure Ends
             </h3>
             <p className="text-gray-600">
@@ -230,9 +231,9 @@ const PlacementProcedure = () => {
         transition={{ duration: 0.6, delay: 0.7 }}
         className="mt-24"
       >
-        <Card className="shadow-lg">
+        <Card className="shadow-lg !bg-white">
           <CardHeader>
-            <CardTitle className="text-2xl font-bold text-center text-main">
+            <CardTitle className="font-bold text-title-1 text-center text-main">
               Result Declaration Options
             </CardTitle>
           </CardHeader>
@@ -240,24 +241,28 @@ const PlacementProcedure = () => {
             <div className="grid md:grid-cols-2 gap-8">
               <div className="border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow">
                 <div className="flex items-center mb-4">
-                  <div className="bg-amber-50 p-3 border rounded-full mr-4">
+                  <div className="bg-main/10 p-3 border rounded-full mr-4">
                     <Presentation className="text-main" size={24} />
                   </div>
-                  <h4 className="text-xl font-semibold">Same Day Result</h4>
+                  <h4 className="text-title-1 text-main font-semibold">
+                    Same Day Result
+                  </h4>
                 </div>
-                <p className="text-gray-600">
+                <p className="text-gray-600 text-title-3 font-normal">
                   Companies that provide immediate results directly issue offer
                   letters to selected students on the same day of interviews.
                 </p>
               </div>
               <div className="border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow">
                 <div className="flex items-center mb-4">
-                  <div className="bg-amber-50 p-3 border rounded-full mr-4">
+                  <div className="bg-main/10 p-3 border rounded-full mr-4">
                     <Building className="text-main" size={24} />
                   </div>
-                  <h4 className="text-xl font-semibold">Delayed Result</h4>
+                  <h4 className="text-title-1 text-main font-semibold">
+                    Delayed Result
+                  </h4>
                 </div>
-                <p className="text-gray-600">
+                <p className="text-gray-600 text-title-3 font-normal">
                   Some companies declare results later. In such cases, offer
                   letters are distributed through the CGC to the selected
                   students.

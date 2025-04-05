@@ -1,6 +1,6 @@
 'use client';
 
-import Logo from '@/assets/layout/Logo1.png';
+import Logo from '@/assets/layout/Logo.webp';
 import { Mail, Menu, X } from 'lucide-react';
 import {
   AnimatePresence,
@@ -57,7 +57,7 @@ function AnimatedNavbar() {
     <>
       <div
         id="top-bar"
-        className="bg-primary text-slate-400 z-50 text-xs w-full flex justify-between max-md:justify-end px-4 md:px-8 py-2"
+        className="bg-primary text-slate-400 z-50 text-callout w-full flex justify-between max-md:justify-end px-4 md:px-8 py-2"
       >
         <div className="max-md:hidden">
           <a
@@ -128,7 +128,7 @@ function AnimatedNavbar() {
         </div>
 
         <motion.div
-          className="absolute right-2 flex flex-col max-xl:hidden w-fit text-center text-primary md:text-right"
+          className="absolute right-4 flex flex-col max-xl:hidden w-fit text-center text-primary md:text-right"
           variants={textVariants}
           animate={isScrolled ? 'scrolled' : 'initial'}
           transition={{
@@ -137,16 +137,16 @@ function AnimatedNavbar() {
             bounce: 0.1
           }}
         >
-          <span className="text-xs md:text-sm">
+          <span className="text-title-3 font-normal mb-[2px]">
             ಭಾರತೀಯ ಮಾಹಿತಿ ತಂತ್ರಜ್ಞಾನ ಸಂಸ್ಥೆ, ಧಾರವಾಡ
           </span>
-          <span className="text-xs md:text-sm">
+          <span className="text-title-3 font-normal">
             भारतीय सूचना प्रौद्योगिकी संस्थान, धारवाड़
           </span>
-          <span className="text-xs md:text-sm font-medium">
+          <span className="text-title-3 font-medium">
             Indian Institute of Information Technology, Dharwad
           </span>
-          <div className="text-xs font-light">
+          <div className="text-callout font-light">
             [Institute of National Importance by An Act of Parliament]
           </div>
         </motion.div>

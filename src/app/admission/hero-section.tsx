@@ -10,7 +10,7 @@ const JumpLink = (props: jumpLinksProps) => {
   return (
     <li className="w-fit max-md:w-full">
       <Link
-        className="px-4 rounded uppercase w-full flex justify-center text-sm font-bold py-2 bg-secondary text-main"
+        className="px-4 rounded uppercase w-full flex justify-center text-body font-bold py-2 bg-secondary text-main"
         href={`/admission/#${props?.link}`}
       >
         {props?.title}
@@ -21,12 +21,12 @@ const JumpLink = (props: jumpLinksProps) => {
 
 export default function HeroSection() {
   return (
-    <div className="z-[2] container px-4 text-center md:px-8 mx-auto h-full items-center justify-center flex flex-col gap-3 text-white">
+    <div className="z-[2] w-[87.5vw] max-w-[1680px] mx-auto text-center h-full items-center justify-center flex flex-col gap-3 text-white">
       <SectionHeading className="w-fit" reverse title="About Us" free />
-      <div className="font-semibold leading-[1.1] text-[clamp(1.7rem,10vw,4rem)] max-w-5xl text-center">
+      <div className="font-bold text-main-title max-w-5xl text-center">
         See Where One Small Step Can Take You
       </div>
-      <div className="text-base md:text-xl max-w-4xl text-white">
+      <div className="text-title-2 font-medium max-w-4xl text-white">
         We&apos;re here to help you learn more about becoming a Boilermaker —
         from admissions and exploring majors and programs to finding information
         about tuition reviews. Every part of the process is explained.

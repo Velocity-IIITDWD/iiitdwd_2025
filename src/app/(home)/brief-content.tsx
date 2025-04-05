@@ -1,12 +1,7 @@
 import { BentoGrid, BentoGridItem } from '@/components/ui/bento-grid';
 import { IconTableColumn, IconTrendingUp } from '@tabler/icons-react';
-import {
-  Check,
-  GraduationCap,
-  Handshake,
-  Lightbulb,
-  Telescope
-} from 'lucide-react';
+import { Check, Handshake, Lightbulb, Telescope } from 'lucide-react';
+import NotificationSection from './notification';
 
 export default function BriefContent() {
   const items = [
@@ -40,18 +35,10 @@ export default function BriefContent() {
       titleClassName: 'text-white'
     },
     {
-      title: 'Discover and Explore',
-      content1:
-        "Explore our vibrant campus in North Karnataka's educational hub with state-of-the-art facilities and dynamic student community.",
-      className: 'col-span-6 xl:col-span-3',
+      title: 'Notifications',
+      content1: <NotificationSection />,
+      className: 'col-span-6 md:col-span-12 xl:col-span-6 text-left',
       icon: <Telescope className="h-4 w-4 text-neutral-500" />
-    },
-    {
-      title: 'Join Us',
-      content1:
-        'Join IIIT Dharwad, an Institute of National Importance offering programs in Computer Science, Electronics & Communication Engineering, and Data Science.',
-      className: 'col-span-6 xl:col-span-3',
-      icon: <GraduationCap className="h-4 w-4 text-neutral-500" />
     },
     {
       title: 'Collaborations & MoUs',
@@ -89,20 +76,20 @@ export default function BriefContent() {
       content2: (
         <ul className="max-w-[300px] text-primary grid grid-cols-2 gap-4">
           <li>
-            <strong>98%</strong>
-            <div className="text-xs text-gray-400">Placement Rate</div>
+            <strong className="text-title-2">98%</strong>
+            <div className="text-callout text-gray-400">Placement Rate</div>
           </li>
           <li>
-            <strong>₹12 LPA</strong>
-            <div className="text-xs text-gray-400">Highest Package</div>
+            <strong className="text-title-2">₹12 LPA</strong>
+            <div className="text-callout text-gray-400">Highest Package</div>
           </li>
           <li>
-            <strong>₹7 LPA</strong>
-            <div className="text-xs text-gray-400">Average Package</div>
+            <strong className="text-title-2">₹7 LPA</strong>
+            <div className="text-callout text-gray-400">Average Package</div>
           </li>
           <li>
-            <strong>50+</strong>
-            <div className="text-xs text-gray-400">Top Recruiters</div>
+            <strong className="text-title-2">50+</strong>
+            <div className="text-callout text-gray-400">Top Recruiters</div>
           </li>
         </ul>
       ),

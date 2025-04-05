@@ -76,9 +76,9 @@ const navigationData: NavigationItem[] = [
         title: 'Building & Works Committee',
         href: '/governing-bodies/building'
       },
-      // { title: 'Registrar', href: '/registrar' },
       { title: 'Deans', href: '/deans' },
       { title: 'Head of Departments', href: '/hods' },
+      { title: 'Staff', href: '/staff' },
       {
         title: 'Career Guidance Cell',
         href: '/cgc',
@@ -117,7 +117,11 @@ const navigationData: NavigationItem[] = [
     title: 'Student life',
     href: '/student-life',
     items: [
-      { title: 'Overview', href: '/student-life/overview' },
+      {
+        title: 'Overview',
+        href: '/student-life/overview',
+        meta: { disableLayout: true }
+      },
       { title: 'Hostel', href: '/student-life/hostel' },
       {
         title: 'IIC and Clubs',

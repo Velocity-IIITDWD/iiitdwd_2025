@@ -11,17 +11,31 @@ import {
 } from '@/components/ui/select';
 import { QueryFacultyResult } from '@/sanity/types';
 import { Filter, Search, X } from 'lucide-react';
-import { useEffect, useState } from 'react';
+import { useSearchParams } from 'next/navigation';
+import { Suspense, useCallback, useEffect, useState } from 'react';
+
+// Wrapper component for search params with proper typing
+function SearchParamsWrapper({
+  onParamsChange
+}: {
+  onParamsChange: (param: string | null) => void;
+}) {
+  const searchParams = useSearchParams();
+  const departmentParam = searchParams.get('department');
+
+  useEffect(() => {
+    onParamsChange(departmentParam);
+  }, [departmentParam, onParamsChange]);
+
+  return null;
+}
 
 function FacultySearchPage({
   facultyData
 }: {
   facultyData: QueryFacultyResult;
 }) {
-  const [searchQuery, setSearchQuery] = useState('');
-  const [selectedDepartment, setSelectedDepartment] = useState('all');
-  const [filteredFaculty, setFilteredFaculty] =
-    useState<QueryFacultyResult>(facultyData);
+  const [departmentParam, setDepartmentParam] = useState<string | null>(null);
 
   // Extract unique departments from faculty data
   const departments = [
@@ -32,6 +46,60 @@ function FacultySearchPage({
         .filter(Boolean)
     )
   ];
+
+  // Department abbreviation to full name mapping
+  const departmentMapping: Record<string, string> = {
+    cse: 'Computer Science & Engineering',
+    ece: 'Electronics and Communication Engineering',
+    dsai: 'Data Science and Artificial Intelligence',
+    arts: 'Department of Arts, Science, and Design'
+    // Add more mappings as needed
+  };
+
+  // Find the full department name based on URL parameter
+  const getDepartmentFromParam = (param: string | null): string => {
+    if (!param) return 'all';
+
+    const paramLower = param.toLowerCase();
+
+    // First check if the abbreviation matches our mapping
+    if (paramLower in departmentMapping) {
+      // Find the actual department that matches this mapping
+      const targetFullName = departmentMapping[paramLower];
+      const matchingDept = departments.find(
+        (dept) => dept.toLowerCase() === targetFullName.toLowerCase()
+      );
+      if (matchingDept) return matchingDept;
+    }
+
+    // If no match in mapping, check if it directly matches a department name
+    const directMatch = departments.find((dept) =>
+      dept.toLowerCase().includes(paramLower)
+    );
+    if (directMatch) return directMatch;
+
+    return 'all';
+  };
+
+  const [searchQuery, setSearchQuery] = useState<string>('');
+  const [selectedDepartment, setSelectedDepartment] = useState<string>('all');
+  const [filteredFaculty, setFilteredFaculty] =
+    useState<QueryFacultyResult>(facultyData);
+
+  // Handle param changes with memoized callback to avoid useEffect dependency issues
+  const handleParamChange = useCallback(
+    (param: string | null) => {
+      setDepartmentParam(param);
+      setSelectedDepartment(getDepartmentFromParam(param));
+    },
+    [departments]
+  );
+
+  useEffect(() => {
+    if (departmentParam !== null) {
+      setSelectedDepartment(getDepartmentFromParam(departmentParam));
+    }
+  }, [departmentParam]);
 
   useEffect(() => {
     let filtered = facultyData;
@@ -47,25 +115,36 @@ function FacultySearchPage({
     if (searchQuery.trim()) {
       const query = searchQuery.toLowerCase().trim();
       filtered = filtered.filter((faculty) => {
+        const name = faculty?.content?.head?.name || '';
+        const designation = faculty?.content?.card?.designation || '';
+        const department = faculty?.content?.card?.department || '';
+        const mailId = faculty?.content?.card?.mail_id || '';
+        const phd = faculty?.content?.card?.PhD || '';
+
         const basicInfoMatch =
-          faculty?.content?.head?.name?.toLowerCase().includes(query) ||
-          faculty?.content?.card?.designation?.toLowerCase().includes(query) ||
-          faculty?.content?.card?.department?.toLowerCase().includes(query) ||
-          faculty?.content?.card?.mail_id?.toLowerCase().includes(query) ||
-          faculty?.content?.card?.PhD?.toLowerCase().includes(query);
+          name.toLowerCase().includes(query) ||
+          designation.toLowerCase().includes(query) ||
+          department.toLowerCase().includes(query) ||
+          mailId.toLowerCase().includes(query) ||
+          phd.toLowerCase().includes(query);
 
-        const areasMatch = faculty.content?.body?.interest_areas?.some((area) =>
-          area.toLowerCase().includes(query)
-        );
+        // Safe access for arrays with optional chaining and null checks
+        const areasMatch =
+          faculty.content?.body?.interest_areas?.some((area) =>
+            area.toLowerCase().includes(query)
+          ) || false;
 
-        const positionsMatch =
-          typeof faculty.content?.card?.position === 'string'
-            ? (faculty.content?.card?.position as string)
-                .toLowerCase()
-                .includes(query)
-            : faculty.content?.card?.position?.some((position) =>
-                position.toLowerCase().includes(query)
-              );
+        // Handle position which could be string or array
+        let positionsMatch = false;
+        const position = faculty.content?.card?.position;
+
+        if (typeof position === 'string') {
+          positionsMatch = (position as string).toLowerCase().includes(query);
+        } else if (Array.isArray(position)) {
+          positionsMatch = position.some((pos) =>
+            pos.toLowerCase().includes(query)
+          );
+        }
 
         return basicInfoMatch || areasMatch || positionsMatch;
       });
@@ -84,12 +163,14 @@ function FacultySearchPage({
   };
 
   return (
-    <div className="min-h-screen px-4 md:px-8 container mx-auto py-10">
+    <div className="min-h-screen w-[87.5vw] max-w-[1680px] mx-auto py-10">
+      <Suspense fallback={null}>
+        <SearchParamsWrapper onParamsChange={handleParamChange} />
+      </Suspense>
+
       <div className="mb-8 w-full space-y-4">
         {/* Search and Filter Controls */}
         <div className="flex flex-col md:flex-row gap-4 w-full">
-          {/* Search Input */}
-
           {/* Department Filter */}
           <div className="w-full md:w-64">
             <Select
@@ -124,7 +205,7 @@ function FacultySearchPage({
             </div>
             <input
               type="text"
-              className="block w-full pl-10 pr-10 py-3 border bg-white border-gray-200 rounded-lg focus:ring-blue-900 focus:border-blue-900 outline-none transition-colors"
+              className="block w-full pl-10 pr-10 text-title-3 font-normal py-3 border bg-white border-gray-200 rounded-lg focus:ring-main focus:border-main outline-none transition-colors"
               placeholder="Search by name, position, or research area..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
@@ -152,7 +233,7 @@ function FacultySearchPage({
         </div>
 
         {/* Results Summary */}
-        <div className="text-gray-500 w-full">
+        <div className="text-gray-500 w-full text-body">
           <p>
             Showing {filteredFaculty.length} of {facultyData.length} faculty
             members
@@ -183,21 +264,21 @@ function FacultySearchPage({
           filteredFaculty.map((faculty, index) => (
             <FacultyProfile
               key={index}
-              name={faculty.content?.head?.name}
-              title={faculty.content?.card?.designation}
-              areasOfInterest={faculty.content?.body?.interest_areas}
-              department={faculty.content?.card?.department}
-              education={faculty.content?.card?.PhD}
-              email={faculty.content?.card?.mail_id}
-              imageUrl={faculty.content?.card?.photo}
-              keyPositions={faculty.content?.card?.position}
-              office={faculty.content?.card?.cabin_number}
-              website={faculty.content?.head?.profile_pdf}
+              name={faculty.content?.head?.name || ''}
+              title={faculty.content?.card?.designation || ''}
+              areasOfInterest={faculty.content?.body?.interest_areas || []}
+              department={faculty.content?.card?.department || ''}
+              education={faculty.content?.card?.PhD || ''}
+              email={faculty.content?.card?.mail_id || ''}
+              imageUrl={faculty.content?.card?.photo || ''}
+              keyPositions={faculty.content?.card?.position || []}
+              office={faculty.content?.card?.cabin_number || ''}
+              website={faculty.content?.head?.profile_pdf || ''}
             />
           ))
         ) : (
           <div className="col-span-full text-center py-12">
-            <p className="text-gray-500 text-lg">
+            <p className="text-gray-500 text-body">
               No faculty members found matching your criteria.
             </p>
             <Button
@@ -214,6 +295,7 @@ function FacultySearchPage({
   );
 }
 
+// Static property
 FacultySearchPage.disableHero = true;
 
 export default FacultySearchPage;

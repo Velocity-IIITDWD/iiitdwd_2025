@@ -43,7 +43,7 @@ export default function Page() {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-16 sm:px-6 lg:px-8 overflow-hidden">
+    <div className="w-[87.5vw] max-w-[1680px] mx-auto py-16">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -55,7 +55,7 @@ export default function Page() {
           initial={{ y: -50 }}
           animate={{ y: 0 }}
           transition={{ duration: 0.6, type: 'spring', stiffness: 100 }}
-          className="text-4xl md:text-5xl font-bold text-center text-primary mb-8 relative"
+          className="text-main-title font-bold text-center text-primary mb-8 relative"
         >
           <span className="relative inline-block">
             WHY RECRUIT FROM US?
@@ -71,7 +71,7 @@ export default function Page() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.6 }}
-          className="text-lg text-gray-700 max-w-4xl mx-auto mb-12 text-center"
+          className="text-title-2 text-gray-700 max-w-4xl mx-auto mb-12 text-center"
         >
           When it comes to recruiting top-notch candidates, IIIT Dharwad stands
           head and shoulders above the rest. Our institution isn't just a place
@@ -131,13 +131,15 @@ export default function Page() {
                 ease: 'easeOut'
               }}
               whileHover={{ scale: 1.02 }}
-              className="relative bg-secondary/60 p-6 rounded-lg border border-gray-200 shadow-sm"
+              className="relative bg-white p-6 rounded-lg border border-gray-200 shadow-sm"
             >
-              <div className="text-4xl font-bold text-main mb-2">
+              <div className="text-main-title font-bold text-main mb-2">
                 {feature.num}
               </div>
-              <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
-              <p className="text-gray-600">{feature.description}</p>
+              <h3 className="text-title-1 font-bold mb-2">{feature.title}</h3>
+              <p className="text-title-3 text-gray-600">
+                {feature.description}
+              </p>
             </motion.div>
           ))}
         </div>
@@ -145,7 +147,7 @@ export default function Page() {
 
       <div
         ref={statsRef}
-        className="py-20 px-4 sm:px-6 lg:px-8 border border-tertiary/20 bg-gradient-to-b from-secondary/20 to-secondary/50 rounded-3xl"
+        className="py-20 px-4 sm:px-6 lg:px-8 border border-tertiary/20 bg-gradient-to-b from-white/70 to-white rounded-3xl"
         id="placement-statistics"
       >
         <motion.div
@@ -154,20 +156,20 @@ export default function Page() {
           animate={isStatsVisible ? 'visible' : 'hidden'}
           variants={statsVariants}
         >
-          <h2 className="text-5xl font-extrabold text-gray-800 mb-4">
+          <h2 className="text-main-title font-bold text-gray-800 mb-4">
             Average Package of
             <span className="text-main"> the top 20% students in</span>
           </h2>
-          <h2 className="text-7xl font-extrabold text-main mb-8">2024</h2>
+          <h2 className="text-main-title font-bold text-main mb-8">2024</h2>
           <motion.div
             className="inline-flex items-center justify-center bg-gradient-to-r from-main to-main/60 text-white rounded-full h-48 w-48 shadow-lg transform hover:scale-105 transition"
             custom={1}
             variants={counterVariants}
           >
-            <motion.span className="text-[2rem] font-bold text-amber-50">
+            <motion.span className="text-title-1 font-bold text-amber-50">
               17
             </motion.span>
-            <span className="text-xl ml-2 text-amber-50">LPA</span>
+            <span className="text-title-2 ml-2 text-amber-50">LPA</span>
           </motion.div>
         </motion.div>
         <motion.div
@@ -177,7 +179,7 @@ export default function Page() {
           variants={statsVariants}
         >
           <div className="bg-secondary/70 rounded-3xl shadow-lg p-10 mb-16">
-            <h2 className="text-3xl font-bold text-center mb-10">
+            <h2 className="text-large-title font-bold text-center mb-10">
               Placement Stats for 2024
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
@@ -220,11 +222,13 @@ export default function Page() {
                     data-tooltip-id={`tooltip-${index}`}
                     data-tooltip-content={stat.label}
                   >
-                    <span className="text-xl font-bold">{stat.value}</span>
+                    <span className="text-title-1 font-bold">{stat.value}</span>
                   </div>
-                  <p className="text-lg font-semibold">{stat.label}</p>
+                  <p className="text-title-2 font-semibold">{stat.label}</p>
                   {stat.subtext && (
-                    <p className="!text-xs text-gray-500">{stat.subtext}</p>
+                    <p className="!text-subheadline text-gray-500">
+                      {stat.subtext}
+                    </p>
                   )}
                 </motion.div>
               ))}

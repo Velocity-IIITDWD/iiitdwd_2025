@@ -47,7 +47,7 @@ export default function DetailSection() {
 
   return (
     <div className="py-20">
-      <section className="px-4 md:px-8 container mx-auto">
+      <section className="w-[87.5vw] max-w-[1680px] mx-auto">
         <div className="max-md:hidden grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Left Sidebar */}
           <div className="space-y-8 pr-10 relative">
@@ -65,7 +65,7 @@ export default function DetailSection() {
                   }}
                   className={`${
                     index === activeSection && 'after:w-full !text-primary'
-                  } flex flex-col items-center after:bg-tertiary after:h-[2px] w-fit after:w-0 after:transition-all hover:after:w-full text-gray-500 hover:text-primary text-[clamp(1.5rem,6vw,2rem)] transition-all font-semibold cursor-pointer`}
+                  } flex flex-col items-center after:bg-tertiary after:h-[2px] w-fit after:w-0 after:transition-all hover:after:w-full text-gray-500 hover:text-primary text-large-title transition-all font-semibold cursor-pointer`}
                   onClick={() => setActiveSection(index)} // Trigger active section change
                 >
                   {section.title}
@@ -99,10 +99,10 @@ export default function DetailSection() {
                     transition={{ duration: 0.8 }}
                     className="space-y-4 flex flex-col"
                   >
-                    <h3 className="text-primary text-[2rem] leading-6 font-semibold mb-8">
+                    <h3 className="text-primary text-title-1 mb-8">
                       {section.heading}
                     </h3>
-                    <div className="text-[#303030] text-base leading-7">
+                    <div className="text-[#303030] text-title-2 font-normal">
                       {section.content}
                     </div>
                   </motion.div>
@@ -117,12 +117,12 @@ export default function DetailSection() {
           {aboutPageSections?.map((section, index) => (
             <AccordionItem key={index} value={`item-${index}`}>
               <AccordionTrigger>
-                <h3 className="text-primary text-[clamp(1.5rem,6vw,2rem)] font-semibold cursor-pointer">
+                <h3 className="text-main text-large-title font-semibold cursor-pointer">
                   {section.title}
                 </h3>
               </AccordionTrigger>
               <AccordionContent>
-                <div className="text-[#303030] text-base leading-7">
+                <div className="text-[#303030] text-title-2 leading-7">
                   {section.content}
                 </div>
               </AccordionContent>

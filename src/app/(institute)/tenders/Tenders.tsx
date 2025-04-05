@@ -67,8 +67,10 @@ function TabsContentContent({ tabsData: tabsData }: TabsContentContentProps) {
                   <TableCell>{index + 1}.</TableCell>
                   <TableCell>
                     <div className="flex flex-col gap-2">
-                      <span className="text-main">{tender.title}</span>
-                      <div className="flex gap-x-3 gap-y-2 font-normal flex-wrap">
+                      <span className="text-main text-title-3">
+                        {tender.title}
+                      </span>
+                      <div className="flex gap-x-3 gap-y-2 text-body font-normal flex-wrap">
                         {tender.documents?.map((doc, index) => (
                           <span className="inline-block underline" key={index}>
                             <Link href={doc.link} target="_blank">
@@ -77,7 +79,7 @@ function TabsContentContent({ tabsData: tabsData }: TabsContentContentProps) {
                           </span>
                         ))}
                       </div>
-                      <div className="flex gap-3">
+                      <div className="flex gap-3 text-headline font-normal">
                         {tender.corrections?.map((correction, index) => (
                           <span
                             className={cn(
@@ -100,7 +102,7 @@ function TabsContentContent({ tabsData: tabsData }: TabsContentContentProps) {
                               correction.title
                             )}
                             {correction.isNew && (
-                              <span className="text-xs ml-2  px-2 py-1 bg-red-300/50 rounded text-red-500 animate-blink ">
+                              <span className="text-callout ml-2  px-2 py-1 bg-red-300/50 rounded text-red-500 animate-blink ">
                                 New
                               </span>
                             )}
@@ -121,13 +123,14 @@ function TabsContentContent({ tabsData: tabsData }: TabsContentContentProps) {
                       </span>
                     )}
                   </TableCell>
-                  <TableCell>
+                  <TableCell className="text-body font-normal">
                     {toDateString(tender.publishDate as number)}
                   </TableCell>
                   <TableCell
                     className={cn(
-                      name === 'archive' && 'text-dwd-secondary2',
-                      tender.cancelled && 'line-through'
+                      name === 'archive' && 'text-gray-400',
+                      tender.cancelled && 'line-through',
+                      'text-body font-normal'
                     )}
                   >
                     {toDateTimeString(tender.submissionDeadline as number)}
@@ -164,7 +167,7 @@ export default function Tenders({ active, archive }: TendersProps) {
   ];
 
   return (
-    <section className="flex flex-col w-full px-4 md:px-8 container mx-auto">
+    <section className="flex flex-col w-[87.5vw] max-w-[1680px] mx-auto">
       <h1 className="heading-text">Tenders</h1>
       <div className="flex w-full">
         <TabData

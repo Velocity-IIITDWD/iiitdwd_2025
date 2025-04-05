@@ -58,7 +58,7 @@ export default function PreviousRecruiters() {
       </motion.h2>
 
       {/* shadcn/ui Tabs */}
-      <Tabs defaultValue="recruiters" className="w-full max-w-4xl mx-auto">
+      <Tabs defaultValue="recruiters" className="w-full mx-auto">
         <div className="flex justify-center mb-4">
           <TabsList>
             <TabsTrigger value="recruiters">Companies</TabsTrigger>
@@ -69,7 +69,7 @@ export default function PreviousRecruiters() {
         <TabsContent value="recruiters">
           <Card>
             <CardContent className="pt-6">
-              <p className="text-sm text-gray-700 text-center mb-4">
+              <p className="text-body text-gray-700 text-center mb-4">
                 We've partnered with leading companies who recognize the
                 exceptional talent of our graduates.
               </p>
@@ -80,7 +80,7 @@ export default function PreviousRecruiters() {
                   <button
                     key={letter}
                     onClick={() => setActiveLetter(letter)}
-                    className={`px-2 py-1 text-xs rounded-md cursor-pointer ${
+                    className={`px-2 py-1 text-callout rounded-md cursor-pointer ${
                       activeLetter === letter
                         ? 'bg-main text-white'
                         : 'bg-secondary/50 text-gray-500 hover:bg-secondary'
@@ -112,7 +112,7 @@ export default function PreviousRecruiters() {
                     }}
                     className="flex items-center justify-center p-2 border-tertiary/20 bg-gradient-to-b from-secondary/20 to-secondary/60 border rounded-md hover:border-secondary/30 hover:shadow-sm transition-all text-center"
                   >
-                    <span className="font-medium text-primary text-sm">
+                    <span className="font-medium text-primary text-body">
                       {recruiter.name}
                     </span>
                   </motion.div>
@@ -124,7 +124,7 @@ export default function PreviousRecruiters() {
                 <div className="flex justify-center mt-4">
                   <button
                     onClick={() => setExpandedView(!expandedView)}
-                    className="flex items-center gap-1 px-4 py-2 bg-secondary rounded-md text-sm font-medium text-primary hover:bg-secondary/90 transition-colors"
+                    className="flex items-center gap-1 px-4 py-2 bg-secondary rounded-md text-body font-medium text-primary hover:bg-secondary/90 transition-colors"
                   >
                     {expandedView ? (
                       <>
@@ -148,13 +148,13 @@ export default function PreviousRecruiters() {
           <div className="grid md:grid-cols-3 gap-4">
             <Card className="hover:shadow-md transition-shadow">
               <CardHeader className="flex flex-row items-center space-y-0 pb-2">
-                <div className="bg-amber-50 border p-2 rounded-full mr-3">
+                <div className="bg-main/10 border p-2 rounded-full mr-3">
                   <Building className="text-main" size={20} />
                 </div>
-                <CardTitle className="text-lg">Industry Leaders</CardTitle>
+                <CardTitle>Industry Leaders</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-gray-600 text-sm">
+                <p className="text-gray-600 text-body">
                   Our students are recruited by industry giants who value
                   innovation and technical excellence.
                 </p>
@@ -163,13 +163,13 @@ export default function PreviousRecruiters() {
 
             <Card className="hover:shadow-md transition-shadow">
               <CardHeader className="flex flex-row items-center space-y-0 pb-2">
-                <div className="bg-amber-50 border p-2 rounded-full mr-3">
+                <div className="bg-main/10 border p-2 rounded-full mr-3">
                   <Award className="text-main" size={20} />
                 </div>
-                <CardTitle className="text-lg">Top Startups</CardTitle>
+                <CardTitle>Top Startups</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-gray-600 text-sm">
+                <p className="text-gray-600 text-body">
                   Fast-growing startups choose our graduates for their
                   adaptability and cutting-edge skills.
                 </p>
@@ -178,13 +178,13 @@ export default function PreviousRecruiters() {
 
             <Card className="hover:shadow-md transition-shadow">
               <CardHeader className="flex flex-row items-center space-y-0 pb-2">
-                <div className="bg-amber-50 border p-2 rounded-full mr-3">
+                <div className="bg-main/10 border p-2 rounded-full mr-3">
                   <Users className="text-main" size={20} />
                 </div>
-                <CardTitle className="text-lg">Global Reach</CardTitle>
+                <CardTitle>Global Reach</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-gray-600 text-sm">
+                <p className="text-gray-600 text-body">
                   Our networks extend globally, connecting students with
                   opportunities across the world.
                 </p>

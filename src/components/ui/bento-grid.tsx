@@ -44,9 +44,9 @@ export const BentoGridItem = ({
           <div className="relative z-10 h-full w-full mx-auto gap-2 sm:gap-4 flex flex-col items-start sm:items-center text-left sm:text-center lg:mx-0 lg:pl-2 lg:items-start lg:text-left">
             <div className="flex items-center gap-2 text-foreground">
               {icon}
-              <h2>{title}</h2>
+              <h2 className="text-title-2">{title}</h2>
             </div>
-            <div className="flex-1 flex flex-col text-gray-500 justify-between gap-2 text-sm [&_strong]:!text-primary">
+            <div className="flex-1 flex flex-col text-gray-500 justify-between text-body font-normal gap-2 text-body [&_strong]:!text-primary">
               {content1}
               {content2}
             </div>

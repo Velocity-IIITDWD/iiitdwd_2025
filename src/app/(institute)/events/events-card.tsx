@@ -64,16 +64,18 @@ const EventCard = ({ event }: EventCardProps) => {
 
       <CardContent className="px-4 py-6 justify-between flex flex-col h-full">
         <Link href={event.href} className="block">
-          <h2 className="text-xl font-bold mb-2 text-main">{event.text}</h2>
+          <h2 className="text-title-2 font-bold mb-2 text-main">
+            {event.text}
+          </h2>
         </Link>
 
         <div>
-          <div className="flex text-sm text-gray-500 mb-1">
+          <div className="flex text-body font-medium text-gray-500 mb-1">
             <CalendarIcon className="mr-2 flex-none" size={16} />
             <span>{formatDate(event.details.startDate)}</span>
           </div>
 
-          <div className="flex text-sm text-gray-500">
+          <div className="flex text-body font-medium text-gray-500">
             <MapPinIcon className="flex-none mr-2" size={16} />
             <span>
               {event.venue.street &&

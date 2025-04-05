@@ -22,7 +22,7 @@ import {
 
 export default function Page() {
   return (
-    <div className="container mx-auto py-8 px-4 md:px-6">
+    <div className="w-[87.5vw] max-w-[1680px] mx-auto py-8">
       <div className="space-y-6">
         {/* Page Header */}
         <div className="text-center space-y-2 mb-8">
@@ -67,7 +67,7 @@ export default function Page() {
                   Central Library and Digital Resources
                 </CardDescription>
               </CardHeader>
-              <CardContent className="space-y-4">
+              <CardContent className="space-y-6 text-title-3 font-medium">
                 <p className="text-gray-700">
                   The Central Library at IIIT Dharwad serves as a knowledge hub
                   for students and faculty. It houses a comprehensive collection
@@ -75,11 +75,11 @@ export default function Page() {
                   and research activities.
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="bg-secondary/70  p-4 rounded-lg">
-                    <h3 className="font-semibold text-main mb-2">
+                  <div className="bg-background p-4 rounded-lg">
+                    <h3 className="font-semibold text-title-2 text-main mb-4">
                       Resources Available
                     </h3>
-                    <ul className="list-disc pl-5 text-gray-700 ">
+                    <ul className="list-disc pl-5 text-body space-y-2 font-medium text-gray-700">
                       <li>
                         Extensive collection of technical books and reference
                         materials
@@ -93,9 +93,11 @@ export default function Page() {
                       <li>Previous year question papers and thesis reports</li>
                     </ul>
                   </div>
-                  <div className="bg-secondary/70  p-4 rounded-lg">
-                    <h3 className="font-semibold text-main mb-2">Facilities</h3>
-                    <ul className="list-disc pl-5 text-gray-700 ">
+                  <div className="bg-background  p-4 rounded-lg">
+                    <h3 className="font-semibold text-title-2 text-main mb-4">
+                      Facilities
+                    </h3>
+                    <ul className="list-disc pl-5 text-body space-y-2 font-medium text-gray-700">
                       <li>Reading hall with ample seating capacity</li>
                       <li>Digital section with computer terminals</li>
                       <li>Wi-Fi enabled premises</li>
@@ -117,7 +119,7 @@ export default function Page() {
                   State-of-the-art computing infrastructure
                 </CardDescription>
               </CardHeader>
-              <CardContent className="space-y-4">
+              <CardContent className="space-y-6 text-title-3 font-medium">
                 <p className="text-gray-700">
                   IIIT Dharwad is equipped with modern computing facilities to
                   support academic and research activities. The institute
@@ -125,11 +127,11 @@ export default function Page() {
                   labs, and campus-wide internet connectivity.
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="bg-secondary/70  p-4 rounded-lg">
-                    <h3 className="font-semibold text-main mb-2">
+                  <div className="bg-background  p-4 rounded-lg">
+                    <h3 className="font-semibold text-title-2 text-main mb-4">
                       Computer Labs
                     </h3>
-                    <ul className="list-disc pl-5 text-gray-700 ">
+                    <ul className="list-disc pl-5 text-body space-y-2 font-medium text-gray-700">
                       <li>
                         General purpose computing labs with latest hardware
                       </li>
@@ -141,11 +143,11 @@ export default function Page() {
                       <li>Project and research labs</li>
                     </ul>
                   </div>
-                  <div className="bg-secondary/70  p-4 rounded-lg">
-                    <h3 className="font-semibold text-main mb-2">
+                  <div className="bg-background  p-4 rounded-lg">
+                    <h3 className="font-semibold text-title-2 text-main mb-4">
                       Network Infrastructure
                     </h3>
-                    <ul className="list-disc pl-5 text-gray-700 ">
+                    <ul className="list-disc pl-5 text-body space-y-2 font-medium text-gray-700">
                       <li>
                         High-speed campus-wide internet (1 Gbps NKN
                         connectivity)
@@ -173,10 +175,10 @@ export default function Page() {
                   Specialized labs for hands-on learning and research
                 </CardDescription>
               </CardHeader>
-              <CardContent>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <CardContent className="space-y-6 text-title-3 font-medium">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-body font-normal">
                   <div className="p-4 border rounded-lg">
-                    <h3 className="font-semibold text-main mb-2">
+                    <h3 className="font-semibold text-main text-title-2 mb-4">
                       Electronics Lab
                     </h3>
                     <p className="text-gray-700">
@@ -186,7 +188,7 @@ export default function Page() {
                     </p>
                   </div>
                   <div className="p-4 border rounded-lg">
-                    <h3 className="font-semibold text-main mb-2">
+                    <h3 className="font-semibold text-main text-title-2 mb-4">
                       Networking Lab
                     </h3>
                     <p className="text-gray-700">
@@ -196,7 +198,7 @@ export default function Page() {
                     </p>
                   </div>
                   <div className="p-4 border rounded-lg">
-                    <h3 className="font-semibold text-main mb-2">
+                    <h3 className="font-semibold text-main text-title-2 mb-4">
                       Research Labs
                     </h3>
                     <p className="text-gray-700 ">
@@ -221,7 +223,7 @@ export default function Page() {
                   Comfortable accommodation for students
                 </CardDescription>
               </CardHeader>
-              <CardContent className="space-y-4">
+              <CardContent className="space-y-6 text-title-3 font-medium">
                 <p className="text-gray-700 ">
                   IIIT Dharwad provides separate hostel facilities for boys and
                   girls. The hostels are designed to provide a comfortable and
@@ -229,11 +231,11 @@ export default function Page() {
                   while enjoying a vibrant campus life.
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="bg-secondary/70  p-4 rounded-lg">
-                    <h3 className="font-semibold text-main mb-2">
+                  <div className="bg-background  p-4 rounded-lg">
+                    <h3 className="font-semibold text-title-2 text-main mb-4">
                       Hostel Features
                     </h3>
-                    <ul className="list-disc pl-5 text-gray-700 ">
+                    <ul className="list-disc pl-5 text-body space-y-2 font-medium text-gray-700">
                       <li>Well-furnished rooms with essential furniture</li>
                       <li>24/7 high-speed Wi-Fi connectivity</li>
                       <li>Purified drinking water facilities</li>
@@ -243,18 +245,20 @@ export default function Page() {
                       <li>24-hour security with CCTV surveillance</li>
                     </ul>
                   </div>
-                  <div className="bg-secondary/70  p-4 rounded-lg">
-                    <h3 className="font-semibold text-main mb-2">Room Types</h3>
-                    <ul className="list-disc pl-5 text-gray-700 ">
+                  <div className="bg-background  p-4 rounded-lg">
+                    <h3 className="font-semibold text-title-2 text-main mb-4">
+                      Room Types
+                    </h3>
+                    <ul className="list-disc pl-5 text-body space-y-2 font-medium text-gray-700">
                       <li>Double occupancy rooms (standard allocation)</li>
                       <li>Single occupancy rooms (limited availability)</li>
                       <li>Special rooms for differently-abled students</li>
                     </ul>
 
-                    <h3 className="font-semibold text-main mt-4 mb-2">
+                    <h3 className="font-semibold text-title-2 text-main my-4">
                       Common Areas
                     </h3>
-                    <ul className="list-disc pl-5 text-gray-700 ">
+                    <ul className="list-disc pl-5 text-body space-y-2 font-medium text-gray-700">
                       <li>
                         Study rooms for group discussions and private study
                       </li>
@@ -265,11 +269,11 @@ export default function Page() {
                     </ul>
                   </div>
                 </div>
-                <div className="bg-secondary/70 dark:bg-amber-900/20 p-4 rounded-lg">
-                  <h3 className="font-semibold text-main">
+                <div className="bg-background dark:bg-amber-900/20 p-4 rounded-lg">
+                  <h3 className="font-semibold text-title-2 text-main mb-4">
                     Note on Accommodation
                   </h3>
-                  <p className="text-gray-700 ">
+                  <p className="text-gray-700 text-body">
                     Hostel accommodation is mandatory for all undergraduate
                     students unless specifically exempted. Room allocation is
                     done by the Hostel Administration based on availability and
@@ -287,7 +291,7 @@ export default function Page() {
                 </CardTitle>
                 <CardDescription>Keeping students connected</CardDescription>
               </CardHeader>
-              <CardContent>
+              <CardContent className="space-y-6 text-title-3 font-medium">
                 <p className="text-gray-700 ">
                   The entire campus including hostels is equipped with
                   high-speed internet connectivity. The institute provides a
@@ -295,9 +299,9 @@ export default function Page() {
                   seamless access to online resources for academic and research
                   purposes.
                 </p>
-                <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4 text-body font-medium">
                   <div className="p-4 border rounded-lg">
-                    <h3 className="font-semibold text-main mb-2">
+                    <h3 className="font-semibold text-title-2 text-main mb-4">
                       Wi-Fi Coverage
                     </h3>
                     <p className="text-gray-700 ">
@@ -307,7 +311,7 @@ export default function Page() {
                     </p>
                   </div>
                   <div className="p-4 border rounded-lg">
-                    <h3 className="font-semibold text-main mb-2">
+                    <h3 className="font-semibold text-title-2 text-main mb-4">
                       Internet Bandwidth
                     </h3>
                     <p className="text-gray-700 ">
@@ -333,7 +337,7 @@ export default function Page() {
                   Nutritious and diverse meal options
                 </CardDescription>
               </CardHeader>
-              <CardContent className="space-y-4">
+              <CardContent className="space-y-6 text-title-3 font-medium">
                 <p className="text-gray-700 ">
                   IIIT Dharwad provides well-managed mess facilities that serve
                   nutritious and balanced meals to students. The mess operations
@@ -341,11 +345,11 @@ export default function Page() {
                   and hygiene.
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="bg-secondary/70  p-4 rounded-lg">
-                    <h3 className="font-semibold text-main mb-2">
+                  <div className="bg-background  p-4 rounded-lg">
+                    <h3 className="font-semibold text-title-2 text-main mb-4">
                       Mess Features
                     </h3>
-                    <ul className="list-disc pl-5 text-gray-700 ">
+                    <ul className="list-disc pl-5 text-body space-y-2 font-medium text-gray-700">
                       <li>
                         Spacious dining halls with adequate seating capacity
                       </li>
@@ -356,21 +360,21 @@ export default function Page() {
                       <li>Dietitian-approved menu planning</li>
                     </ul>
                   </div>
-                  <div className="bg-secondary/70  p-4 rounded-lg">
-                    <h3 className="font-semibold text-main mb-2">
+                  <div className="bg-background  p-4 rounded-lg">
+                    <h3 className="font-semibold text-title-2 text-main mb-4">
                       Meal Schedule
                     </h3>
-                    <ul className="list-disc pl-5 text-gray-700 ">
+                    <ul className="list-disc pl-5 text-body space-y-2 font-medium text-gray-700">
                       <li>Breakfast: 7:30 AM to 9:30 AM</li>
                       <li>Lunch: 12:00 PM to 2:00 PM</li>
                       <li>Evening Snacks: 5:00 PM to 6:00 PM</li>
                       <li>Dinner: 7:30 PM to 9:30 PM</li>
                     </ul>
 
-                    <h3 className="font-semibold text-main mt-4 mb-2">
+                    <h3 className="font-semibold text-title-2 text-main my-4">
                       Special Provisions
                     </h3>
-                    <ul className="list-disc pl-5 text-gray-700 ">
+                    <ul className="list-disc pl-5 text-body space-y-2 font-medium text-gray-700">
                       <li>Sick diet on doctor's recommendation</li>
                       <li>
                         Packed meals for students during events/competitions
@@ -392,7 +396,7 @@ export default function Page() {
                   Additional dining options on campus
                 </CardDescription>
               </CardHeader>
-              <CardContent>
+              <CardContent className="space-y-6 text-title-3 font-medium">
                 <p className="text-gray-700 ">
                   In addition to the regular mess, the campus has cafeterias and
                   food stalls that offer a variety of refreshments and snacks.
@@ -400,8 +404,8 @@ export default function Page() {
                   relax and socialize.
                 </p>
                 <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="p-4 border rounded-lg">
-                    <h3 className="font-semibold text-main mb-2">
+                  <div className="p-4 border rounded-lg text-body font-medium">
+                    <h3 className="font-semibold text-title-2 text-main mb-4">
                       Main Cafeteria
                     </h3>
                     <p className="text-gray-700 ">
@@ -415,8 +419,8 @@ export default function Page() {
                       9:00 PM (Monday to Saturday)
                     </p>
                   </div>
-                  <div className="p-4 border rounded-lg">
-                    <h3 className="font-semibold text-main mb-2">
+                  <div className="p-4 border rounded-lg text-body font-medium">
+                    <h3 className="font-semibold text-title-2 text-main mb-4">
                       Night Canteen
                     </h3>
                     <p className="text-gray-700 ">
@@ -446,7 +450,7 @@ export default function Page() {
                   Facilities for physical fitness and leisure
                 </CardDescription>
               </CardHeader>
-              <CardContent className="space-y-4">
+              <CardContent className="space-y-6 text-title-3 font-medium">
                 <p className="text-gray-700 ">
                   IIIT Dharwad provides excellent sports and recreational
                   facilities to encourage students to maintain physical fitness
@@ -455,11 +459,11 @@ export default function Page() {
                   a healthy balance between academics and sports.
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="bg-secondary/70  p-4 rounded-lg">
-                    <h3 className="font-semibold text-main mb-2">
+                  <div className="bg-background  p-4 rounded-lg">
+                    <h3 className="font-semibold text-title-2 text-main mb-4">
                       Outdoor Sports Facilities
                     </h3>
-                    <ul className="list-disc pl-5 text-gray-700 ">
+                    <ul className="list-disc pl-5 text-body space-y-2 font-medium text-gray-700">
                       <li>Cricket field</li>
                       <li>Football ground</li>
                       <li>Basketball court</li>
@@ -468,11 +472,11 @@ export default function Page() {
                       <li>Athletics track</li>
                     </ul>
                   </div>
-                  <div className="bg-secondary/70  p-4 rounded-lg">
-                    <h3 className="font-semibold text-main mb-2">
+                  <div className="bg-background  p-4 rounded-lg">
+                    <h3 className="font-semibold text-title-2 text-main mb-4">
                       Indoor Sports Facilities
                     </h3>
-                    <ul className="list-disc pl-5 text-gray-700 ">
+                    <ul className="list-disc pl-5 text-body space-y-2 font-medium text-gray-700">
                       <li>Fully equipped gymnasium</li>
                       <li>Table tennis</li>
                       <li>Chess</li>
@@ -482,7 +486,7 @@ export default function Page() {
                   </div>
                 </div>
                 <div className="p-4 border rounded-lg">
-                  <h3 className="font-semibold text-main mb-2">
+                  <h3 className="font-semibold text-title-2 text-main mb-4">
                     Recreation Areas
                   </h3>
                   <p className="text-gray-700 ">
@@ -505,7 +509,7 @@ export default function Page() {
                   Medical services for students and staff
                 </CardDescription>
               </CardHeader>
-              <CardContent>
+              <CardContent className="space-y-6 text-title-3 font-medium">
                 <p className="text-gray-700 ">
                   The institute maintains a health center to address the medical
                   needs of students and staff. The center provides primary
@@ -514,10 +518,10 @@ export default function Page() {
                 </p>
                 <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="p-4 border rounded-lg">
-                    <h3 className="font-semibold text-main mb-2">
+                    <h3 className="font-semibold text-title-2 text-main mb-4">
                       Health Center Services
                     </h3>
-                    <ul className="list-disc pl-5 text-gray-700 ">
+                    <ul className="list-disc pl-5 text-body space-y-2 font-medium text-gray-700">
                       <li>OPD services with qualified medical staff</li>
                       <li>First aid and emergency medical care</li>
                       <li>Basic medications and dispensary</li>
@@ -526,10 +530,10 @@ export default function Page() {
                     </ul>
                   </div>
                   <div className="p-4 border rounded-lg">
-                    <h3 className="font-semibold text-main mb-2">
+                    <h3 className="font-semibold text-title-2 text-main mb-4">
                       Insurance and Tie-ups
                     </h3>
-                    <ul className="list-disc pl-5 text-gray-700 ">
+                    <ul className="list-disc pl-5 text-body space-y-2 font-medium text-gray-700">
                       <li>Student health insurance coverage</li>
                       <li>
                         Tie-ups with specialized hospitals in Dharwad and

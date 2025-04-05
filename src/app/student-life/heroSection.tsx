@@ -1,4 +1,5 @@
 'use client';
+import SectionHeading from '@/components/layout/section-heading';
 import Image from 'next/image';
 
 export default function HeroSection() {
@@ -8,19 +9,15 @@ export default function HeroSection() {
         <div className="h-full flex flex-col lg:block">
           <div className="relative lg:absolute left-0 top-0 w-full lg:w-[60%] h-auto lg:h-full z-10 flex items-center p-8 lg:p-0">
             <div className="max-w-xl mx-auto lg:mx-0 lg:ml-12 xl:ml-24 space-y-8">
-              <div className="inline-block bg-main px-5 py-2 rounded-full">
-                <span className="text-white font-medium text-sm tracking-wide">
-                  LIFE AT IIIT DHARWAD
-                </span>
-              </div>
-              <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight leading-tight text-left">
+              <SectionHeading title="Student Life" />
+              <h1 className="text-main-title font-bold text-left">
                 EXPERIENCE THE
                 <br />
                 STUDENT
                 <br />
                 COMMUNITY
               </h1>
-              <p className="text-gray-600 text-lg max-w-lg text-left">
+              <p className="text-gray-600 text-title-2 max-w-lg text-left">
                 At our university, every student can take small steps to reach
                 their giant leaps through unique educational opportunities,
                 student organizations, campus resources and more.

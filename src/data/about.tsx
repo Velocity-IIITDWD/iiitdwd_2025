@@ -156,7 +156,7 @@ export const carouselData = [
   {
     title: 'Vision',
     content: (
-      <p className="text-xs md:text-sm">
+      <p className="text-callout md:text-body">
         To be a globally renowned academy of information technology for societal
         development.
       </p>
@@ -165,7 +165,7 @@ export const carouselData = [
   {
     title: 'Our Mission',
     content: (
-      <div className="flex flex-col gap-3 text-xs md:text-sm">
+      <div className="flex flex-col gap-3 text-callout md:text-body">
         <p>
           To produce globally competent information technology professionals
           with the right mix of professional skills and ethical, societal and
@@ -185,7 +185,7 @@ export const carouselData = [
   {
     title: 'Core Values',
     content: (
-      <ul className="text-xs md:text-sm flex flex-col gap-2 items-center ">
+      <ul className="text-callout md:text-body flex flex-col gap-2 items-center ">
         <li className="border rounded-full px-4 w-full py-1">Integrity</li>
         <li className="border rounded-full px-4 w-full py-1">Service</li>
         <li className="border rounded-full px-4 w-full py-1">Positivity</li>

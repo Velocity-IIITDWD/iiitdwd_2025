@@ -11,14 +11,14 @@ import { Bus, Car, MapPin, Plane, Train } from 'lucide-react';
 
 export default function HowToReach() {
   return (
-    <div className="container mx-auto py-8 px-4 md:px-6">
+    <div className="w-[87.5vw] max-w-[1680px] mx-auto py-8">
       <div className="space-y-6">
         {/* Page Header */}
         <div className="text-center space-y-2 mb-8">
-          <h1 className="text-3xl font-bold tracking-tight">
+          <h1 className="text-large-title font-bold tracking-tight">
             How to Reach IIIT Dharwad
           </h1>
-          <p className="text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">
+          <p className="text-gray-500 max-w-2xl text-title-2 mx-auto">
             Find directions to reach Indian Institute of Information Technology,
             Dharwad from various locations
           </p>
@@ -37,16 +37,20 @@ export default function HowToReach() {
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid md:grid-cols-2 text-title-3 font-normal gap-6">
               <div>
-                <h3 className="font-medium text-main mb-2">Address</h3>
+                <h3 className="font-medium text-main text-title-2 mb-2">
+                  Address
+                </h3>
                 <p className="text-gray-700 dark:text-gray-300">
                   Indian Institute of Information Technology Dharwad,
                   <br />
                   Ittigatti Rd, near Sattur Colony, Karnataka 580009
                 </p>
                 <div className="mt-4">
-                  <h3 className="font-medium text-main mb-2">Contact</h3>
+                  <h3 className="font-medium text-title-2 text-main mb-2">
+                    Contact
+                  </h3>
                   <p className="text-gray-700 dark:text-gray-300">
                     Phone: +91-836-2250879
                     <br />
@@ -94,8 +98,8 @@ export default function HowToReach() {
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
-                <div>
-                  <h3 className="font-semibold text-main text-lg">
+                <div className="text-title-3 font-normal">
+                  <h3 className="font-semibold text-main text-title-2 mb-2">
                     Hubballi Airport
                   </h3>
                   <p className="text-gray-700 dark:text-gray-300">
@@ -105,8 +109,8 @@ export default function HowToReach() {
                     take a taxi to reach the institute (approximately 45
                     minutes).
                   </p>
-                  <div className="mt-3 bg-secondary/70 p-4 rounded-lg">
-                    <h4 className="font-medium text-main mb-2">
+                  <div className="mt-3 bg-background p-4 rounded-lg">
+                    <h4 className="text-main text-title-2 font-semibold mb-2">
                       From Hubli Airport to IIITDWD campus:
                     </h4>
                     <ul className="list-disc pl-5 text-gray-600 space-y-2">
@@ -138,8 +142,8 @@ export default function HowToReach() {
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
-                <div>
-                  <h3 className="font-semibold text-main text-lg">
+                <div className="text-title-3 font-normal">
+                  <h3 className="font-semibold text-main text-title-2 mb-2">
                     Dharwad Railway Station
                   </h3>
                   <p className="text-gray-700 dark:text-gray-300">
@@ -148,8 +152,8 @@ export default function HowToReach() {
                     From the railway station, you can take an auto-rickshaw or
                     taxi to reach the campus (approximately 15-20 minutes).
                   </p>
-                  <div className="bg-secondary/70 p-4 rounded-lg mt-2">
-                    <h4 className="font-medium text-main mb-2">
+                  <div className="bg-background p-4 rounded-lg mt-2">
+                    <h4 className="font-semibold text-main mb-2 text-title-2">
                       From Dharwad Railway Station to IIITD campus:
                     </h4>
                     <ul className="list-disc pl-5 text-gray-700 dark:text-gray-300 space-y-2">
@@ -169,8 +173,8 @@ export default function HowToReach() {
                     </ul>
                   </div>
                 </div>
-                <div>
-                  <h3 className="font-semibold text-main text-lg">
+                <div className="text-title-3 font-normal">
+                  <h3 className="font-semibold text-main text-title-2 mb-2">
                     Hubballi Railway Station
                   </h3>
                   <p className="text-gray-700 dark:text-gray-300">
@@ -179,8 +183,8 @@ export default function HowToReach() {
                     connectivity to various parts of the country. Regular buses
                     and taxis are available from Hubballi to Dharwad.
                   </p>
-                  <div className="bg-secondary/70 p-4 rounded-lg mt-2">
-                    <h4 className="font-medium text-main mb-2">
+                  <div className="bg-background p-4 rounded-lg mt-2">
+                    <h4 className="font-semibold text-main mb-2 text-title-2">
                       From Hubli Railway Station to IIITD campus:
                     </h4>
                     <ul className="list-disc pl-5 text-gray-700 dark:text-gray-300 space-y-2">
@@ -196,8 +200,10 @@ export default function HowToReach() {
                     </ul>
                   </div>
                 </div>
-                <div className="bg-secondary/70 p-4 rounded-lg">
-                  <h3 className="font-medium text-main mb-2">Major Trains</h3>
+                <div className="bg-background p-4 rounded-lg">
+                  <h3 className="font-semibold text-main text-title-2 mb-2">
+                    Major Trains
+                  </h3>
                   <ul className="list-disc pl-5 text-gray-700 dark:text-gray-300">
                     <li>
                       Rani Chennamma Express (Bangalore to Dharwad/Hubballi)
@@ -222,8 +228,8 @@ export default function HowToReach() {
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
-                <div>
-                  <h3 className="font-semibold text-main text-lg">
+                <div className="text-title-3 font-normal">
+                  <h3 className="font-semibold text-main text-title-2 mb-2">
                     State Transport Buses
                   </h3>
                   <p className="text-gray-700 dark:text-gray-300">
@@ -233,8 +239,8 @@ export default function HowToReach() {
                     from Bangalore to Dharwad takes approximately 8-9 hours.
                   </p>
                 </div>
-                <div>
-                  <h3 className="font-semibold text-main text-lg">
+                <div className="text-title-3 font-normal">
+                  <h3 className="font-semibold text-main text-title-2 mb-2">
                     Private Buses
                   </h3>
                   <p className="text-gray-700 dark:text-gray-300">
@@ -243,8 +249,8 @@ export default function HowToReach() {
                     can be booked online through various platforms.
                   </p>
                 </div>
-                <div>
-                  <h3 className="font-semibold text-main text-lg">
+                <div className="text-title-3 font-normal">
+                  <h3 className="font-semibold text-main text-title-2 mb-2">
                     Local Transport
                   </h3>
                   <p className="text-gray-700 dark:text-gray-300">
@@ -265,8 +271,8 @@ export default function HowToReach() {
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
-                <div>
-                  <h3 className="font-semibold text-main text-lg">
+                <div className="text-title-3 font-normal">
+                  <h3 className="font-semibold text-main text-title-2 mb-2">
                     From Bangalore
                   </h3>
                   <p className="text-gray-700 dark:text-gray-300">
@@ -277,8 +283,8 @@ export default function HowToReach() {
                     Pune-Bengaluru Highway (NH-4) in the WALMI Campus.
                   </p>
                 </div>
-                <div>
-                  <h3 className="font-semibold text-main text-lg">
+                <div className="text-title-3 font-normal">
+                  <h3 className="font-semibold text-main text-title-2 mb-2">
                     From Mumbai
                   </h3>
                   <p className="text-gray-700 dark:text-gray-300">
@@ -286,8 +292,10 @@ export default function HowToReach() {
                     via NH-48. The journey takes around 10-11 hours by car.
                   </p>
                 </div>
-                <div>
-                  <h3 className="font-semibold text-main text-lg">From Goa</h3>
+                <div className="text-title-3 font-normal">
+                  <h3 className="font-semibold text-main text-title-2 mb-2">
+                    From Goa
+                  </h3>
                   <p className="text-gray-700 dark:text-gray-300">
                     Dharwad is about 150 km from Goa via NH-748. The journey
                     takes approximately 3-4 hours by car.
@@ -313,8 +321,8 @@ export default function HowToReach() {
           </CardHeader>
           <CardContent>
             <div className="grid md:grid-cols-2 gap-4">
-              <div className="p-4 border rounded-lg">
-                <h3 className="font-semibold text-main text-lg">
+              <div className="p-4 border text-title-3 rounded-lg">
+                <h3 className="font-semibold text-main text-title-2 mb-2">
                   Dharwad City
                 </h3>
                 <p className="text-gray-700 dark:text-gray-300">
@@ -322,8 +330,8 @@ export default function HowToReach() {
                   center, approximately 7 km from the campus.
                 </p>
               </div>
-              <div className="p-4 border rounded-lg">
-                <h3 className="font-semibold text-main text-lg">
+              <div className="p-4 border text-title-3 rounded-lg">
+                <h3 className="font-semibold text-main text-title-2 mb-2">
                   Hubballi City
                 </h3>
                 <p className="text-gray-700 dark:text-gray-300">

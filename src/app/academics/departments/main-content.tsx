@@ -27,15 +27,17 @@ export default function MainContent({
   const [selectedSemester, setSelectedSemester] = useState(0);
 
   return (
-    <div className="flex-1 pt-8 md:py-4 md:px-8">
-      <h1 className="text-3xl font-bold mb-4 hover:text-main transition-colors">
+    <div className="flex-1 md:px-8">
+      <h1 className="text-large-title font-bold mb-4 hover:text-main transition-colors">
         Academic Programs in {currentDept?.name}
       </h1>
       <div className="mb-12">
-        <p className="text-lg mb-6">{currentDept?.description}</p>
+        <p className="text-title-3 font-normal mb-6">
+          {currentDept?.description}
+        </p>
 
         <div className="bg-white border border-gray-400 shadow-md p-6 rounded-lg mb-8 hover:shadow-lg transition-all duration-300">
-          <h3 className="text-xl font-semibold mb-3 text-main">
+          <h3 className="text-title-1 font-semibold mb-3 text-main">
             Department Head
           </h3>
           <div className="flex items-center mb-3">
@@ -47,17 +49,17 @@ export default function MainContent({
               />
             )}
             <div>
-              <p className="font-medium text-lg hover:text-main transition-colors">
+              <p className="font-medium text-title-2 hover:text-main transition-colors">
                 {currentDept.hod}
               </p>
-              <p className="text-gray-600 hover:text-amber-900 transition-colors">
+              <p className="text-gray-600 text-body hover:text-amber-900 transition-colors">
                 {currentDept.email}
               </p>
             </div>
           </div>
         </div>
 
-        <h2 className="text-2xl font-bold mb-4 hover:text-main transition-colors">
+        <h2 className="text-title-1 font-bold mb-4 hover:text-main transition-colors">
           Program Structure
         </h2>
 
@@ -118,14 +120,14 @@ export default function MainContent({
 
         <ContentTypes currentDept={currentDept} />
 
-        <h2 className="text-2xl font-bold mb-4 mt-8 hover:text-main transition-colors">
+        <h2 className="text-title-1 font-bold mb-4 mt-8 hover:text-main transition-colors">
           Semester-wise Course Structure
         </h2>
 
         <div className="mb-6">
           <label
             htmlFor="semester"
-            className="block mb-2 font-medium text-gray-700"
+            className="block mb-2 text-title-3 font-medium text-gray-700"
           >
             Select Semester:
           </label>
@@ -177,7 +179,7 @@ export default function MainContent({
                 <TableCell>
                   <Badge
                     variant="outline"
-                    className="border-none text-main text-sm"
+                    className="border-none text-main text-body"
                   >
                     {currentDept.SemesterData[selectedSemester].totalCredits}{' '}
                     credits
@@ -188,7 +190,7 @@ export default function MainContent({
           </Table>
         </div>
 
-        <div className="mt-4 text-sm text-main bg-secondary p-3 rounded-md transition-colors">
+        <div className="mt-4 text-subheadline text-main bg-secondary p-3 rounded-md transition-colors">
           <p>Credit Format: Lecture-Tutorial-Practical-Project-Total</p>
         </div>
       </div>

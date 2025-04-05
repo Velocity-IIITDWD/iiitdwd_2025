@@ -18,7 +18,7 @@ export const AlumniCard = ({
 }: ReviewCardProps) => {
   return (
     <Link
-      href={`/testimonial/${_id}`}
+      href={`/alumni-testimonials/${_id}`}
       className={cn(
         'relative cursor-pointer rounded-lg border w-full p-4',
         'border-gray-400 bg-gradient-to-b from-white/70 to-white'
@@ -32,17 +32,17 @@ export const AlumniCard = ({
           width={32}
           alt={name}
         />
-        <div className="flex flex-col">
-          <figcaption className="text-sm font-medium text-main">
+        <div className="flex flex-col w-full">
+          <figcaption className="text-title-3 font-medium text-main">
             {name}
           </figcaption>
-          <p className="text-xs font-medium text-main/70 text-left">
-            {designation}{' '}
+          <p className="text-footnote text-main/70 text-left flex justify-between w-full">
+            {designation}
             <span className="text-main/70 pl-4">Batch - {graduationYear}</span>
           </p>
         </div>
       </div>
-      <blockquote className="mt-2 text-sm w-full text-left text-gray-600">
+      <blockquote className="mt-2 text-callout w-full text-left text-gray-600">
         {testimonial}
       </blockquote>
     </Link>
