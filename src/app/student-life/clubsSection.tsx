@@ -3,8 +3,8 @@ import ClubCard from './clubCard';
 
 export default function ClubsSection() {
   return (
-    <div className="bg-black text-white py-24">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="bg-secondary text-black py-24">
+      <div className="w-[87.5vw] mx-auto max-w-[1680px]">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           <ClubCard
             title="Technical Clubs"

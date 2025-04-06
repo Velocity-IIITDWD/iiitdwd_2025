@@ -1,6 +1,6 @@
 export default [
   {
-    title: '',
+    title: 'Leads',
     profiles: [
       {
         content: ['Faculty-In-Charge'],
@@ -15,7 +15,7 @@ export default [
     ]
   },
   {
-    title: '',
+    title: 'Ex-officio Members',
     profiles: [
       {
         content: ['Ex-officio Member'],
@@ -35,7 +35,7 @@ export default [
     ]
   },
   {
-    title: '',
+    title: 'Members',
     profiles: [
       {
         content: ['Member'],

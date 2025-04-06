@@ -23,8 +23,8 @@ const navigationData: NavigationItem[] = [
           {
             title: 'Amenities',
             href: '/amenities'
-          },
-          { title: 'Video of campus', href: '/campus-video' }
+          }
+          // { title: 'Video of campus', href: '/campus-video' }
         ]
       },
       { title: 'Events / Awards', href: '/events' },
@@ -55,7 +55,7 @@ const navigationData: NavigationItem[] = [
       },
       {
         title: 'Fees',
-        href: '/admission/fees'
+        href: 'https://iiitdwd.ac.in/docs/FEE_2024-25_Sheet1.pdf'
       }
     ]
   },
@@ -76,9 +76,9 @@ const navigationData: NavigationItem[] = [
         title: 'Building & Works Committee',
         href: '/governing-bodies/building'
       },
-      { title: 'Registrar', href: '/registrar' },
       { title: 'Deans', href: '/deans' },
       { title: 'Head of Departments', href: '/hods' },
+      { title: 'Staff', href: '/staff' },
       {
         title: 'Career Guidance Cell',
         href: '/cgc',
@@ -117,29 +117,33 @@ const navigationData: NavigationItem[] = [
     title: 'Student life',
     href: '/student-life',
     items: [
-      { title: 'Overview', href: '/student-life/overview' },
-      { title: 'Hostel', href: '/student-life/hostel' },
+      {
+        title: 'Overview',
+        href: '/student-life/overview',
+        meta: { disableLayout: true }
+      },
+      // { title: 'Hostel', href: '/student-life/hostel' },
       {
         title: 'IIC and Clubs',
         href: '/student-life/clubs',
         items: [
           { title: 'Tech clubs', href: '/student-life/clubs/tech' },
           { title: 'Non Tech clubs', href: '/student-life/clubs/non-tech' },
-          { title: 'Sports club', href: '/student-life/clubs/sports' },
+          // { title: 'Sports club', href: '/student-life/clubs/sports' },
           { title: 'Cultural club', href: '/student-life/clubs/cultural' }
         ]
       },
-      { title: 'NSS', href: '/student-life/nss' },
-      { title: 'NCC', href: '/student-life/ncc' },
-      { title: 'Sports and games', href: '/student-life/sports' },
+      // { title: 'NSS', href: '/student-life/nss' },
+      // { title: 'NCC', href: '/student-life/ncc' },
+      // { title: 'Sports and games', href: '/student-life/sports' },
       {
         title: 'Anti ragging',
         href: 'https://iiitdwd.ac.in/docs/Anti_Ragging_Information.pdf'
-      },
-      {
-        title: 'Achievements',
-        href: '/student-life/achievements'
       }
+      // {
+      //   title: 'Achievements',
+      //   href: '/student-life/achievements'
+      // }
     ]
   },
   {

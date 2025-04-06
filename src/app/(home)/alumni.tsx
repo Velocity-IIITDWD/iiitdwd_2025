@@ -7,6 +7,16 @@ import { useEffect, useState } from 'react';
 import { AlumniCard } from './alumni-card';
 
 // Function to process the original testimonials into the format returned by your Sanity query
+const shuffleArray = (array: Review[]) => {
+  const shuffled = [...array];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+};
+
+// Function to distribute reviews into columns
 const distributeReviews = (reviews: Review[], columns: number) => {
   const distributed: Review[][] = Array.from({ length: columns }, () => []);
 
@@ -44,9 +54,9 @@ export default function AlumniSection() {
 
   // Process them to match the Sanity query structure
 
-  const finalReviews = reviews
-    .filter((review) => review.graduationYear <= 2024)
-    .sort((a, b) => a.name.localeCompare(b.name));
+  const finalReviews = shuffleArray(
+    reviews.filter((review) => review.graduationYear <= 2024)
+  );
 
   // Now you can use them with your component
   const distributedReviews = distributeReviews(finalReviews, columnCount);
@@ -54,7 +64,7 @@ export default function AlumniSection() {
   return (
     <div className="relative">
       <div className="z-[2] relative py-10 w-full flex flex-col items-center">
-        <div className="mt-4 w-full text-primary text-center px-2 max-sm:px-4 font-semibold text-[clamp(1.5rem,4vw,2.6rem)] leading-[1.3]">
+        <div className="mt-4 w-full text-primary text-center px-2 max-sm:px-4 font-semibold text-large-title">
           <h1 className="">Explore inspiring journeys and achievements</h1>
           <h2>from our thriving alumni community.</h2>
         </div>
@@ -73,7 +83,7 @@ export default function AlumniSection() {
             ))}
           </div>
           {/* <div className="pointer-events-none absolute inset-x-0 top-0 h-1/5 bg-gradient-to-b from-color1"></div> */}
-          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t from-white"></div>
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t from-background"></div>
         </div>
 
         <Link href="/alumni-testimonials" className="mt-10">

@@ -94,11 +94,11 @@ export default function CareersPage({ Fulldata }: { Fulldata: Jobs[] }) {
   }, []);
 
   return (
-    <section className="flex flex-col w-full h-fit items-center mb-8 px-6 md:px-20">
+    <section className="flex flex-col py-10 h-fit items-center mb-8 w-[87.5vw] max-w-[1680px] mx-auto">
       {/* Filters */}
       <div className="w-full flex flex-col items-end">
-        <h1 className="heading-text w-full">Careers</h1>
-        <div className="flex flex-col max-md:w-full items-center rounded text-muted-foreground bg-muted lg:flex-row gap-4 w-fit my-2">
+        <h1 className="text-large-title w-full">Careers</h1>
+        <div className="flex flex-col max-md:w-full items-center rounded text-main bg-white border lg:flex-row gap-4 w-fit my-2">
           <Select defaultValue="all" onValueChange={setCategory}>
             <SelectTrigger className="rounded-sm w-full max-w-sm self-end border-none shadow-none lg:self-auto">
               <SelectValue placeholder="Filter by category" />
@@ -111,14 +111,14 @@ export default function CareersPage({ Fulldata }: { Fulldata: Jobs[] }) {
             </SelectContent>
           </Select>
 
-          <search className="flex bg-dwd-secondary1 max-md:w-full border-2 border-dwd-secondary1 rounded-md sm:border-0">
+          <search className="flex bg-white max-md:w-full border-2 border-dwd-secondary1 rounded-md sm:border-0">
             <input
               // onKeyDown={(e) => e.key === 'Enter' && updateSearch()}
               ref={searchInputRef}
               onChange={(event) =>
                 setSearchText(event.target.value.toLowerCase())
               }
-              className="text-dwd-secondary1 rounded-l-md p-1 px-2 focus:outline-none w-full sm:w-auto"
+              className="rounded-l-md p-1 px-2 focus:outline-none w-full sm:w-auto"
               type="text"
               placeholder="Search..."
             />
@@ -142,13 +142,13 @@ export default function CareersPage({ Fulldata }: { Fulldata: Jobs[] }) {
 
         {/* Large screen table */}
         <Table>
-          <TableHeader className="bg-primary">
+          <TableHeader className="bg-main">
             <TableRow>
-              <TableHead className="text-white">No.</TableHead>
+              <TableHead className="text-title-3 text-white">No.</TableHead>
               <TableHead className="text-white">
                 Title and Description
               </TableHead>
-              <TableHead className="text-white">Deadline</TableHead>
+              <TableHead className="text-white text-center">Deadline</TableHead>
               <TableHead className="text-center text-white w-min">
                 General Instructions
               </TableHead>
@@ -160,16 +160,15 @@ export default function CareersPage({ Fulldata }: { Fulldata: Jobs[] }) {
 
           <TableBody>
             {filteredJobs.map((job, index) => (
-              <TableRow
-                key={index}
-                className={index % 2 === 0 ? 'bg-secondary/8' : 'bg-white'}
-              >
+              <TableRow key={index} className="bg-white even:bg-gray-100">
                 <TableCell>{index + 1}.</TableCell>
                 <TableCell>
                   <div className="flex flex-col gap-2 flex-1">
-                    <span className="text-primary">{job.title}</span>
+                    <span className="text-primary text-title-3 font-medium">
+                      {job.title}
+                    </span>
                     {job.details && (
-                      <div className="pr-4 text-wrap text-secondary text-justify">
+                      <div className="pr-4 text-wrap text-body font-normal text-main/70 text-justify">
                         {job.details}
                       </div>
                     )}
@@ -190,7 +189,7 @@ export default function CareersPage({ Fulldata }: { Fulldata: Jobs[] }) {
                   </div> */}
                   </div>
                 </TableCell>
-                <TableCell className="text-wrap text-center text-primary text-sm">
+                <TableCell className="text-wrap text-center text-primary text-body font-normal">
                   {job?.lastDate ? (
                     <>
                       {new Date(job.lastDate).toLocaleDateString('en-US', {

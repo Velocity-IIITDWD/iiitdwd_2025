@@ -65,7 +65,7 @@ export function ClubCard({
   return (
     <>
       <div
-        className="group cursor-pointer"
+        className="group cursor-pointer h-full"
         onClick={() => setIsOpen(true)}
         role="button"
         tabIndex={0}
@@ -75,8 +75,8 @@ export function ClubCard({
           }
         }}
       >
-        <Card className="overflow-hidden border-0 shadow-lg transition-all duration-300 group-hover:shadow-2xl bg-white">
-          <div className="relative h-48 w-full overflow-hidden">
+        <Card className="overflow-hidden h-full p-0 border shadow-lg transition-all duration-300 group-hover:shadow-2xl bg-white">
+          <div className="relative h-48 w-full flex-none overflow-hidden">
             <Image
               src={imageUrl}
               alt={name}
@@ -90,17 +90,17 @@ export function ClubCard({
                   src={logo}
                   alt={`${name} logo`}
                   fill
-                  className="object-contain"
+                  className="object-cover "
                 />
               </div>
-              <h3 className="text-xl font-bold text-white">{name}</h3>
+              <h3 className="text-title-1 font-bold text-white">{name}</h3>
             </div>
           </div>
 
-          <div className="p-6">
+          <div className="p-6 text-title-3 flex flex-col justify-between h-full">
             <p className="text-gray-600 mb-6 line-clamp-3">{description}</p>
 
-            <div className="flex items-center justify-between text-sm">
+            <div className="flex items-center justify-between text-body">
               <div className="flex items-center gap-2 text-[#001B3D]">
                 <Users className="h-5 w-5" />
                 <span className="font-medium">{memberCount} members</span>
@@ -138,7 +138,9 @@ export function ClubCard({
                     className="object-contain"
                   />
                 </div>
-                <DrawerTitle className="text-2xl font-bold">{name}</DrawerTitle>
+                <DrawerTitle className="text-large-title font-bold">
+                  {name}
+                </DrawerTitle>
               </div>
               <DrawerDescription className="text-gray-600 mt-2">
                 {description}

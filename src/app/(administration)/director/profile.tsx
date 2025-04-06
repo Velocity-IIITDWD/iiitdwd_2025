@@ -28,7 +28,7 @@ export default function Profile({
   signaturePosition
 }: ProfilePageProps) {
   return (
-    <div className="w-full py-10 px-6 md:px-20">
+    <div className="py-10 w-[87.5vw] max-w-[1680px] mx-auto">
       <div className="flex flex-col md:flex-row gap-8">
         <div className="flex flex-col gap-4">
           {image && (
@@ -75,28 +75,35 @@ export default function Profile({
           {(name || position) && (
             <div>
               {name && (
-                <h1 className="text-4xl font-bold text-gray-900">{name}</h1>
+                <h1 className="text-main-title font-semibold text-gray-900">
+                  {name}
+                </h1>
               )}
-              {position && <p className="text-xl text-gray-600">{position}</p>}
+              {position && <p className="text-title-1 text-main">{position}</p>}
             </div>
           )}
 
-          {quote && <p className="text-primary text-lg">{quote}</p>}
+          {quote && <p className="text-primary text-title-3">{quote}</p>}
 
-          <div className="h-1 bg-primary w-full my-6"></div>
+          <div className="h-[1px] bg-primary w-full my-6"></div>
 
           <div>
-            <h2 className="text-2xl font-semibold text-gray-800 mb-4">About</h2>
+            <h2 className="text-title-1 font-semibold text-gray-800 mb-4">
+              About
+            </h2>
             {about.map((paragraph, index) => (
-              <p key={index} className="text-gray-700 mb-4">
+              <p
+                key={index}
+                className="text-gray-700 text-title-3 font-normal mb-4"
+              >
                 {paragraph}
               </p>
             ))}
 
             {(signatureText || signaturePosition) && (
-              <p className="text-primary text-lg">
+              <p className="text-primary text-title-3 mt-5">
                 {signatureText && (
-                  <span className="text-lg font-semibold block">
+                  <span className="text-title-2 font-semibold block">
                     {signatureText}
                   </span>
                 )}
@@ -105,7 +112,7 @@ export default function Profile({
             )}
           </div>
 
-          <div className="h-1 bg-primary w-full my-6"></div>
+          {/* <div className="h-[1px] bg-primary w-full my-6"></div> */}
         </div>
       </div>
     </div>

@@ -1,7 +1,7 @@
-import { Card, CardContent } from "@/components/ui/card";
-import { CalendarIcon, MapPinIcon } from "lucide-react";
-import Image from "next/image";
-import Link from "next/link";
+import { Card, CardContent } from '@/components/ui/card';
+import { CalendarIcon, MapPinIcon } from 'lucide-react';
+import Image from 'next/image';
+import Link from 'next/link';
 
 interface EventCardProps {
   event: {
@@ -36,16 +36,16 @@ const EventCard = ({ event }: EventCardProps) => {
       const [day, month, year] = dateString.split('-');
       const date = new Date(`${year}-${month}-${day}`);
 
-      return date.toLocaleDateString("en-US", {
-        month: "short",
-        day: "numeric",
-        year: "numeric",
+      return date.toLocaleDateString('en-US', {
+        month: 'short',
+        day: 'numeric',
+        year: 'numeric'
       });
     }
-  }
+  };
 
   return (
-    <Card className="overflow-hidden max-w-md group border hover:-translate-y-2 transition-all duration-300 hover:shadow-xl border-gray-200 rounded-lg shadow-sm py-0 gap-0">
+    <Card className="overflow-hidden max-w-md group hover:-translate-y-2 transition-all duration-300 hover:shadow-xl border bg-white rounded-lg shadow-sm py-0 gap-0">
       <div className="relative h-64 flex-none w-full">
         <div className="absolute h-full w-full group-hover:bg-main/20 z-[2] bg-none transition-colors duration-300" />
         {event.allImage && event.allImage.length > 0 ? (
@@ -60,27 +60,30 @@ const EventCard = ({ event }: EventCardProps) => {
             <span className="text-gray-400">No image available</span>
           </div>
         )}
-
       </div>
 
       <CardContent className="px-4 py-6 justify-between flex flex-col h-full">
         <Link href={event.href} className="block">
-          <h2 className="text-xl font-bold mb-2 text-primary">
+          <h2 className="text-title-2 font-bold mb-2 text-main">
             {event.text}
           </h2>
         </Link>
 
         <div>
-          <div className="flex text-sm text-secondary mb-1">
+          <div className="flex text-body font-medium text-gray-500 mb-1">
             <CalendarIcon className="mr-2 flex-none" size={16} />
             <span>{formatDate(event.details.startDate)}</span>
           </div>
 
-          <div className="flex text-sm text-secondary">
+          <div className="flex text-body font-medium text-gray-500">
             <MapPinIcon className="flex-none mr-2" size={16} />
             <span>
-              {event.venue.street && `${event.venue.street}${event.venue.place || event.venue.city ? ', ' : ''}`}
-              {event.venue.place && `${event.venue.place}${event.venue.city ? ', ' : ''}`}
+              {event.venue.street &&
+                `${event.venue.street}${
+                  event.venue.place || event.venue.city ? ', ' : ''
+                }`}
+              {event.venue.place &&
+                `${event.venue.place}${event.venue.city ? ', ' : ''}`}
               {event.venue.city && event.venue.city}
             </span>
           </div>
@@ -91,4 +94,3 @@ const EventCard = ({ event }: EventCardProps) => {
 };
 
 export default EventCard;
-

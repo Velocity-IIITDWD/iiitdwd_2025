@@ -2,6 +2,7 @@
 import { Marquee } from '@/components/ui/marquee';
 import { ArrowRightIcon } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function LandingSection({ data }: { data: string[] }) {
   const half = Math.ceil(data.length / 2);
@@ -41,7 +42,7 @@ export default function LandingSection({ data }: { data: string[] }) {
         </div>
         <div className=" px-5 md:px-13 py-12 font-grotesk">
           <div className="mx-auto max-w-6xl w-full">
-            <div className="text-[clamp(2rem,10vw,3.3rem)] uppercase text-center leading-[1.2] font-bold">
+            <div className="text-main-title uppercase text-center font-bold">
               <div>Creating thinkers and leaders</div>
               <div>in technology to positively</div>
               <div>impact society</div>
@@ -53,26 +54,38 @@ export default function LandingSection({ data }: { data: string[] }) {
         id="quick-links"
         className="w-fit uppercase my-10 flex max-md:flex-col max-md:w-full items-center gap-4 py-4"
       >
-        <div className="hidden text-sm md:block whitespace-nowrap text-gray-500">
+        <div className="hidden text-title-3 md:block whitespace-nowrap text-gray-500">
           Quick Links:
         </div>
         <div className="flex gap-1 md:gap-4 max-md:flex-col w-full max-md:max-w-[260px] items-center">
-          <button className="flex gap-4 uppercase max-md:w-full max-md:justify-between text-sm text-bold text-amber-50 hover:bg-primary transition-colors bg-main rounded px-4 md:px-6 py-2 items-center">
+          <Link
+            href={'/academics/programmes'}
+            className="flex gap-4 uppercase max-md:w-full max-md:justify-between text-title-3 text-bold text-amber-50 hover:bg-main/90 transition-colors bg-main rounded px-4 md:px-6 py-2 items-center"
+          >
             Academics
             <ArrowRightIcon size={18} />
-          </button>
-          <button className="flex gap-4 uppercase max-md:w-full max-md:justify-between text-sm text-bold text-amber-50 hover:bg-primary transition-colors bg-main rounded px-4 md:px-6 py-2 items-center">
+          </Link>
+          <Link
+            href={'/admission'}
+            className="flex gap-4 uppercase max-md:w-full max-md:justify-between text-title-3 text-bold text-amber-50 hover:bg-main/90 transition-colors bg-main rounded px-4 md:px-6 py-2 items-center"
+          >
             Admissions
             <ArrowRightIcon size={18} />
-          </button>
-          <button className="flex gap-4 uppercase max-md:w-full max-md:justify-between text-sm text-bold text-amber-50 hover:bg-primary transition-colors bg-main rounded px-4 md:px-6 py-2 items-center">
+          </Link>
+          <Link
+            href={'/amenities'}
+            className="flex gap-4 uppercase max-md:w-full max-md:justify-between text-title-3 text-bold text-amber-50 hover:bg-main/90 transition-colors bg-main rounded px-4 md:px-6 py-2 items-center"
+          >
             Campus
             <ArrowRightIcon size={18} />
-          </button>
-          <button className="flex gap-4 uppercase max-md:w-full max-md:justify-between text-sm text-bold text-amber-50 hover:bg-primary transition-colors bg-main rounded px-4 md:px-6 py-2 items-center">
+          </Link>
+          <Link
+            href={'/student-life/overview'}
+            className="flex gap-4 uppercase max-md:w-full max-md:justify-between text-title-3 text-bold text-amber-50 hover:bg-main/90 transition-colors bg-main rounded px-4 md:px-6 py-2 items-center"
+          >
             Culture
             <ArrowRightIcon size={18} />
-          </button>
+          </Link>
         </div>
       </div>
     </div>

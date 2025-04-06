@@ -87,7 +87,7 @@ export default function Page() {
   const distributedReviews = distributeReviews(filteredReviews, columnCount);
 
   return (
-    <div className="w-full px-6 md:px-20 min-h-screen flex flex-col pb-20 text-text-col bg-color1">
+    <div className="w-[87.5vw] max-w-[1680px] mx-auto min-h-screen flex flex-col pb-20 text-text-col bg-color1">
       <div className="w-full pt-20 flex flex-col gap-8">
         {/* Search and Filters Section */}
         <div className="flex flex-col gap-6">
@@ -115,7 +115,7 @@ export default function Page() {
             </Select>
           </div>
 
-          <div className="text-sm text-gray-600">
+          <div className="text-body text-gray-600">
             Showing {filteredReviews.length} of {reviews.length} testimonials
           </div>
         </div>

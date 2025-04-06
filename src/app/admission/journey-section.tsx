@@ -17,29 +17,29 @@ import JourneyComponent from './journey-component';
 const JourneySection = () => {
   const [selectedProgram, setSelectedProgram] = useState('b-tech');
   return (
-    <div className="mx-auto container px-4 md:px-8 py-16 md:py-24">
-      <div className="container mx-auto relative">
-        <div className="absolute z-[-2] w-[3px] [mask:linear-gradient(0deg,transparent,white_20%,white_80%,transparent)]  h-full bg-tertiary/20">
+    <div className="w-[87.5vw] max-w-[1680px] mx-auto py-16 md:py-24">
+      <div className="mx-auto relative">
+        <div className="absolute z-[-2] w-[3px] [mask:linear-gradient(0deg,transparent,white_20%,white_80%,transparent)]  h-full bg-tertiary/30">
           <div className="fixed left-auto top-0 right-auto bottom-[50vh] z-[-1] w-[3px] h-[50vh] bg-main"></div>
         </div>
 
-        <h1 className="text-center text-xl font-bold tracking-tight mb-16">
+        <h1 className="text-center text-title-1 font-semibold tracking-tight mb-16">
           START YOUR JOURNEY HERE
         </h1>
 
-        <div className="relative flex flex-col space-y-20">
+        <div className="relative flex flex-col gap-10 md:gap-16">
           {/* Timeline */}
 
           {/* Content */}
 
           {/* Section 1 */}
           <JourneyComponent id="major">
-            <section className="flex max-md:px-6 flex-col md:flex-row gap-8 w-full">
-              <div className="flex-1">
-                <h3 className="text-base font-bold text-gray-700 mb-4">
+            <section className="flex px-6 md:px-12 flex-col md:flex-row gap-8 w-full">
+              <div className="flex-1 text-title-2">
+                <h3 className="text-title-1 font-bold text-main mb-4">
                   Find Your Program
                 </h3>
-                <h2 className="text-5xl font-bold mb-8">
+                <h2 className="text-main-title font-bold mb-8">
                   Explore every area you can study
                 </h2>
                 <p className="text-gray-700 mb-6">
@@ -65,7 +65,7 @@ const JourneySection = () => {
 
                   <Link
                     href={`/admission/${selectedProgram}`}
-                    className="bg-main flex items-center hover:bg-primary text-amber-50 transition-colors rounded h-12 border-0 px-6"
+                    className="bg-main flex items-center hover:bg-main/90 text-white transition-colors rounded h-12 border-0 px-6"
                   >
                     LEARN MORE <ChevronRight className="ml-2 h-4 w-4" />
                   </Link>
@@ -79,16 +79,16 @@ const JourneySection = () => {
           </JourneyComponent>
 
           <JourneyComponent id="visit">
-            <section className="flex max-md:px-6 flex-col md:flex-row gap-8 w-full">
+            <section className="flex px-6 md:px-12 flex-col md:flex-row gap-8 w-full">
               <div className="flex-1 order-2 md:order-1">
                 <div className="bg-gray-300 w-full aspect-[3/2]" />
               </div>
 
-              <div className="flex-1 order-1 md:order-2">
-                <h3 className="text-base font-bold text-gray-700 mb-4">
+              <div className="flex-1 text-title-2 order-1 md:order-2">
+                <h3 className="text-title-1 font-bold text-main mb-4">
                   Visit IIIT Dharwad
                 </h3>
-                <h2 className="text-5xl font-bold mb-8">
+                <h2 className="text-main-title font-bold mb-8">
                   Explore our Dharwad campus
                 </h2>
                 <p className="text-gray-700 mb-6">
@@ -98,7 +98,7 @@ const JourneySection = () => {
 
                 <Button
                   variant="outline"
-                  className="bg-main hover:bg-primary !text-amber-50 transition-colors rounded h-12 border-0 px-6"
+                  className="bg-main flex items-center hover:bg-main/90 text-white hover:text-white transition-colors rounded h-12 border-0 px-6"
                 >
                   SCHEDULE A VISIT <ChevronRight className="ml-2 h-4 w-4" />
                 </Button>
@@ -108,12 +108,12 @@ const JourneySection = () => {
 
           {/* Section 3 */}
           <JourneyComponent id="tuition">
-            <section className="flex max-md:px-6 flex-col md:flex-row gap-8 w-full">
-              <div className="flex-1">
-                <h3 className="text-base font-bold text-gray-700 mb-4">
+            <section className="flex px-6 md:px-12 flex-col md:flex-row gap-8 w-full">
+              <div className="flex-1 text-title-2">
+                <h3 className="text-title-1 font-bold text-main mb-4">
                   Review Tuition and Aid
                 </h3>
-                <h2 className="text-5xl font-bold mb-8">
+                <h2 className="text-main-title font-bold mb-8">
                   Get financial information you need
                 </h2>
                 <p className="text-gray-700 mb-6">
@@ -123,7 +123,7 @@ const JourneySection = () => {
 
                 <Button
                   variant="outline"
-                  className="bg-main hover:bg-primary !text-amber-50 transition-colors rounded h-12 border-0 px-6"
+                  className="bg-main flex items-center hover:bg-main/90 text-white hover:text-white transition-colors rounded h-12 border-0 px-6"
                 >
                   EXPLORE FINANCIAL AID{' '}
                   <ChevronRight className="ml-2 h-4 w-4" />

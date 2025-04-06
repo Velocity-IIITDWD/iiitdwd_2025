@@ -1,12 +1,12 @@
 export default function VisionMissionValues() {
   return (
-    <div className="px-6 md:px-20 mb-16">
+    <div className="w-[87.5vw] max-w-[1680px] mx-auto mb-16">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
         {/* Vision Card - Takes full width on mobile, 1/3 on desktop */}
-        <div className="bg-gradient-to-br from-primary h-full to-black rounded-xl p-6 text-white shadow-lg flex flex-col justify-between">
+        <div className="bg-gradient-to-br from-primary h-full to-main rounded-xl p-6 text-white shadow-lg flex flex-col justify-between">
           <div>
-            <h2 className="text-2xl font-bold mb-4">Our Vision</h2>
-            <p className="text-lg">
+            <h2 className="text-large-title mb-4">Our Vision</h2>
+            <p className="text-title-2">
               To be a globally renowned academy of information technology for
               societal development.
             </p>
@@ -14,9 +14,11 @@ export default function VisionMissionValues() {
         </div>
 
         {/* Mission Card - Takes full width on mobile, 2/3 on desktop */}
-        <div className="bg-gradient-to-b from-secondary/10 to-tertiary/30 border hover:border-secondary/30 focus:outline-none focus:border-none focus:ring-brand-600 focus:ring-2 hover:shadow rounded-xl p-6 md:col-span-2 flex flex-col justify-between">
-          <h2 className="text-2xl font-bold mb-4 text-gray-800">Our Mission</h2>
-          <ul className="space-y-2 text-gray-700">
+        <div className="bg-gradient-to-b from-white/30 to-white border focus:outline-none focus:border-none focus:ring-brand-600 focus:ring-2 hover:shadow rounded-xl p-6 md:col-span-2 flex flex-col justify-between">
+          <h2 className="text-large-title font-bold mb-4 text-gray-800">
+            Our Mission
+          </h2>
+          <ul className="space-y-2 text-title-2 font-medium text-gray-700">
             <li className="flex items-start">
               <span className="text-primary mr-2">•</span>
               <p>
@@ -45,11 +47,11 @@ export default function VisionMissionValues() {
 
       {/* Core Values - 4 equal cards in a grid */}
       <div>
-        <h2 className="text-2xl font-bold mb-4 text-primary">Core Values</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <h2 className="text-large-title my-6 pl-4 text-primary">Core Values</h2>
+        <div className="grid grid-cols-1 text-title-3 font-medium sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {/* Integrity Card */}
-          <div className="bg-gradient-to-b from-secondary/10 to-tertiary/30 border hover:border-secondary/30 focus:outline-none focus:border-none focus:ring-brand-600 focus:ring-2 hover:shadow rounded-xl p-6 flex flex-col justify-between">
-            <h3 className="text-xl font-bold text-gray-800 mb-2">Integrity</h3>
+          <div className="bg-gradient-to-b from-white/30 to-white border focus:outline-none focus:border-none focus:ring-brand-600 focus:ring-2 hover:shadow rounded-xl p-6 flex flex-col justify-between">
+            <h3 className="text-title-1 text-gray-800 mb-2">Integrity</h3>
             <p className="text-gray-600">
               We uphold honesty, transparency, and ethical behavior in all our
               actions and decisions.
@@ -57,8 +59,8 @@ export default function VisionMissionValues() {
           </div>
 
           {/* Service Card */}
-          <div className="bg-gradient-to-b from-secondary/10 to-tertiary/30 border hover:border-secondary/30 focus:outline-none focus:border-none focus:ring-brand-600 focus:ring-2 hover:shadow rounded-xl p-6 flex flex-col justify-between">
-            <h3 className="text-xl font-bold text-gray-800 mb-2">Service</h3>
+          <div className="bg-gradient-to-b from-white/30 to-white border focus:outline-none focus:border-none focus:ring-brand-600 focus:ring-2 hover:shadow rounded-xl p-6 flex flex-col justify-between">
+            <h3 className="text-title-1 text-gray-800 mb-2">Service</h3>
             <p className="text-gray-600">
               We are dedicated to serving society through technology and
               knowledge sharing.
@@ -66,8 +68,8 @@ export default function VisionMissionValues() {
           </div>
 
           {/* Positivity Card */}
-          <div className="bg-gradient-to-b from-secondary/10 to-tertiary/30 border hover:border-secondary/30 focus:outline-none focus:border-none focus:ring-brand-600 focus:ring-2 hover:shadow rounded-xl p-6 flex flex-col justify-between">
-            <h3 className="text-xl font-bold text-gray-800 mb-2">Positivity</h3>
+          <div className="bg-gradient-to-b from-white/30 to-white border focus:outline-none focus:border-none focus:ring-brand-600 focus:ring-2 hover:shadow rounded-xl p-6 flex flex-col justify-between">
+            <h3 className="text-title-1 text-gray-800 mb-2">Positivity</h3>
             <p className="text-gray-600">
               We embrace an optimistic mindset to overcome challenges and drive
               innovation.
@@ -75,8 +77,8 @@ export default function VisionMissionValues() {
           </div>
 
           {/* Commitment Card */}
-          <div className="bg-gradient-to-b from-secondary/10 to-tertiary/30 border hover:border-secondary/30 focus:outline-none focus:border-none focus:ring-brand-600 focus:ring-2 hover:shadow rounded-xl p-6 flex flex-col justify-between">
-            <h3 className="text-xl font-bold text-gray-800 mb-2">
+          <div className="bg-gradient-to-b from-white/30 to-white border focus:outline-none focus:border-none focus:ring-brand-600 focus:ring-2 hover:shadow rounded-xl p-6 flex flex-col justify-between">
+            <h3 className="text-title-1 text-gray-800 mb-2">
               Commitment & Passion
             </h3>
             <p className="text-gray-600">

@@ -14,8 +14,8 @@ interface ProfileSectionProps {
 
 export function ProfileCard({ title, content, imageURL }: ProfileCardProps) {
   return (
-    <div className="flex flex-col items-center text-center border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 p-6 bg-white">
-      <div className="w-40 h-40 rounded-full overflow-hidden mb-4">
+    <div className="flex flex-col items-center text-center border border-gray-400 rounded-xl shadow-sm hover:shadow-md bg-white transition-shadow duration-300 overflow-clip">
+      <div className="w-full aspect-square overflow-hidden">
         <Image
           src={
             imageURL?.startsWith('/images')
@@ -28,13 +28,15 @@ export function ProfileCard({ title, content, imageURL }: ProfileCardProps) {
           className="object-cover w-full h-full"
         />
       </div>
-      <h3 className="text-xl font-bold text-navy-700 mb-2">{title || ''}</h3>
-      <div className="space-y-1">
-        {content?.map((line, index) => (
-          <p key={index} className="text-gray-600 text-sm">
-            {line}
-          </p>
-        ))}
+      <div className="px-4 py-6 text-left w-full">
+        <h3 className="text-title-2 font-bold text-main mb-1">{title || ''}</h3>
+        <div className="space-y-1">
+          {content?.map((line, index) => (
+            <p key={index} className="text-gray-600 text-body font-normal">
+              {line}
+            </p>
+          ))}
+        </div>
       </div>
     </div>
   );

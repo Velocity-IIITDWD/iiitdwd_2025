@@ -1,18 +1,26 @@
 // pages/how-to-reach.js
-import React from 'react';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { MapPin, Train, Plane, Bus, Car } from "lucide-react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle
+} from '@/components/ui/card';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Bus, Car, MapPin, Plane, Train } from 'lucide-react';
 
 export default function HowToReach() {
   return (
-    <div className="container mx-auto py-8 px-4 md:px-6">
+    <div className="w-[87.5vw] max-w-[1680px] mx-auto py-8">
       <div className="space-y-6">
         {/* Page Header */}
         <div className="text-center space-y-2 mb-8">
-          <h1 className="text-3xl font-bold tracking-tight">How to Reach IIIT Dharwad</h1>
-          <p className="text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">
-            Find directions to reach Indian Institute of Information Technology, Dharwad from various locations
+          <h1 className="text-large-title font-bold tracking-tight">
+            How to Reach IIIT Dharwad
+          </h1>
+          <p className="text-gray-500 max-w-2xl text-title-2 mx-auto">
+            Find directions to reach Indian Institute of Information Technology,
+            Dharwad from various locations
           </p>
         </div>
 
@@ -24,21 +32,28 @@ export default function HowToReach() {
               Campus Location
             </CardTitle>
             <CardDescription>
-              IIIT Dharwad is located in North Karnataka, approximately 430 km from Bangalore.
+              IIIT Dharwad is located in North Karnataka, approximately 430 km
+              from Bangalore.
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid md:grid-cols-2 text-title-3 font-normal gap-6">
               <div>
-                <h3 className="font-medium mb-2">Address</h3>
+                <h3 className="font-medium text-main text-title-2 mb-2">
+                  Address
+                </h3>
                 <p className="text-gray-700 dark:text-gray-300">
-                  Indian Institute of Information Technology Dharwad,<br />
+                  Indian Institute of Information Technology Dharwad,
+                  <br />
                   Ittigatti Rd, near Sattur Colony, Karnataka 580009
                 </p>
                 <div className="mt-4">
-                  <h3 className="font-medium mb-2">Contact</h3>
+                  <h3 className="font-medium text-title-2 text-main mb-2">
+                    Contact
+                  </h3>
                   <p className="text-gray-700 dark:text-gray-300">
-                    Phone: +91-836-2250879<br />
+                    Phone: +91-836-2250879
+                    <br />
                     Email: office@iiitdwd.ac.in
                   </p>
                 </div>
@@ -59,7 +74,7 @@ export default function HowToReach() {
 
         {/* Transportation Options */}
         <Tabs defaultValue="air" className="w-full">
-          <TabsList className="grid grid-cols-4 mb-6">
+          <TabsList className="grid grid-cols-2 md:grid-cols-4 mb-6 h-fit gap-2">
             <TabsTrigger value="air" className="flex items-center gap-1">
               <Plane className="h-4 w-4" /> By Air
             </TabsTrigger>
@@ -78,22 +93,39 @@ export default function HowToReach() {
             <Card>
               <CardHeader>
                 <CardTitle>By Air</CardTitle>
-                <CardDescription>The nearest airports to IIIT Dharwad</CardDescription>
+                <CardDescription>
+                  The nearest airports to IIIT Dharwad
+                </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
-                <div>
-                  <h3 className="font-semibold text-lg">Hubballi Airport</h3>
+                <div className="text-title-3 font-normal">
+                  <h3 className="font-semibold text-main text-title-2 mb-2">
+                    Hubballi Airport
+                  </h3>
                   <p className="text-gray-700 dark:text-gray-300">
-                    The nearest airport is Hubballi Airport, approximately 30 km from IIIT Dharwad campus.
-                    Direct flights are available from Bangalore, Mumbai, and Hyderabad. From the airport,
-                    you can take a taxi to reach the institute (approximately 45 minutes).
+                    The nearest airport is Hubballi Airport, approximately 30 km
+                    from IIIT Dharwad campus. Direct flights are available from
+                    Bangalore, Mumbai, and Hyderabad. From the airport, you can
+                    take a taxi to reach the institute (approximately 45
+                    minutes).
                   </p>
-                  <div className="mt-3 bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg">
-                    <h4 className="font-medium text-blue-700 dark:text-blue-400 mb-2">From Hubli Airport to IIITDWD campus:</h4>
-                    <ul className="list-disc pl-5 text-gray-700 dark:text-gray-300 space-y-2">
-                      <li>Take an auto rickshaw directly to the campus or take the bus shuttle from Airport to Hosur Cross</li>
-                      <li>From Hosur Cross take the BRTS (Bus Rapid Transit System) to Sattur Cross</li>
-                      <li>After reaching Sattur Cross take an auto rickshaw directly to the campus</li>
+                  <div className="mt-3 bg-background p-4 rounded-lg">
+                    <h4 className="text-main text-title-2 font-semibold mb-2">
+                      From Hubli Airport to IIITDWD campus:
+                    </h4>
+                    <ul className="list-disc pl-5 text-gray-600 space-y-2">
+                      <li>
+                        Take an auto rickshaw directly to the campus or take the
+                        bus shuttle from Airport to Hosur Cross
+                      </li>
+                      <li>
+                        From Hosur Cross take the BRTS (Bus Rapid Transit
+                        System) to Sattur Cross
+                      </li>
+                      <li>
+                        After reaching Sattur Cross take an auto rickshaw
+                        directly to the campus
+                      </li>
                     </ul>
                   </div>
                 </div>
@@ -105,48 +137,82 @@ export default function HowToReach() {
             <Card>
               <CardHeader>
                 <CardTitle>By Rail</CardTitle>
-                <CardDescription>Rail connectivity to IIIT Dharwad</CardDescription>
+                <CardDescription>
+                  Rail connectivity to IIIT Dharwad
+                </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
-                <div>
-                  <h3 className="font-semibold text-lg">Dharwad Railway Station</h3>
+                <div className="text-title-3 font-normal">
+                  <h3 className="font-semibold text-main text-title-2 mb-2">
+                    Dharwad Railway Station
+                  </h3>
                   <p className="text-gray-700 dark:text-gray-300">
-                    Dharwad has its own railway station with good connectivity to major cities like
-                    Bangalore, Mumbai, Pune, and Hyderabad. From the railway station, you can take an
-                    auto-rickshaw or taxi to reach the campus (approximately 15-20 minutes).
+                    Dharwad has its own railway station with good connectivity
+                    to major cities like Bangalore, Mumbai, Pune, and Hyderabad.
+                    From the railway station, you can take an auto-rickshaw or
+                    taxi to reach the campus (approximately 15-20 minutes).
                   </p>
-                  <div className="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg mt-2">
-                    <h4 className="font-medium text-blue-700 dark:text-blue-400 mb-2">From Dharwad Railway Station to IIITD campus:</h4>
+                  <div className="bg-background p-4 rounded-lg mt-2">
+                    <h4 className="font-semibold text-main mb-2 text-title-2">
+                      From Dharwad Railway Station to IIITD campus:
+                    </h4>
                     <ul className="list-disc pl-5 text-gray-700 dark:text-gray-300 space-y-2">
                       <li>You can directly take an auto rickshaw to campus</li>
-                      <li>Or you can take an auto rickshaw to Court Circle BRTS Station</li>
-                      <li>After that you can take BRTS from Court Circle to Sattur Cross BRTS Station</li>
-                      <li>After that you can take an auto rickshaw directly to the campus</li>
+                      <li>
+                        Or you can take an auto rickshaw to Court Circle BRTS
+                        Station
+                      </li>
+                      <li>
+                        After that you can take BRTS from Court Circle to Sattur
+                        Cross BRTS Station
+                      </li>
+                      <li>
+                        After that you can take an auto rickshaw directly to the
+                        campus
+                      </li>
                     </ul>
                   </div>
                 </div>
-                <div>
-                  <h3 className="font-semibold text-lg">Hubballi Railway Station</h3>
+                <div className="text-title-3 font-normal">
+                  <h3 className="font-semibold text-main text-title-2 mb-2">
+                    Hubballi Railway Station
+                  </h3>
                   <p className="text-gray-700 dark:text-gray-300">
-                    Hubballi (earlier known as Hubli) is a major railway junction approximately 20 km from
-                    Dharwad with better connectivity to various parts of the country. Regular buses and taxis
-                    are available from Hubballi to Dharwad.
-                  </p><div className="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg mt-2">
-                    <h4 className="font-medium text-blue-700 dark:text-blue-400 mb-2">From Hubli Railway Station to IIITD campus:</h4>
+                    Hubballi (earlier known as Hubli) is a major railway
+                    junction approximately 20 km from Dharwad with better
+                    connectivity to various parts of the country. Regular buses
+                    and taxis are available from Hubballi to Dharwad.
+                  </p>
+                  <div className="bg-background p-4 rounded-lg mt-2">
+                    <h4 className="font-semibold text-main mb-2 text-title-2">
+                      From Hubli Railway Station to IIITD campus:
+                    </h4>
                     <ul className="list-disc pl-5 text-gray-700 dark:text-gray-300 space-y-2">
-                      <li>If you are reaching campus after midnight you have to take an Auto Rickshaw directly to campus</li>
+                      <li>
+                        If you are reaching campus after midnight you have to
+                        take an Auto Rickshaw directly to campus
+                      </li>
                       <li>Or you can take BRTS to Sattur Cross</li>
-                      <li>After reaching Sattur Cross you can take an auto rickshaw directly to the campus</li>
+                      <li>
+                        After reaching Sattur Cross you can take an auto
+                        rickshaw directly to the campus
+                      </li>
                     </ul>
                   </div>
                 </div>
-                <div className="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg">
-                  <h3 className="font-semibold text-blue-700 dark:text-blue-400">Major Trains</h3>
+                <div className="bg-background p-4 rounded-lg">
+                  <h3 className="font-semibold text-main text-title-2 mb-2">
+                    Major Trains
+                  </h3>
                   <ul className="list-disc pl-5 text-gray-700 dark:text-gray-300">
-                    <li>Rani Chennamma Express (Bangalore to Dharwad/Hubballi)</li>
+                    <li>
+                      Rani Chennamma Express (Bangalore to Dharwad/Hubballi)
+                    </li>
                     <li>Siddhaganga Express (Bangalore to Dharwad/Hubballi)</li>
                     <li>Hubballi Express (Mumbai to Hubballi)</li>
-                    <li>Goa Express (Delhi to Vasco-Da-Gama via Dharwad/Hubballi)</li>
+                    <li>
+                      Goa Express (Delhi to Vasco-Da-Gama via Dharwad/Hubballi)
+                    </li>
                   </ul>
                 </div>
               </CardContent>
@@ -157,28 +223,39 @@ export default function HowToReach() {
             <Card>
               <CardHeader>
                 <CardTitle>By Bus</CardTitle>
-                <CardDescription>Bus connectivity to IIIT Dharwad</CardDescription>
+                <CardDescription>
+                  Bus connectivity to IIIT Dharwad
+                </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
-                <div>
-                  <h3 className="font-semibold text-lg">State Transport Buses</h3>
+                <div className="text-title-3 font-normal">
+                  <h3 className="font-semibold text-main text-title-2 mb-2">
+                    State Transport Buses
+                  </h3>
                   <p className="text-gray-700 dark:text-gray-300">
-                    Karnataka State Road Transport Corporation (KSRTC) operates regular bus services
-                    to Dharwad from Bangalore, Mysore, Mangalore, and other major cities in Karnataka.
-                    The journey from Bangalore to Dharwad takes approximately 8-9 hours.
+                    Karnataka State Road Transport Corporation (KSRTC) operates
+                    regular bus services to Dharwad from Bangalore, Mysore,
+                    Mangalore, and other major cities in Karnataka. The journey
+                    from Bangalore to Dharwad takes approximately 8-9 hours.
                   </p>
                 </div>
-                <div>
-                  <h3 className="font-semibold text-lg">Private Buses</h3>
+                <div className="text-title-3 font-normal">
+                  <h3 className="font-semibold text-main text-title-2 mb-2">
+                    Private Buses
+                  </h3>
                   <p className="text-gray-700 dark:text-gray-300">
-                    Several private operators run comfortable AC and non-AC sleeper and seater buses
-                    to Dharwad from major cities. These can be booked online through various platforms.
+                    Several private operators run comfortable AC and non-AC
+                    sleeper and seater buses to Dharwad from major cities. These
+                    can be booked online through various platforms.
                   </p>
                 </div>
-                <div>
-                  <h3 className="font-semibold text-lg">Local Transport</h3>
+                <div className="text-title-3 font-normal">
+                  <h3 className="font-semibold text-main text-title-2 mb-2">
+                    Local Transport
+                  </h3>
                   <p className="text-gray-700 dark:text-gray-300">
-                    From Dharwad bus stand, you can take an auto-rickshaw or city bus to reach the IIIT Dharwad campus.
+                    From Dharwad bus stand, you can take an auto-rickshaw or
+                    city bus to reach the IIIT Dharwad campus.
                   </p>
                 </div>
               </CardContent>
@@ -189,28 +266,39 @@ export default function HowToReach() {
             <Card>
               <CardHeader>
                 <CardTitle>By Car</CardTitle>
-                <CardDescription>Driving directions to IIIT Dharwad</CardDescription>
+                <CardDescription>
+                  Driving directions to IIIT Dharwad
+                </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
-                <div>
-                  <h3 className="font-semibold text-lg">From Bangalore</h3>
+                <div className="text-title-3 font-normal">
+                  <h3 className="font-semibold text-main text-title-2 mb-2">
+                    From Bangalore
+                  </h3>
                   <p className="text-gray-700 dark:text-gray-300">
-                    Dharwad is well-connected to Bangalore via NH-48 (earlier NH-4). The distance is approximately
-                    430 km and takes around 7-8 hours by car. Take the Pune-Bengaluru Highway and drive towards
-                    Hubballi-Dharwad. IIIT Dharwad is located on the Pune-Bengaluru Highway (NH-4) in the WALMI Campus.
+                    Dharwad is well-connected to Bangalore via NH-48 (earlier
+                    NH-4). The distance is approximately 430 km and takes around
+                    7-8 hours by car. Take the Pune-Bengaluru Highway and drive
+                    towards Hubballi-Dharwad. IIIT Dharwad is located on the
+                    Pune-Bengaluru Highway (NH-4) in the WALMI Campus.
                   </p>
                 </div>
-                <div>
-                  <h3 className="font-semibold text-lg">From Mumbai</h3>
+                <div className="text-title-3 font-normal">
+                  <h3 className="font-semibold text-main text-title-2 mb-2">
+                    From Mumbai
+                  </h3>
                   <p className="text-gray-700 dark:text-gray-300">
-                    The distance from Mumbai to Dharwad is approximately 550 km via NH-48. The journey takes
-                    around 10-11 hours by car.
+                    The distance from Mumbai to Dharwad is approximately 550 km
+                    via NH-48. The journey takes around 10-11 hours by car.
                   </p>
                 </div>
-                <div>
-                  <h3 className="font-semibold text-lg">From Goa</h3>
+                <div className="text-title-3 font-normal">
+                  <h3 className="font-semibold text-main text-title-2 mb-2">
+                    From Goa
+                  </h3>
                   <p className="text-gray-700 dark:text-gray-300">
-                    Dharwad is about 150 km from Goa via NH-748. The journey takes approximately 3-4 hours by car.
+                    Dharwad is about 150 km from Goa via NH-748. The journey
+                    takes approximately 3-4 hours by car.
                   </p>
                 </div>
                 {/*<div className="bg-amber-50 dark:bg-amber-900/20 p-4 rounded-lg">
@@ -229,24 +317,27 @@ export default function HowToReach() {
         <Card>
           <CardHeader>
             <CardTitle>Nearby Accommodations</CardTitle>
-            <CardDescription>
-              Places to stay near IIIT Dharwad
-            </CardDescription>
+            <CardDescription>Places to stay near IIIT Dharwad</CardDescription>
           </CardHeader>
           <CardContent>
             <div className="grid md:grid-cols-2 gap-4">
-              <div className="p-4 border rounded-lg">
-                <h3 className="font-semibold text-lg">Dharwad City</h3>
+              <div className="p-4 border text-title-3 rounded-lg">
+                <h3 className="font-semibold text-main text-title-2 mb-2">
+                  Dharwad City
+                </h3>
                 <p className="text-gray-700 dark:text-gray-300">
-                  Various hotels and guest houses are available in Dharwad city center,
-                  approximately 7 km from the campus.
+                  Various hotels and guest houses are available in Dharwad city
+                  center, approximately 7 km from the campus.
                 </p>
               </div>
-              <div className="p-4 border rounded-lg">
-                <h3 className="font-semibold text-lg">Hubballi City</h3>
+              <div className="p-4 border text-title-3 rounded-lg">
+                <h3 className="font-semibold text-main text-title-2 mb-2">
+                  Hubballi City
+                </h3>
                 <p className="text-gray-700 dark:text-gray-300">
-                  More accommodation options are available in Hubballi city, approximately
-                  20 km from the campus, including 3-star and 4-star hotels.
+                  More accommodation options are available in Hubballi city,
+                  approximately 20 km from the campus, including 3-star and
+                  4-star hotels.
                 </p>
               </div>
             </div>

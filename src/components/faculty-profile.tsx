@@ -61,7 +61,7 @@ export default function FacultyProfile({
           <h3 className="font-semibold text-primary group-hover:translate-x-0.5 transition-transform duration-300 truncate">
             {name}
           </h3>
-          <p className="text-sm text-gray-500 transition-all duration-300 truncate">
+          <p className="text-body text-gray-500 transition-all duration-300 truncate">
             {title}
           </p>
           {positions.length > 0 && (
@@ -70,14 +70,14 @@ export default function FacultyProfile({
                 <span
                   key={index}
                   className={cn(
-                    'text-xs px-2 py-0.5 rounded-full border transition-all duration-300 group-hover:shadow-sm'
+                    'text-callout px-2 py-0.5 rounded-full border transition-all duration-300 group-hover:shadow-sm'
                   )}
                 >
                   {position}
                 </span>
               ))}
               {positions.length > 1 && (
-                <span className="text-xs text-gray-500 px-1.5 group-hover:text-primary/70 transition-colors duration-300">
+                <span className="text-callout text-gray-500 px-1.5 group-hover:text-primary/70 transition-colors duration-300">
                   +{positions.length - 1} more
                 </span>
               )}
@@ -109,14 +109,14 @@ export default function FacultyProfile({
             </div>
           </div>
           <div className="flex-1 min-w-0">
-            <h2 className="text-lg font-bold text-primary group-hover:translate-x-0.5 transition-transform duration-300">
+            <h2 className="text-title-1 font-bold text-primary group-hover:translate-x-0.5 transition-transform duration-300">
               {name}
             </h2>
             <p className="text-gray-500 font-medium transition-all duration-300">
               {title}
             </p>
             {department && (
-              <p className="text-sm mt-1 text-gray-500 transition-all duration-300">
+              <p className="text-body mt-1 text-gray-500 transition-all duration-300">
                 {department}
               </p>
             )}
@@ -127,7 +127,7 @@ export default function FacultyProfile({
                   <span
                     key={index}
                     className={cn(
-                      'text-xs px-2.5 py-0.5 rounded-full border transition-all duration-300 group-hover:shadow-sm'
+                      'text-callout px-2.5 py-0.5 rounded-full border transition-all duration-300 group-hover:shadow-sm'
                     )}
                   >
                     {position}
@@ -139,7 +139,7 @@ export default function FacultyProfile({
         </div>
         <div className="mt-4 flex flex-col gap-2 border-t pt-3">
           {email && email !== '-' && (
-            <div className="flex items-center gap-3 text-sm">
+            <div className="flex items-center gap-3 text-body">
               <Mail className="h-4 w-4 text-gray-500" />
               <a
                 href={`mailto:${email}`}
@@ -150,7 +150,7 @@ export default function FacultyProfile({
             </div>
           )}
           {office && office !== '?' && (
-            <div className="flex items-center gap-3 text-sm">
+            <div className="flex items-center gap-3 text-body">
               <MapPin className="h-4 w-4 text-gray-500" />
               <span className="text-gray-500">{office}</span>
             </div>
@@ -164,16 +164,16 @@ export default function FacultyProfile({
   return (
     <div
       className={cn(
-        'p-5 border rounded-lg bg-white shadow-sm hover:shadow transition-all duration-300 relative overflow-hidden group',
+        'p-5 border rounded-lg bg-gradient-to-b from-white/70 to-white shadow-sm hover:shadow transition-all duration-300 relative overflow-hidden group',
         className
       )}
     >
       <div className="absolute inset-0 bg-[radial-gradient(#7a8b99_1px,transparent_1px)] [background-size:16px_16px] opacity-[0.05] group-hover:opacity-[0.07] transition-opacity duration-700 pointer-events-none" />
-      <div className="absolute top-0 left-0 right-0 h-1 bg-primary/70 group-hover:bg-primary transition-colors duration-500" />
+      <div className="absolute top-0 left-0 right-0 h-1 bg-main/80 group-hover:bg-main transition-colors duration-500" />
       <div className="flex flex-col gap-5 relative justify-between h-full">
         <div className="flex flex-col gap-5 relative">
           <div className="flex items-center gap-4">
-            <div className="flex-shrink-0 w-24 h-24 rounded-full border-3 border-primary/30 group-hover:border-primary/50 shadow-md transition-all duration-500 group-hover:shadow-lg overflow-hidden">
+            <div className="flex-shrink-0 w-24 h-24 rounded-full border-2 border-main/80 group-hover:border-primary/50 shadow-md transition-all duration-500 group-hover:shadow-lg overflow-hidden">
               <div className="w-full h-full relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
                 <Image
@@ -185,10 +185,10 @@ export default function FacultyProfile({
               </div>
             </div>
             <div className="flex-1 min-w-0">
-              <h2 className="text-lg font-bold text-primary group-hover:translate-x-1 transition-transform duration-300">
+              <h2 className="text-title-2 font-bold text-main group-hover:translate-x-1 transition-transform duration-300">
                 {name}
               </h2>
-              <p className="text-gray-500 font-base text-sm mt-0 transition-all group-hover:translate-x-1 duration-300">
+              <p className="text-gray-500 font-base text-body mt-0 transition-all group-hover:translate-x-1 duration-300">
                 {title}
               </p>
 
@@ -200,7 +200,7 @@ export default function FacultyProfile({
                         <span
                           key={index}
                           className={cn(
-                            'text-xs px-2.5 text-pretty py-0.5 rounded border transition-all duration-300 group-hover:shadow-sm'
+                            'text-subheadline font-normal px-2.5 text-pretty py-0.5 rounded border transition-all duration-300 group-hover:shadow-sm'
                           )}
                         >
                           {position}
@@ -212,9 +212,9 @@ export default function FacultyProfile({
             </div>
           </div>
 
-          <div className="space-y-1 text-sm pl-1 py-2">
+          <div className="space-y-1 text-callout pl-1 py-2">
             {department && (
-              <p className="text-black text-base transition-all duration-300">
+              <p className="text-black text-title-3 transition-all duration-300">
                 {department}
               </p>
             )}
@@ -224,7 +224,7 @@ export default function FacultyProfile({
               </p>
             )}
             {education && (
-              <p className="text-gray-500 text-xs transition-all duration-300">
+              <p className="text-gray-500 transition-all duration-300">
                 {education}
               </p>
             )}
@@ -232,14 +232,14 @@ export default function FacultyProfile({
 
           {areasOfInterest.length > 0 && (
             <div className="space-y-2">
-              <h3 className="text-base font-medium border-b pb-1   text-primary">
+              <h3 className="text-title-3 font-medium border-b border-main/25 pb-1 text-primary">
                 Areas of Interest
               </h3>
               <div className="flex flex-wrap gap-2 py-2">
                 {areasOfInterest.map((area, index) => (
                   <div
                     key={index}
-                    className="px-3 py-1 bg-[#f8f9fa] rounded-full text-xs border border-[#e0e4e9] hover:bg-[#f0f2f5] hover:border-[#ccd4e0] hover:shadow-sm transition-all duration-300 text-primary"
+                    className="px-3 py-1 bg-secondary/70 rounded-full text-callout border hover:shadow-sm transition-all duration-300 text-primary"
                   >
                     {area}
                   </div>
@@ -249,7 +249,7 @@ export default function FacultyProfile({
           )}
         </div>
 
-        <div className="border-t text-xs pt-1">
+        <div className="border-t border-main/25 text-callout pt-1">
           {email && email !== '-' && (
             <div className="flex items-center gap-3 py-2">
               <Mail size={16} className="text-gray-500" />

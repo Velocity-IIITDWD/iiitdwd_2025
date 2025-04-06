@@ -36,7 +36,7 @@ export default function MobileHeader({
                 className="border-b border-gray-100"
               >
                 <Collapsible className="w-full">
-                  <CollapsibleTrigger className="flex items-center justify-between w-full py-3 px-2 text-left font-medium text-primary hover:bg-gray-50 rounded-md">
+                  <CollapsibleTrigger className="flex items-center justify-between w-full py-3 px-2 text-left font-medium text-primary hover:bg-secondary/50 rounded-md">
                     {item.title}
                     <ChevronDown className="h-4 w-4 text-gray-500" />
                   </CollapsibleTrigger>
@@ -49,7 +49,7 @@ export default function MobileHeader({
                               key={`level2-${subIndex}`}
                               className="w-full"
                             >
-                              <CollapsibleTrigger className="flex items-center justify-between w-full py-2 pl-6 text-left text-primary border-l hover:border-primary">
+                              <CollapsibleTrigger className="flex items-center hover:bg-secondary/50 justify-between w-full py-2 pl-6 pr-3 text-left text-primary border-l-2 hover:border-primary">
                                 {subItem.title}
                                 <ChevronRight className="h-4 w-4 text-gray-500" />
                               </CollapsibleTrigger>
@@ -60,7 +60,7 @@ export default function MobileHeader({
                                       <Link
                                         key={`level3-${thirdIndex}`}
                                         href={thirdItem.href}
-                                        className="py-2 pl-12 text-primary border-l hover:border-primary"
+                                        className="py-2 pl-12 text-primary border-l-2 hover:border-primary hover:bg-secondary/50"
                                         onClick={toggleMenu}
                                       >
                                         {thirdItem.title}
@@ -76,7 +76,7 @@ export default function MobileHeader({
                             <Link
                               key={`level2-simple-${subIndex}`}
                               href={subItem.href}
-                              className="py-2 pl-6 border-l hover:border-primary -left-1 text-primary"
+                              className="py-2 pl-6 border-l-2 hover:border-primary hover:bg-secondary/50 -left-1 text-primary"
                               onClick={toggleMenu}
                             >
                               {subItem.title}
@@ -111,8 +111,8 @@ export default function MobileHeader({
         })}
       </nav>
 
-      <div className="mt-6 pt-4 border-t border-gray-200">
-        <div className="flex flex-col space-y-3 text-sm">
+      <div className="mt-6 pt-4 border-t border-main/30">
+        <div className="flex flex-col space-y-3 text-body">
           <Link href={'https://aims.iiitdwd.ac.in/aims/'}>AIMS</Link>
           <Link href={''}>RTI</Link>
           <Link href={'/nirf'}>NIRF</Link>

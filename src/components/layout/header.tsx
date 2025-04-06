@@ -1,6 +1,6 @@
 'use client';
 
-import Logo from '@/assets/layout/Logo1.png';
+import Logo from '@/assets/layout/Logo.webp';
 import { Mail, Menu, X } from 'lucide-react';
 import {
   AnimatePresence,
@@ -43,9 +43,14 @@ function AnimatedNavbar() {
     });
   };
 
+  // Updated logo variants with responsive heights
   const logoVariants = {
-    initial: { height: '6rem' },
-    scrolled: { height: '4.5rem' }
+    initial: {
+      height: 'clamp(4rem, 6vw, 6rem)' // Responsive height: 4rem on small screens, up to 6rem on larger screens
+    },
+    scrolled: {
+      height: 'clamp(3rem, 4.5vw, 4.5rem)' // Responsive height: 3rem on small screens, up to 4.5rem on larger screens
+    }
   };
 
   const textVariants = {
@@ -57,7 +62,7 @@ function AnimatedNavbar() {
     <>
       <div
         id="top-bar"
-        className="bg-primary text-slate-400 z-50 text-xs w-full flex justify-between max-md:justify-end px-4 md:px-8 py-2"
+        className="bg-primary text-slate-400 z-50 text-callout w-full flex justify-between max-md:justify-end px-4 md:px-8 py-2"
       >
         <div className="max-md:hidden">
           <a
@@ -83,9 +88,13 @@ function AnimatedNavbar() {
       </div>
       <motion.header
         ref={headerRef}
-        initial={{ height: '7rem' }}
-        animate={{ height: isScrolled ? '5rem' : '7rem' }}
-        className="sticky top-0 flex items-center left-0 w-full right-0 z-50 bg-white shadow-md overflow-hidden"
+        initial={{ height: 'clamp(5rem, 7vw, 7rem)' }} // Also make header height responsive
+        animate={{
+          height: isScrolled
+            ? 'clamp(4rem, 5vw, 5rem)'
+            : 'clamp(5rem, 7vw, 7rem)'
+        }}
+        className="sticky top-0 flex items-center left-0 w-full right-0 z-50 !bg-white shadow-md overflow-hidden"
       >
         <motion.div
           className="absolute left-4"
@@ -128,7 +137,7 @@ function AnimatedNavbar() {
         </div>
 
         <motion.div
-          className="absolute right-2 flex flex-col max-xl:hidden w-fit text-center text-primary md:text-right"
+          className="absolute right-4 flex flex-col max-xl:hidden w-fit text-center text-primary md:text-right"
           variants={textVariants}
           animate={isScrolled ? 'scrolled' : 'initial'}
           transition={{
@@ -137,16 +146,16 @@ function AnimatedNavbar() {
             bounce: 0.1
           }}
         >
-          <span className="text-xs md:text-sm">
+          <span className="text-title-3 font-normal mb-[2px]">
             ಭಾರತೀಯ ಮಾಹಿತಿ ತಂತ್ರಜ್ಞಾನ ಸಂಸ್ಥೆ, ಧಾರವಾಡ
           </span>
-          <span className="text-xs md:text-sm">
+          <span className="text-title-3 font-normal">
             भारतीय सूचना प्रौद्योगिकी संस्थान, धारवाड़
           </span>
-          <span className="text-xs md:text-sm font-medium">
+          <span className="text-title-3 font-medium">
             Indian Institute of Information Technology, Dharwad
           </span>
-          <div className="text-xs font-light">
+          <div className="text-callout font-light">
             [Institute of National Importance by An Act of Parliament]
           </div>
         </motion.div>
@@ -189,7 +198,7 @@ function AnimatedNavbar() {
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
-            className={`fixed inset-0 bg-white z-40 ${
+            className={`fixed inset-0 bg-background z-40 ${
               isScrolled ? '' : ''
             } md:pt-20 pb-6 px-4 overflow-y-auto`}
             initial={{ y: '-100%' }}
@@ -202,7 +211,9 @@ function AnimatedNavbar() {
               visualDuration: 0.8
             }}
             style={{
-              top: isScrolled ? '5rem' : '7rem'
+              top: isScrolled
+                ? 'clamp(4rem, 5vw, 5rem)'
+                : 'clamp(7rem, 7vw, 8rem)'
             }}
           >
             <MobileHeader toggleMenu={toggleMenu} />

@@ -52,10 +52,10 @@ export default function CustomKBarProvider({
     <KBarProvider actions={generateActions()}>
       <KBarPortal>
         <KBarPositioner className="z-50 bg-black/15">
-          <KBarAnimator className="max-w-[600px] w-full rounded-lg overflow-hidden shadow-lg bg-white border border-gray-200">
+          <KBarAnimator className="max-w-[600px] w-full rounded-lg overflow-hidden shadow-lg bg-white">
             <KBarSearch
-              className="w-full py-3 px-4 text-base outline-none border-none bg-white"
-              style={{ padding: '12px 16px' }}
+              className="w-full py-3 px-4 text-title-3 font-normal outline-none border-none bg-white"
+              style={{ padding: '18px 16px' }}
               defaultPlaceholder="Search for anything..."
             />
             <RenderResults />
@@ -77,7 +77,7 @@ function RenderResults() {
         typeof item === 'string' ? (
           <div
             style={{ padding: '8px 16px' }}
-            className="text-xs uppercase opacity-50"
+            className="text-body uppercase opacity-50"
           >
             {item}
           </div>
@@ -107,15 +107,20 @@ function ResultItem({
       style={{ padding: '12px 16px' }}
       className={`flex items-center justify-between cursor-pointer ${
         active
-          ? 'bg-gray-100 border-l-2 border-l-gray-800'
-          : 'border-l-2 border-l-transparent'
+          ? 'bg-secondary/40 border-l-2 text-main border-l-gray-800'
+          : 'border-l-2 text-gray-700 border-l-transparent'
       }`}
     >
-      <div className="flex items-center text-sm" style={{ gap: '8px' }}>
+      <div
+        className="flex items-center text-title-3 font-medium"
+        style={{ gap: '8px' }}
+      >
         <div className="flex flex-col">
           <div>{action.name}</div>
           {action.subtitle && (
-            <span className="text-xs text-gray-500">{action.subtitle}</span>
+            <span className="text-callout text-gray-500">
+              {action.subtitle}
+            </span>
           )}
         </div>
       </div>

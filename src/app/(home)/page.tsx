@@ -6,7 +6,6 @@ import AlumniSection from './alumni';
 import BriefContent from './brief-content';
 import Hero from './hero';
 import MainCarousel from './main-carousel';
-import NotificationSection from './notification';
 
 export default async function HomePage() {
   const data = await get<QueryEventsResult>(queryEvents);
@@ -16,7 +15,7 @@ export default async function HomePage() {
     <main className="min-h-screen w-full">
       <Hero data={heroData} />
       <BriefContent />
-      <NotificationSection />
+      {/* <NotificationSection /> */}
       <MainCarousel />
       <AlumniSection />
       <ToTop />

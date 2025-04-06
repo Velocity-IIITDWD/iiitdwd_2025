@@ -150,13 +150,13 @@ const organizations = [
 export default function ClubsPage() {
   return (
     <main>
-      <div className="w-full min-h-screen md:px-4 lg:px-12 xl:px-16 py-8">
-        <section className="py-4 px-4 max-w-7xl mx-auto">
+      <div className="w-full min-h-screen py-8">
+        <section className="py-4 max-w-[1680px] w-[87.5vw] mx-auto">
           <div className="text-center mb-8">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-large-title font-bold text-gray-900 mb-4">
               Non Technical Clubs
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-title-3 text-gray-600 max-w-2xl mx-auto">
               Discover and join IIIT Dharwad&apos;s diverse community of student
               non-technical organizations. Each group offers unique
               opportunities for leadership, physical fitness, and personal
