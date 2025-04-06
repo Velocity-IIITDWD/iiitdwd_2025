@@ -58,12 +58,7 @@ function TabsContentContent({ tabsData: tabsData }: TabsContentContentProps) {
             </TableHeader>
             <TableBody>
               {data.map((tender, index) => (
-                <TableRow
-                  key={index}
-                  className={
-                    index % 2 === 0 ? 'bg-secondary/10' : 'bg-secondary/30'
-                  }
-                >
+                <TableRow key={index} className="bg-white even:bg-gray-100">
                   <TableCell>{index + 1}.</TableCell>
                   <TableCell>
                     <div className="flex flex-col gap-2">

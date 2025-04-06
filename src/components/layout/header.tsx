@@ -43,9 +43,14 @@ function AnimatedNavbar() {
     });
   };
 
+  // Updated logo variants with responsive heights
   const logoVariants = {
-    initial: { height: '6rem' },
-    scrolled: { height: '4.5rem' }
+    initial: {
+      height: 'clamp(4rem, 6vw, 6rem)' // Responsive height: 4rem on small screens, up to 6rem on larger screens
+    },
+    scrolled: {
+      height: 'clamp(3rem, 4.5vw, 4.5rem)' // Responsive height: 3rem on small screens, up to 4.5rem on larger screens
+    }
   };
 
   const textVariants = {
@@ -83,8 +88,12 @@ function AnimatedNavbar() {
       </div>
       <motion.header
         ref={headerRef}
-        initial={{ height: '7rem' }}
-        animate={{ height: isScrolled ? '5rem' : '7rem' }}
+        initial={{ height: 'clamp(5rem, 7vw, 7rem)' }} // Also make header height responsive
+        animate={{
+          height: isScrolled
+            ? 'clamp(4rem, 5vw, 5rem)'
+            : 'clamp(5rem, 7vw, 7rem)'
+        }}
         className="sticky top-0 flex items-center left-0 w-full right-0 z-50 !bg-white shadow-md overflow-hidden"
       >
         <motion.div
@@ -202,7 +211,9 @@ function AnimatedNavbar() {
               visualDuration: 0.8
             }}
             style={{
-              top: isScrolled ? '5rem' : '8rem'
+              top: isScrolled
+                ? 'clamp(4rem, 5vw, 5rem)'
+                : 'clamp(7rem, 7vw, 8rem)'
             }}
           >
             <MobileHeader toggleMenu={toggleMenu} />

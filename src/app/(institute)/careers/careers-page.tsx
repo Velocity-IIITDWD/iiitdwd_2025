@@ -148,7 +148,7 @@ export default function CareersPage({ Fulldata }: { Fulldata: Jobs[] }) {
               <TableHead className="text-white">
                 Title and Description
               </TableHead>
-              <TableHead className="text-white">Deadline</TableHead>
+              <TableHead className="text-white text-center">Deadline</TableHead>
               <TableHead className="text-center text-white w-min">
                 General Instructions
               </TableHead>
@@ -160,12 +160,7 @@ export default function CareersPage({ Fulldata }: { Fulldata: Jobs[] }) {
 
           <TableBody>
             {filteredJobs.map((job, index) => (
-              <TableRow
-                key={index}
-                className={
-                  index % 2 === 0 ? 'bg-secondary/10' : 'bg-secondary/30'
-                }
-              >
+              <TableRow key={index} className="bg-white even:bg-gray-100">
                 <TableCell>{index + 1}.</TableCell>
                 <TableCell>
                   <div className="flex flex-col gap-2 flex-1">

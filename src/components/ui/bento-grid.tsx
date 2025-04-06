@@ -41,12 +41,12 @@ export const BentoGridItem = ({
     >
       <div className="group/panel rounded-lg md:rounded-xl border p-px bg-gradient-to-b from-white/30 to-white transition-all hover:shadow-md flex items-center justify-center relative w-full h-full">
         <div className="z-10 rounded-[7px] md:rounded-[11px] relative overflow-hidden flex-1 flex flex-row sm:flex-col gap-4 items-start sm:items-center lg:items-start justify-between bg-surface-75 w-full h-full text-foreground-lighter [&_strong]:!font-normal [&_strong]:!text-foreground p-4 sm:py-6">
-          <div className="relative z-10 h-full w-full mx-auto gap-2 sm:gap-4 flex flex-col items-start sm:items-center text-left sm:text-center lg:mx-0 lg:pl-2 lg:items-start lg:text-left">
+          <div className="relative z-10 h-full overflow-hidden w-full mx-auto gap-2 sm:gap-4 flex flex-col items-start sm:items-center text-left sm:text-center lg:mx-0 lg:pl-2 lg:items-start lg:text-left">
             <div className="flex items-center gap-2 text-foreground">
               {icon}
               <h2 className="text-title-2">{title}</h2>
             </div>
-            <div className="flex-1 flex flex-col text-gray-500 justify-between text-body font-normal gap-2 text-body [&_strong]:!text-primary">
+            <div className="flex-1 flex flex-col h-full w-full text-gray-500 justify-between text-body font-normal gap-2 text-body [&_strong]:!text-primary">
               {content1}
               {content2}
             </div>

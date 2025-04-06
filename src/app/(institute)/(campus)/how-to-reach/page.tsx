@@ -74,7 +74,7 @@ export default function HowToReach() {
 
         {/* Transportation Options */}
         <Tabs defaultValue="air" className="w-full">
-          <TabsList className="grid grid-cols-4 mb-6">
+          <TabsList className="grid grid-cols-2 md:grid-cols-4 mb-6 h-fit gap-2">
             <TabsTrigger value="air" className="flex items-center gap-1">
               <Plane className="h-4 w-4" /> By Air
             </TabsTrigger>

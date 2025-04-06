@@ -7,6 +7,16 @@ import { useEffect, useState } from 'react';
 import { AlumniCard } from './alumni-card';
 
 // Function to process the original testimonials into the format returned by your Sanity query
+const shuffleArray = (array: Review[]) => {
+  const shuffled = [...array];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+};
+
+// Function to distribute reviews into columns
 const distributeReviews = (reviews: Review[], columns: number) => {
   const distributed: Review[][] = Array.from({ length: columns }, () => []);
 
@@ -44,9 +54,9 @@ export default function AlumniSection() {
 
   // Process them to match the Sanity query structure
 
-  const finalReviews = reviews
-    .filter((review) => review.graduationYear <= 2024)
-    .sort((a, b) => a.name.localeCompare(b.name));
+  const finalReviews = shuffleArray(
+    reviews.filter((review) => review.graduationYear <= 2024)
+  );
 
   // Now you can use them with your component
   const distributedReviews = distributeReviews(finalReviews, columnCount);

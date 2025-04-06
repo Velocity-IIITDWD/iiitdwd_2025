@@ -16,7 +16,7 @@ const HigherStudiesContact = () => {
       <div id="higher-studies" className="mb-12">
         <Card className="shadow-lg border-main border overflow-hidden">
           <CardHeader className="bg-main text-white py-2 gap-0">
-            <CardTitle className="text-2xl text-white font-bold">
+            <CardTitle className="text-white font-bold">
               Higher Studies
             </CardTitle>
           </CardHeader>

@@ -1,35 +1,14 @@
+import LinkedInCarousel from '@/components/linkedin/EmblaCarousel';
 import { BentoGrid, BentoGridItem } from '@/components/ui/bento-grid';
 import { IconTableColumn, IconTrendingUp } from '@tabler/icons-react';
-import { Check, Handshake, Lightbulb, Telescope } from 'lucide-react';
+import { Handshake, Lightbulb, Telescope } from 'lucide-react';
 import NotificationSection from './notification';
 
 export default function BriefContent() {
   const items = [
     {
-      title: 'About Us',
-      content1: (
-        <div className="max-w-[300px]">
-          <strong>IIIT Dharwad</strong> is a premier technical institute
-          established as an Institute of <strong>National Importance</strong>.
-        </div>
-      ),
-
-      content2: (
-        <ul className="max-w-[300px] text-primary">
-          <li className="flex gap-2">
-            <Check size={18} />
-            Strong industry collaborations
-          </li>
-          <li className="flex gap-2">
-            <Check size={18} />
-            Modern campus facilities
-          </li>
-          <li className="flex gap-2">
-            <Check size={18} />
-            Research-driven environment
-          </li>
-        </ul>
-      ),
+      title: 'LinkedIn Posts',
+      content1: <LinkedInCarousel />,
       className: 'col-span-6 md:col-span-12 xl:col-span-6',
       icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
       titleClassName: 'text-white'

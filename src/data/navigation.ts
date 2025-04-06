@@ -23,8 +23,8 @@ const navigationData: NavigationItem[] = [
           {
             title: 'Amenities',
             href: '/amenities'
-          },
-          { title: 'Video of campus', href: '/campus-video' }
+          }
+          // { title: 'Video of campus', href: '/campus-video' }
         ]
       },
       { title: 'Events / Awards', href: '/events' },
@@ -55,7 +55,7 @@ const navigationData: NavigationItem[] = [
       },
       {
         title: 'Fees',
-        href: '/admission/fees'
+        href: 'https://iiitdwd.ac.in/docs/FEE_2024-25_Sheet1.pdf'
       }
     ]
   },
@@ -122,14 +122,14 @@ const navigationData: NavigationItem[] = [
         href: '/student-life/overview',
         meta: { disableLayout: true }
       },
-      { title: 'Hostel', href: '/student-life/hostel' },
+      // { title: 'Hostel', href: '/student-life/hostel' },
       {
         title: 'IIC and Clubs',
         href: '/student-life/clubs',
         items: [
           { title: 'Tech clubs', href: '/student-life/clubs/tech' },
           { title: 'Non Tech clubs', href: '/student-life/clubs/non-tech' },
-          { title: 'Sports club', href: '/student-life/clubs/sports' },
+          // { title: 'Sports club', href: '/student-life/clubs/sports' },
           { title: 'Cultural club', href: '/student-life/clubs/cultural' }
         ]
       },
@@ -139,11 +139,11 @@ const navigationData: NavigationItem[] = [
       {
         title: 'Anti ragging',
         href: 'https://iiitdwd.ac.in/docs/Anti_Ragging_Information.pdf'
-      },
-      {
-        title: 'Achievements',
-        href: '/student-life/achievements'
       }
+      // {
+      //   title: 'Achievements',
+      //   href: '/student-life/achievements'
+      // }
     ]
   },
   {

@@ -138,7 +138,9 @@ export function ClubCard({
                     className="object-contain"
                   />
                 </div>
-                <DrawerTitle className="text-2xl font-bold">{name}</DrawerTitle>
+                <DrawerTitle className="text-large-title font-bold">
+                  {name}
+                </DrawerTitle>
               </div>
               <DrawerDescription className="text-gray-600 mt-2">
                 {description}

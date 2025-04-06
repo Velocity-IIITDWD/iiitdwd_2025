@@ -113,125 +113,65 @@ export default function NotificationSection() {
     .slice(0, 2);
 
   return (
-    <div className="max-w-7xl mx-auto mb-10 px-4 py-8">
-      {/* News Section */}
-      {/* <div className="relative">
-          <SectionHeading title="News and Updates" />
-
-          <div className="grid grid-cols-1 gap-4 mb-4">
-            {pinnedNewsItems.map((item) => (
-              <div key={item.id}>
-                <div className="text-gray-500 mb-1">{item.date}</div>
-                <div className="flex items-start">
-                  <span className="text-green-500 mr-2 mt-1">📌</span>
-                  <h3 className="text-gray-700 font-medium hover:text-blue-600 cursor-pointer">
-                    {item.title}
-                  </h3>
-                </div>
-              </div>
-            ))}
-          </div>
-          <Carousel
-            className="w-full mt-4"
-            plugins={[
-              Autoplay({
-                delay: 3000
-              })
-            ]}
-          >
-            <CarouselContent>
-              {regularNewsItems.map((item, index) => (
-                <CarouselItem key={index}>
-                  <div className="p-1">
-                    <Card className="border-none shadow-none py-0">
-                      <CardContent className="flex flex-col px-2">
-                        <div className="text-gray-500 mb-1">{item.date}</div>
-                        <h3 className="text-gray-700 font-medium hover:text-blue-600 cursor-pointer">
-                          {item.title}
-                        </h3>
-                      </CardContent>
-                    </Card>
-                  </div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-
-            <div className="flex justify-between items-center mt-6">
-              <a
-                href="#"
-                className="text-blue-600 hover:underline flex items-center"
-              >
-                View all News <span className="ml-2">→</span>
-              </a>
-              <div className="flex space-x-2">
-                <CarouselPrevious className="relative left-0 !top-0 !translate-none" />
-                <CarouselNext className="relative right-0 !top-0 !translate-none" />
-              </div>
+    <div className="relative">
+      {/* First show pinned items in a 2-row grid */}
+      <div className="grid grid-cols-1 gap-4 mb-4">
+        {pinnedAnnouncementItems.map((item) => (
+          <div key={item.id}>
+            <div className="text-gray-500 mb-1 text-body text-left">
+              {item.date}
             </div>
-          </Carousel>
-        </div> */}
-
-      {/* Announcements Section */}
-      <div className="relative">
-        {/* First show pinned items in a 2-row grid */}
-        <div className="grid grid-cols-1 gap-4 mb-4">
-          {pinnedAnnouncementItems.map((item) => (
-            <div key={item.id}>
-              <div className="text-gray-500 mb-1 text-body text-left">
-                {item.date}
-              </div>
-              <div className="flex items-start">
-                <span className="text-green-500 mr-2 mt-1">📌</span>
-                <h3 className="text-gray-700 text-title-3 font-medium hover:text-blue-600 cursor-pointer">
-                  {item.title}
-                </h3>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Then infinite scroll carousel for remaining items */}
-        <Carousel
-          className="w-full mt-4"
-          plugins={[
-            Autoplay({
-              delay: 3000
-            })
-          ]}
-        >
-          <CarouselContent>
-            {regularAnnouncementItems.map((item, index) => (
-              <CarouselItem key={index}>
-                <div className="p-1">
-                  <Card className="border-none shadow-none py-0">
-                    <CardContent className="flex flex-col px-2 text-left">
-                      <div className="text-gray-500 mb-1 text-body">
-                        {item.date}
-                      </div>
-                      <h3 className="text-gray-700 text-title-3 font-medium hover:text-blue-600 cursor-pointer">
-                        {item.title}
-                      </h3>
-                    </CardContent>
-                  </Card>
-                </div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-
-          <div className="flex justify-between items-center mt-6">
-            <a
-              href="#"
-              className="text-blue-600 hover:underline flex text-body items-center"
-            >
-              View all Announcements <span className="ml-2">→</span>
-            </a>
-            <div className="flex space-x-2">
-              <CarouselPrevious className="relative left-0 !top-0 !translate-none" />
-              <CarouselNext className="relative right-0 !top-0 !translate-none" />
+            <div className="flex items-start">
+              <span className="text-green-500 mr-2 mt-1">📌</span>
+              <h3 className="text-gray-700 text-title-3 font-medium hover:text-main cursor-pointer">
+                {item.title}
+              </h3>
             </div>
           </div>
-        </Carousel>
+        ))}
       </div>
+
+      {/* Then infinite scroll carousel for remaining items */}
+      <Carousel
+        className="w-full mt-4"
+        plugins={[
+          Autoplay({
+            delay: 3000
+          })
+        ]}
+      >
+        <CarouselContent>
+          {regularAnnouncementItems.map((item, index) => (
+            <CarouselItem key={index}>
+              <div className="p-1">
+                <Card className="border-none shadow-none py-0 bg-transparent">
+                  <CardContent className="flex flex-col px-2 text-left">
+                    <div className="text-gray-500 mb-1 text-body">
+                      {item.date}
+                    </div>
+                    <h3 className="text-gray-700 text-title-3 font-medium hover:text-main cursor-pointer">
+                      {item.title}
+                    </h3>
+                  </CardContent>
+                </Card>
+              </div>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+
+        <div className="flex justify-between items-center mt-6 max-md:flex-col max-md:items-start gap-2">
+          <a
+            href="#"
+            className="text-main hover:underline flex text-body items-center"
+          >
+            View all Announcements <span className="ml-2">→</span>
+          </a>
+          <div className="flex space-x-2">
+            <CarouselPrevious className="relative left-0 !top-0 !translate-none" />
+            <CarouselNext className="relative right-0 !top-0 !translate-none" />
+          </div>
+        </div>
+      </Carousel>
     </div>
   );
 }

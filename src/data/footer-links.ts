@@ -37,10 +37,13 @@ export const footerLinks = [
     links: [
       { text: 'About Institute', href: '/about' },
       { text: 'Admissions', href: '/admissions' },
-      { text: 'Fee Structure', href: '/admissions/fees' },
+      {
+        text: 'Fee Structure',
+        href: 'https://iiitdwd.ac.in/docs/FEE_2024-25_Sheet1.pdf'
+      },
       // { text: 'Scholarships', href: '/admissions/scholarships' },
       { text: 'Placements', href: '/placements' },
-      { text: 'Faculty', href: '/faculty' },
+      { text: 'Faculty', href: '/faculty' }
     ]
   },
   {
@@ -55,7 +58,7 @@ export const footerLinks = [
       {
         text: 'Public Disclosures',
         href: '/administration/public-disclosures'
-      },
+      }
     ]
   }
 ];

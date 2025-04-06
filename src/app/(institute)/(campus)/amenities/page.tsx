@@ -37,7 +37,7 @@ export default function Page() {
 
         {/* Amenities Tabs */}
         <Tabs defaultValue="academic" className="w-full">
-          <TabsList className="grid grid-cols-2 md:grid-cols-4 mb-6">
+          <TabsList className="grid grid-cols-2 md:grid-cols-4 mb-6 h-fit gap-2">
             <TabsTrigger value="academic" className="flex items-center gap-1">
               <BookOpen className="h-4 w-4" /> Academic
             </TabsTrigger>

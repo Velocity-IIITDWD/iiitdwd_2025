@@ -83,7 +83,7 @@ export default function Profile({
             </div>
           )}
 
-          {quote && <p className="text-primary text-lg">{quote}</p>}
+          {quote && <p className="text-primary text-title-3">{quote}</p>}
 
           <div className="h-[1px] bg-primary w-full my-6"></div>
 
