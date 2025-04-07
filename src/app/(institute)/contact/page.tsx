@@ -31,7 +31,7 @@ export default function Page() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-8 md:my-16">
           <div className="flex flex-col gap-4 md:gap-8">
             <h2 className="text-large-title font-semibold text-main">
-              University Address
+              Institute Address
             </h2>
 
             <ul className="list-none">
@@ -42,7 +42,7 @@ export default function Page() {
 
           <div className="flex flex-col gap-4 md:gap-8">
             <h2 className="text-large-title font-semibold text-main">
-              University Phone
+              Institute Phone
             </h2>
 
             <ul className="list-none">

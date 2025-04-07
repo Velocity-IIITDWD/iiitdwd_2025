@@ -63,7 +63,7 @@ const EventCard = ({ event }: EventCardProps) => {
       </div>
 
       <CardContent className="px-4 py-6 justify-between flex flex-col h-full">
-        <Link href={event.href} className="block">
+        <Link href={'#'} className="block">
           <h2 className="text-title-2 font-bold mb-2 text-main">
             {event.text}
           </h2>

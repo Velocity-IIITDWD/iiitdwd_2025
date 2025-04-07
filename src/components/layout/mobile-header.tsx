@@ -114,8 +114,8 @@ export default function MobileHeader({
       <div className="mt-6 pt-4 border-t border-main/30">
         <div className="flex flex-col space-y-3 text-body">
           <Link href={'https://aims.iiitdwd.ac.in/aims/'}>AIMS</Link>
-          <Link href={''}>RTI</Link>
-          <Link href={'/nirf'}>NIRF</Link>
+          <Link href={'https://iiitdwd.ac.in/pdfs/RTI.pdf'}>RTI</Link>
+          <Link href={'/academics/nirf'}>NIRF</Link>
           <Link
             href={
               'https://www.onlinesbi.sbi/sbicollect/icollecthome.htm?corpID=873279'

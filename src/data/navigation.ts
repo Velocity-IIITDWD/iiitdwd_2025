@@ -87,7 +87,17 @@ const navigationData: NavigationItem[] = [
       {
         title: 'Public disclosures',
         href: '/disclosures',
-        items: [{ title: 'RTI', href: 'https://iiitdwd.ac.in/pdfs/RTI.pdf' }]
+        items: [
+          { title: 'RTI', href: 'https://iiitdwd.ac.in/pdfs/RTI.pdf' },
+          {
+            title: 'IIIT PPP Act',
+            href: 'https://iiitdwd.ac.in/pdfs/iiit_ppp_2017.pdf'
+          },
+          {
+            title: 'ARIIA',
+            href: 'https://iiitdwd.ac.in/pdfs/ARIIA.pdf'
+          }
+        ]
       }
     ]
   },
@@ -108,7 +118,14 @@ const navigationData: NavigationItem[] = [
         title: 'Curriculum',
         href: 'https://iiitdwd.ac.in/docs/Curricula_16May23.pdf'
       },
-      { title: 'Convocation / Conclave', href: '/academics/convocation' },
+      {
+        title: 'Convocation 2024',
+        href: 'https://www.youtube.com/watch?v=Sh5VyQxKQvk'
+      },
+      {
+        title: 'Conclave 2024',
+        href: 'https://conclave.iiitdwd.ac.in'
+      },
       { title: 'NIRF', href: '/academics/nirf' },
       { title: 'Online', href: 'https://online.iiitdwd.ac.in/' }
     ]
@@ -117,11 +134,11 @@ const navigationData: NavigationItem[] = [
     title: 'Student life',
     href: '#',
     items: [
-      {
-        title: 'Overview',
-        href: '/student-life/overview',
-        meta: { disableLayout: true }
-      },
+      // {
+      //   title: 'Overview',
+      //   href: '/student-life/overview',
+      //   meta: { disableLayout: true }
+      // },
       // { title: 'Hostel', href: '/student-life/hostel' },
       {
         title: 'IIC and Clubs',

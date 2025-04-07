@@ -11,6 +11,7 @@ interface ProfilePageProps {
   position?: string;
   quote?: string;
   about?: string[];
+  message?: string[];
   signatureText?: string;
   signaturePosition?: string;
 }
@@ -25,12 +26,13 @@ export default function Profile({
   quote,
   about = [],
   signatureText,
+  message,
   signaturePosition
 }: ProfilePageProps) {
   return (
     <div className="py-10 w-[87.5vw] max-w-[1680px] mx-auto">
       <div className="flex flex-col md:flex-row gap-8">
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-4 sticky top-20 ">
           {image && (
             <div className="border border-primary w-full max-w-[400px]">
               <Image
@@ -99,6 +101,22 @@ export default function Profile({
                 {paragraph}
               </p>
             ))}
+
+            {message && (
+              <>
+                <h2 className="text-title-1 font-semibold text-gray-800 mb-4">
+                  Message
+                </h2>
+                {message.map((paragraph, index) => (
+                  <p
+                    key={index}
+                    className="text-gray-700 text-title-3 font-normal mb-4"
+                  >
+                    {paragraph}
+                  </p>
+                ))}
+              </>
+            )}
 
             {(signatureText || signaturePosition) && (
               <p className="text-primary text-title-3 mt-5">

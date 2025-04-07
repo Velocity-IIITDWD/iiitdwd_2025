@@ -96,12 +96,14 @@ const JourneySection = () => {
                   IIIT Dharwad special.
                 </p>
 
-                <Button
-                  variant="outline"
-                  className="bg-main flex items-center hover:bg-main/90 text-white hover:text-white transition-colors rounded h-12 border-0 px-6"
-                >
-                  SCHEDULE A VISIT <ChevronRight className="ml-2 h-4 w-4" />
-                </Button>
+                <Link href={'/how-to-visit'}>
+                  <Button
+                    variant="outline"
+                    className="bg-main flex items-center hover:bg-main/90 text-white hover:text-white transition-colors rounded h-12 border-0 px-6"
+                  >
+                    VISIT <ChevronRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </Link>
               </div>
             </section>
           </JourneyComponent>
@@ -121,13 +123,16 @@ const JourneySection = () => {
                   assistance programs available at IIIT Dharwad.
                 </p>
 
-                <Button
-                  variant="outline"
-                  className="bg-main flex items-center hover:bg-main/90 text-white hover:text-white transition-colors rounded h-12 border-0 px-6"
+                <Link
+                  href={'https://iiitdwd.ac.in/docs/FEE_2024-25_Sheet1.pdf'}
                 >
-                  EXPLORE FINANCIAL AID{' '}
-                  <ChevronRight className="ml-2 h-4 w-4" />
-                </Button>
+                  <Button
+                    variant="outline"
+                    className="bg-main flex items-center hover:bg-main/90 text-white hover:text-white transition-colors rounded h-12 border-0 px-6"
+                  >
+                    EXPLORE FEES <ChevronRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </Link>
               </div>
 
               <div className="flex-1">

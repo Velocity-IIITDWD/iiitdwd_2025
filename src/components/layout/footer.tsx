@@ -72,25 +72,25 @@ export default function Footer() {
               <div className="font-bold text-title-3 text-white">FOLLOW US</div>
               <div className="flex gap-6 flex-wrap">
                 <a
-                  href="#"
+                  href="https://www.instagram.com/iiitdharwad_"
                   className="hover:text-white transition-colors duration-200"
                 >
                   <Instagram size={24} />
                 </a>
                 <a
-                  href="#"
+                  href="https://www.linkedin.com/in/iiitdharwad/"
                   className="hover:text-white transition-colors duration-200"
                 >
                   <Linkedin size={24} />
                 </a>
                 <a
-                  href="#"
+                  href="https://www.youtube.com/@socialmediaiiitdharwad2584"
                   className="hover:text-white transition-colors duration-200"
                 >
                   <Youtube size={24} />
                 </a>
                 <a
-                  href="#"
+                  href="https://x.com/dharwad_iiit"
                   className="hover:text-white transition-colors duration-200"
                 >
                   <Twitter size={24} />
@@ -102,7 +102,7 @@ export default function Footer() {
           {/* Explore Button - Takes 4 of 12 columns on large screens */}
           <div className="lg:col-span-4 flex items-end">
             <Link
-              href={'/student-life/overview'}
+              href={'/student-life/clubs/tech/'}
               className="bg-black border text-title-2 font-medium group w-full px-6 py-4 rounded flex justify-between items-center border-white text-white hover:bg-black/90 transition-colors duration-200"
             >
               <span>Explore</span>

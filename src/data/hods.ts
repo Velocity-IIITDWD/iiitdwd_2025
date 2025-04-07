@@ -25,5 +25,14 @@ export default [
     department: 'DSAI',
     email: 'siddharth_r@iiitdwd.ac.in',
     imageUrl: 'https://www.iiitdwd.ac.in//images/Dr.SiddharthR.jpg'
+  },
+  {
+    id: '4',
+    name: 'Dr. Aswath Babu H',
+    title: 'Assistant Professor',
+    position: 'Head of the Department [HoD]',
+    department: 'Department of Arts, Science, and Design',
+    email: 'aswath@iiitdwd.ac.in',
+    imageUrl: 'https://iiitdwd.ac.in/images/Dr.AswathBabuH.jpeg'
   }
 ];

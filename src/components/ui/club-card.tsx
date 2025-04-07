@@ -11,7 +11,7 @@ import {
   DrawerHeader,
   DrawerTitle
 } from '@/components/ui/drawer';
-import { Calendar, Instagram, Linkedin, Twitter, Users } from 'lucide-react';
+import { Instagram, Linkedin, Twitter } from 'lucide-react';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
@@ -66,14 +66,14 @@ export function ClubCard({
     <>
       <div
         className="group cursor-pointer h-full"
-        onClick={() => setIsOpen(true)}
+        // onClick={() => setIsOpen(true)}
         role="button"
         tabIndex={0}
-        onKeyDown={(e) => {
-          if (e.key === 'Enter' || e.key === ' ') {
-            setIsOpen(true);
-          }
-        }}
+        // onKeyDown={(e) => {
+        //   if (e.key === 'Enter' || e.key === ' ') {
+        //     setIsOpen(true);
+        //   }
+        // }}
       >
         <Card className="overflow-hidden h-full p-0 border shadow-lg transition-all duration-300 group-hover:shadow-2xl bg-white">
           <div className="relative h-48 w-full flex-none overflow-hidden">
@@ -101,14 +101,14 @@ export function ClubCard({
             <p className="text-gray-600 mb-6 line-clamp-3">{description}</p>
 
             <div className="flex items-center justify-between text-body">
-              <div className="flex items-center gap-2 text-[#001B3D]">
+              {/* <div className="flex items-center gap-2 text-[#001B3D]">
                 <Users className="h-5 w-5" />
                 <span className="font-medium">{memberCount} members</span>
-              </div>
-              <div className="flex items-center gap-2 text-[#001B3D]">
+              </div> */}
+              {/* <div className="flex items-center gap-2 text-[#001B3D]">
                 <Calendar className="h-5 w-5" />
                 <span className="font-medium">{meetingSchedule}</span>
-              </div>
+              </div> */}
             </div>
           </div>
         </Card>

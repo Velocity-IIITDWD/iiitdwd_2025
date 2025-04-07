@@ -20,7 +20,7 @@ export function ProfileCard({ title, content, imageURL }: ProfileCardProps) {
           src={
             imageURL?.startsWith('/images')
               ? `https://iiitdwd.ac.in${imageURL}`
-              : imageURL || '/placeholder-person.svg'
+              : imageURL || '/placeholder-person.png'
           }
           alt={title || 'Profile'}
           width={160}

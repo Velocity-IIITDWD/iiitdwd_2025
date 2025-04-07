@@ -1,4 +1,5 @@
 'use client';
+import AlumniBackground from '@/assets/layout/Alumni_Background.webp';
 import SectionHeading from '@/components/layout/section-heading';
 import {
   Accordion,
@@ -86,7 +87,13 @@ export default function DetailSection() {
               initial={{ top: 0 }}
               transition={{ duration: 0.3 }}
             />
-            <div className="w-full aspect-[5/3] bg-gray-300 mb-16" />
+            <img
+              src={AlumniBackground.src}
+              alt="Section Image"
+              width={1000}
+              height={600}
+              className="w-full aspect-[5/3] mb-16"
+            />
             {aboutPageSections.map((section, index) => {
               // Only show the details of the active section
               if (index === activeSection) {

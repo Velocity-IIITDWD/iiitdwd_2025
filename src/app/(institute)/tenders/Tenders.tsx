@@ -163,8 +163,7 @@ export default function Tenders({ active, archive }: TendersProps) {
 
   return (
     <section className="flex flex-col w-[87.5vw] max-w-[1680px] mx-auto">
-      <h1 className="heading-text">Tenders</h1>
-      <div className="flex w-full">
+      <div className="flex w-full my-4">
         <TabData
           onValueChange={(value) => setSelectedTab(value)}
           defaultValue={selectedTab}

@@ -213,7 +213,7 @@ export default function IndustryProjects() {
             <Search className="absolute left-2 top-2.5 h-4 w-4 text-gray-500" />
             <Input
               placeholder="Search projects..."
-              className="pl-8 bg-white"
+              className="pl-8 bg-white text-primary"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
             />

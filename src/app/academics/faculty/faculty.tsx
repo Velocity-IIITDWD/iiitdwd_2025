@@ -12,7 +12,15 @@ import {
 import { QueryFacultyResult } from '@/sanity/types';
 import { Filter, Search, X } from 'lucide-react';
 import { useSearchParams } from 'next/navigation';
-import { Suspense, useCallback, useEffect, useState } from 'react';
+import { Suspense, useCallback, useEffect, useMemo, useState } from 'react';
+
+// Move these outside the component
+const departmentMapping: Record<string, string> = {
+  cse: 'Computer Science & Engineering',
+  ece: 'Electronics and Communication Engineering',
+  dsai: 'Data Science and Artificial Intelligence',
+  arts: 'Department of Arts, Science, and Design'
+};
 
 // Wrapper component for search params with proper typing
 function SearchParamsWrapper({
@@ -38,48 +46,39 @@ function FacultySearchPage({
   const [departmentParam, setDepartmentParam] = useState<string | null>(null);
 
   // Extract unique departments from faculty data
-  const departments = [
-    'all',
-    ...new Set(
-      facultyData
-        .map((faculty) => faculty?.content?.card?.department || '')
-        .filter(Boolean)
-    )
-  ];
+  const departments = useMemo(() => {
+    const uniqueDepartments = [
+      ...new Set(
+        facultyData
+          .map((faculty) => faculty?.content?.card?.department || '')
+          .filter(Boolean)
+      )
+    ];
+    return ['all', ...uniqueDepartments];
+  }, [facultyData]);
 
-  // Department abbreviation to full name mapping
-  const departmentMapping: Record<string, string> = {
-    cse: 'Computer Science & Engineering',
-    ece: 'Electronics and Communication Engineering',
-    dsai: 'Data Science and Artificial Intelligence',
-    arts: 'Department of Arts, Science, and Design'
-    // Add more mappings as needed
-  };
+  // Updated department param handling
+  const getDepartmentFromParam = useCallback(
+    (param: string | null): string => {
+      if (!param) return 'all';
 
-  // Find the full department name based on URL parameter
-  const getDepartmentFromParam = (param: string | null): string => {
-    if (!param) return 'all';
+      const paramLower = param.toLowerCase();
+      const mappedDepartment = departmentMapping[paramLower];
 
-    const paramLower = param.toLowerCase();
+      if (mappedDepartment) {
+        const match = departments.find(
+          (dept) => dept.toLowerCase() === mappedDepartment.toLowerCase()
+        );
+        if (match) return match;
+      }
 
-    // First check if the abbreviation matches our mapping
-    if (paramLower in departmentMapping) {
-      // Find the actual department that matches this mapping
-      const targetFullName = departmentMapping[paramLower];
-      const matchingDept = departments.find(
-        (dept) => dept.toLowerCase() === targetFullName.toLowerCase()
+      const directMatch = departments.find((dept) =>
+        dept.toLowerCase().includes(paramLower)
       );
-      if (matchingDept) return matchingDept;
-    }
-
-    // If no match in mapping, check if it directly matches a department name
-    const directMatch = departments.find((dept) =>
-      dept.toLowerCase().includes(paramLower)
-    );
-    if (directMatch) return directMatch;
-
-    return 'all';
-  };
+      return directMatch || 'all';
+    },
+    [departments]
+  );
 
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [selectedDepartment, setSelectedDepartment] = useState<string>('all');
@@ -92,14 +91,14 @@ function FacultySearchPage({
       setDepartmentParam(param);
       setSelectedDepartment(getDepartmentFromParam(param));
     },
-    [departments]
+    [departments, getDepartmentFromParam]
   );
 
   useEffect(() => {
     if (departmentParam !== null) {
       setSelectedDepartment(getDepartmentFromParam(departmentParam));
     }
-  }, [departmentParam]);
+  }, [departmentParam, getDepartmentFromParam]);
 
   useEffect(() => {
     let filtered = facultyData;
@@ -107,7 +106,9 @@ function FacultySearchPage({
     // Filter by department first
     if (selectedDepartment && selectedDepartment !== 'all') {
       filtered = filtered.filter(
-        (faculty) => faculty?.content?.card?.department === selectedDepartment
+        (faculty) =>
+          faculty?.content?.card?.department?.toLowerCase() ===
+          selectedDepartment.toLowerCase()
       );
     }
 
@@ -219,42 +220,35 @@ function FacultySearchPage({
               </button>
             )}
           </div>
-
-          {/* Clear Filters Button (only shown when filters are applied) */}
-          {(searchQuery || selectedDepartment !== 'all') && (
-            <Button
-              variant="outline"
-              onClick={clearFilters}
-              className="h-12 border border-gray-200"
-            >
-              Clear Filters
-            </Button>
-          )}
         </div>
 
         {/* Results Summary */}
         <div className="text-gray-500 w-full text-body">
-          <p>
-            Showing {filteredFaculty.length} of {facultyData.length} faculty
-            members
-            {selectedDepartment !== 'all' && (
-              <>
-                {' '}
-                in{' '}
-                <span className="font-medium text-blue-900">
-                  {selectedDepartment}
-                </span>
-              </>
-            )}
-            {searchQuery && (
-              <>
-                {' '}
-                matching "
-                <span className="font-medium text-blue-900">{searchQuery}</span>
-                "
-              </>
-            )}
-          </p>
+          {(selectedDepartment !== 'all' || searchQuery) && (
+            <p>
+              Showing {filteredFaculty.length} of {facultyData.length} faculty
+              members
+              {selectedDepartment !== 'all' && (
+                <>
+                  {' '}
+                  in{' '}
+                  <span className="font-medium text-blue-900">
+                    {selectedDepartment}
+                  </span>
+                </>
+              )}
+              {searchQuery && (
+                <>
+                  {' '}
+                  matching "
+                  <span className="font-medium text-blue-900">
+                    {searchQuery}
+                  </span>
+                  "
+                </>
+              )}
+            </p>
+          )}
         </div>
       </div>
 

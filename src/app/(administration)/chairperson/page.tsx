@@ -7,17 +7,20 @@ export default async function Page() {
       email="chairperson@iiitdwd.ac.in"
       name="Dr. Sridhar Vembu"
       position="Chairperson, IIIT Dharwad"
-      quote={`" add chairperson sir's one liner "`}
+      quote={``}
       about={[
-        `CHANGE THIS! Sridhar Vembu (born 1968) is an Indian billionaire business magnate and the founder and former chief executive officer of the Zoho Corporation.[2] According to Forbes, he is the 39th richest person in India with a net worth of $5.85 billion, as of 2024.[3] He was awarded India's fourth highest civilian award, the Padma Shri, in 2021.[4][5]
+        `Dr. Sridhar Vembu is the co-founder and Chief Scientist of Zoho Corporation, a globally respected technology leader and a pioneer in rural development through innovation. Raised in a humble village in Tamil Nadu, India, Dr. Vembu's academic journey led him to earn a degree in Electrical Engineering from IIT Madras and a Ph.D. from Princeton University.
+In 1996, he co-founded AdventNet, which evolved into Zoho Corporation in 2009. Under his visionary leadership, Zoho grew into a global provider of cloud-based business software, empowering millions of users and businesses across the world. The company operates with a strong philosophy of self-reliance, long-term thinking, and customer-focused innovation.`,
 
-As per Forbes list of India’s 100 richest tycoons, dated OCTOBER 09, 2024, Sridhar Vembu & siblings are ranked 51st with a net worth of $5.8 Billion.[6]
+        `A defining aspect of Dr. Vembu's mission has been his unwavering commitment to social impact. He has championed the establishment of offices in rural areas, such as Tenkasi in Tamil Nadu, to decentralize opportunities and bring technological innovation closer to underserved regions. His initiative, Zoho Schools of Learning, offers free vocational education to high school graduates, especially from rural communities, providing them with hands-on training and job opportunities without the burden of a formal college degree.
+
+Dr. Vembu's approach to business blends technological excellence with deep social responsibility. His work has earned him numerous accolades, including the Padma Shri in 2021 and CNN-News18 Indian of the Year in 2022. In 2025, he transitioned from the role of CEO to Chief Scientist, dedicating his focus to research, product innovation, and the long-term vision of Zoho.`,
+
+        `Respected for his humility, foresight, and belief in inclusive growth, Dr. Sridhar Vembu continues to inspire a generation of entrepreneurs to think beyond conventional boundaries and create impact-driven enterprises.
 `
       ]}
-      signatureText="Dr. Sridhar Vembu"
-      signaturePosition="Chairperson, IIIT Dharwad
-
-"
+      // signatureText="Dr. Sridhar Vembu"
+      // signaturePosition="Chairperson, IIIT Dharwad"
     />
   );
 }

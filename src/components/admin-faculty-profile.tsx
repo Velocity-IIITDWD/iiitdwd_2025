@@ -1,4 +1,4 @@
-import { MailIcon, Quote } from 'lucide-react';
+import { MailIcon } from 'lucide-react';
 import Image from 'next/image';
 
 interface AdminFacultyProfileProps {
@@ -24,7 +24,7 @@ export function AdminFacultyProfile({
         {highlightPosition ? `${position} (${department})` : department}
       </h2> */}
 
-      <div className="flex flex-col md:flex-row gap-8">
+      <div className="flex flex-col md:flex-row gap-8 h-full">
         <div className="flex-shrink-0 max-md:flex max-md:justify-center">
           <Image
             src={
@@ -39,7 +39,7 @@ export function AdminFacultyProfile({
           />
         </div>
 
-        <div className="flex-1">
+        <div className="flex-1 flex flex-col justify-center h-full">
           <h3 className="text-large-title font-bold text-main mb-2">{name}</h3>
           <p className="text-gray-600 text-title-1 mb-2">{position}</p>
           <p className="text-gray-600 text-title-2 mb-4">{department}</p>
@@ -49,14 +49,14 @@ export function AdminFacultyProfile({
               <MailIcon size={20} /> {email}
             </p>
 
-            <div className="bg-gray-100 p-6 rounded-12px">
+            {/* <div className="bg-gray-100 p-6 rounded-12px">
               <div className="flex gap-2 items-start">
                 <Quote className="w-6 h-6 text-gray-400 flex-shrink-0" />
                 <p className="text-gray-700 text-title-3 font-normal">
-                  {/* {review.testimonial} */}
+                  {review.testimonial} 
                 </p>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
