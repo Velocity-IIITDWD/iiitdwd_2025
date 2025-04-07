@@ -93,7 +93,7 @@ const navigationData: NavigationItem[] = [
   },
   {
     title: 'Academics',
-    href: '/academics',
+    href: '#',
     items: [
       { title: 'Programmes', href: '/academics/programmes' },
       // { title: 'Calendar', href: '/academics/calendar' },

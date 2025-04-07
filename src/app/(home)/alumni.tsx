@@ -1,22 +1,10 @@
 'use client';
 import { Button } from '@/components/ui/button';
-import reviews from '@/data/alumni.json';
 import { Review } from '@/types/alumni';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { AlumniCard } from './alumni-card';
 
-// Function to process the original testimonials into the format returned by your Sanity query
-const shuffleArray = (array: Review[]) => {
-  const shuffled = [...array];
-  for (let i = shuffled.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-  }
-  return shuffled;
-};
-
-// Function to distribute reviews into columns
 const distributeReviews = (reviews: Review[], columns: number) => {
   const distributed: Review[][] = Array.from({ length: columns }, () => []);
 
@@ -28,14 +16,16 @@ const distributeReviews = (reviews: Review[], columns: number) => {
   return distributed;
 };
 
-export default function AlumniSection() {
-  // const [selectedReview, setSelectedReview] = useState<Review | null>(null);
+interface AlumniSectionProps {
+  reviews: Review[];
+}
+
+export default function AlumniSection({ reviews }: AlumniSectionProps) {
   const [windowWidth, setWindowWidth] = useState(0);
 
   useEffect(() => {
     setWindowWidth(window.innerWidth);
 
-    // Add window resize listener
     const handleResize = () => setWindowWidth(window.innerWidth);
     window.addEventListener('resize', handleResize);
 
@@ -43,23 +33,13 @@ export default function AlumniSection() {
   }, []);
 
   const getColumnCount = () => {
-    if (windowWidth >= 1280) return 4; // xl
-    if (windowWidth >= 1024) return 3; // lg
-    if (windowWidth >= 768) return 2; // md
-    return 1; // smaller screens
+    if (windowWidth >= 1280) return 4;
+    if (windowWidth >= 1024) return 3;
+    if (windowWidth >= 768) return 2;
+    return 1;
   };
   const columnCount = getColumnCount();
-
-  // Assuming you have your original testimonials
-
-  // Process them to match the Sanity query structure
-
-  const finalReviews = shuffleArray(
-    reviews.filter((review) => review.graduationYear <= 2024)
-  );
-
-  // Now you can use them with your component
-  const distributedReviews = distributeReviews(finalReviews, columnCount);
+  const distributedReviews = distributeReviews(reviews, columnCount);
 
   return (
     <div className="relative">
