@@ -14,11 +14,16 @@ import { useKBar } from 'kbar';
 import { Command, Search } from 'lucide-react';
 import { motion } from 'motion/react';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function DesktopHeader() {
   const { query } = useKBar();
   const [openMenu, setOpenMenu] = useState<string>('');
+  const [isMacOS, setIsMacOS] = useState(false);
+
+  useEffect(() => {
+    setIsMacOS(window.navigator.platform.toLowerCase().includes('mac'));
+  }, []);
 
   const renderMenuItems = (items: NavigationItem[]) => {
     return items.map((item, index) => {
@@ -140,7 +145,7 @@ export default function DesktopHeader() {
         }}
       >
         <Search size={14} className="mr-3" />
-        {navigator.platform.toLowerCase().includes('mac') ? (
+        {isMacOS ? (
           <Command size={14} className="mr-1" />
         ) : (
           <span className="mr-1">Ctrl</span>

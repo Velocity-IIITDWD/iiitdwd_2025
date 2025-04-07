@@ -8,7 +8,7 @@ const navigationData: NavigationItem[] = [
   },
   {
     title: 'Institute',
-    href: '/institute',
+    href: '#',
     items: [
       {
         title: 'About Us',
@@ -61,7 +61,7 @@ const navigationData: NavigationItem[] = [
   },
   {
     title: 'Administration',
-    href: '/administration',
+    href: '#',
     items: [
       { title: 'Visitor', href: '/visitor' },
       { title: 'Chairperson', href: '/chairperson' },
@@ -115,7 +115,7 @@ const navigationData: NavigationItem[] = [
   },
   {
     title: 'Student life',
-    href: '/student-life',
+    href: '#',
     items: [
       {
         title: 'Overview',
