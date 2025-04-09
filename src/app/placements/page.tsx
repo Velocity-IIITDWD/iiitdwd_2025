@@ -157,19 +157,18 @@ export default function Page() {
           variants={statsVariants}
         >
           <h2 className="text-main-title font-bold text-gray-800 mb-4">
-            Average Package of
-            <span className="text-main"> the top 20% students in</span>
+            Number of Companies
+            <span className="text-main"> Visited in</span>
           </h2>
-          <h2 className="text-main-title font-bold text-main mb-8">2024</h2>
+          <h2 className="text-main-title font-bold text-main mb-8">2025</h2>
           <motion.div
             className="inline-flex items-center justify-center bg-gradient-to-r from-main to-main/60 text-white rounded-full h-48 w-48 shadow-lg transform hover:scale-105 transition"
             custom={1}
             variants={counterVariants}
           >
             <motion.span className="text-title-1 font-bold text-amber-50">
-              17
+              77
             </motion.span>
-            <span className="text-title-2 ml-2 text-amber-50">LPA</span>
           </motion.div>
         </motion.div>
         <motion.div
@@ -180,34 +179,34 @@ export default function Page() {
         >
           <div className="bg-secondary/70 rounded-3xl shadow-lg p-10 mb-16">
             <h2 className="text-large-title font-bold text-center mb-10">
-              Placement Stats for 2024
+              Placement Stats for 2025
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
               {[
                 {
                   label: 'Median CTC',
-                  value: '9 LPA',
+                  value: '8 LPA',
                   bgColor: 'bg-gradient-to-b from-secondary/10 to-secondary/60',
                   textColor: 'text-primary'
                 },
                 {
                   label: 'Highest CTC',
-                  value: '46 LPA',
+                  value: '61 LPA',
                   bgColor: 'bg-gradient-to-b from-secondary/10 to-secondary/60',
                   textColor: 'text-primary'
                 },
                 {
                   label: 'Average CTC',
-                  value: '9.93 LPA',
+                  value: '10 LPA',
                   bgColor: 'bg-gradient-to-b from-secondary/10 to-secondary/60',
                   textColor: 'text-primary'
                 },
                 {
                   label: 'Placed',
-                  value: '47%',
+                  value: '66%',
                   bgColor: 'bg-gradient-to-b from-secondary/10 to-secondary/60',
                   textColor: 'text-primary',
-                  subtext: '*Ongoing'
+                  subtext: 'ongoing'
                 }
               ].map((stat, index) => (
                 <motion.div
