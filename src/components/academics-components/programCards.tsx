@@ -33,7 +33,15 @@ const ProgramCard: React.FC<ProgramCardProps> = ({
       {/* Underline effect on hover */}
       <div className="absolute bottom-0 left-1/2 w-0 h-[4px] bg-main transition-all duration-300 ease-in-out group-hover:w-full group-hover:left-0"></div>
 
-      <div className="relative h-50 w-full bg-gray-200" />
+      {imageSrc ? (
+        <img
+          src={imageSrc}
+          alt={title}
+          className="relative h-50 w-full object-cover"
+        />
+      ) : (
+        <div className="relative h-50 w-full bg-gray-200" />
+      )}
       <div className="p-6 flex flex-col justify-between h-full flex-1">
         <div className="">
           <h2 className="text-title-1 font-bold mb-2 text-main">{title}</h2>

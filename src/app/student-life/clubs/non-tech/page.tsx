@@ -9,9 +9,6 @@ const organizations = [
     memberCount: 60,
     meetingSchedule: 'Daily, 6:00 AM - 8:00 AM',
     location: 'Cricket Ground',
-    logo: 'https://images.pexels.com/photos/3621104/pexels-photo-3621104.jpeg?auto=compress&cs=tinysrgb&w=600',
-    imageUrl:
-      'https://images.pexels.com/photos/3659993/pexels-photo-3659993.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     href: '/organizations/cricket-club',
     president: 'Rajesh Patel',
     vision:
@@ -30,9 +27,6 @@ const organizations = [
     memberCount: 45,
     meetingSchedule: 'Every Mon, Wed, Fri, 7:00 PM - 9:00 PM',
     location: 'Indoor Badminton Courts',
-    logo: 'https://images.pexels.com/photos/6203297/pexels-photo-6203297.jpeg?auto=compress&cs=tinysrgb&w=600',
-    imageUrl:
-      'https://images.pexels.com/photos/3660204/pexels-photo-3660204.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     href: '/organizations/badminton-club',
     president: 'Priya Sharma',
     vision:
@@ -50,9 +44,6 @@ const organizations = [
     memberCount: 50,
     meetingSchedule: 'Every Tue, Thu, Sat, 6:00 PM - 8:00 PM',
     location: 'Volleyball Court',
-    logo: 'https://images.pexels.com/photos/39629/volleyball-ball-sport-game-39629.jpeg?auto=compress&cs=tinysrgb&w=600',
-    imageUrl:
-      'https://images.pexels.com/photos/12430129/pexels-photo-12430129.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     href: '/organizations/volleyball-club',
     president: 'Vikram Singh',
     vision:
@@ -70,9 +61,6 @@ const organizations = [
     memberCount: 55,
     meetingSchedule: 'Every Tue, Thu, Sat, 8:00 PM - 10:00 PM',
     location: 'Basketball Court',
-    logo: 'https://images.pexels.com/photos/1332237/pexels-photo-1332237.jpeg?auto=compress&cs=tinysrgb&w=600',
-    imageUrl:
-      'https://images.pexels.com/photos/5384434/pexels-photo-5384434.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     href: '/organizations/basketball-club',
     president: 'Anjali Reddy',
     vision:
@@ -91,9 +79,6 @@ const organizations = [
     memberCount: 40,
     meetingSchedule: 'Daily, 5:30 AM - 7:30 AM',
     location: 'Athletics Track',
-    logo: 'https://images.pexels.com/photos/2526878/pexels-photo-2526878.jpeg?auto=compress&cs=tinysrgb&w=600',
-    imageUrl:
-      'https://images.pexels.com/photos/3764011/pexels-photo-3764011.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     href: '/organizations/athletics-club',
     president: 'Arjun Verma',
     vision:
@@ -112,9 +97,6 @@ const organizations = [
     memberCount: 15,
     meetingSchedule: 'Mon-Fri, 9:00 AM - 5:00 PM (Appointment Based)',
     location: 'Counselling Center',
-    logo: 'https://images.pexels.com/photos/1181434/pexels-photo-1181434.jpeg?auto=compress&cs=tinysrgb&w=600',
-    imageUrl:
-      'https://images.pexels.com/photos/7176026/pexels-photo-7176026.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     href: '/organizations/counselling-cell',
     president: 'Dr. Neha Gupta (Lead Counsellor)',
     vision: 'To promote the mental health and well-being of all students.',
@@ -131,9 +113,6 @@ const organizations = [
     memberCount: 25,
     meetingSchedule: 'Weekly Tuesdays, 4:00 PM - 6:00 PM',
     location: 'Student Publications Office',
-    logo: 'https://images.pexels.com/photos/3584930/pexels-photo-3584930.jpeg?auto=compress&cs=tinysrgb&w=600',
-    imageUrl:
-      'https://images.pexels.com/photos/6417923/pexels-photo-6417923.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     href: '/organizations/magazine-committee',
     president: 'Sneha Kapoor (Editor-in-Chief)',
     vision:

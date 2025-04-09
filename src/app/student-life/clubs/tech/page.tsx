@@ -4,15 +4,12 @@ import { ClubCard } from '@/components/ui/club-card';
 const organizations = [
   {
     name: 'Velocity',
-    imageUrl:
-      'https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     href: '/organizations/velocity',
     description:
       'Velocity is dedicated to accelerating innovation and empowering young minds to create futuristic solutions. We focus on robotics, automation, and AI.',
     memberCount: 120,
     meetingSchedule: 'Weekly Fridays, 5:00 PM',
     location: 'Engineering Building - Room 204',
-    logo: 'https://images.pexels.com/photos/1714208/pexels-photo-1714208.jpeg?auto=compress&cs=tinysrgb&w=600',
     president: 'Jane Doe', // Example President's name
     vision: 'To be the leading hub for technological innovation on campus.',
     mission:
@@ -25,15 +22,12 @@ const organizations = [
   },
   {
     name: 'Return 0',
-    imageUrl:
-      'https://images.pexels.com/photos/270348/pexels-photo-270348.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     href: '/organizations/return-0',
     description:
       'Return 0 is a coding and competitive programming club that helps students enhance their problem-solving skills through contests and hackathons.',
     memberCount: 200,
     meetingSchedule: 'Weekly Tuesdays, 6:00 PM',
     location: 'CS Department - Lab 301',
-    logo: 'https://images.pexels.com/photos/11035471/pexels-photo-11035471.jpeg?auto=compress&cs=tinysrgb&w=600',
     president: 'John Smith',
     vision:
       'To become the go-to club for students looking to improve their coding skills and succeed in competitive programming.',
@@ -46,15 +40,12 @@ const organizations = [
   },
   {
     name: 'BlocSoc',
-    imageUrl:
-      'https://images.pexels.com/photos/8370752/pexels-photo-8370752.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     href: '/organizations/blocsoc',
     description:
       'BlocSoc is the ultimate social club for blockchain enthusiasts, where we explore the future of decentralized systems and cryptocurrencies.',
     memberCount: 150,
     meetingSchedule: 'Weekly Wednesdays, 4:00 PM',
     location: 'Block Chain Lab - Room 110',
-    logo: 'https://images.pexels.com/photos/6781341/pexels-photo-6781341.jpeg?auto=compress&cs=tinysrgb&w=600',
     president: 'Alice Johnson',
     vision:
       'To foster a vibrant community of blockchain enthusiasts on campus.',
@@ -66,15 +57,12 @@ const organizations = [
   },
   {
     name: 'GDSC IIIT Dharwad',
-    imageUrl:
-      'https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     href: '/organizations/gdsc-iiit-dharwad',
     description:
       'The Google Developer Student Club (GDSC) at IIIT Dharwad provides an excellent platform for students to learn and collaborate on tech projects.',
     memberCount: 250,
     meetingSchedule: 'Bi-weekly Thursdays, 3:00 PM',
     location: 'IIIT Dharwad Campus - Tech Lab 204',
-    logo: 'https://images.pexels.com/photos/1148820/pexels-photo-1148820.jpeg?auto=compress&cs=tinysrgb&w=600',
     president: 'Bob Williams',
     vision: 'To empower students to become proficient in Google technologies.',
     mission:
@@ -87,15 +75,12 @@ const organizations = [
   },
   {
     name: 'E cell',
-    imageUrl:
-      'https://images.pexels.com/photos/8867434/pexels-photo-8867434.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     href: '/organizations/e-cell',
     description:
       'E-cell fosters the entrepreneurial spirit among students. We offer mentorship, networking, and funding opportunities for aspiring entrepreneurs.',
     memberCount: 100,
     meetingSchedule: 'Weekly Mondays, 5:30 PM',
     location: 'Business Incubator - Room 101',
-    logo: 'https://images.pexels.com/photos/7681096/pexels-photo-7681096.jpeg?auto=compress&cs=tinysrgb&w=600',
     president: 'Emily Davis',
     vision: 'To be the catalyst for entrepreneurial success among students.',
     mission:
@@ -107,15 +92,12 @@ const organizations = [
   },
   {
     name: 'IEEE SB & CS',
-    imageUrl:
-      'https://images.pexels.com/photos/2599244/pexels-photo-2599244.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     href: '/organizations/ieee-sb-cs',
     description:
       'IEEE Student Branch & Computer Science is a tech community where we conduct workshops, seminars, and projects related to electrical engineering and computer science.',
     memberCount: 300,
     meetingSchedule: 'Monthly 1st Saturday, 10:00 AM',
     location: 'IEEE Lab - Room 305',
-    logo: 'https://images.pexels.com/photos/3862130/pexels-photo-3862130.jpeg?auto=compress&cs=tinysrgb&w=600',
     president: 'David Brown',
     vision:
       'To advance technological innovation and excellence among students.',
@@ -129,15 +111,12 @@ const organizations = [
   },
   {
     name: 'Inquizitive',
-    imageUrl:
-      'https://images.pexels.com/photos/356079/pexels-photo-356079.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     href: '/organizations/inquizitive',
     description:
       'Inquizitive is a quiz club dedicated to fostering knowledge and promoting intellectual curiosity through regular quiz competitions and brain-storming sessions.',
     memberCount: 80,
     meetingSchedule: 'Weekly Sundays, 4:30 PM',
     location: 'Quiz Hall - Room 202',
-    logo: 'https://images.pexels.com/photos/5428836/pexels-photo-5428836.jpeg?auto=compress&cs=tinysrgb&w=600',
     president: 'Sarah Green',
     vision:
       'To foster a culture of intellectual curiosity and knowledge sharing on campus.',
@@ -149,15 +128,12 @@ const organizations = [
   },
   {
     name: 'IRIS',
-    imageUrl:
-      'https://images.pexels.com/photos/2599244/pexels-photo-2599244.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     href: '/organizations/iris',
     description:
       'IRIS is an interdisciplinary research club focused on artificial intelligence, machine learning, and cutting-edge tech innovations.',
     memberCount: 180,
     meetingSchedule: 'Weekly Thursdays, 5:00 PM',
     location: 'Innovation Lab - Room 402',
-    logo: 'https://images.pexels.com/photos/8386434/pexels-photo-8386434.jpeg?auto=compress&cs=tinysrgb&w=600',
     president: 'Michael Lee',
     vision:
       'To drive innovation and research excellence in the field of artificial intelligence.',
@@ -170,15 +146,12 @@ const organizations = [
   },
   {
     name: 'DSAI Society',
-    imageUrl:
-      'https://images.pexels.com/photos/1181271/pexels-photo-1181271.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     href: '/organizations/dsai-society',
     description:
       'The DSAI Society aims to advance the field of data science and AI by organizing workshops, seminars, and data-driven projects.',
     memberCount: 220,
     meetingSchedule: 'Bi-weekly Tuesdays, 5:30 PM',
     location: 'Data Science Lab - Room 103',
-    logo: 'https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg?auto=compress&cs=tinysrgb&w=600',
     president: 'Olivia Chen',
     vision:
       'To be the leading community for data science and AI enthusiasts on campus.',
@@ -191,15 +164,12 @@ const organizations = [
   },
   {
     name: 'Quantum Computing Club',
-    imageUrl:
-      'https://images.pexels.com/photos/373543/pexels-photo-373543.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     href: '/organizations/quantum-computing-club',
     description:
       'The Quantum Computing Club brings together students passionate about exploring the quantum computing revolution. We provide resources and discussions about future computing paradigms.',
     memberCount: 70,
     meetingSchedule: 'Monthly 2nd Wednesday, 6:00 PM',
     location: 'Quantum Computing Lab - Room 506',
-    logo: 'https://images.pexels.com/photos/60582/newton-s-cradle-balls-sphere-60582.jpeg?auto=compress&cs=tinysrgb&w=600',
     president: 'Kevin Rodriguez',
     vision:
       'To explore the potential of quantum computing and prepare students for the future of computing.',
@@ -212,15 +182,12 @@ const organizations = [
   },
   {
     name: 'Techniosys',
-    imageUrl:
-      'https://images.pexels.com/photos/2582937/pexels-photo-2582937.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     href: '/organizations/techniosys',
     description:
       'Techniosys is a tech club focused on the latest trends in software development, app building, and providing hands-on workshops for all levels.',
     memberCount: 120,
     meetingSchedule: 'Weekly Fridays, 7:00 PM',
     location: 'Tech Lab - Room 310',
-    logo: 'https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=600',
     president: 'Grace Thompson',
     vision:
       'To empower students with the skills and knowledge to succeed in the ever-evolving field of software development.',

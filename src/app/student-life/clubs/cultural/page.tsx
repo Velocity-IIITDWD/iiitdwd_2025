@@ -9,9 +9,6 @@ const organizations = [
     memberCount: 85,
     meetingSchedule: 'Bi-weekly Wednesdays, 6:00 PM',
     location: 'Library Seminar Room',
-    logo: 'https://images.pexels.com/photos/1370295/pexels-photo-1370295.jpeg?auto=compress&cs=tinysrgb&w=600',
-    imageUrl:
-      'https://images.pexels.com/photos/3760263/pexels-photo-3760263.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     href: '/organizations/zeitgeist',
     president: 'Eleanor Vance',
     vision:
@@ -30,9 +27,6 @@ const organizations = [
     memberCount: 70,
     meetingSchedule: 'Weekly Saturdays, 4:00 PM',
     location: 'Media Lab - Room 210',
-    logo: 'https://images.pexels.com/photos/243757/pexels-photo-243757.jpeg?auto=compress&cs=tinysrgb&w=600',
-    imageUrl:
-      'https://images.pexels.com/photos/7679833/pexels-photo-7679833.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     href: '/organizations/iridescence',
     president: 'Kai Tanaka',
     vision:
@@ -51,9 +45,6 @@ const organizations = [
     memberCount: 90,
     meetingSchedule: 'Weekly Fridays, 5:30 PM',
     location: 'Music Room - Building B',
-    logo: 'https://images.pexels.com/photos/4087991/pexels-photo-4087991.jpeg?auto=compress&cs=tinysrgb&w=600',
-    imageUrl:
-      'https://images.pexels.com/photos/3794662/pexels-photo-3794662.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     href: '/organizations/440-hz',
     president: 'Aisha Khan',
     vision:
@@ -71,9 +62,6 @@ const organizations = [
     memberCount: 60,
     meetingSchedule: 'Bi-weekly Tuesdays, 7:00 PM',
     location: 'Auditorium Screening Room',
-    logo: 'https://images.pexels.com/photos/274937/pexels-photo-274937.jpeg?auto=compress&cs=tinysrgb&w=600',
-    imageUrl:
-      'https://images.pexels.com/photos/3062541/pexels-photo-3062541.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     href: '/organizations/in-motion',
     president: 'Ben Carter',
     vision:
@@ -92,9 +80,6 @@ const organizations = [
     memberCount: 100,
     meetingSchedule: 'Weekly Thursdays, 6:00 PM',
     location: 'Dance Studio - Room 101',
-    logo: 'https://images.pexels.com/photos/1701202/pexels-photo-1701202.jpeg?auto=compress&cs=tinysrgb&w=600',
-    imageUrl:
-      'https://images.pexels.com/photos/2188012/pexels-photo-2188012.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     href: '/organizations/dynamight',
     president: 'Sofia Ramirez',
     vision:
@@ -113,9 +98,6 @@ const organizations = [
     memberCount: 75,
     meetingSchedule: 'Weekly Mondays, 5:00 PM',
     location: 'Black Box Theatre',
-    logo: 'https://images.pexels.com/photos/11401493/pexels-photo-11401493.jpeg?auto=compress&cs=tinysrgb&w=600',
-    imageUrl:
-      'https://images.pexels.com/photos/713149/pexels-photo-713149.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     href: '/organizations/limelight',
     president: 'Ethan Lee',
     vision:
@@ -133,9 +115,6 @@ const organizations = [
     memberCount: 65,
     meetingSchedule: 'Bi-weekly Sundays, 3:00 PM',
     location: 'Art Room - Building C',
-    logo: 'https://images.pexels.com/photos/102127/pexels-photo-102127.jpeg?auto=compress&cs=tinysrgb&w=600',
-    imageUrl:
-      'https://images.pexels.com/photos/6739730/pexels-photo-6739730.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     href: '/organizations/mosaic',
     president: 'Chloe Nguyen',
     vision: 'To foster creativity and artistic expression in all its forms.',

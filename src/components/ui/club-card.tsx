@@ -77,21 +77,29 @@ export function ClubCard({
       >
         <Card className="overflow-hidden h-full p-0 border shadow-lg transition-all duration-300 group-hover:shadow-2xl bg-white">
           <div className="relative h-48 w-full flex-none overflow-hidden">
-            <Image
-              src={imageUrl}
-              alt={name}
-              fill
-              className="object-cover transition-transform duration-300 group-hover:scale-105"
-            />
+            {imageUrl ? (
+              <Image
+                src={imageUrl}
+                alt={name}
+                fill
+                className="object-cover transition-transform duration-300 group-hover:scale-105"
+              />
+            ) : (
+              <div className="relative h-48 w-full bg-gray-200" />
+            )}
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
             <div className="absolute bottom-4 left-4 right-4 flex items-center gap-3 pointer-events-none">
               <div className="relative h-10 w-10 rounded-full overflow-hidden bg-white p-1">
-                <Image
-                  src={logo}
-                  alt={`${name} logo`}
-                  fill
-                  className="object-cover "
-                />
+                {logo ? (
+                  <Image
+                    src={logo}
+                    alt={`${name} logo`}
+                    fill
+                    className="object-cover "
+                  />
+                ) : (
+                  <div className="absolute inset-0 bg-gray-200" />
+                )}
               </div>
               <h3 className="text-title-1 font-bold text-white">{name}</h3>
             </div>
