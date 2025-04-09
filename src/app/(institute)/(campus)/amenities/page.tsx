@@ -246,14 +246,14 @@ export default function Page() {
                     </ul>
                   </div>
                   <div className="bg-background  p-4 rounded-lg">
-                    <h3 className="font-semibold text-title-2 text-main mb-4">
+                    {/* <h3 className="font-semibold text-title-2 text-main mb-4">
                       Room Types
                     </h3>
                     <ul className="list-disc pl-5 text-body space-y-2 font-medium text-gray-700">
                       <li>Double occupancy rooms (standard allocation)</li>
                       <li>Single occupancy rooms (limited availability)</li>
                       <li>Special rooms for differently-abled students</li>
-                    </ul>
+                    </ul> */}
 
                     <h3 className="font-semibold text-title-2 text-main my-4">
                       Common Areas
@@ -315,9 +315,8 @@ export default function Page() {
                       Internet Bandwidth
                     </h3>
                     <p className="text-gray-700 ">
-                      The institute is connected to the National Knowledge
-                      Network (NKN) with a 1 Gbps link, providing ample
-                      bandwidth for academic and research activities.
+                      The institute provides ample bandwidth for academic and
+                      research activities.
                     </p>
                   </div>
                 </div>

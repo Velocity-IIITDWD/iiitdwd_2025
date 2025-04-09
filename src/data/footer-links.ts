@@ -48,7 +48,10 @@ export const footerLinks = [
         text: 'Fee Structure',
         href: 'https://iiitdwd.ac.in/docs/FEE_2024-25_Sheet1.pdf'
       },
-      // { text: 'Scholarships', href: '/admissions/scholarships' },
+      {
+        text: 'Annual Reportds',
+        href: 'https://iiitdwd.ac.in/annual_reports/'
+      },
       { text: 'Placements', href: '/placements' },
       { text: 'Faculty', href: '/academics/faculty' }
     ]

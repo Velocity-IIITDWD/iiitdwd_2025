@@ -76,7 +76,7 @@ const navigationData: NavigationItem[] = [
         title: 'Building & Works Committee',
         href: '/governing-bodies/building'
       },
-      { title: 'Deans', href: '/deans' },
+      { title: 'Deans / PiC', href: '/deans' },
       { title: 'Head of Departments', href: '/hods' },
       { title: 'Staff', href: '/staff' },
       {
@@ -114,10 +114,10 @@ const navigationData: NavigationItem[] = [
         meta: { disableLayout: false }
       },
       { title: 'Research', href: '/academics/research' },
-      {
-        title: 'Curriculum',
-        href: 'https://iiitdwd.ac.in/docs/Curricula_16May23.pdf'
-      },
+      // {
+      //   title: 'Curriculum',
+      //   href: 'https://iiitdwd.ac.in/docs/Curricula_16May23.pdf'
+      // },
       {
         title: 'Convocation 2024',
         href: 'https://www.youtube.com/watch?v=Sh5VyQxKQvk'

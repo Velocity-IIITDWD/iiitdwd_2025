@@ -2,6 +2,7 @@ import LinkedInCarousel from '@/components/linkedin/EmblaCarousel';
 import { BentoGrid, BentoGridItem } from '@/components/ui/bento-grid';
 import { IconTableColumn, IconTrendingUp } from '@tabler/icons-react';
 import { Handshake, Lightbulb, Telescope } from 'lucide-react';
+import Link from 'next/link';
 import NotificationSection from './notification';
 
 export default function BriefContent() {
@@ -28,6 +29,11 @@ export default function BriefContent() {
           global partnerships.
         </div>
       ),
+      content2: (
+        <Link href={'/mou'} className="bg-main text-white px-4 py-2 rounded">
+          View all MoUs
+        </Link>
+      ),
       className: 'col-span-6 xl:col-span-3',
       icon: <Handshake className="h-4 w-4 text-neutral-500" />
     },
@@ -39,6 +45,14 @@ export default function BriefContent() {
           IoT, and emerging technologies, collaborating with top institutes and
           industries.
         </div>
+      ),
+      content2: (
+        <Link
+          href={'/academics/research'}
+          className="bg-main text-white px-4 py-2 rounded"
+        >
+          Research
+        </Link>
       ),
       className: 'col-span-6 xl:col-span-3',
       icon: <Lightbulb className="h-4 w-4 text-neutral-500" />
@@ -80,7 +94,7 @@ export default function BriefContent() {
 
   return (
     <div className="w-full flex min-h-screen h-full py-4 my-10">
-      <BentoGrid className="sm:py-18 container relative mx-auto px-6 py-16 md:py-24 lg:px-16 lg:py-24 xl:px-20 !pt-0 grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-4 xl:gap-3 2xl:gap-6 md:grid-cols-12">
+      <BentoGrid className="sm:py-18 max-w-[1960px] w-[87.5vw] relative mx-auto py-16 md:py-24 !pt-0 grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-4 xl:gap-3 2xl:gap-6 md:grid-cols-12">
         {items.map((item, i) => (
           <BentoGridItem
             key={i}
