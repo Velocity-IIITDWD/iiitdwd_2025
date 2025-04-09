@@ -113,14 +113,13 @@ const JourneySection = () => {
             <section className="flex px-6 md:px-12 flex-col md:flex-row gap-8 w-full">
               <div className="flex-1 text-title-2">
                 <h3 className="text-title-1 font-bold text-main mb-4">
-                  Review Tuition and Aid
+                  Review Tuition
                 </h3>
                 <h2 className="text-main-title font-bold mb-8">
                   Get financial information you need
                 </h2>
                 <p className="text-gray-700 mb-6">
-                  Learn about tuition fees, scholarships, and financial
-                  assistance programs available at IIIT Dharwad.
+                  Learn about tuition fees available at IIIT Dharwad.
                 </p>
 
                 <Link

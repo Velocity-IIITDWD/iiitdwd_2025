@@ -1,6 +1,15 @@
 export default [
   {
     id: '1',
+    name: 'Dr. Rajendra Hegadi',
+    title: 'Assistant Professor',
+    position: 'Professor In-Charge',
+    department: 'Academic & Student Welfare',
+    email: 'rajendrahegadi@iiitdwd.ac.in',
+    imageUrl: 'https://www.iiitdwd.ac.in//images/Dr.RajendraHegadi.jpeg'
+  },
+  {
+    id: '2',
     name: 'Dr. Deepak K T',
     title: 'Assistant Professor',
     position: 'Associate Dean',
@@ -9,7 +18,7 @@ export default [
     imageUrl: 'https://www.iiitdwd.ac.in//images/Dr.DeepakKT.jpeg'
   },
   {
-    id: '2',
+    id: '3',
     name: 'Dr. Jagadish D N',
     title: 'Assistant Professor',
     position: 'Associate Dean',
@@ -18,7 +27,7 @@ export default [
     imageUrl: 'https://www.iiitdwd.ac.in//images/Dr.JagadishDN.jpeg'
   },
   {
-    id: '3',
+    id: '4',
     name: 'Dr. Pavan Kumar C',
     title: 'Assistant Professor',
     position: 'Associate Dean',
@@ -27,7 +36,7 @@ export default [
     imageUrl: 'https://www.iiitdwd.ac.in//images/Dr.PavanKumarC.jpg'
   },
   {
-    id: '4',
+    id: '5',
     name: 'Dr. Sunil Saumya',
     title: 'Assistant Professor',
     position: 'Associate Dean',

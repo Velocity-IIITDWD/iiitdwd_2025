@@ -107,14 +107,16 @@ function AnimatedNavbar() {
             bounce: 0.1
           }}
         >
-          <Image
-            src={Logo}
-            alt="IIIT Dharwad Logo"
-            width={0}
-            height={0}
-            sizes="100%"
-            className="object-contain h-full w-auto"
-          />
+          <Link href="/" className="z-1 relative">
+            <Image
+              src={Logo}
+              alt="IIIT Dharwad Logo"
+              width={0}
+              height={0}
+              sizes="100%"
+              className="object-contain h-full w-auto"
+            />
+          </Link>
         </motion.div>
         <div
           className="w-full flex h-full xl:-translate-x-[3rem] 2xl:-translate-x-0"
