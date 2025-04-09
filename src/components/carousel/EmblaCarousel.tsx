@@ -104,7 +104,7 @@ const EmblaCarousel: React.FC<PropType> = (props: PropType) => {
         </div>
       </div>
 
-      <div className="embla__controls absolute bottom-0 left-1/2 -translate-x-1/2 flex items-center gap-4">
+      <div className="embla__controls absolute bottom-2 bg-white/30 backdrop-blur py-2 rounded left-1/2 -translate-x-1/2 flex items-center gap-4">
         <PrevButton
           onClick={() => onAutoplayButtonClick(onPrevButtonClick)}
           disabled={prevBtnDisabled}

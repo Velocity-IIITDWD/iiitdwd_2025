@@ -58,34 +58,8 @@ export default function BriefContent() {
       icon: <Lightbulb className="h-4 w-4 text-neutral-500" />
     },
     {
-      title: 'Placements',
-      content1: (
-        <div className="max-w-[300px]">
-          IIIT Dharwad has a <strong>strong placement record</strong>, with top
-          companies hiring graduates with excellent packages.
-        </div>
-      ),
-
-      content2: (
-        <ul className="max-w-[300px] text-primary grid grid-cols-2 gap-4">
-          <li>
-            <strong className="text-title-2">98%</strong>
-            <div className="text-callout text-gray-400">Placement Rate</div>
-          </li>
-          <li>
-            <strong className="text-title-2">₹12 LPA</strong>
-            <div className="text-callout text-gray-400">Highest Package</div>
-          </li>
-          <li>
-            <strong className="text-title-2">₹7 LPA</strong>
-            <div className="text-callout text-gray-400">Average Package</div>
-          </li>
-          <li>
-            <strong className="text-title-2">50+</strong>
-            <div className="text-callout text-gray-400">Top Recruiters</div>
-          </li>
-        </ul>
-      ),
+      title: 'Placements LinkedIn',
+      content1: <LinkedInCarousel />,
       className: 'col-span-6 md:col-span-12 xl:col-span-6',
       icon: <IconTrendingUp className="h-4 w-4 text-neutral-500" />,
       titleClassName: 'text-white'
