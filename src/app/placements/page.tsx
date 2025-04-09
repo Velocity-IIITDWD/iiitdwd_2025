@@ -2,6 +2,7 @@
 import { motion, useInView } from 'motion/react';
 import { useRef } from 'react';
 import { Tooltip } from 'react-tooltip';
+import DirectorsMessage from './directors-message';
 import HigherStudiesContact from './higher-studies-contact';
 import PlacementProcedure from './placement-procedure';
 import PreviousRecruiters from './previous-recruiters';
@@ -144,7 +145,6 @@ export default function Page() {
           ))}
         </div>
       </motion.div>
-
       <div
         ref={statsRef}
         className="py-20 px-4 sm:px-6 lg:px-8 border border-tertiary/20 bg-gradient-to-b from-white/70 to-white rounded-3xl"
@@ -260,6 +260,7 @@ export default function Page() {
         </motion.div> */}
       </div>
 
+      <DirectorsMessage />
       <PlacementProcedure />
       <PreviousRecruiters />
       <HigherStudiesContact />
