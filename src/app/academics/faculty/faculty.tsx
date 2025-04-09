@@ -19,7 +19,7 @@ const departmentMapping: Record<string, string> = {
   cse: 'Computer Science & Engineering',
   ece: 'Electronics and Communication Engineering',
   dsai: 'Data Science and Artificial Intelligence',
-  arts: 'Department of Arts, Science, and Design'
+  asd: 'Department of Arts, Science, and Design'
 };
 
 // Wrapper component for search params with proper typing

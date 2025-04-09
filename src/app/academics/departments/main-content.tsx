@@ -59,140 +59,158 @@ export default function MainContent({
           </div>
         </div>
 
-        <h2 className="text-title-1 font-bold mb-4 hover:text-main transition-colors">
-          Program Structure
-        </h2>
-
-        <div className="overflow-x-auto rounded-lg shadow-md mb-4 ">
-          <Table className="bg-white">
-            <TableHeader>
-              <TableRow className="bg-secondary/80 hover:bg-secondary/80 transition-colors">
-                <TableHead className="text-left w-full">Name</TableHead>
-                <TableHead className="text-center whitespace-nowrap">
-                  Credits
-                </TableHead>
-                <TableHead className="text-center whitespace-nowrap">
-                  Percentage of Total
-                </TableHead>
-                <TableHead className="text-center whitespace-nowrap">
-                  Recommended Percentage
-                </TableHead>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              {currentDept.courseCategories.map((category, index) => (
-                <TableRow
-                  key={index}
-                  className="hover:bg-secondary/30 transition-colors"
-                >
-                  <TableCell className="w-full">{category.name}</TableCell>
-                  <TableCell className="whitespace-nowrap">
-                    <Badge
-                      variant="outline"
-                      className="bg-gray-50 text-primary w-full h-full"
+        {currentDept?.courseCategories && (
+          <>
+            <h2 className="text-title-1 font-bold mb-4 hover:text-main transition-colors">
+              Program Structure
+            </h2>
+            <div className="overflow-x-auto rounded-lg shadow-md mb-4 ">
+              <Table className="bg-white">
+                <TableHeader>
+                  <TableRow className="bg-secondary/80 hover:bg-secondary/80 transition-colors">
+                    <TableHead className="text-left w-full">Name</TableHead>
+                    <TableHead className="text-center whitespace-nowrap">
+                      Credits
+                    </TableHead>
+                    <TableHead className="text-center whitespace-nowrap">
+                      Percentage of Total
+                    </TableHead>
+                    <TableHead className="text-center whitespace-nowrap">
+                      Recommended Percentage
+                    </TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  {currentDept.courseCategories.map((category, index) => (
+                    <TableRow
+                      key={index}
+                      className="hover:bg-secondary/30 transition-colors"
                     >
-                      {' '}
-                      {category.credits}
-                    </Badge>
-                  </TableCell>
-                  <TableCell className="whitespace-nowrap">
-                    <Badge
-                      variant="outline"
-                      className="bg-gray-100 text-primary w-full h-full"
-                    >
-                      {' '}
-                      {category.percentageOfTotal}%
-                    </Badge>
-                  </TableCell>
-                  <TableCell className="whitespace-nowrap">
-                    <Badge
-                      variant="outline"
-                      className="bg-main/15 text-main w-full h-full"
-                    >
-                      {category.recommendedPercentage}%
-                    </Badge>
-                  </TableCell>
-                </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </div>
+                      <TableCell className="w-full">{category.name}</TableCell>
+                      <TableCell className="whitespace-nowrap">
+                        <Badge
+                          variant="outline"
+                          className="bg-gray-50 text-primary w-full h-full"
+                        >
+                          {' '}
+                          {category.credits}
+                        </Badge>
+                      </TableCell>
+                      <TableCell className="whitespace-nowrap">
+                        <Badge
+                          variant="outline"
+                          className="bg-gray-100 text-primary w-full h-full"
+                        >
+                          {' '}
+                          {category.percentageOfTotal}%
+                        </Badge>
+                      </TableCell>
+                      <TableCell className="whitespace-nowrap">
+                        <Badge
+                          variant="outline"
+                          className="bg-main/15 text-main w-full h-full"
+                        >
+                          {category.recommendedPercentage}%
+                        </Badge>
+                      </TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </div>
+          </>
+        )}
 
         <ContentTypes currentDept={currentDept} />
 
-        <h2 className="text-title-1 font-bold mb-4 mt-8 hover:text-main transition-colors">
-          Semester-wise Course Structure
-        </h2>
+        {currentDept?.SemesterData &&
+          currentDept?.SemesterData.length > 0 &&
+          currentDept?.SemesterData[0]?.courses &&
+          currentDept?.SemesterData[0]?.courses.length > 0 && (
+            <>
+              <h2 className="text-title-1 font-bold mb-4 mt-8 hover:text-main transition-colors">
+                Semester-wise Course Structure
+              </h2>
 
-        <div className="mb-6">
-          <label
-            htmlFor="semester"
-            className="block mb-2 text-title-3 font-medium text-gray-700"
-          >
-            Select Semester:
-          </label>
-          <Select
-            value={selectedSemester.toString()}
-            onValueChange={(value) => setSelectedSemester(parseInt(value))}
-          >
-            <SelectTrigger className="w-full md:w-64">
-              <SelectValue placeholder="Select a semester" />
-            </SelectTrigger>
-            <SelectContent>
-              {currentDept.SemesterData.map((_, index) => (
-                <SelectItem key={index} value={index.toString()}>
-                  Semester {index + 1}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
-        </div>
+              <div className="mb-6">
+                <label
+                  htmlFor="semester"
+                  className="block mb-2 text-title-3 font-medium text-gray-700"
+                >
+                  Select Semester:
+                </label>
+                <Select
+                  value={selectedSemester.toString()}
+                  onValueChange={(value) =>
+                    setSelectedSemester(parseInt(value))
+                  }
+                >
+                  <SelectTrigger className="w-full md:w-64">
+                    <SelectValue placeholder="Select a semester" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {currentDept.SemesterData.map((_, index) => (
+                      <SelectItem key={index} value={index.toString()}>
+                        Semester {index + 1}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
 
-        <div className="overflow-x-auto rounded-lg shadow-md">
-          <Table className="bg-white">
-            <TableHeader>
-              <TableRow className="bg-secondary/70 hover:bg-secondary/80 transition-colors">
-                <TableHead className="text-left">Course Name</TableHead>
-                <TableHead className="text-left">Credits</TableHead>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              {currentDept.SemesterData[selectedSemester].courses.map(
-                (course, index) => (
-                  <TableRow
-                    key={index}
-                    className="hover:bg-secondary/20 transition-colors"
-                  >
-                    <TableCell>{course.name}</TableCell>
-                    <TableCell>
-                      <Badge variant="outline" className="bg-main/15 text-main">
-                        {course.credit} credits
-                      </Badge>
-                    </TableCell>
-                  </TableRow>
-                )
-              )}
-              <TableRow className="bg-secondary/50">
-                <TableCell className="font-medium text-gray-700">
-                  Semester Credits:
-                </TableCell>
-                <TableCell>
-                  <Badge
-                    variant="outline"
-                    className="border-none text-main text-body"
-                  >
-                    {currentDept.SemesterData[selectedSemester].totalCredits}{' '}
-                    credits
-                  </Badge>
-                </TableCell>
-              </TableRow>
-            </TableBody>
-          </Table>
-        </div>
+              <div className="overflow-x-auto rounded-lg shadow-md">
+                <Table className="bg-white">
+                  <TableHeader>
+                    <TableRow className="bg-secondary/70 hover:bg-secondary/80 transition-colors">
+                      <TableHead className="text-left">Course Name</TableHead>
+                      <TableHead className="text-left">Credits</TableHead>
+                    </TableRow>
+                  </TableHeader>
+                  <TableBody>
+                    {currentDept.SemesterData[selectedSemester].courses.map(
+                      (course, index) => (
+                        <TableRow
+                          key={index}
+                          className="hover:bg-secondary/20 transition-colors"
+                        >
+                          <TableCell>{course.name}</TableCell>
+                          <TableCell>
+                            <Badge
+                              variant="outline"
+                              className="bg-main/15 text-main"
+                            >
+                              {course.credit} credits
+                            </Badge>
+                          </TableCell>
+                        </TableRow>
+                      )
+                    )}
+                    <TableRow className="bg-secondary/50">
+                      <TableCell className="font-medium text-gray-700">
+                        Semester Credits:
+                      </TableCell>
+                      <TableCell>
+                        <Badge
+                          variant="outline"
+                          className="border-none text-main text-body"
+                        >
+                          {
+                            currentDept.SemesterData[selectedSemester]
+                              .totalCredits
+                          }{' '}
+                          credits
+                        </Badge>
+                      </TableCell>
+                    </TableRow>
+                  </TableBody>
+                </Table>
+              </div>
 
-        <div className="mt-4 text-subheadline text-main bg-secondary p-3 rounded-md transition-colors">
-          <p>Credit Format: Lecture-Tutorial-Practical-Project-Total</p>
-        </div>
+              <div className="mt-4 text-subheadline text-main bg-secondary p-3 rounded-md transition-colors">
+                <p>Credit Format: Lecture-Tutorial-Practical-Project-Total</p>
+              </div>
+            </>
+          )}
       </div>
     </div>
   );
