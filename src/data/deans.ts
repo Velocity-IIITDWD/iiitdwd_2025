@@ -2,7 +2,7 @@ export default [
   {
     id: '1',
     name: 'Dr. Rajendra Hegadi',
-    title: 'Assistant Professor',
+    title: 'Associate Professor',
     position: 'Professor In-Charge',
     department: 'Academic & Student Welfare',
     email: 'rajendrahegadi@iiitdwd.ac.in',

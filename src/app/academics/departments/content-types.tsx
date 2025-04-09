@@ -17,6 +17,16 @@ export default function ContentTypes({
 }: {
   currentDept: BTechCSEProgram;
 }) {
+  if (
+    !currentDept ||
+    !currentDept.disciplineCoreCourses ||
+    !currentDept.engineeringCoreCourses ||
+    !currentDept.mathsAndStatsCourses ||
+    !currentDept.disciplineElectiveCourses
+  ) {
+    return null;
+  }
+
   return (
     <div className="space-y-8">
       <Tabs defaultValue="disciplineCore" className="w-full">
