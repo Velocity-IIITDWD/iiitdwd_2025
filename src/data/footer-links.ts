@@ -49,7 +49,7 @@ export const footerLinks = [
         href: 'https://iiitdwd.ac.in/docs/FEE_2024-25_Sheet1.pdf'
       },
       {
-        text: 'Annual Reportds',
+        text: 'Annual Reports',
         href: 'https://iiitdwd.ac.in/annual_reports/'
       },
       { text: 'Career Guidance Cell', href: '/placements' },
