@@ -7,33 +7,20 @@ import {
   CarouselNext,
   CarouselPrevious
 } from '@/components/ui/carousel';
-import { Announcement } from '@/sanity/types';
 import Autoplay from 'embla-carousel-autoplay';
 import Link from 'next/link';
+import { AnnouncementItem } from './notification';
 
 export default function AnnouncementComponent({
   announcements
 }: {
-  announcements: Announcement[];
+  announcements: AnnouncementItem[];
 }) {
-  // Transform Sanity data into our component format
-  const announcementItems = announcements.map((item) => ({
-    id: item._id,
-    title: item.text || '',
-    date:
-      (item.date ?? '') + '-' + (item.month ?? '') + '-' + (item.year ?? '') ||
-      '',
-    isPinned: item.new || false, // Using "new" field to determine if pinned
-    type: 'announcement'
-  }));
-
-  // Get pinned items (max 2)
-  const pinnedAnnouncementItems = announcementItems
+  const pinnedAnnouncementItems = announcements
     .filter((item) => item.isPinned)
     .slice(0, 2);
 
-  // Get regular items (all non-pinned)
-  const regularAnnouncementItems = announcementItems.filter(
+  const regularAnnouncementItems = announcements.filter(
     (item) => !item.isPinned
   );
 
@@ -41,8 +28,8 @@ export default function AnnouncementComponent({
     <div className="relative">
       {/* First show pinned items in a 2-row grid */}
       <div className="grid grid-cols-1 gap-4 mb-4">
-        {pinnedAnnouncementItems.map((item) => (
-          <div key={item.id}>
+        {pinnedAnnouncementItems.map((item, idx) => (
+          <div key={idx}>
             <div className="text-gray-500 mb-1 text-body text-left">
               {item.date}
             </div>
@@ -66,8 +53,8 @@ export default function AnnouncementComponent({
         ]}
       >
         <CarouselContent>
-          {regularAnnouncementItems.map((item) => (
-            <CarouselItem key={item.id}>
+          {regularAnnouncementItems.map((item, idx) => (
+            <CarouselItem key={idx}>
               <div className="p-1">
                 <Card className="border-none shadow-none py-0 bg-transparent">
                   <CardContent className="flex flex-col px-2 text-left">

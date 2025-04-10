@@ -5,7 +5,6 @@ import {
   ChevronDown,
   ChevronUp,
   Github,
-  Heart,
   Linkedin,
   Mail,
   Twitter
@@ -15,178 +14,7 @@ import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 
 import { Badge } from '@/components/ui/badge';
-
-interface TeamMember {
-  id: string;
-  name: string;
-  role: string;
-  bio: string;
-  skills: string[];
-  image: string;
-  social: {
-    twitter?: string;
-    github?: string;
-    linkedin?: string;
-    email?: string;
-  };
-}
-
-// This would typically come from a database or API
-const teamMembers: TeamMember[] = [
-  {
-    id: '1',
-    name: 'Alex Johnson',
-    role: 'Lead Developer',
-    bio: 'Full-stack developer with 8+ years of experience specializing in React and Node.js ecosystems.',
-    skills: ['React', 'TypeScript', 'Node.js', 'GraphQL', 'AWS', 'Next.js'],
-    image: '/placeholder.svg?height=300&width=300',
-    social: {
-      twitter: 'https://twitter.com/alexj',
-      github: 'https://github.com/alexj',
-      linkedin: 'https://linkedin.com/in/alexj',
-      email: 'alex@example.com'
-    }
-  },
-  {
-    id: '2',
-    name: 'Sarah Chen',
-    role: 'UI/UX Designer',
-    bio: 'Creative designer focused on creating intuitive and accessible user experiences.',
-    skills: [
-      'Figma',
-      'UI Design',
-      'User Research',
-      'Prototyping',
-      'Design Systems',
-      'Accessibility'
-    ],
-    image: '/placeholder.svg?height=300&width=300',
-    social: {
-      twitter: 'https://twitter.com/sarahc',
-      github: 'https://github.com/sarahc',
-      linkedin: 'https://linkedin.com/in/sarahc'
-    }
-  },
-  {
-    id: '3',
-    name: 'Miguel Rodriguez',
-    role: 'Backend Engineer',
-    bio: 'Database expert with strong experience in building scalable APIs.',
-    skills: [
-      'Python',
-      'PostgreSQL',
-      'AWS',
-      'Docker',
-      'Kubernetes',
-      'Microservices'
-    ],
-    image: '/placeholder.svg?height=300&width=300',
-    social: {
-      github: 'https://github.com/miguelr',
-      linkedin: 'https://linkedin.com/in/miguelr',
-      email: 'miguel@example.com'
-    }
-  },
-  {
-    id: '4',
-    name: 'Priya Patel',
-    role: 'Frontend Developer',
-    bio: 'Passionate about creating responsive and accessible web applications.',
-    skills: [
-      'Vue.js',
-      'CSS',
-      'Accessibility',
-      'JavaScript',
-      'Tailwind',
-      'Animation'
-    ],
-    image: '/placeholder.svg?height=300&width=300',
-    social: {
-      twitter: 'https://twitter.com/priyap',
-      github: 'https://github.com/priyap',
-      linkedin: 'https://linkedin.com/in/priyap'
-    }
-  },
-  {
-    id: '5',
-    name: 'David Kim',
-    role: 'DevOps Engineer',
-    bio: 'Infrastructure specialist focused on CI/CD pipelines and cloud architecture.',
-    skills: [
-      'Docker',
-      'Kubernetes',
-      'GCP',
-      'Terraform',
-      'GitHub Actions',
-      'Monitoring'
-    ],
-    image: '/placeholder.svg?height=300&width=300',
-    social: {
-      github: 'https://github.com/davidk',
-      linkedin: 'https://linkedin.com/in/davidk',
-      email: 'david@example.com'
-    }
-  },
-  {
-    id: '6',
-    name: 'Emma Wilson',
-    role: 'Project Manager',
-    bio: 'Agile practitioner specializing in team coordination and client communication.',
-    skills: [
-      'Agile',
-      'Scrum',
-      'JIRA',
-      'Risk Management',
-      'Stakeholder Management',
-      'Roadmapping'
-    ],
-    image: '/placeholder.svg?height=300&width=300',
-    social: {
-      twitter: 'https://twitter.com/emmaw',
-      linkedin: 'https://linkedin.com/in/emmaw',
-      email: 'emma@example.com'
-    }
-  },
-  {
-    id: '7',
-    name: 'James Lee',
-    role: 'QA Engineer',
-    bio: 'Quality assurance expert with a focus on automated testing and CI/CD integration.',
-    skills: [
-      'Selenium',
-      'Jest',
-      'Cypress',
-      'Test Planning',
-      'Performance Testing',
-      'Security Testing'
-    ],
-    image: '/placeholder.svg?height=300&width=300',
-    social: {
-      github: 'https://github.com/jameslee',
-      linkedin: 'https://linkedin.com/in/jameslee'
-    }
-  },
-  {
-    id: '8',
-    name: 'Olivia Martinez',
-    role: 'Content Strategist',
-    bio: 'Content creator with expertise in SEO and technical documentation.',
-    skills: [
-      'SEO',
-      'Copywriting',
-      'Documentation',
-      'Content Planning',
-      'Analytics',
-      'Brand Voice'
-    ],
-    image: '/placeholder.svg?height=300&width=300',
-    social: {
-      twitter: 'https://twitter.com/oliviam',
-      linkedin: 'https://linkedin.com/in/oliviam',
-      email: 'olivia@example.com'
-    }
-  }
-];
+import { data as teamMembers } from '@/data/website-team';
 
 const MotionLink = motion(Link);
 
@@ -282,7 +110,7 @@ export default function TeamPage() {
     <>
       <canvas
         id="particles"
-        className="fixed inset-0 pointer-events-none z-0 opacity-30"
+        className="fixed inset-0 pointer-events-none z-0 opacity-10"
       />
 
       <div className="container relative z-10 py-12 px-4 md:px-6 md:py-16 lg:py-24 mx-auto max-w-7xl">
@@ -292,24 +120,12 @@ export default function TeamPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <motion.div
-            className="inline-flex items-center gap-2 mb-4 px-4 py-1.5 rounded-full bg-primary/10 text-primary"
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ delay: 0.3, duration: 0.5 }}
-          >
-            <Heart className="h-4 w-4 animate-pulse" />
-            <span className="text-sm font-medium">
-              The Heart of Our Website
-            </span>
-          </motion.div>
-
-          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-500">
+          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl text-primary">
             Meet Our Team
           </h1>
-          <p className="mt-4 text-xl text-muted-foreground">
-            We&apos;re a diverse group of talented individuals passionate about
-            creating exceptional digital experiences.
+          <p className="mt-4 text-sm leading-relaxed text-muted-foreground/90 max-w-xl mx-auto">
+            A dedicated group of students driven by passion and innovation,
+            crafting digital experiences that resonate and inspire.
           </p>
         </motion.div>
 
@@ -332,10 +148,10 @@ export default function TeamPage() {
               onHoverStart={() => setHoveredMember(member.id)}
               onHoverEnd={() => setHoveredMember(null)}
             >
-              <div className="relative overflow-hidden rounded-xl bg-gradient-to-br from-card/80 to-card border border-border/50 backdrop-blur-sm shadow-lg transition-all duration-300 group-hover:shadow-xl h-full">
+              <div className="relative overflow-hidden rounded-xl bg-card border border-border/50 backdrop-blur-sm shadow-lg transition-all duration-300 group-hover:shadow-xl h-full">
                 {/* Decorative elements */}
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary/80 to-purple-500/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="absolute bottom-0 right-0 w-20 h-20 rounded-full bg-gradient-to-br from-primary/20 to-purple-500/20 -translate-y-1/2 translate-x-1/2 blur-xl" />
+                {/* Removed top gradient bar */}
+                <div className="absolute bottom-0 right-0 w-20 h-20 rounded-full bg-gradient-to-br from-primary/20 to-[--main]/20 -translate-y-1/2 translate-x-1/2 blur-xl" />
 
                 <div className="aspect-square relative overflow-hidden">
                   <motion.div
@@ -501,23 +317,6 @@ export default function TeamPage() {
             </motion.div>
           ))}
         </div>
-
-        <motion.div
-          className="mt-16 text-center"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1, duration: 0.8 }}
-        >
-          <p className="text-muted-foreground">Want to join our team?</p>
-          <motion.a
-            href="/careers"
-            className="inline-flex items-center mt-2 px-6 py-2 rounded-full bg-gradient-to-r from-primary to-purple-500 text-white font-medium shadow-lg hover:shadow-xl transition-all duration-300"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.98 }}
-          >
-            View Open Positions
-          </motion.a>
-        </motion.div>
       </div>
     </>
   );
