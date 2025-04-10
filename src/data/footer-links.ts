@@ -53,7 +53,11 @@ export const footerLinks = [
         href: 'https://iiitdwd.ac.in/annual_reports/'
       },
       { text: 'Career Guidance Cell', href: '/placements' },
-      { text: 'Faculty', href: '/academics/faculty' }
+      { text: 'Faculty', href: '/academics/faculty' },
+      {
+        text: 'Website Team',
+        href: '/website-team'
+      }
     ]
   },
   {

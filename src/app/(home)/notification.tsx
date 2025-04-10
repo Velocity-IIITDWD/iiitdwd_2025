@@ -15,5 +15,13 @@ export interface AnnouncementItem {
 export default async function NotificationSection() {
   const response = await get<Announcement[]>(GetAnnouncements);
 
-  return <AnnouncementComponent announcements={response} />;
+  const transformedAnnouncements = response.map((item) => ({
+    id: item._id,
+    title: item.text || '',
+    date: `${item.date ?? ''}-${item.month ?? ''}-${item.year ?? ''}`,
+    isPinned: item.new || false,
+    type: 'announcement' as const
+  }));
+
+  return <AnnouncementComponent announcements={transformedAnnouncements} />;
 }
