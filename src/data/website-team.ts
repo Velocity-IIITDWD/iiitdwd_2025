@@ -32,11 +32,16 @@ export const data: TeamMember[] = [
   {
     id: 'nikhil',
     name: 'Nikhil Karthik',
-    role: 'Tead',
-    bio: '',
-    skills: ['Web', 'Frontend'],
+    role: 'Lead',
+    bio: 'Web and Game Developer',
+    skills: ['JS', 'Python', 'Java', 'OpenGL'],
     image: 'https://iiitdwd.ac.in/images/nikhil-karthik.jpg',
-    social: {}
+    social: {
+      twitter: 'https://twitter.com/nikhilkarthik24',
+      github: 'https://github.com/C-NikhilKarthik',
+      linkedin: 'https://linkedin.com/in/nikhilkarthik24',
+      email: 'nikhilkarthik241103@gmail.com'
+    }
   },
   {
     id: 'shreyansh',
