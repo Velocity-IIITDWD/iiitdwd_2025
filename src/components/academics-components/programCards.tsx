@@ -69,25 +69,29 @@ const ProgramCards: React.FC<ProgramCardsProps> = ({ programs }) => {
       title: 'Under-Graduate Programs',
       description:
         "Explore top ranked master's, doctoral and professional degrees.",
-      link: '/academics/departments'
+      link: '/academics/departments',
+      imageSrc: 'https://iiitdwd.ac.in/images/undergrad_programs.JPG'
     },
     {
       title: 'Online Programs',
       description:
         'Find the rigorous training the university is known for online.',
-      link: 'https://online.iiitdwd.ac.in/'
+      link: 'https://online.iiitdwd.ac.in/',
+      imageSrc: 'https://iiitdwd.ac.in/images/online_programs.JPG'
     },
     {
       title: 'Minors',
       description:
         'Choose from over 200 undergraduate programs that dive into your interests.',
-      link: ''
+      link: '',
+      imageSrc: 'https://iiitdwd.ac.in/images/minors.JPG'
     },
     {
       title: 'Course Catalog',
       description:
         'Discover different classes, review degree requirements and more.',
-      link: '/academics/course-catalog'
+      link: '/academics/course-catalog',
+      imageSrc: 'https://iiitdwd.ac.in/images/course_catalog.JPG'
     }
   ];
 

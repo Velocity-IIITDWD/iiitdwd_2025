@@ -11,6 +11,7 @@ import {
 import { ChevronRight } from 'lucide-react';
 import { useState } from 'react';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import JourneyComponent from './journey-component';
 
@@ -73,7 +74,15 @@ const JourneySection = () => {
               </div>
 
               <div className="flex-1">
-                <div className="bg-gray-300 w-full aspect-[3/2]" />
+                <div className="w-full aspect-[3/2] relative overflow-hidden rounded-lg">
+                  <Image
+                    src="https://iiitdwd.ac.in/images/every_area.JPG"
+                    alt="IIIT Dharwad academic programs"
+                    fill
+                    className="object-cover"
+                    priority
+                  />
+                </div>
               </div>
             </section>
           </JourneyComponent>
@@ -81,7 +90,14 @@ const JourneySection = () => {
           <JourneyComponent id="visit">
             <section className="flex px-6 md:px-12 flex-col md:flex-row gap-8 w-full">
               <div className="flex-1 order-2 md:order-1">
-                <div className="bg-gray-300 w-full aspect-[3/2]" />
+                <div className="w-full aspect-[3/2] relative overflow-hidden rounded-lg">
+                  <Image
+                    src="https://iiitdwd.ac.in/images/explore_campus.JPG"
+                    alt="IIIT Dharwad campus view"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
               </div>
 
               <div className="flex-1 text-title-2 order-1 md:order-2">
@@ -135,7 +151,14 @@ const JourneySection = () => {
               </div>
 
               <div className="flex-1">
-                <div className="bg-gray-300 w-full aspect-[3/2]" />
+                <div className="w-full aspect-[3/2] relative overflow-hidden rounded-lg">
+                  <Image
+                    src="https://iiitdwd.ac.in/images/financial_info.JPG"
+                    alt="IIIT Dharwad tuition and fees information"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
               </div>
             </section>
           </JourneyComponent>

@@ -3,6 +3,7 @@ import ProgramCards from '@/components/academics-components/programCards';
 import SectionHeading from '@/components/layout/section-heading';
 import { ArrowRightCircle } from 'lucide-react';
 import { AnimatePresence, motion } from 'motion/react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
@@ -64,7 +65,15 @@ export default function ProgrammesPage() {
             href="https://iiitdwd.ac.in/docs/Academic_Calendar_year_1_2024-25.pdf"
             className="relative focus:outline-none focus:border-none focus:ring-brand-600 focus:ring-2 hover:shadow-md cursor-pointer overflow-clip flex rounded-lg border w-full border-gray-400 bg-white hover:border-gray-500"
           >
-            <div className="h-24 w-40 relative bg-gray-300 max-md:hidden" />
+            <div className="h-24 w-40 relative max-md:hidden">
+              <Image
+                src="https://www.iiitdwd.ac.in/images/calendar.JPG"
+                alt="First Year Academic Calendar"
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
             <div className="w-full flex items-center p-4">
               <div className="flex flex-col justify-center flex-1 gap-1">
                 <span className="text-title-1 text-main font-semibold">
@@ -82,7 +91,15 @@ export default function ProgrammesPage() {
             href="https://iiitdwd.ac.in/docs/Academic_Calendar_year_234_2024-25.pdf"
             className="relative focus:outline-none focus:border-none focus:ring-brand-600 focus:ring-2 hover:shadow-md cursor-pointer overflow-clip flex rounded-lg border w-full border-gray-400 bg-white hover:border-gray-500"
           >
-            <div className="h-24 w-40 relative bg-gray-300 max-md:hidden" />
+            <div className="h-24 w-40 relative max-md:hidden">
+              <Image
+                src="https://www.iiitdwd.ac.in/images/curriculum.JPG"
+                alt="Academic Calendar for Year 2-4"
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
             <div className="w-full flex items-center p-4">
               <div className="flex flex-col justify-center flex-1 gap-1">
                 <span className="text-title-1 text-main font-semibold">
@@ -100,7 +117,15 @@ export default function ProgrammesPage() {
             href="https://iiitdwd.ac.in/docs/Curricula_16May23.pdf"
             className="relative focus:outline-none focus:border-none focus:ring-brand-600 focus:ring-2 hover:shadow-md cursor-pointer overflow-clip flex rounded-lg border w-full border-gray-400 bg-white hover:border-gray-500"
           >
-            <div className="h-24 w-40 relative bg-gray-300 max-md:hidden" />
+            <div className="h-24 w-40 relative max-md:hidden">
+              <Image
+                src="https://www.iiitdwd.ac.in/images/calendar.JPG"
+                alt="Curriculum Document"
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
             <div className="w-full flex items-center p-4">
               <div className="flex flex-col justify-center flex-1 gap-1">
                 <span className="text-title-1 text-main font-semibold">
