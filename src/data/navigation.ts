@@ -78,6 +78,10 @@ const navigationData: NavigationItem[] = [
       },
       { title: 'Deans / PiC', href: '/deans' },
       { title: 'Head of Departments', href: '/hods' },
+      {
+        title: 'Faculty in Charge',
+        href: '/faculty-in-charge'
+      },
       { title: 'Staff', href: '/staff' },
       {
         title: 'Career Guidance Cell',
@@ -119,11 +123,33 @@ const navigationData: NavigationItem[] = [
       //   href: 'https://iiitdwd.ac.in/docs/Curricula_16May23.pdf'
       // },
       {
-        title: 'Convocation 2024',
-        href: 'https://www.youtube.com/watch?v=Sh5VyQxKQvk'
+        title: 'Convocation',
+        href: '#',
+        items: [
+          {
+            title: '2nd Convocation',
+            href: 'https://youtu.be/85AIdBqqDWQ?si=XfqUQoEIUZ0REW1u'
+          },
+          {
+            title: '3rd Convocation',
+            href: 'https://youtu.be/GzB2favRmds?si=m_2dUSQtPONcg85N'
+          },
+          {
+            title: '4th Convocation',
+            href: 'https://www.youtube.com/live/SdLfdDpaHQ4?si=UbMPvcgaRwv1lLWN'
+          },
+          {
+            title: '5th Convocation',
+            href: 'https://www.youtube.com/live/coH5br8K1B8?si=pFCzKllRV3LA-xWt'
+          },
+          {
+            title: '6th Convocation',
+            href: 'https://www.youtube.com/live/Sh5VyQxKQvk?si=Bvz_hVfB9lAw48xN'
+          }
+        ]
       },
       {
-        title: 'Conclave 2024',
+        title: 'Conclave',
         href: 'https://conclave.iiitdwd.ac.in'
       },
       { title: 'NIRF', href: '/academics/nirf' },
@@ -164,7 +190,7 @@ const navigationData: NavigationItem[] = [
     ]
   },
   {
-    title: 'Placements',
+    title: 'Career Guidance Cell',
     href: '/placements',
     items: [
       { title: 'Why Recruit Us?', href: '/placements/#why-recruit-us' },

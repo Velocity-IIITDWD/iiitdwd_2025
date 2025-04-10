@@ -24,13 +24,18 @@ export default [
       },
       {
         content: ['Ex-officio Member'],
-        imageURL: '/images/Dr.PrakashPawar.jpg',
-        title: 'Dr. Prakash Pawar'
+        imageURL: '/images/Dr.SibasankarPadhy.jpg',
+        title: 'Dr. Sibasankar Padhy'
       },
       {
         content: ['Ex-officio Member'],
-        imageURL: '/images/Dr.SunilSaumya.jpeg',
-        title: 'Dr. Sunil Saumya'
+        imageURL: '/images/Dr.SiddharthR.jpg',
+        title: 'Dr.Siddharth R'
+      },
+      {
+        content: ['Ex-officio Member'],
+        imageURL: '/images/Dr.AswathBabuH.jpeg',
+        title: 'Dr. Aswath Babu H'
       }
     ]
   },

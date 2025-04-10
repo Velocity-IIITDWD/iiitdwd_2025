@@ -32,7 +32,7 @@ export default function Profile({
   return (
     <div className="py-10 w-[87.5vw] max-w-[1680px] mx-auto">
       <div className="flex flex-col md:flex-row gap-8">
-        <div className="flex flex-col gap-4 sticky top-20 ">
+        <div className="flex flex-col gap-4">
           {image && (
             <div className="border border-primary w-full max-w-[400px]">
               <Image

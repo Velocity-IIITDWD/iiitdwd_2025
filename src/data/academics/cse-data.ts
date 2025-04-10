@@ -26,15 +26,15 @@ export interface BTechCSEProgram {
   hod: string;
   hod_image: string;
   email: string;
-  courseCategories: CourseCategory[];
-  disciplineCoreCourses: Course[];
-  disciplineElectiveCourses: Course[];
-  engineeringCoreCourses: Course[];
-  mathsAndStatsCourses: Course[];
-  openElectivesAndProjectsCredits: number;
-  hssAndIECredits: number;
-  totalCredits: number;
-  SemesterData: SemesterCredit[];
+  courseCategories?: CourseCategory[];
+  disciplineCoreCourses?: Course[];
+  disciplineElectiveCourses?: Course[];
+  engineeringCoreCourses?: Course[];
+  mathsAndStatsCourses?: Course[];
+  openElectivesAndProjectsCredits?: number;
+  hssAndIECredits?: number;
+  totalCredits?: number;
+  SemesterData?: SemesterCredit[];
 }
 
 // Data from the PDF
