@@ -70,4 +70,18 @@ export const data: TeamMember[] = [
     image: 'https://iiitdwd.ac.in/images/ashitosh-sable.jpg',
     social: {}
   }
+  {
+    id: 'karan',
+    name: 'Karan Naik',
+    role: 'Member',
+    bio: 'Web Developer',
+    skills: ['NextJs'],
+    image: '',
+    social: {
+      twitter: '',
+      github: 'https://github.com/karannaik503/',
+      linkedin: 'https://www.linkedin.com/in/karan-naik-08680623a/',
+      email: 'karannaik503@gmail.com'
+    }
+  }
 ];
