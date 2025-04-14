@@ -1,0 +1,42 @@
+name: Beta Deploy to cPanel
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - dev
+
+jobs:
+  deploy:
+    name: Build & SSH Deploy
+    runs-on: ubuntu-22.04
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4.0.2
+        with:
+          node-version: '20'
+
+      - name: ⬇️ Install dependencies
+        run: npm ci
+
+      - name: 🛠️ Build Next.js application
+        env:
+          NEXT_PUBLIC_SANITY_DATASET: ${{ secrets.SANITY_DATASET }}
+          NEXT_PUBLIC_SANITY_PROJECT_ID: ${{ secrets.SANITY_PROJECT_ID }}
+        run: npm run build
+
+      - name: 📂 Deploy via SSH
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          source: 'out/*'
+          target: 'beta'
+          rm: true
+          strip_components: 1
+          rm_options: '--exclude=docs --exclude=images'
