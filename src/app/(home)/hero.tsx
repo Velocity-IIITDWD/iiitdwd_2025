@@ -22,6 +22,9 @@ export default function LandingSection({ data }: { data: string[] }) {
                 className="h-[calc(20vw-1.5px)] w-[calc(33vw-2.67px)] md:h-36 md:w-64 shadow"
                 height={0}
                 width={0}
+                loading="lazy"
+                quality={75}
+                priority={false}
                 sizes={'100%'}
               />
             ))}
@@ -35,6 +38,9 @@ export default function LandingSection({ data }: { data: string[] }) {
                 className="h-[calc(20vw-1.5px)] w-[calc(33vw-2.67px)] md:h-36 md:w-64 shadow"
                 height={0}
                 width={0}
+                loading="lazy"
+                quality={75}
+                priority={false}
                 sizes={'100%'}
               />
             ))}

@@ -63,21 +63,34 @@ export default function SortSearch({
   };
 
   const onSearchByChange = (value: string) => {
-    if (value === searchFor) return;
-    setSearchFor(value);
+    const lowerValue = value.toLowerCase();
+    if (lowerValue === searchFor) return;
+
+    setSearchFor(lowerValue);
     let data = selectedTab === 'active' ? active : archive;
-    if (value) {
-      data = data.filter(
-        (tender) =>
-          tender.title.toLowerCase().includes(value) ||
-          tender.documents.some((doc) =>
-            doc.title.toLowerCase().includes(value)
+
+    if (lowerValue) {
+      data = data.filter((tender) => {
+        const inTitle = tender?.title?.toLowerCase().includes(lowerValue);
+        const inDocuments = tender?.documents?.some((doc) =>
+          doc?.title?.toLowerCase().includes(lowerValue)
+        );
+        const inCorrections = tender?.corrections?.some((cor) =>
+          cor?.title?.toLowerCase().includes(lowerValue)
+        );
+        const inLinks =
+          tender?.link?.toLowerCase().includes(lowerValue) ||
+          tender?.documents?.some((doc) =>
+            doc?.link?.toLowerCase().includes(lowerValue)
           ) ||
-          tender.corrections.some((cor) =>
-            cor.title.toLowerCase().includes(value)
-          )
-      );
+          tender?.corrections?.some((cor) =>
+            cor?.link?.toLowerCase().includes(lowerValue)
+          );
+
+        return inTitle || inDocuments || inCorrections || inLinks;
+      });
     }
+
     sortAndSetData(sortBy, sortAsc, data);
   };
 
