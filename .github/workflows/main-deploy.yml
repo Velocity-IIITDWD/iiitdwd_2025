@@ -64,7 +64,7 @@ jobs:
           TERM: xterm
         run: |
           export SSHPASS=${{ secrets.SSH_PASSWORD }}
-          sshpass -e scp -o StrictHostKeyChecking=no deploy.tar.gz ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }}:beta/
+          sshpass -e scp -o StrictHostKeyChecking=no deploy.tar.gz ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }}:public_html/
           sshpass -e ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }} '
           cd public_html &&
           tar -xzf deploy.tar.gz &&
