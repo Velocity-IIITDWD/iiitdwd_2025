@@ -50,6 +50,8 @@ jobs:
         run: sudo apt-get install -y sshpass
 
       - name: 🧹 Clean remote directory
+        env:
+          TERM: xterm
         run: |
           export SSHPASS=${{ secrets.SSH_PASSWORD }}
           sshpass -e ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }} '
@@ -58,6 +60,8 @@ jobs:
           find . -mindepth 1 -maxdepth 1 ! -name "docs" ! -name "images" -exec rm -rf {} +'
 
       - name: 📂 Transfer and extract files
+        env:
+          TERM: xterm
         run: |
           export SSHPASS=${{ secrets.SSH_PASSWORD }}
           sshpass -e scp -o StrictHostKeyChecking=no deploy.tar.gz ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }}:beta/
