@@ -21,7 +21,7 @@ jobs:
           node-version: '20'
 
       - name: ⬇️ Install dependencies
-        run: npm ci
+        run: npm i
 
       - name: 🛠️ Build Next.js application
         env:
