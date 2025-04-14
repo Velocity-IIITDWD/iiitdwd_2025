@@ -20,14 +20,19 @@ jobs:
         with:
           node-version: '20'
 
+      - name: Install pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: 8
+
       - name: ⬇️ Install dependencies
-        run: npm i
+        run: pnpm install
 
       - name: 🛠️ Build Next.js application
         env:
           NEXT_PUBLIC_SANITY_DATASET: ${{ secrets.SANITY_DATASET }}
           NEXT_PUBLIC_SANITY_PROJECT_ID: ${{ secrets.SANITY_PROJECT_ID }}
-        run: npm run build
+        run: pnpm run build
 
       - name: 📂 Deploy via SSH
         uses: appleboy/scp-action@v0.1.7
