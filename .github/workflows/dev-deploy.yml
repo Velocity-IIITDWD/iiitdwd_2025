@@ -30,8 +30,8 @@ jobs:
 
       - name: 🛠️ Build Next.js application
         env:
-          NEXT_PUBLIC_SANITY_DATASET: ${{ secrets.SANITY_DATASET }}
-          NEXT_PUBLIC_SANITY_PROJECT_ID: ${{ secrets.SANITY_PROJECT_ID }}
+          SANITY_DATASET: ${{ secrets.SANITY_DATASET }}
+          SANITY_PROJECT_ID: ${{ secrets.SANITY_PROJECT_ID }}
         run: pnpm run build
 
       - name: 📂 Deploy via SSH
