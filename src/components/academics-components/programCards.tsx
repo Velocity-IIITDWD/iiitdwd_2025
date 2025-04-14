@@ -80,7 +80,7 @@ const ProgramCards: React.FC<ProgramCardsProps> = ({ programs }) => {
       imageSrc: 'https://iiitdwd.ac.in/images/online_programs.JPG'
     },
     {
-      title: 'Minors',
+      title: 'Majors',
       description:
         'Choose from over 200 undergraduate programs that dive into your interests.',
       link: '',
