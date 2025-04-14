@@ -34,23 +34,42 @@ jobs:
           SANITY_PROJECT_ID: ${{ secrets.SANITY_PROJECT_ID }}
         run: pnpm run build
 
-      - name: 🧹 Clean via SSH
+      - name: 📦 Prepare deployment
+        run: |
+          cd out
+          tar -czf ../deploy.tar.gz .
+
+      - name: 🚀 Deploy to server
         uses: appleboy/ssh-action@v1.0.0
+        env:
+          TERM: xterm
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          script: |
+            mkdir -p beta
+            cd beta
+            find . -mindepth 1 -maxdepth 1 ! -name 'docs' ! -name 'images' -exec rm -rf {} +
+
+      - name: 📂 Transfer files
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          source: 'deploy.tar.gz'
+          target: 'beta'
+
+      - name: 📋 Extract files
+        uses: appleboy/ssh-action@v1.0.0
+        env:
+          TERM: xterm
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USERNAME }}
           password: ${{ secrets.SSH_PASSWORD }}
           script: |
             cd beta
-            find . -mindepth 1 -maxdepth 1 ! -name 'docs' ! -name 'images' -exec rm -rf {} +
-
-      - name: 📂 Deploy via SSH
-        uses: appleboy/scp-action@v0.1.7
-        with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USERNAME }}
-          password: ${{ secrets.SSH_PASSWORD }}
-          source: 'out/*'
-          target: 'beta'
-          rm: false
-          strip_components: 1
+            tar -xzf deploy.tar.gz
+            rm deploy.tar.gz
