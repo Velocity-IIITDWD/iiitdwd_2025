@@ -54,6 +54,8 @@ jobs:
 
       - name: 📂 Transfer files
         uses: appleboy/scp-action@v0.1.7
+        env:
+          TERM: xterm
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USERNAME }}
@@ -63,8 +65,6 @@ jobs:
 
       - name: 📋 Extract files
         uses: appleboy/ssh-action@v1.0.0
-        env:
-          TERM: xterm
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USERNAME }}
