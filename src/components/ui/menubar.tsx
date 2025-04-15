@@ -56,7 +56,7 @@ function MenubarTrigger({
     <MenubarPrimitive.Trigger
       data-slot="menubar-trigger"
       className={cn(
-        '!text-gray-500 focus:!text-main data-[state=open]:!text-main flex items-center rounded-sm px-2 py-1 text-title-3 outline-hidden select-none',
+        '!text-main focus:!text-primary data-[state=open]:!text-primary flex items-center rounded-sm px-2 py-1 text-title-3 outline-hidden select-none',
         className
       )}
       {...props}
@@ -103,7 +103,7 @@ function MenubarItem({
       data-inset={inset}
       data-variant={variant}
       className={cn(
-        "focus:bg-secondary/40 !text-gray-500 border-l-2 hover:bg-secondary/40 hover:border-main focus:!text-main data-[variant=destructive]:text-destructive data-[variant=destructive]:focus:bg-destructive/10 dark:data-[variant=destructive]:focus:bg-destructive/20 data-[variant=destructive]:focus:text-destructive data-[variant=destructive]:*:[svg]:!text-destructive [&_svg:not([class*='text-'])]:text-muted-foreground relative flex cursor-default items-center gap-2 px-2 py-2 text-body outline-hidden select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 data-[inset]:pl-8 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+        "focus:bg-secondary/40 !text-main border-l-2 hover:bg-secondary/40 hover:border-main focus:!text-primary data-[variant=destructive]:text-destructive data-[variant=destructive]:focus:bg-destructive/10 dark:data-[variant=destructive]:focus:bg-destructive/20 data-[variant=destructive]:focus:text-destructive data-[variant=destructive]:*:[svg]:!text-destructive [&_svg:not([class*='text-'])]:text-muted-foreground relative flex cursor-default items-center gap-2 px-2 py-2 text-body outline-hidden select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 data-[inset]:pl-8 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
         className
       )}
       {...props}
@@ -229,7 +229,7 @@ function MenubarSubTrigger({
       data-slot="menubar-sub-trigger"
       data-inset={inset}
       className={cn(
-        'focus:bg-secondary/40 !text-gray-500 border-l-2 focus:!border-main focus:!text-main data-[state=open]:bg-secondary/40 data-[state=open]:!text-main flex cursor-default items-center px-2 py-1.5 text-body outline-none select-none data-[inset]:pl-8',
+        'focus:bg-secondary/40 !text-main border-l-2 focus:!border-main focus:!text-primary data-[state=open]:bg-secondary/40 data-[state=open]:!text-primary flex cursor-default items-center px-2 py-1.5 text-body outline-none select-none data-[inset]:pl-8',
         className
       )}
       {...props}
