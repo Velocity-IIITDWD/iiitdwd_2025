@@ -4,7 +4,7 @@ const ModernSocialMediaGrid = () => {
   const socialMedia = [
     {
       name: 'LinkedIn',
-      url: 'https://www.linkedin.com/school/iiitdwd/',
+      url: 'https://www.linkedin.com/in/iiitdharwad/',
       icon: (
         <svg
           viewBox="0 0 24 24"
@@ -16,7 +16,7 @@ const ModernSocialMediaGrid = () => {
     },
     {
       name: 'X',
-      url: 'https://twitter.com/IIITDwd',
+      url: 'https://x.com/dharwad_iiit',
       icon: (
         <svg
           viewBox="0 0 24 24"
@@ -28,7 +28,7 @@ const ModernSocialMediaGrid = () => {
     },
     {
       name: 'YouTube',
-      url: 'https://www.youtube.com/channel/UCF-ZGGbxFij1lH5JSB-9Bbw',
+      url: 'https://www.youtube.com/@socialmediaiiitdharwad2584',
       icon: (
         <svg
           viewBox="0 0 24 24"
@@ -40,7 +40,7 @@ const ModernSocialMediaGrid = () => {
     },
     {
       name: 'Instagram',
-      url: 'https://www.instagram.com/iiitdwd/',
+      url: 'https://www.instagram.com/iiitdharwad_',
       icon: (
         <svg
           viewBox="0 0 24 24"

@@ -91,12 +91,12 @@ export default function AnnouncementComponent({
                 {formatDate(item.date)}
               </div>
             )}
-            <div className="flex items-start">
+            <a className="flex items-start" href={item.link}>
               <span className="text-green-500 mr-2 mt-1">📌</span>
               <h3 className="text-gray-700 text-title-3 line-clamp-1 font-medium hover:text-main cursor-pointer">
                 {item.title}
               </h3>
-            </div>
+            </a>
           </div>
         ))}
       </div>
@@ -113,7 +113,7 @@ export default function AnnouncementComponent({
         <CarouselContent>
           {regularAnnouncementItems.map((item, idx) => (
             <CarouselItem key={idx}>
-              <div className="p-1">
+              <a href={item.link} className="p-1">
                 <Card className="border-none shadow-none py-0 bg-transparent">
                   <CardContent className="flex flex-col px-2 text-left">
                     {formatDate(item.date) && (
@@ -126,7 +126,7 @@ export default function AnnouncementComponent({
                     </h3>
                   </CardContent>
                 </Card>
-              </div>
+              </a>
             </CarouselItem>
           ))}
         </CarouselContent>
