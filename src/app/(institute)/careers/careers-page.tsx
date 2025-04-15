@@ -79,14 +79,16 @@ export default function CareersPage({ Fulldata }: { Fulldata: Jobs[] }) {
     setFilteredJobs(
       updatedJobsData
         .filter((job) => category === 'all' || job.category === category)
-        .filter(
-          (job) =>
-            !searchText ||
-            job.title.toLowerCase().includes(searchText.toLowerCase()) ||
-            job.details.toLowerCase().includes(searchText.toLowerCase())
-        )
+        .filter((job) => {
+          if (!searchText) return true;
+
+          const title = job.title?.toLowerCase() || '';
+          const details = job.details?.toLowerCase() || '';
+
+          return title.includes(searchText) || details.includes(searchText);
+        })
     );
-  }, [category, searchText]);
+  }, [category, searchText, updatedJobsData]);
 
   const searchInputRef = useRef<HTMLInputElement>(null);
   const updateSearch = useCallback(() => {
@@ -100,7 +102,7 @@ export default function CareersPage({ Fulldata }: { Fulldata: Jobs[] }) {
         <h1 className="text-large-title w-full">Careers</h1>
         <div className="flex flex-col max-md:w-full items-center rounded text-main bg-white border lg:flex-row gap-4 w-fit my-2">
           <Select defaultValue="all" onValueChange={setCategory}>
-            <SelectTrigger className="rounded-sm w-full max-w-sm self-end border-none shadow-none lg:self-auto">
+            <SelectTrigger className="rounded-sm w-full self-end border-none shadow-none lg:self-auto">
               <SelectValue placeholder="Filter by category" />
             </SelectTrigger>
             <SelectContent>
@@ -118,7 +120,7 @@ export default function CareersPage({ Fulldata }: { Fulldata: Jobs[] }) {
               onChange={(event) =>
                 setSearchText(event.target.value.toLowerCase())
               }
-              className="rounded-l-md p-1 px-2 focus:outline-none w-full sm:w-auto"
+              className="rounded-l-md p-1 px-2 focus:outline-none w-full md:w-auto"
               type="text"
               placeholder="Search..."
             />

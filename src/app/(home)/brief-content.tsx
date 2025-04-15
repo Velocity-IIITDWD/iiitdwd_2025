@@ -4,20 +4,21 @@ import { IconTableColumn, IconTrendingUp } from '@tabler/icons-react';
 import { Handshake, Lightbulb, Telescope } from 'lucide-react';
 import Link from 'next/link';
 import NotificationSection from './notification';
+import SocialMediaGrid from './social-media';
 
 export default function BriefContent() {
   const items = [
     {
-      title: 'LinkedIn Posts',
-      content1: <LinkedInCarousel />,
-      className: 'col-span-6 md:col-span-12 xl:col-span-6',
+      title: 'Social Media',
+      content1: <SocialMediaGrid />,
+      className: 'col-span-6 md:col-span-12 xl:col-span-4',
       icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
       titleClassName: 'text-white'
     },
     {
       title: 'Notifications',
       content1: <NotificationSection />,
-      className: 'col-span-6 md:col-span-12 xl:col-span-6 text-left',
+      className: 'col-span-6 md:col-span-12 xl:col-span-8 text-left',
       icon: <Telescope className="h-4 w-4 text-neutral-500" />
     },
     {

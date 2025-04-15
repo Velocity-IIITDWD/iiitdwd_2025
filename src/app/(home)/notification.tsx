@@ -10,6 +10,7 @@ export interface AnnouncementItem {
   date: string;
   isPinned?: boolean;
   type?: 'news' | 'announcement';
+  link: string;
 }
 
 export default async function NotificationSection() {
@@ -18,9 +19,10 @@ export default async function NotificationSection() {
   const transformedAnnouncements = response.map((item) => ({
     id: item._id,
     title: item.text || '',
-    date: `${item.date ?? ''}-${item.month ?? ''}-${item.year ?? ''}`,
+    date: item.date,
     isPinned: item.new || false,
-    type: 'announcement' as const
+    type: 'announcement' as const,
+    link: item.link || '#'
   }));
 
   return <AnnouncementComponent announcements={transformedAnnouncements} />;

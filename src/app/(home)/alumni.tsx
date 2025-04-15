@@ -49,7 +49,7 @@ export default function AlumniSection({ reviews }: AlumniSectionProps) {
           <h2>from our thriving alumni community.</h2>
         </div>
 
-        <div className="max-h-[80vh]max-w-[1960px] w-[87.5vw] mx-auto py-20 relative overflow-hidden flex gap-4">
+        <div className="max-h-[80vh] max-w-[1960px] w-[87.5vw] mx-auto py-20 relative overflow-hidden flex gap-4">
           <div className="w-full flex gap-4">
             {distributedReviews.map((column, columnIndex) => (
               <div key={columnIndex} className="flex-1 flex flex-col gap-4">
