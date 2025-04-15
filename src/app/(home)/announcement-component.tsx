@@ -20,12 +20,14 @@ export default function AnnouncementComponent({
     .filter((item) => item.isPinned)
     .slice(0, 2);
 
-  const regularAnnouncementItems = announcements.filter(
-    (item) => !item.isPinned
-  );
+  const regularAnnouncementItems = [
+    ...announcements.filter((item) => item.isPinned).slice(2),
+    ...announcements.filter((item) => !item.isPinned)
+  ];
 
   // Function to format the date properly
   const formatDate = (dateString: string) => {
+    return dateString;
     if (!dateString) return '';
 
     // Handle cases like "-06-2023" or "--2023"
