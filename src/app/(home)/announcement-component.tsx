@@ -25,18 +25,49 @@ export default function AnnouncementComponent({
     ...announcements.filter((item) => !item.isPinned)
   ];
 
-  // Function to format the date properly
-  const formatDate = (dateString: string) => {
-    return dateString;
+  // Improved date formatter that handles various formats and edge cases
+  const formatDate = (dateString: string | null | undefined) => {
     if (!dateString) return '';
 
-    // Handle cases like "-06-2023" or "--2023"
+    // Try parsing as ISO date (for formats like 'Mon, 23 Dec 2024 12:46:44 GMT')
+    try {
+      const date = new Date(dateString);
+      if (!isNaN(date.getTime())) {
+        return new Intl.DateTimeFormat('en-US', {
+          day: 'numeric',
+          month: 'long',
+          year: 'numeric'
+        }).format(date);
+      }
+    } catch (e) {
+      // Continue to other parsing methods if this fails
+    }
+
+    // Try parsing DD-MM-YYYY format (like '13-02-2025')
+    const ddmmyyyyRegex = /^(\d{1,2})-(\d{1,2})-(\d{4})$/;
+    const ddmmyyyyMatch = dateString.match(ddmmyyyyRegex);
+
+    if (ddmmyyyyMatch) {
+      const [_, day, month, year] = ddmmyyyyMatch;
+      const parsedDate = new Date(
+        parseInt(year),
+        parseInt(month) - 1,
+        parseInt(day)
+      );
+
+      if (!isNaN(parsedDate.getTime())) {
+        return new Intl.DateTimeFormat('en-US', {
+          day: 'numeric',
+          month: 'long',
+          year: 'numeric'
+        }).format(parsedDate);
+      }
+    }
+
+    // Handle partial dates with missing parts
     const parts = dateString.split('-').filter((part) => part !== '');
 
-    if (parts.length === 0) {
-      // No valid date parts, return empty string
-      return '';
-    } else if (parts.length === 1) {
+    if (parts.length === 1) {
       // Only year is present
       return parts[0];
     } else if (parts.length === 2) {
@@ -56,30 +87,16 @@ export default function AnnouncementComponent({
         'December'
       ];
 
-      // Check if month is numerical
       const monthIndex = parseInt(parts[0], 10);
-      if (isNaN(monthIndex) || monthIndex < 1 || monthIndex > 12) {
+      if (!isNaN(monthIndex) && monthIndex >= 1 && monthIndex <= 12) {
+        return `${monthNames[monthIndex - 1]} ${parts[1]}`;
+      } else {
         return parts.join(' ');
       }
-
-      return `${monthNames[monthIndex - 1]} ${parts[1]}`;
-    } else {
-      // Full date with day, month, year
-      try {
-        const date = new Date(dateString);
-        if (!isNaN(date.getTime())) {
-          return new Intl.DateTimeFormat('en-US', {
-            day: 'numeric',
-            month: 'long',
-            year: 'numeric'
-          }).format(date);
-        }
-      } catch (e) {
-        // Fallback to original string if date parsing fails
-      }
-
-      return dateString;
     }
+
+    // Return original string if all parsing attempts fail
+    return dateString;
   };
 
   return (
@@ -88,7 +105,7 @@ export default function AnnouncementComponent({
       <div className="grid grid-cols-1 gap-4 mb-4">
         {pinnedAnnouncementItems.map((item, idx) => (
           <div key={idx}>
-            {formatDate(item.date) && (
+            {item.date && (
               <div className="text-gray-500 mb-1 text-body text-left">
                 {formatDate(item.date)}
               </div>
@@ -118,7 +135,7 @@ export default function AnnouncementComponent({
               <a href={item.link} className="p-1">
                 <Card className="border-none shadow-none py-0 bg-transparent">
                   <CardContent className="flex flex-col px-2 text-left">
-                    {formatDate(item.date) && (
+                    {item.date && (
                       <div className="text-gray-500 mb-1 text-body">
                         {formatDate(item.date)}
                       </div>
