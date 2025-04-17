@@ -14,7 +14,7 @@ export default function LandingSection({ data }: { data: string[] }) {
       <div className="flex-1 flex flex-col w-full">
         <div className="relative flex-1 flex w-full flex-col items-center justify-center overflow-hidden">
           <Marquee className="!mt-0">
-            {Array.from({ length: 25 }, (_, index) => (
+            {Array.from({ length: 17 }, (_, index) => (
               <Image
                 key={index}
                 src={`https://iiitdwd.ac.in/images/CAMPUS_${index + 1}.webp`}
@@ -30,10 +30,10 @@ export default function LandingSection({ data }: { data: string[] }) {
             ))}
           </Marquee>
           <Marquee className="!mt-0 pr-[calc(33vw-2.67px)] md:pr-64">
-            {Array.from({ length: 25 }, (_, index) => (
+            {Array.from({ length: 17 }, (_, index) => (
               <Image
                 key={index}
-                src={`https://iiitdwd.ac.in/images/CAMPUS_${index + 26}.webp`}
+                src={`https://iiitdwd.ac.in/images/CAMPUS_${index + 18}.webp`}
                 alt={`Campus Image ${index + 26}`}
                 className="h-[calc(20vw-1.5px)] w-[calc(33vw-2.67px)] md:h-36 md:w-64 shadow"
                 height={0}

@@ -13,6 +13,37 @@ export interface AnnouncementItem {
   link: string;
 }
 
+const parseDate = (dateString: string | null | undefined): Date | null => {
+  if (!dateString) return null;
+
+  try {
+    const date = new Date(dateString);
+    if (!isNaN(date.getTime())) {
+      return date;
+    }
+  } catch (e) {
+    // Continue to other parsing attempts
+  }
+
+  // Try DD-MM-YYYY format
+  const ddmmyyyyRegex = /^(\d{1,2})-(\d{1,2})-(\d{4})$/;
+  const ddmmyyyyMatch = dateString.match(ddmmyyyyRegex);
+
+  if (ddmmyyyyMatch) {
+    const [_, day, month, year] = ddmmyyyyMatch;
+    try {
+      const date = new Date(parseInt(year), parseInt(month) - 1, parseInt(day));
+      if (!isNaN(date.getTime())) {
+        return date;
+      }
+    } catch (e) {
+      console.warn('Failed to parse DD-MM-YYYY date:', dateString);
+    }
+  }
+
+  return null;
+};
+
 export default async function NotificationSection() {
   const response = await get<Announcement[]>(GetAnnouncements);
 
