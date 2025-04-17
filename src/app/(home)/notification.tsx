@@ -13,11 +13,9 @@ export interface AnnouncementItem {
   link: string;
 }
 
-// Helper function to parse dates in various formats
 const parseDate = (dateString: string | null | undefined): Date | null => {
   if (!dateString) return null;
 
-  // Try standard date parsing first (handles ISO formats)
   try {
     const date = new Date(dateString);
     if (!isNaN(date.getTime())) {
