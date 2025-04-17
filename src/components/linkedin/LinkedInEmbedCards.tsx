@@ -12,7 +12,7 @@ const LinkedInEmbedCards: React.FC<LinkedInEmbedCardsProps> = ({
 
   return (
     <div className="embla__slide">
-      <div className="slide_number_main mx-auto flex w-[504px] h-full flex-col relative">
+      <div className="slide_number_main mx-auto flex w-full h-full flex-col relative">
         <a
           href={externalUrl}
           className="h-full"

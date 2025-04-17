@@ -1,8 +1,9 @@
-import LinkedInCarousel from '@/components/linkedin/EmblaCarousel';
+import LinkedInCarousel from '@/components/linkedin/linkedin-carousel';
 import { BentoGrid, BentoGridItem } from '@/components/ui/bento-grid';
 import { IconTableColumn, IconTrendingUp } from '@tabler/icons-react';
 import { Handshake, Lightbulb, Telescope } from 'lucide-react';
 import Link from 'next/link';
+import EventsSection from './events';
 import NotificationSection from './notification';
 import SocialMediaGrid from './social-media';
 
@@ -39,29 +40,16 @@ export default function BriefContent() {
       icon: <Handshake className="h-4 w-4 text-neutral-500" />
     },
     {
-      title: 'Research & Innovation',
-      content1: (
-        <div>
-          IIIT Dharwad fosters <strong>cutting-edge research</strong> in AI,
-          IoT, and emerging technologies, collaborating with top institutes and
-          industries.
-        </div>
-      ),
-      content2: (
-        <Link
-          href={'/academics/research'}
-          className="bg-main text-white px-4 py-2 rounded"
-        >
-          Research
-        </Link>
-      ),
-      className: 'col-span-6 xl:col-span-3',
+      title: 'Events',
+      content1: <EventsSection />,
+
+      className: 'col-span-6 xl:col-span-4',
       icon: <Lightbulb className="h-4 w-4 text-neutral-500" />
     },
     {
       title: 'Placements LinkedIn',
       content1: <LinkedInCarousel />,
-      className: 'col-span-6 md:col-span-12 xl:col-span-6',
+      className: 'col-span-6 md:col-span-12 xl:col-span-[5]',
       icon: <IconTrendingUp className="h-4 w-4 text-neutral-500" />,
       titleClassName: 'text-white'
     }
