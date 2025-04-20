@@ -1,6 +1,13 @@
 interface GAEventParams {
   action: string;
-  category: string;
+  category:
+    | 'navigation'
+    | 'user_interaction'
+    | 'form'
+    | 'error'
+    | 'social'
+    | 'ecommerce'
+    | 'search';
   label: string;
   value?: number;
 }
