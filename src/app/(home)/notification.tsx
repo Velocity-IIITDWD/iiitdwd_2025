@@ -7,7 +7,7 @@ import AnnouncementComponent from './announcement-component';
 export interface AnnouncementItem {
   id: string;
   title: string;
-  date: string;
+  date: string | null;
   isPinned?: boolean;
   type?: 'news' | 'announcement';
   link: string;
@@ -50,53 +50,37 @@ export default async function NotificationSection() {
   const transformedAnnouncements = response.map((item) => ({
     id: item._id,
     title: item.text || '',
-    date: item.date,
+    date: item.date || null,
     isPinned: item.new || false,
     type: 'announcement' as const,
     link: item.link || '#'
   }));
 
-  const sortedAnnouncements = transformedAnnouncements.sort((a, b) => {
-    try {
-      // Validate date format using regex (dd-mm-yyyy)
-      const dateRegex = /^\d{2}-\d{2}-\d{4}$/;
-      if (!dateRegex.test(a.date) || !dateRegex.test(b.date)) {
-        console.error('Invalid date format:', { date1: a.date, date2: b.date });
-        return 0;
-      }
+  // More robust sorting that handles various date formats and nulls
+  const sortedAnnouncements = [...transformedAnnouncements].sort((a, b) => {
+    // Handle cases where dates might be null
+    if (!a.date && !b.date) return 0;
+    if (!a.date) return 1; // Push items with no date to the bottom
+    if (!b.date) return -1; // Keep items with dates at the top
 
-      const [aDay, aMonth, aYear] = a.date.split('-').map(Number);
-      const [bDay, bMonth, bYear] = b.date.split('-').map(Number);
+    const dateA = parseDate(a.date);
+    const dateB = parseDate(b.date);
 
-      // Validate date values
-      if (
-        aMonth < 1 ||
-        aMonth > 12 ||
-        bMonth < 1 ||
-        bMonth > 12 ||
-        aDay < 1 ||
-        aDay > 31 ||
-        bDay < 1 ||
-        bDay > 31
-      ) {
-        console.warn('Invalid date values:', { date1: a.date, date2: b.date });
-        return 0;
-      }
+    // If dates couldn't be parsed, keep original order
+    if (!dateA && !dateB) return 0;
+    if (!dateA) return 1;
+    if (!dateB) return -1;
 
-      const dateA = new Date(aYear, aMonth - 1, aDay);
-      const dateB = new Date(bYear, bMonth - 1, bDay);
-
-      if (isNaN(dateA.getTime()) || isNaN(dateB.getTime())) {
-        console.warn('Invalid date objects:', { dateA, dateB });
-        return 0;
-      }
-
-      return dateB.getTime() - dateA.getTime();
-    } catch (error) {
-      console.warn('Error sorting dates:', error);
-      return 0;
-    }
+    // Sort by date, newest first
+    return dateB.getTime() - dateA.getTime();
   });
 
-  return <AnnouncementComponent announcements={sortedAnnouncements} />;
+  // Group pinned items to the top regardless of date
+  const pinnedItems = sortedAnnouncements.filter((item) => item.isPinned);
+  const regularItems = sortedAnnouncements.filter((item) => !item.isPinned);
+
+  // Combine the arrays with pinned items first
+  const finalSortedAnnouncements = [...pinnedItems, ...regularItems];
+
+  return <AnnouncementComponent announcements={finalSortedAnnouncements} />;
 }

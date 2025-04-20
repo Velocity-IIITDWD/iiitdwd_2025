@@ -62,6 +62,15 @@ export const data: TeamMember[] = [
     social: {}
   },
   {
+    id: 'karan',
+    name: 'Karan Naik',
+    role: 'Member',
+    bio: '',
+    skills: ['NextJS'],
+    image: 'https://iiitdwd.ac.in/images/karan-naik.jpg',
+    social: {}
+  },
+  {
     id: 'ashitosh',
     name: 'Ashitosh Sable',
     role: 'Member',
@@ -69,5 +78,39 @@ export const data: TeamMember[] = [
     skills: ['UI'],
     image: 'https://iiitdwd.ac.in/images/ashitosh-sable.jpg',
     social: {}
+  },
+  {
+    id: 'harsh',
+    name: 'Harsh Soni',
+    role: 'Ex-Member',
+    bio: `I'm a passionate full-stack developer with an interest in cybersecurity and Web3, currently pursuing BTech in Computer Science and Engineering at IIIT Dharwad. I've led teams to develop dynamic web applications`,
+    skills: ['Javascript', 'MERN', 'AWS', 'Docker', 'Wagmi', 'Viem'],
+    image: 'https://iiitdwd.ac.in/images/harsh-soni.jpeg',
+    social: {
+      twitter: 'https://x.com/harshsoni_harsh',
+      github: 'https://github.com/harshsoni-harsh',
+      linkedin: 'http://linkedin.com/in/harsh-soni-/'
+    }
+  },
+  {
+    id: 'abhigyan',
+    name: 'Abhigyan Niranjan',
+    role: 'Ex-Member',
+    bio: '',
+    skills: [
+      'TypeScript',
+      'Go',
+      'Next.js',
+      'Docker',
+      'PostgreSQL',
+      'Redis',
+      'Vue',
+      'Nuxt'
+    ],
+    image: 'https://iiitdwd.ac.in/images/abhigyan-niranjan.jpeg',
+    social: {
+      github: 'https://github.com/SlightlyEpic',
+      linkedin: 'https://www.linkedin.com/in/abhigyan-niranjan'
+    }
   }
 ];

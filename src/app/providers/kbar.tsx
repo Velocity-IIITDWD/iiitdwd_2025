@@ -1,6 +1,7 @@
 'use client';
 
 import data from '@/data/navigation';
+import { trackEvent } from '@/lib/ga';
 import { type NavigationItem } from '@/types/navigation';
 import {
   KBarAnimator,
@@ -28,7 +29,14 @@ const generateActions = () => {
       id: item.href,
       name: item.title,
       section: parentSection || 'Main Menu',
-      perform: () => (window.location.pathname = item.href)
+      perform: () => {
+        trackEvent({
+          action: 'kbar_navigation',
+          category: 'navigation',
+          label: `${parentSection ? `${parentSection} -> ` : ''}${item.title}`
+        });
+        window.location.pathname = item.href;
+      }
     });
 
     if (item.items) {
