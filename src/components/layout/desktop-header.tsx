@@ -9,6 +9,7 @@ import {
   MenubarTrigger
 } from '@/components/ui/menubar';
 import navigationData from '@/data/navigation';
+import { trackEvent } from '@/lib/ga';
 import { NavigationItem } from '@/types/navigation';
 import { useKBar } from 'kbar';
 import { Command, Search } from 'lucide-react';
@@ -88,7 +89,17 @@ export default function DesktopHeader() {
         );
       } else {
         return (
-          <MenubarItem key={index} asChild>
+          <MenubarItem
+            key={index}
+            asChild
+            onClick={() =>
+              trackEvent({
+                action: 'click',
+                category: 'navigation',
+                label: `menu_item_${item.title}`
+              })
+            }
+          >
             <Link href={item.href!}>{item.title}</Link>
           </MenubarItem>
         );
@@ -108,6 +119,14 @@ export default function DesktopHeader() {
           <MenubarTrigger
             className="font-medium"
             onMouseEnter={() => setOpenMenu(item.title)}
+            onClick={() =>
+              item.href &&
+              trackEvent({
+                action: 'click',
+                category: 'navigation',
+                label: `main_menu_${item.title}`
+              })
+            }
           >
             {item?.href ? (
               <Link href={item?.href}>{item.title}</Link>
@@ -142,6 +161,11 @@ export default function DesktopHeader() {
         className="text-gray-600 hover:text-primary rounded-full bg-tertiary/20 px-2 py-1 flex items-center text-body cursor-pointer"
         onClick={() => {
           query.toggle();
+          trackEvent({
+            action: 'click',
+            category: 'search',
+            label: 'command_palette'
+          });
         }}
       >
         <Search size={14} className="mr-3" />

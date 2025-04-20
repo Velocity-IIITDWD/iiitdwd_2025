@@ -1,3 +1,5 @@
+'use client';
+
 import Background from '@/assets/layout/Alumni_Background.webp';
 import FooterLogo from '@/assets/layout/FooterLogo.webp';
 import {
@@ -7,10 +9,12 @@ import {
   AccordionTrigger
 } from '@/components/ui/accordion';
 import { footerLinks } from '@/data/footer-links';
+import { trackEvent } from '@/lib/ga';
 import {
   ArrowRightIcon,
   Instagram,
   Linkedin,
+  LucideIcon,
   MapPin,
   Phone,
   Twitter,
@@ -18,6 +22,47 @@ import {
 } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
+
+const FooterLink = ({ href, text }: { href: string; text: string }) => (
+  <Link
+    href={href}
+    onClick={() =>
+      trackEvent({
+        action: 'click',
+        category: 'Footer Navigation',
+        label: text
+      })
+    }
+    className="text-gray-400 hover:text-white transition-colors duration-200 flex items-center gap-2"
+  >
+    <span className="h-1 w-1 bg-gray-500 rounded-full"></span>
+    {text}
+  </Link>
+);
+
+const SocialLink = ({
+  href,
+  label,
+  icon: Icon
+}: {
+  href: string;
+  label: string;
+  icon: LucideIcon;
+}) => (
+  <a
+    href={href}
+    className="hover:text-white transition-colors duration-200"
+    onClick={() =>
+      trackEvent({
+        action: 'click',
+        category: 'Social Media',
+        label
+      })
+    }
+  >
+    <Icon size={24} />
+  </a>
+);
 
 export default function Footer() {
   return (
@@ -71,30 +116,26 @@ export default function Footer() {
             <div className="space-y-4">
               <div className="font-bold text-title-3 text-white">FOLLOW US</div>
               <div className="flex gap-6 flex-wrap">
-                <a
+                <SocialLink
                   href="https://www.instagram.com/iiitdharwad_"
-                  className="hover:text-white transition-colors duration-200"
-                >
-                  <Instagram size={24} />
-                </a>
-                <a
+                  label="Instagram"
+                  icon={Instagram}
+                />
+                <SocialLink
                   href="https://www.linkedin.com/in/iiitdharwad/"
-                  className="hover:text-white transition-colors duration-200"
-                >
-                  <Linkedin size={24} />
-                </a>
-                <a
+                  label="LinkedIn"
+                  icon={Linkedin}
+                />
+                <SocialLink
                   href="https://www.youtube.com/@socialmediaiiitdharwad2584"
-                  className="hover:text-white transition-colors duration-200"
-                >
-                  <Youtube size={24} />
-                </a>
-                <a
+                  label="YouTube"
+                  icon={Youtube}
+                />
+                <SocialLink
                   href="https://x.com/dharwad_iiit"
-                  className="hover:text-white transition-colors duration-200"
-                >
-                  <Twitter size={24} />
-                </a>
+                  label="Twitter"
+                  icon={Twitter}
+                />
               </div>
             </div>
           </div>
@@ -103,6 +144,13 @@ export default function Footer() {
           <div className="lg:col-span-4 flex items-end">
             <Link
               href={'/student-life/clubs/tech/'}
+              onClick={() =>
+                trackEvent({
+                  action: 'click',
+                  category: 'Navigation',
+                  label: 'Explore Button'
+                })
+              }
               className="bg-black border text-title-2 font-medium group w-full px-6 py-4 rounded flex justify-between items-center border-white text-white hover:bg-black/90 transition-colors duration-200"
             >
               <span>Explore</span>
@@ -127,13 +175,7 @@ export default function Footer() {
                   <ul className="space-y-3 py-2 pl-2">
                     {group.links.map((link, linkIndex) => (
                       <li key={linkIndex}>
-                        <Link
-                          href={link.href}
-                          className="text-gray-400 hover:text-white transition-colors duration-200 flex items-center gap-2"
-                        >
-                          <span className="h-1 w-1 bg-gray-500 rounded-full"></span>
-                          {link.text}
-                        </Link>
+                        <FooterLink href={link.href} text={link.text} />
                       </li>
                     ))}
                   </ul>
@@ -156,13 +198,7 @@ export default function Footer() {
                     key={linkIndex}
                     className="transition-transform duration-200 hover:translate-x-1"
                   >
-                    <Link
-                      href={link.href}
-                      className="text-gray-400 text-body font-normal hover:text-white transition-colors duration-200 flex items-center gap-2"
-                    >
-                      <span className="h-1 w-1 bg-gray-500 rounded-full"></span>
-                      {link.text}
-                    </Link>
+                    <FooterLink href={link.href} text={link.text} />
                   </li>
                 ))}
               </ul>
