@@ -4,9 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "prebuild": "next-sitemap",
     "build": "next build --turbopack",
-    "postbuild": "rm -f public/sitemap*.xml public/robots.txt || true",
+    "postbuild": "next-sitemap && node postbuild.js && rm -f public/sitemap*.xml public/robots.txt || true",
     "start": "next start",
     "lint": "next lint",
     "typegen": "npx sanity typegen generate"
