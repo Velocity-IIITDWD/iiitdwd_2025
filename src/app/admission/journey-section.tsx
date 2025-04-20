@@ -66,9 +66,14 @@ const JourneySection = () => {
 
                   <Link
                     href={`/admission/${selectedProgram}`}
-                    className="bg-main flex items-center hover:bg-main/90 text-white transition-colors rounded h-12 border-0 px-6"
+                    className="w-fit flex"
                   >
-                    LEARN MORE <ChevronRight className="ml-2 h-4 w-4" />
+                    <Button
+                      variant="outline"
+                      className="bg-main flex items-center hover:bg-main/90 text-white hover:text-white transition-colors rounded h-12 border-0 px-6"
+                    >
+                      LEARN MORE <ChevronRight className="ml-2 h-4 w-4" />
+                    </Button>
                   </Link>
                 </div>
               </div>
@@ -112,7 +117,7 @@ const JourneySection = () => {
                   IIIT Dharwad special.
                 </p>
 
-                <Link href={'/how-to-visit'}>
+                <Link href={'/how-to-reach'} className="w-fit flex">
                   <Button
                     variant="outline"
                     className="bg-main flex items-center hover:bg-main/90 text-white hover:text-white transition-colors rounded h-12 border-0 px-6"
@@ -140,6 +145,7 @@ const JourneySection = () => {
 
                 <Link
                   href={'https://iiitdwd.ac.in/docs/FEE_2024-25_Sheet1.pdf'}
+                  className="w-fit flex"
                 >
                   <Button
                     variant="outline"

@@ -7,9 +7,11 @@ import {
 } from '@/components/ui/collapsible';
 import navigationData from '@/data/navigation';
 import { NavigationItem } from '@/types/navigation';
-import { ChevronDown, ChevronRight } from 'lucide-react';
+import { useKBar } from 'kbar';
+import { ChevronDown, ChevronRight, Search } from 'lucide-react';
 import { motion } from 'motion/react';
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
 
 export default function MobileHeader({
   toggleMenu
@@ -19,6 +21,14 @@ export default function MobileHeader({
   const hasChildren = (item: any) => {
     return item.items && item.items.length > 0;
   };
+
+  const { query } = useKBar();
+  const [openMenu, setOpenMenu] = useState<string>('');
+  const [isMacOS, setIsMacOS] = useState(false);
+
+  useEffect(() => {
+    setIsMacOS(window.navigator.platform.toLowerCase().includes('mac'));
+  }, []);
 
   return (
     <div className="py-4 flex flex-col justify-between pt-4 md:pt-10 px-4 h-[calc(100vh-6.5rem)] overflow-y-auto">
@@ -110,6 +120,16 @@ export default function MobileHeader({
           }
         })}
       </nav>
+
+      <button
+        className="text-gray-600 hover:text-primary rounded bg-tertiary/20 px-4.5 py-2.5 flex items-center text-body cursor-pointer"
+        onClick={() => {
+          query.toggle();
+        }}
+      >
+        <Search size={14} className="mr-3" />
+        What are you looking for?
+      </button>
 
       <div className="mt-6 pt-4 border-t border-main/30">
         <div className="flex flex-col space-y-3 text-body">

@@ -98,7 +98,7 @@ export default function DesktopHeader() {
 
   return (
     <Menubar
-      className="border-b max-md:hidden border-none px-2"
+      className="border-b max-lg:hidden border-none px-2"
       value={openMenu}
       onValueChange={setOpenMenu}
       // onMouseLeave={() => setOpenMenu('')}

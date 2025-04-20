@@ -10,8 +10,8 @@ import {
 
 export default function SeatMatrix() {
   return (
-    <div className="overflow-x-auto shadow-md rounded-lg max-w-full max-h-[550px] mx-auto">
-      <Table>
+    <div className="overflow-hidden shadow-md rounded-lg max-w-full flex-1 w-full max-h-[550px] mx-auto">
+      <Table className="w-full">
         <TableHeader className="bg-main">
           <TableRow>
             <TableHead className="text-center">Institute Code</TableHead>

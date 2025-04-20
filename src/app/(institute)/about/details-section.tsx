@@ -66,7 +66,7 @@ export default function DetailSection() {
                   }}
                   className={`${
                     index === activeSection && 'after:w-full !text-primary'
-                  } flex flex-col items-center after:bg-tertiary after:h-[2px] w-fit after:w-0 after:transition-all hover:after:w-full text-gray-500 hover:text-primary text-large-title transition-all font-semibold cursor-pointer`}
+                  } flex flex-col items-center after:bg-tertiary after:h-[2px] w-fit after:w-0 after:transition-all hover:after:w-full text-gray-500 hover:text-primary text-large-title transition-all cursor-pointer`}
                   onClick={() => setActiveSection(index)} // Trigger active section change
                 >
                   {section.title}

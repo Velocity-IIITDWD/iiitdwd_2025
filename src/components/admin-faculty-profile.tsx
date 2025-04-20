@@ -1,5 +1,9 @@
+'use client';
+
+import { motion, useInView } from 'framer-motion';
 import { MailIcon } from 'lucide-react';
 import Image from 'next/image';
+import { useRef } from 'react';
 
 interface AdminFacultyProfileProps {
   name: string;
@@ -8,6 +12,7 @@ interface AdminFacultyProfileProps {
   email: string;
   imageUrl: string;
   highlightPosition?: boolean;
+  index?: number;
 }
 
 export function AdminFacultyProfile({
@@ -16,55 +21,73 @@ export function AdminFacultyProfile({
   position,
   email,
   imageUrl,
-  highlightPosition = true
+  highlightPosition = true,
+  index = 0
 }: AdminFacultyProfileProps) {
-  department = Array.isArray(department) ? department : [department];
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true });
+
+  const departments = Array.isArray(department) ? department : [department];
 
   return (
-    <div className="p-8 w-full bg-white shadow-md rounded-lg border">
-      {/* <h2 className="text-2xl font-semibold text-navy-800 mb-8">
-        {highlightPosition ? `${position} (${department})` : department}
-      </h2> */}
+    <motion.div
+      ref={ref}
+      className="relative group"
+      initial={{ opacity: 0, y: 20 }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
+      transition={{
+        duration: 0.6,
+        delay: index * 0.1,
+        ease: [0.22, 1, 0.36, 1]
+      }}
+    >
+      <div className="relative overflow-hidden hover:scale-[1.02] group rounded-xl bg-card border border-border/50 backdrop-blur-sm shadow-lg transition-all duration-300 group-hover:shadow-xl h-full">
+        {/* Decorative gradient */}
+        <div className="absolute bottom-0 right-0 w-20 h-20 rounded-full bg-gradient-to-br from-primary/20 to-[--main]/20 -translate-y-full translate-x-1/2 blur-xl" />
 
-      <div className="flex flex-col md:flex-row gap-8 h-full">
-        <div className="flex-shrink-0 max-md:flex max-md:justify-center">
-          <Image
-            src={
-              imageUrl?.startsWith('/images')
-                ? `https://iiitdwd.ac.in${imageUrl}`
-                : imageUrl || '/placeholder-person.svg'
-            }
-            alt={name}
-            width={300}
-            height={300}
-            className="sm:w-[300px] w-full aspect-square rounded-lg object-cover"
-          />
+        {/* Image */}
+        <div className="aspect-square relative overflow-hidden">
+          <motion.div
+            className="h-full w-full"
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.4 }}
+          >
+            <Image
+              src={
+                imageUrl?.startsWith('/images')
+                  ? `https://iiitdwd.ac.in${imageUrl}`
+                  : imageUrl || '/placeholder-person.svg'
+              }
+              alt={`Photo of ${name}`}
+              fill
+              className="object-cover"
+              sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+              priority={index < 4}
+            />
+          </motion.div>
         </div>
 
-        <div className="flex-1 flex flex-col justify-center h-full">
-          <h3 className="text-large-title font-bold text-main mb-2">{name}</h3>
-          <p className="text-gray-600 text-title-1 mb-2">{position}</p>
-          {department.map((dept) => (
-            <p className="text-gray-600 text-title-2 mb-2">{dept}</p>
-          ))}
-
-          <div className="space-y-2 text-body">
-            <p className="text-gray-700 inline-flex gap-2 py-2">
-              <MailIcon size={20} /> {email}
-            </p>
-
-            {/* <div className="bg-gray-100 p-6 rounded-12px">
-              <div className="flex gap-2 items-start">
-                <Quote className="w-6 h-6 text-gray-400 flex-shrink-0" />
-                <p className="text-gray-700 text-title-3 font-normal">
-                  {review.testimonial} 
-                </p>
+        {/* Text Content */}
+        <div className="p-4 relative">
+          <div className="flex flex-col gap-1">
+            <h2 className="text-title-1 font-bold leading-tight text-main">
+              {name}
+            </h2>
+            <p className="text-title-3 text-muted-foreground">{position}</p>
+            {departments.map((dept, i) => (
+              <p key={i} className="text-body text-gray-500">
+                {dept}
+              </p>
+            ))}
+            {email && (
+              <div className="mt-2 text-gray-600 text-callout inline-flex items-center gap-2">
+                <MailIcon size={16} /> {email}
               </div>
-            </div> */}
+            )}
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
@@ -80,13 +103,14 @@ export function AdminFacultyProfileGrid({
   return (
     <div className="w-[87.5vw] max-w-[1680px] mx-auto py-10">
       <div
-        className={`grid grid-cols-1 gap-6 ${
+        className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 ${
           gridCols > 1 ? 'lg:grid-cols-2 gap-6' : ''
         }`}
       >
         {list.map((faculty, index) => (
           <AdminFacultyProfile
             {...faculty}
+            index={index} // 👈 Add this
             key={index}
             highlightPosition={highlightPosition}
           />

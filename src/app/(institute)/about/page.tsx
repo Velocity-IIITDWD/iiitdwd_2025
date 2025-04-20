@@ -45,7 +45,7 @@ export default function AboutPage() {
                 Institute
               </span>
               <ChevronRight className="h-4 w-4 mx-1 text-gray-400" />
-              <span className="text-main font-semibold">About Us</span>
+              <span className="text-main">About Us</span>
             </div>
           </nav>
         </div>

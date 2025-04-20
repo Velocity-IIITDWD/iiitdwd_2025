@@ -4,8 +4,8 @@ import { get } from '@/sanity/lib/client';
 import { queryEvents } from '@/sanity/lib/queries';
 import { QueryEventsResult } from '@/sanity/types';
 import AlumniSection from './alumni';
-import BriefContent from './brief-content';
 import Hero from './hero';
+import InfoSection from './info-section';
 import MainCarousel from './main-carousel';
 
 export default async function HomePage() {
@@ -15,7 +15,7 @@ export default async function HomePage() {
   return (
     <main className="min-h-screen w-full">
       <Hero data={heroData} />
-      <BriefContent />
+      <InfoSection />
       <MainCarousel />
       <AlumniSection reviews={reviews} />
       <ToTop />
