@@ -6,7 +6,7 @@
     "dev": "next dev --turbopack",
     "prebuild": "next-sitemap",
     "build": "next build --turbopack",
-    "postbuild": "rm public/sitemap*.xml && rm public/robots.txt",
+    "postbuild": "rm -f public/sitemap*.xml public/robots.txt || true",
     "start": "next start",
     "lint": "next lint",
     "typegen": "npx sanity typegen generate"
