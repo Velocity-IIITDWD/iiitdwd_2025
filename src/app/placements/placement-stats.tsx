@@ -88,7 +88,6 @@ export default function PlacementStatistics() {
     }
   };
 
-  // Create year chart data
   const createYearChartData = (year: Year) => {
     return {
       labels: ['Companies', 'Offers', 'Highest CTC (LPA)'],
