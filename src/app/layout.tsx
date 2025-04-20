@@ -1,6 +1,7 @@
 import Footer from '@/components/layout/footer';
 import Header from '@/components/layout/header';
 import type { Metadata } from 'next';
+import Analytics from './analytics';
 import './globals.css';
 import KBarProvider from './providers/kbar';
 
@@ -25,6 +26,7 @@ export default function RootLayout({
           {children}
           <Footer />
         </KBarProvider>
+        <Analytics />
       </body>
     </html>
   );
