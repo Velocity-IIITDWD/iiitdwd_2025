@@ -55,7 +55,7 @@ function AnimatedNavbar() {
 
   const textVariants = {
     initial: { opacity: 1, x: '0%', scale: 1 },
-    scrolled: { opacity: 0, x: '100%', scale: 0.5 }
+    scrolled: { opacity: 0, x: '-100%', scale: 0.5 }
   };
 
   return (
@@ -96,33 +96,59 @@ function AnimatedNavbar() {
         }}
         className="sticky top-0 flex items-center left-0 w-full right-0 z-50 !bg-white shadow-md overflow-hidden"
       >
-        <motion.div
-          className="absolute left-4"
-          variants={logoVariants}
-          initial="initial"
-          animate={isScrolled ? 'scrolled' : 'initial'}
-          transition={{
-            type: 'spring',
-            visualDuration: 0.8,
-            bounce: 0.1
-          }}
-        >
-          <Link href="/" className="z-1 relative">
-            <Image
-              src={Logo}
-              alt="IIIT Dharwad Logo"
-              width={0}
-              height={0}
-              sizes="100%"
-              className="object-contain h-full w-auto"
-            />
-          </Link>
-        </motion.div>
+        <div className="absolute left-4 flex gap-4 overflow-clip items-center">
+          <motion.div
+            variants={logoVariants}
+            initial="initial"
+            animate={isScrolled ? 'scrolled' : 'initial'}
+            transition={{
+              type: 'spring',
+              visualDuration: 0.8,
+              bounce: 0.1
+            }}
+          >
+            <Link href="/" className="z-1 relative">
+              <Image
+                src={Logo}
+                alt="IIIT Dharwad Logo"
+                width={0}
+                height={0}
+                sizes="100%"
+                className="object-contain h-full w-auto"
+              />
+            </Link>
+          </motion.div>
+
+          <motion.div
+            className="flex flex-col max-xl:hidden w-fit text-primary text-left"
+            variants={textVariants}
+            animate={isScrolled ? 'scrolled' : 'initial'}
+            transition={{
+              type: 'spring',
+              visualDuration: 0.8,
+              bounce: 0.1
+            }}
+          >
+            <span className="text-body font-normal mb-[2px]">
+              ಭಾರತೀಯ ಮಾಹಿತಿ ತಂತ್ರಜ್ಞಾನ ಸಂಸ್ಥೆ, ಧಾರವಾಡ
+            </span>
+            <span className="text-body font-normal">
+              भारतीय सूचना प्रौद्योगिकी संस्थान, धारवाड़
+            </span>
+            <span className="text-body font-medium">
+              Indian Institute of Information Technology, Dharwad
+            </span>
+            <div className="text-callout font-light">
+              [Institute of National Importance by An Act of Parliament]
+            </div>
+          </motion.div>
+        </div>
+
         <div
-          className="w-full flex h-full xl:-translate-x-[3rem] 2xl:-translate-x-0"
+          className="w-full flex h-full"
           style={{
-            justifyContent: isScrolled ? 'flex-end' : 'center',
-            alignItems: isScrolled ? 'center' : 'flex-end'
+            justifyContent: isScrolled ? 'center' : 'flex-end',
+            alignItems: isScrolled ? 'flex-end' : 'center'
           }}
         >
           <motion.div
@@ -138,31 +164,7 @@ function AnimatedNavbar() {
           </motion.div>
         </div>
 
-        <motion.div
-          className="absolute right-4 flex flex-col max-xl:hidden w-fit text-center text-primary md:text-right"
-          variants={textVariants}
-          animate={isScrolled ? 'scrolled' : 'initial'}
-          transition={{
-            type: 'spring',
-            visualDuration: 0.8,
-            bounce: 0.1
-          }}
-        >
-          <span className="text-title-3 font-normal mb-[2px]">
-            ಭಾರತೀಯ ಮಾಹಿತಿ ತಂತ್ರಜ್ಞಾನ ಸಂಸ್ಥೆ, ಧಾರವಾಡ
-          </span>
-          <span className="text-title-3 font-normal">
-            भारतीय सूचना प्रौद्योगिकी संस्थान, धारवाड़
-          </span>
-          <span className="text-title-3 font-medium">
-            Indian Institute of Information Technology, Dharwad
-          </span>
-          <div className="text-callout font-light">
-            [Institute of National Importance by An Act of Parliament]
-          </div>
-        </motion.div>
-
-        <div className="md:hidden absolute right-2 ">
+        <div className="lg:hidden absolute right-2 ">
           <Button
             variant="ghost"
             size="icon"
@@ -202,7 +204,7 @@ function AnimatedNavbar() {
           <motion.div
             className={`fixed inset-0 bg-background z-40 ${
               isScrolled ? '' : ''
-            } md:pt-20 pb-6 px-4 overflow-y-auto`}
+            } lg:pt-20 pb-6 px-4 overflow-y-auto`}
             initial={{ y: '-100%' }}
             animate={{ y: 0 }}
             exit={{ y: '-100%' }}

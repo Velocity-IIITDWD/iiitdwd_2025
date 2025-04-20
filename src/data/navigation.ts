@@ -152,8 +152,8 @@ const navigationData: NavigationItem[] = [
         title: 'Conclave',
         href: 'https://conclave.iiitdwd.ac.in'
       },
-      { title: 'NIRF', href: '/academics/nirf' },
-      { title: 'Online', href: 'https://online.iiitdwd.ac.in/' }
+      { title: 'NIRF', href: '/academics/nirf' }
+      // { title: 'Online', href: 'https://online.iiitdwd.ac.in/' }
     ]
   },
   {
@@ -216,6 +216,10 @@ const navigationData: NavigationItem[] = [
       },
       { title: 'Contact T&P', href: '/placements/#contact' }
     ]
+  },
+  {
+    title: 'Online',
+    href: 'https://online.iiitdwd.ac.in'
   }
 ];
 

@@ -120,10 +120,10 @@ export default function TeamPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl text-primary">
+          <h1 className="text-main-title font-bold tracking-tight sm:text-5xl md:text-6xl text-primary">
             Meet Our Team
           </h1>
-          <p className="mt-4 text-sm leading-relaxed text-muted-foreground/90 max-w-xl mx-auto">
+          <p className="mt-4 text-title-3 leading-relaxed text-muted-foreground/90 max-w-xl mx-auto">
             A dedicated group of students driven by passion and innovation,
             crafting digital experiences that resonate and inspire.
           </p>
@@ -174,7 +174,7 @@ export default function TeamPage() {
                       transition={{ duration: 0.3 }}
                     >
                       <div className="w-full">
-                        <p className="text-white text-sm line-clamp-3 mb-3">
+                        <p className="text-white text-title-3 line-clamp-3 mb-3">
                           {member.bio}
                         </p>
                         <div className="flex gap-3 justify-end">
@@ -237,10 +237,10 @@ export default function TeamPage() {
                 <div className="p-4 relative">
                   <div className="flex justify-between items-start">
                     <div>
-                      <h2 className="text-base font-bold leading-tight">
+                      <h2 className="text-title-2 font-bold leading-tight">
                         {member.name}
                       </h2>
-                      <p className="text-xs text-muted-foreground">
+                      <p className="text-callout text-muted-foreground">
                         {member.role}
                       </p>
                     </div>
@@ -270,7 +270,7 @@ export default function TeamPage() {
                         <Badge
                           key={skill}
                           variant="secondary"
-                          className="text-[10px] px-1.5 py-0 font-normal bg-secondary/50 hover:bg-secondary/70 transition-colors"
+                          className="text-callout px-1.5 py-0 font-normal bg-secondary/50 hover:bg-secondary/70 transition-colors"
                         >
                           {skill}
                         </Badge>
