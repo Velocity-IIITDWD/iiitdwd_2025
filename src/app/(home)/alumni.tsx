@@ -37,11 +37,22 @@ export default function AlumniSection({
   const [reviews, setReviews] = useState<Review[]>([]);
   const [isShuffling, setIsShuffling] = useState(false);
 
+  const handleShuffle = () => {
+    setIsShuffling(true);
+    setTimeout(() => {
+      setReviews(
+        shuffleArray(reviews.filter((review) => review.graduationYear <= 2024))
+      );
+      setIsShuffling(false);
+    }, 600);
+  };
+
   useEffect(() => {
-    // Initial setup
-    setReviews(
+    // Do the initial shuffle only once during mount
+    const filteredAndShuffled = shuffleArray(
       initialReviews.filter((review) => review.graduationYear <= 2024)
     );
+    setReviews(filteredAndShuffled);
     setWindowWidth(window.innerWidth);
 
     const handleResize = () => setWindowWidth(window.innerWidth);
@@ -55,17 +66,6 @@ export default function AlumniSection({
     if (windowWidth >= 1024) return 3;
     if (windowWidth >= 768) return 2;
     return 1;
-  };
-
-  const handleShuffle = () => {
-    setIsShuffling(true);
-    // Add a small delay to allow the animation to play
-    setTimeout(() => {
-      setReviews(
-        shuffleArray(reviews.filter((review) => review.graduationYear <= 2024))
-      );
-      setIsShuffling(false);
-    }, 600);
   };
 
   const columnCount = getColumnCount();

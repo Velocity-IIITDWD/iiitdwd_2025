@@ -92,14 +92,14 @@ const navigationData: NavigationItem[] = [
         title: 'Public disclosures',
         href: '/disclosures',
         items: [
-          { title: 'RTI', href: 'https://iiitdwd.ac.in/pdfs/RTI.pdf' },
+          { title: 'RTI', href: 'https://iiitdwd.ac.in/docs/RTI.pdf' },
           {
             title: 'IIIT PPP Act',
-            href: 'https://iiitdwd.ac.in/pdfs/iiit_ppp_2017.pdf'
+            href: 'https://iiitdwd.ac.in/docs/iiit_ppp_2017.pdf'
           },
           {
             title: 'ARIIA',
-            href: 'https://iiitdwd.ac.in/pdfs/ARIIA.pdf'
+            href: 'https://iiitdwd.ac.in/docs/ARIIA.pdf'
           }
         ]
       }

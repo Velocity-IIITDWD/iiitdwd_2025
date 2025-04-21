@@ -90,7 +90,7 @@ const ProgramCards: React.FC<ProgramCardsProps> = ({ programs }) => {
       title: 'Course Catalog',
       description:
         'Discover different classes, review degree requirements and more.',
-      link: '/academics/course-catalog',
+      link: '#',
       imageSrc: 'https://iiitdwd.ac.in/images/course_catalog.JPG'
     }
   ];
