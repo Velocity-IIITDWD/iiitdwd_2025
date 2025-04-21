@@ -96,7 +96,7 @@ export const data: TeamMember[] = [
     id: 'abhigyan',
     name: 'Abhigyan Niranjan',
     role: 'Ex-Member',
-    bio: '',
+    bio: 'I love solving technical problems and exploring new technologies. I am a fullstack developer with a strong focus and expertise in backend development.',
     skills: [
       'TypeScript',
       'Go',
