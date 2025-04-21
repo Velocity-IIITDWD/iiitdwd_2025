@@ -43,7 +43,7 @@ const navigationData: NavigationItem[] = [
     items: [
       {
         title: 'B.Tech',
-        href: '/admission/b-tech'
+        href: '/admission/btech'
       },
       {
         title: 'M.Tech',

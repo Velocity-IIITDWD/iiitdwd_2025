@@ -1,6 +1,6 @@
 'use client';
 import Link from 'next/link';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import {
   bTechAdmissionLinks,
   eligibilityCriteria,
@@ -13,6 +13,33 @@ import SeatMatrix from './seatMatrix-component';
 export default function Page() {
   const [activeTab, setActiveTab] = useState(0);
   const sectionRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  useEffect(() => {
+    const observers = sectionRefs.current.map((section, index) => {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setActiveTab(index);
+          }
+        },
+        { threshold: 0.5 }
+      );
+
+      if (section) {
+        observer.observe(section);
+      }
+
+      return observer;
+    });
+
+    return () => {
+      observers.forEach((observer, index) => {
+        if (sectionRefs.current[index]) {
+          observer.unobserve(sectionRefs.current[index]!);
+        }
+      });
+    };
+  }, []);
 
   const scrollToSection = (index: number) => {
     setActiveTab(index);
@@ -84,7 +111,7 @@ export default function Page() {
           className="w-5 h-5"
           fill="none"
           stroke="currentColor"
-          viewBox="0 0 24 24"
+          viewBox="0 24 24"
         >
           <path
             strokeLinecap="round"
@@ -112,15 +139,22 @@ export default function Page() {
 
         <div className="grid grid-cols-1 md:grid-cols-[minmax(0,1fr)_minmax(300px,300px)] w-[87.5vw] max-w-[1680px] mx-auto gap-6">
           <div className="max-md:order-2 flex flex-col max-md:flex-col-reverse gap-6">
-            <SeatMatrix />
+            <div
+              ref={(el) => {
+                if (sectionRefs.current) {
+                  sectionRefs.current[0] = el;
+                }
+              }}
+            >
+              <SeatMatrix />
+            </div>
 
-            {/* Content sections */}
             {tabs.map((tab, index) => (
               <div
                 key={index}
-                ref={(el: HTMLDivElement | null) => {
+                ref={(el) => {
                   if (sectionRefs.current) {
-                    sectionRefs.current[index] = el;
+                    sectionRefs.current[index + 1] = el;
                   }
                 }}
                 className="bg-gradient-to-b from-white/30 to-white hover:shadow p-6 rounded"

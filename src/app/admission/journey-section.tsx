@@ -16,7 +16,7 @@ import Link from 'next/link';
 import JourneyComponent from './journey-component';
 
 const JourneySection = () => {
-  const [selectedProgram, setSelectedProgram] = useState('b-tech');
+  const [selectedProgram, setSelectedProgram] = useState('btech');
   return (
     <div className="w-[87.5vw] max-w-[1680px] mx-auto py-16 md:py-24">
       <div className="mx-auto relative">
@@ -50,13 +50,13 @@ const JourneySection = () => {
                 <div className="flex flex-col sm:flex-row gap-4 items-start">
                   <Select
                     onValueChange={(value) => setSelectedProgram(value)}
-                    defaultValue="b-tech"
+                    defaultValue="btech"
                   >
                     <SelectTrigger className="w-full sm:w-64 border-2 rounded !h-12">
                       <SelectValue placeholder="B.Tech Students" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="b-tech">B.Tech Students</SelectItem>
+                      <SelectItem value="btech">B.Tech Students</SelectItem>
                       <SelectItem value="m-tech">
                         M.Tech (Research) Students
                       </SelectItem>
