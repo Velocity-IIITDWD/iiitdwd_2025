@@ -1,3 +1,4 @@
+import { IconCurrencyRupee } from '@tabler/icons-react';
 import {
   BarElement,
   CategoryScale,
@@ -7,7 +8,7 @@ import {
   Title,
   Tooltip
 } from 'chart.js';
-import { Briefcase, Building, DollarSign, Users } from 'lucide-react';
+import { Briefcase, Building, Users } from 'lucide-react';
 import { useState } from 'react';
 import { Bar } from 'react-chartjs-2';
 
@@ -189,7 +190,10 @@ export default function PlacementStatistics() {
   };
 
   return (
-    <div className="w-full bg-gray-50 rounded-xl shadow-md p-6">
+    <div
+      id="placement-statistics"
+      className="w-full bg-gray-50 rounded-xl shadow-md p-6"
+    >
       {/* Tabs */}
       <div className="flex border-b mb-6 overflow-x-auto">
         {(Object.keys(placementData) as Year[]).map((year) => (
@@ -248,7 +252,7 @@ export default function PlacementStatistics() {
 
             <div className="bg-white rounded-lg shadow p-6 flex items-center space-x-4">
               <div className="bg-main/10 border p-3 rounded-full">
-                <DollarSign className="h-6 w-6 text-main" />
+                <IconCurrencyRupee className="h-6 w-6 text-main" />
               </div>
               <div>
                 <p className="text-body text-gray-500">Highest CTC</p>
