@@ -10,7 +10,7 @@ export const bTechAdmissionLinks: LinkItem[] = [
   },
   {
     title: 'For General Queries you can contact here',
-    href: 'https://iiitdwd.ac.in/contact_info/'
+    href: 'https://iiitdwd.ac.in/contact/'
   }
 ];
 

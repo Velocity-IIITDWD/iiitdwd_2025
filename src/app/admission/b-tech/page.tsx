@@ -1,6 +1,6 @@
 'use client';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import {
   bTechAdmissionLinks,
   eligibilityCriteria,
@@ -12,6 +12,12 @@ import SeatMatrix from './seatMatrix-component';
 
 export default function Page() {
   const [activeTab, setActiveTab] = useState(0);
+  const sectionRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  const scrollToSection = (index: number) => {
+    setActiveTab(index);
+    sectionRefs.current[index]?.scrollIntoView({ behavior: 'smooth' });
+  };
 
   const tabs = [
     {
@@ -106,49 +112,57 @@ export default function Page() {
 
         <div className="grid grid-cols-1 md:grid-cols-[minmax(0,1fr)_minmax(300px,300px)] w-[87.5vw] max-w-[1680px] mx-auto gap-6">
           <div className="max-md:order-2 flex flex-col max-md:flex-col-reverse gap-6">
-            {/* <SectionHeading title="Seat Matrix" /> */}
             <SeatMatrix />
 
-            {/* Modern content display area for active tab */}
-            <div className="bg-gradient-to-b from-white/30 to-white hover:shadow p-6 rounded">
-              <h2 className="text-xl font-semibold text-main mb-4 flex items-center">
-                {tabs[activeTab].icon}
-                <span className="ml-2">{tabs[activeTab].title}</span>
-              </h2>
-              <div className="space-y-4">
-                {tabs[activeTab].links.map((link, index) => (
-                  <div
-                    className="p-3 border border-main/10 rounded-md hover:bg-secondary/30 transition-colors flex items-center"
-                    key={index}
-                  >
-                    <svg
-                      className="w-5 h-5 text-main mr-3 flex-shrink-0"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
+            {/* Content sections */}
+            {tabs.map((tab, index) => (
+              <div
+                key={index}
+                ref={(el: HTMLDivElement | null) => {
+                  if (sectionRefs.current) {
+                    sectionRefs.current[index] = el;
+                  }
+                }}
+                className="bg-gradient-to-b from-white/30 to-white hover:shadow p-6 rounded"
+              >
+                <h2 className="text-xl font-semibold text-main mb-4 flex items-center">
+                  {tab.icon}
+                  <span className="ml-2">{tab.title}</span>
+                </h2>
+                <div className="space-y-4">
+                  {tab.links.map((link, linkIndex) => (
+                    <div
+                      className="p-3 border border-main/10 rounded-md hover:bg-secondary/30 transition-colors flex items-center"
+                      key={linkIndex}
                     >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M13 7l5 5-5 5M5 7l5 5-5 5"
-                      />
-                    </svg>
-                    <Link
-                      href={link?.href}
-                      className="text-title-3 text-gray-500 hover:text-main flex-grow"
-                    >
-                      {link?.title}
-                    </Link>
-                  </div>
-                ))}
+                      <svg
+                        className="w-5 h-5 text-main mr-3 flex-shrink-0"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M13 7l5 5-5 5M5 7l5 5-5 5"
+                        />
+                      </svg>
+                      <Link
+                        href={link?.href}
+                        className="text-title-3 text-gray-500 hover:text-main flex-grow"
+                      >
+                        {link?.title}
+                      </Link>
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
+            ))}
           </div>
 
-          <div className="space-y-0 max-md:order-1">
-            {/* Modern Tech-styled Tabs */}
-
+          <div className="space-y-0 max-md:order-1 md:sticky md:top-4 md:h-fit">
+            {/* Important dates section */}
             <div className="md:min-h-[300px] max-md:mb-6">
               <h3 className="text-body font-semibold text-main mb-4 flex items-center">
                 Important Dates
@@ -193,7 +207,7 @@ export default function Page() {
                     activeTab === index &&
                     'bg-secondary/50 text-primary font-medium border-l-main'
                   }`}
-                  onClick={() => setActiveTab(index)}
+                  onClick={() => scrollToSection(index)}
                 >
                   <div
                     className={`${
@@ -223,8 +237,6 @@ export default function Page() {
                 </div>
               ))}
             </div>
-
-            {/* <QueriesBox /> */}
           </div>
         </div>
 
