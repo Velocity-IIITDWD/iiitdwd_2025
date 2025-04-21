@@ -28,7 +28,7 @@ export default async function EventsSection() {
               className="object-cover h-full flex-1 rounded"
             />
 
-            <div className="text-title-2 flex-1 flex flex-col justify-end gap-4 h-full">
+            <div className="text-title-2 flex-1 flex flex-col justify-between gap-4 h-full">
               {item?.caption}
 
               <Link

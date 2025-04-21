@@ -1,61 +1,13 @@
+import director from '@/assets/director.jpg';
 import { IconArrowUpRight } from '@tabler/icons-react';
+import Image from 'next/image';
 import Link from 'next/link';
 import EventsSection from './events';
 import NotificationSection from './notification';
+import PlacementCard from './placement-card';
 import ModernSocialMediaGrid from './social-media';
 
 export default function InfoSection() {
-  const socialMedia = [
-    {
-      name: 'LinkedIn',
-      url: 'https://www.linkedin.com/in/iiitdharwad/',
-      icon: (
-        <svg
-          viewBox="0 0 24 24"
-          className="w-8 h-8 transition-colors duration-300 fill-gray-600 hover:fill-[#0A66C2]"
-        >
-          <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
-        </svg>
-      )
-    },
-    {
-      name: 'X',
-      url: 'https://x.com/dharwad_iiit',
-      icon: (
-        <svg
-          viewBox="0 0 24 24"
-          className="w-8 h-8 transition-colors duration-300 fill-gray-600 hover:fill-black"
-        >
-          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-        </svg>
-      )
-    },
-    {
-      name: 'YouTube',
-      url: 'https://www.youtube.com/@socialmediaiiitdharwad2584',
-      icon: (
-        <svg
-          viewBox="0 0 24 24"
-          className="w-8 h-8 transition-colors duration-300 fill-gray-600 hover:fill-[#FF0000]"
-        >
-          <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z" />
-        </svg>
-      )
-    },
-    {
-      name: 'Instagram',
-      url: 'https://www.instagram.com/iiitdharwad_',
-      icon: (
-        <svg
-          viewBox="0 0 24 24"
-          className="w-8 h-8 transition-colors duration-300 fill-gray-600 hover:fill-[#E4405F]"
-        >
-          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-        </svg>
-      )
-    }
-  ];
-
   return (
     <div className="px-6 w-full relative overflow-x-hidden">
       <div className="w-full relative overflow-hidden">
@@ -77,27 +29,89 @@ export default function InfoSection() {
         >
           <div className="!h-[90px]"></div>
 
-          {Array.from({ length: 34 }, (_, i) => (
+          {Array.from({ length: 28 }, (_, i) => (
             <div key={i}></div>
           ))}
 
-          <div className="relative [grid-area:4/2] md:[grid-area:3/2] hover:bg-secondary/30 group transition-all duration-300 flex flex-col justify-end p-6">
-            <IconArrowUpRight
-              className="top-6 absolute right-6 transition-all group-hover:top-5 group-hover:right-5 text-gray-500 group-hover:text-black"
-              size={20}
-            />
+          <div className="relative [grid-area:4/2] md:[grid-area:4/2] lg:[grid-area:3/2] group transition-all duration-300 flex flex-col justify-end p-6 overflow-hidden shadow-sm hover:shadow-md">
+            <Link href="/director" className="absolute inset-0 z-0" />
 
-            <div className="text-title-1 font-semibold mb-2">
-              Explore IIIT Dharwad
+            {/* Background pattern */}
+            <div className="absolute inset-0 opacity-5 bg-grid-pattern"></div>
+
+            {/* Image wrapper with gradient overlay */}
+            <div className="relative w-full h-[220px] mb-4 overflow-hidden rounded-md">
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/20 z-10"></div>
+              <Image
+                height={0}
+                width={0}
+                sizes="100%"
+                className="w-full h-full object-contain object-center transition-transform duration-500 group-hover:scale-105"
+                src={director}
+                alt="Director of IIIT Dharwad"
+              />
             </div>
-            <div className="text-title-2 text-gray-600">
-              Whether it's coding marathons, cultural fests, or insightful
-              seminars—there's always something happening to spark your passion
-              and build connections.
+
+            {/* Content */}
+            <div className="relative z-10">
+              <div className="flex items-center justify-between mb-2">
+                <h3 className="text-title-1 font-bold text-gray-900">
+                  Director's Message
+                </h3>
+                <IconArrowUpRight
+                  className="transition-all duration-300 text-gray-500 group-hover:text-primary group-hover:translate-x-1 group-hover:-translate-y-1"
+                  size={20}
+                />
+              </div>
+
+              <p className="text-title-2 text-gray-600 mb-4 line-clamp-3">
+                Welcome to IIIT Dharwad — a hub of innovation, learning, and
+                excellence. We are committed to nurturing future leaders in
+                technology and research.
+              </p>
+
+              {/* Social links with improved design */}
+              <div className="flex items-center gap-3 mt-auto">
+                <span className="text-sm text-gray-500 font-medium">
+                  Follow:
+                </span>
+                <a
+                  href="https://www.youtube.com/@profmahadevaprasanna"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center w-8 h-8 rounded-full bg-white shadow-sm hover:shadow transition-all duration-300 hover:-translate-y-1"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    className="w-4 h-4 transition duration-300 fill-[#FF0000]"
+                  >
+                    <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z" />
+                  </svg>
+                </a>
+
+                <a
+                  href="https://www.linkedin.com/in/prof-mahadeva-prasanna-1b238b1a4/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center w-8 h-8 rounded-full bg-white shadow-sm hover:shadow transition-all duration-300 hover:-translate-y-1"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    className="w-4 h-4 transition duration-300 fill-[#0077B5]"
+                  >
+                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 11.268h-3v-5.604c0-1.337-.025-3.061-1.866-3.061-1.867 0-2.154 1.459-2.154 2.968v5.697h-3v-10h2.881v1.367h.041c.401-.76 1.381-1.561 2.842-1.561 3.04 0 3.602 2.002 3.602 4.605v5.589z" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            {/* Add a subtle indicator to show it's clickable */}
+            <div className="absolute bottom-3 right-3 flex items-center text-xs text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <span>Read more</span>
             </div>
           </div>
 
-          <div className="[grid-area:3/2] md:[grid-area:3/3/span_1/span_2] h-[400px] p-6 relative">
+          <div className="[grid-area:3/2] h-full md:[grid-area:3/2/span_1/span_2] lg:[grid-area:3/3/span_1/span_2] min-h-[400px] p-6 relative">
             <div
               className="absolute inset-0 flex items-center justify-center 
                 [background-image:radial-gradient(var(--color-gray-300)_0.8px,transparent_0)] 
@@ -119,26 +133,11 @@ export default function InfoSection() {
             <NotificationSection />
           </div>
 
-          <Link
-            href={'/annoucements'}
-            className="relative [grid-area:7/2] md:[grid-area:5/4] hover:bg-secondary/30 group transition-all duration-300 flex flex-col justify-end p-6"
-          >
-            <IconArrowUpRight
-              className="top-6 absolute right-6 transition-all group-hover:top-5 group-hover:right-5 text-gray-500 group-hover:text-black"
-              size={20}
-            />
-            <div className="text-title-1 font-semibold mb-2">
-              Stay in the Loop{' '}
-            </div>
-            <div className="text-title-2 text-gray-600">
-              Get the latest updates on deadlines, events, and
-              opportunities—never miss a beat at IIIT Dharwad.
-            </div>
-          </Link>
-
-          <div className="[grid-area:9/2] md:[grid-area:7/2] flex flex-col p-6 justify-between h-[300px]">
+          <div className="relative [grid-area:7/2] md:[grid-area:4/3] lg:[grid-area:5/4] hover:bg-secondary/30 group transition-all duration-300 flex flex-col justify-between p-6">
             <div className="">
-              <div className="text-title-1 font-semibold">Connect With Us</div>
+              <div className="text-title-1 font-semibold">
+                IIIT Dharwad Socials
+              </div>
               <div className="text-title-2 text-gray-600 mt-2">
                 Stay updated with the latest news, events, and innovations from
                 IIIT Dharwad. Follow us on social media to join our vibrant
@@ -149,27 +148,11 @@ export default function InfoSection() {
             <ModernSocialMediaGrid />
           </div>
 
-          <Link
-            href={'/director'}
-            className="[grid-area:10/2] md:[grid-area:7/3] flex flex-col p-6 justify-end relative hover:bg-secondary/30 group transition-all duration-300"
-          >
-            <IconArrowUpRight
-              className="top-6 absolute right-6 transition-all group-hover:top-5 group-hover:right-5 text-gray-500 group-hover:text-black"
-              size={20}
-            />
-            <div className="text-title-1 font-semibold">
-              Director&apos;s Message
-            </div>
-            <div className="text-title-2 text-gray-600 mt-2">
-              Welcome to IIIT Dharwad — a hub of innovation, learning, and
-              excellence. We are committed to nurturing future leaders in
-              technology and research.
-            </div>
-          </Link>
+          <PlacementCard />
 
           <Link
             href={'/placements'}
-            className="[grid-area:11/2] md:[grid-area:7/4] flex flex-col p-6 justify-end relative hover:bg-secondary/30 group transition-all duration-300"
+            className="[grid-area:9/2] md:[grid-area:8/2/span_1/span_2] lg:[grid-area:7/2] flex flex-col p-6 justify-end relative hover:bg-secondary/30 group transition-all duration-300"
           >
             <IconArrowUpRight
               className="top-6 absolute right-6 transition-all group-hover:top-5 group-hover:right-5 text-gray-500 group-hover:text-black"
