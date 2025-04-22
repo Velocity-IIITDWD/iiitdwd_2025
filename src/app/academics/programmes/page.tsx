@@ -29,29 +29,33 @@ export default function ProgrammesPage() {
     <main className="px-4 md:px-8 pt-16 flex flex-col items-center gap-5 md:gap-10 lg:gap-14">
       <SectionHeading title="Programmes" className="w-fit" free reverse />
 
-      <div className="flex flex-col items-center">
-        <h2 className="text-main-title font-bold">THE PERSISTENT PURSUIT OF</h2>
+      <div className="space-y-3">
+        <div className="flex flex-col items-center">
+          <h2 className="text-main-title font-bold">
+            THE PERSISTENT PURSUIT OF
+          </h2>
 
-        <AnimatePresence mode="wait">
-          <motion.h2
-            key={words[currentWordIndex]}
-            className="text-main-title font-bold"
-            initial={{ x: 50, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            exit={{ x: -50, opacity: 0 }}
-            transition={{
-              duration: 0.5,
-              ease: 'easeInOut'
-            }}
-          >
-            {words[currentWordIndex]}
-          </motion.h2>
-        </AnimatePresence>
-      </div>
+          <AnimatePresence mode="wait">
+            <motion.h2
+              key={words[currentWordIndex]}
+              className="text-main-title font-bold"
+              initial={{ x: 50, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              exit={{ x: -50, opacity: 0 }}
+              transition={{
+                duration: 0.5,
+                ease: 'easeInOut'
+              }}
+            >
+              {words[currentWordIndex]}
+            </motion.h2>
+          </AnimatePresence>
+        </div>
 
-      <div className="text-title-2 font-medium max-w-3xl mx-auto text-center">
-        We&apos;re driven by our meaningful land-grant mission to provide an
-        education that propels our state, nation and world forward.
+        <div className="text-title-2 font-medium max-w-2xl mx-auto text-center">
+          We&apos;re driven by our meaningful land-grant mission to provide an
+          education that propels our state, nation and world forward.
+        </div>
       </div>
       <ProgramCards />
 

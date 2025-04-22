@@ -17,8 +17,8 @@ import { useEffect, useState } from 'react';
 
 interface ClubCardProps {
   name: string;
-  logo: string;
-  imageUrl: string;
+  logo?: string;
+  imageUrl?: string;
   href: string;
   description: string;
   memberCount: number;
@@ -75,7 +75,7 @@ export function ClubCard({
         //   }
         // }}
       >
-        <Card className="overflow-hidden h-full p-0 border shadow-lg transition-all duration-300 group-hover:shadow-2xl bg-white">
+        <Card className="overflow-hidden h-full p-0 gap-0 border shadow-lg transition-all duration-300 group-hover:shadow-2xl bg-white">
           <div className="relative h-48 w-full flex-none overflow-hidden">
             {imageUrl ? (
               <Image
@@ -106,18 +106,18 @@ export function ClubCard({
           </div>
 
           <div className="p-6 text-title-3 flex flex-col justify-between h-full">
-            <p className="text-gray-600 mb-6 line-clamp-3">{description}</p>
+            <p className="text-gray-600 line-clamp-3">{description}</p>
 
-            <div className="flex items-center justify-between text-body">
-              {/* <div className="flex items-center gap-2 text-[#001B3D]">
+            {/* <div className="flex items-center justify-between text-body">
+              <div className="flex items-center gap-2 text-[#001B3D]">
                 <Users className="h-5 w-5" />
                 <span className="font-medium">{memberCount} members</span>
-              </div> */}
-              {/* <div className="flex items-center gap-2 text-[#001B3D]">
+              </div>
+              <div className="flex items-center gap-2 text-[#001B3D]">
                 <Calendar className="h-5 w-5" />
                 <span className="font-medium">{meetingSchedule}</span>
-              </div> */}
-            </div>
+              </div>
+            </div> */}
           </div>
         </Card>
       </div>
@@ -140,7 +140,7 @@ export function ClubCard({
               <div className="flex items-center gap-4">
                 <div className="relative h-12 w-12 rounded-full overflow-hidden">
                   <Image
-                    src={logo}
+                    src={logo!}
                     alt={`${name} logo`}
                     fill
                     className="object-contain"

@@ -112,7 +112,7 @@ export default function AnnouncementComponent({
             )}
             <a className="flex items-start" href={item.link}>
               <span className="text-green-500 mr-2 mt-1">📌</span>
-              <h3 className="text-gray-700 text-title-3 line-clamp-1 font-medium hover:text-main cursor-pointer">
+              <h3 className="text-gray-700 text-title-2 line-clamp-1 font-medium hover:text-main cursor-pointer">
                 {item.title}
               </h3>
             </a>
@@ -140,7 +140,7 @@ export default function AnnouncementComponent({
                         {formatDate(item.date)}
                       </div>
                     )}
-                    <h3 className="text-gray-700 text-title-3 line-clamp-1 font-medium hover:text-main cursor-pointer">
+                    <h3 className="text-gray-700 text-title-2 line-clamp-1 font-medium hover:text-main cursor-pointer">
                       {item.title}
                     </h3>
                   </CardContent>
@@ -150,10 +150,10 @@ export default function AnnouncementComponent({
           ))}
         </CarouselContent>
 
-        <div className="flex justify-between items-center mt-6 max-md:flex-col max-md:items-start gap-2">
+        <div className="flex justify-between items-center max-md:flex-col max-md:items-start gap-2">
           <Link
             href="/annoucements"
-            className="text-main hover:underline flex text-body items-center"
+            className="text-main hover:underline flex text-title-3 items-center"
           >
             View all Announcements <span className="ml-2">→</span>
           </Link>

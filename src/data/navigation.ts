@@ -43,7 +43,7 @@ const navigationData: NavigationItem[] = [
     items: [
       {
         title: 'B.Tech',
-        href: '/admission/b-tech'
+        href: '/admission/btech'
       },
       {
         title: 'M.Tech',
@@ -92,14 +92,14 @@ const navigationData: NavigationItem[] = [
         title: 'Public disclosures',
         href: '/disclosures',
         items: [
-          { title: 'RTI', href: 'https://iiitdwd.ac.in/pdfs/RTI.pdf' },
+          { title: 'RTI', href: 'https://iiitdwd.ac.in/docs/RTI.pdf' },
           {
             title: 'IIIT PPP Act',
-            href: 'https://iiitdwd.ac.in/pdfs/iiit_ppp_2017.pdf'
+            href: 'https://iiitdwd.ac.in/docs/iiit_ppp_2017.pdf'
           },
           {
             title: 'ARIIA',
-            href: 'https://iiitdwd.ac.in/pdfs/ARIIA.pdf'
+            href: 'https://iiitdwd.ac.in/docs/ARIIA.pdf'
           }
         ]
       }
@@ -152,8 +152,8 @@ const navigationData: NavigationItem[] = [
         title: 'Conclave',
         href: 'https://conclave.iiitdwd.ac.in'
       },
-      { title: 'NIRF', href: '/academics/nirf' },
-      { title: 'Online', href: 'https://online.iiitdwd.ac.in/' }
+      { title: 'NIRF', href: '/academics/nirf' }
+      // { title: 'Online', href: 'https://online.iiitdwd.ac.in/' }
     ]
   },
   {
@@ -216,6 +216,10 @@ const navigationData: NavigationItem[] = [
       },
       { title: 'Contact T&P', href: '/placements/#contact' }
     ]
+  },
+  {
+    title: 'Online',
+    href: 'https://online.iiitdwd.ac.in'
   }
 ];
 

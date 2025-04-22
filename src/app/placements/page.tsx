@@ -1,10 +1,10 @@
 'use client';
 import { motion, useInView } from 'motion/react';
 import { useRef } from 'react';
-import { Tooltip } from 'react-tooltip';
 import DirectorsMessage from './directors-message';
 import HigherStudiesContact from './higher-studies-contact';
 import PlacementProcedure from './placement-procedure';
+import PlacementStatistics from './placement-stats';
 import PreviousRecruiters from './previous-recruiters';
 
 export default function Page() {
@@ -145,7 +145,7 @@ export default function Page() {
           ))}
         </div>
       </motion.div>
-      <div
+      {/* <div
         ref={statsRef}
         className="py-20 px-4 sm:px-6 lg:px-8 border border-tertiary/20 bg-gradient-to-b from-white/70 to-white rounded-3xl"
         id="placement-statistics"
@@ -234,30 +234,9 @@ export default function Page() {
             </div>
           </div>
         </motion.div>
+      </div> */}
 
-        {/* <motion.div
-          ref={trackRecordRef}
-          className="max-w-7xl mx-auto"
-          id="track-record-section"
-          initial="hidden"
-          animate={isTrackRecordVisible ? 'visible' : 'hidden'}
-          variants={statsVariants}
-        >
-          <motion.h2
-            className="text-3xl font-bold text-center mb-12"
-            initial={{ opacity: 0, y: 20 }}
-            animate={
-              isTrackRecordVisible
-                ? { opacity: 1, y: 0 }
-                : { opacity: 0, y: 20 }
-            }
-            transition={{ duration: 0.6 }}
-          >
-            Our Track Record
-          </motion.h2>
-          <PlacementStats />
-        </motion.div> */}
-      </div>
+      <PlacementStatistics />
 
       <DirectorsMessage />
       <PlacementProcedure />

@@ -16,7 +16,7 @@ import Link from 'next/link';
 import JourneyComponent from './journey-component';
 
 const JourneySection = () => {
-  const [selectedProgram, setSelectedProgram] = useState('b-tech');
+  const [selectedProgram, setSelectedProgram] = useState('btech');
   return (
     <div className="w-[87.5vw] max-w-[1680px] mx-auto py-16 md:py-24">
       <div className="mx-auto relative">
@@ -50,13 +50,13 @@ const JourneySection = () => {
                 <div className="flex flex-col sm:flex-row gap-4 items-start">
                   <Select
                     onValueChange={(value) => setSelectedProgram(value)}
-                    defaultValue="b-tech"
+                    defaultValue="btech"
                   >
                     <SelectTrigger className="w-full sm:w-64 border-2 rounded !h-12">
                       <SelectValue placeholder="B.Tech Students" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="b-tech">B.Tech Students</SelectItem>
+                      <SelectItem value="btech">B.Tech Students</SelectItem>
                       <SelectItem value="m-tech">
                         M.Tech (Research) Students
                       </SelectItem>
@@ -66,9 +66,14 @@ const JourneySection = () => {
 
                   <Link
                     href={`/admission/${selectedProgram}`}
-                    className="bg-main flex items-center hover:bg-main/90 text-white transition-colors rounded h-12 border-0 px-6"
+                    className="w-fit flex"
                   >
-                    LEARN MORE <ChevronRight className="ml-2 h-4 w-4" />
+                    <Button
+                      variant="outline"
+                      className="bg-main flex items-center hover:bg-main/90 text-white hover:text-white transition-colors rounded h-12 border-0 px-6"
+                    >
+                      LEARN MORE <ChevronRight className="ml-2 h-4 w-4" />
+                    </Button>
                   </Link>
                 </div>
               </div>
@@ -112,7 +117,7 @@ const JourneySection = () => {
                   IIIT Dharwad special.
                 </p>
 
-                <Link href={'/how-to-visit'}>
+                <Link href={'/how-to-reach'} className="w-fit flex">
                   <Button
                     variant="outline"
                     className="bg-main flex items-center hover:bg-main/90 text-white hover:text-white transition-colors rounded h-12 border-0 px-6"
@@ -140,6 +145,7 @@ const JourneySection = () => {
 
                 <Link
                   href={'https://iiitdwd.ac.in/docs/FEE_2024-25_Sheet1.pdf'}
+                  className="w-fit flex"
                 >
                   <Button
                     variant="outline"

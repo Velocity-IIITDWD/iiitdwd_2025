@@ -43,10 +43,12 @@ export default function FacultyProfile({
     return (
       <div
         className={cn(
-          'flex items-center gap-3 p-3 border rounded-lg bg-white shadow-sm hover:shadow transition-all duration-300 group',
+          'flex items-center gap-3 relative p-3 border rounded-lg bg-white shadow-sm hover:shadow transition-all duration-300 group',
           className
         )}
       >
+        <div className="absolute bottom-0 right-0 w-20 h-20 rounded-full bg-gradient-to-br from-primary/20 to-[--main]/20 -translate-y-1/2 translate-x-1/2 blur-xl" />
+
         <div className="flex-shrink-0 w-10 h-10 rounded-full border-2 border-primary/30 group-hover:border-primary/50 shadow-sm transition-all duration-300 overflow-hidden">
           <div className="w-full h-full relative">
             <Image
@@ -168,7 +170,7 @@ export default function FacultyProfile({
         className
       )}
     >
-      <div className="absolute inset-0 bg-[radial-gradient(#7a8b99_1px,transparent_1px)] [background-size:16px_16px] opacity-[0.05] group-hover:opacity-[0.07] transition-opacity duration-700 pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(var(--color-gray-300)_1px,transparent_1px)] [background-size:16px_16px] opacity-[0.4] group-hover:opacity-[0.07] transition-opacity duration-700 pointer-events-none" />
       <div className="absolute top-0 left-0 right-0 h-1 bg-main/80 group-hover:bg-main transition-colors duration-500" />
       <div className="flex flex-col gap-5 relative justify-between h-full">
         <div className="flex flex-col gap-5 relative">
