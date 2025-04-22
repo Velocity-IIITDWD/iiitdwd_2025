@@ -154,6 +154,18 @@ const JourneySection = () => {
                     EXPLORE FEES <ChevronRight className="ml-2 h-4 w-4" />
                   </Button>
                 </Link>
+                <Link
+                  href={'/docs/OM_39-22025-CSIS_dated_2025-04-22.pdf'}
+                  className="w-fit flex mt-4"
+                >
+                  <Button
+                    variant="outline"
+                    className="bg-main flex items-center hover:bg-main/90 text-white hover:text-white transition-colors rounded h-12 border-0 px-6"
+                  >
+                    Financial Aid and Student Loans{' '}
+                    <ChevronRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </Link>
               </div>
 
               <div className="flex-1">
