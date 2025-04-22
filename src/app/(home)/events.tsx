@@ -24,11 +24,10 @@ export default async function EventsSection() {
               alt={item?.caption!}
               width={0}
               height={0}
-              sizes="100%"
-              className="object-cover h-full flex-1 rounded"
+              className="object-cover flex-1 rounded max-h-[350px]"
             />
 
-            <div className="text-title-2 flex-1 flex flex-col justify-between gap-4 h-full">
+            <div className="text-title-2 flex-1 flex flex-col justify-between gap-4 h-full py-10">
               {item?.caption}
 
               <Link

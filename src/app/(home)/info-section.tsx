@@ -34,41 +34,41 @@ export default function InfoSection() {
           ))}
 
           <div className="relative [grid-area:4/2] md:[grid-area:4/2] lg:[grid-area:3/2] group transition-all duration-300 flex flex-col justify-end p-6 overflow-hidden shadow-sm hover:shadow-md">
-            <Link href="/director" className="absolute inset-0 z-0" />
-
             {/* Background pattern */}
             <div className="absolute inset-0 opacity-5 bg-grid-pattern"></div>
 
             {/* Image wrapper with gradient overlay */}
-            <div className="relative w-full h-[220px] mb-4 overflow-hidden rounded-md">
-              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/20 z-10"></div>
+            <div className="relative w-full h-[220px] mb-4 overflow-hidden rounded-md flex items-center justify-center bg-gray-100">
               <Image
-                height={0}
-                width={0}
-                sizes="100%"
-                className="w-full h-full object-contain object-center transition-transform duration-500 group-hover:scale-105"
                 src={director}
                 alt="Director of IIIT Dharwad"
+                width={220}
+                height={220}
+                className="object-cover object-center rounded transition-transform duration-500 group-hover:scale-105"
+                style={{ maxHeight: 200, width: 'auto', maxWidth: '100%' }}
+                priority
               />
             </div>
 
             {/* Content */}
             <div className="relative z-10">
-              <div className="flex items-center justify-between mb-2">
-                <h3 className="text-title-1 font-bold text-gray-900">
-                  Director's Message
-                </h3>
-                <IconArrowUpRight
-                  className="transition-all duration-300 text-gray-500 group-hover:text-primary group-hover:translate-x-1 group-hover:-translate-y-1"
-                  size={20}
-                />
-              </div>
+              <Link href="/director" className="">
+                <div className="flex items-center justify-between mb-2">
+                  <h3 className="text-title-1 font-bold text-gray-900">
+                    Director's Message
+                  </h3>
+                  <IconArrowUpRight
+                    className="transition-all duration-300 text-gray-500 group-hover:text-primary group-hover:translate-x-1 group-hover:-translate-y-1"
+                    size={20}
+                  />
+                </div>
 
-              <p className="text-title-2 text-gray-600 mb-4 line-clamp-3">
-                Welcome to IIIT Dharwad — a hub of innovation, learning, and
-                excellence. We are committed to nurturing future leaders in
-                technology and research.
-              </p>
+                <p className="text-title-2 text-gray-600 mb-4 line-clamp-3">
+                  Welcome to IIIT Dharwad — a hub of innovation, learning, and
+                  excellence. We are committed to nurturing future leaders in
+                  technology and research.
+                </p>
+              </Link>
 
               {/* Social links with improved design */}
               <div className="flex items-center gap-3 mt-auto">
@@ -79,7 +79,7 @@ export default function InfoSection() {
                   href="https://www.youtube.com/@profmahadevaprasanna"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center w-8 h-8 rounded-full bg-white shadow-sm hover:shadow transition-all duration-300 hover:-translate-y-1"
+                  className="flex items-center justify-center w-8 h-8 rounded-full bg-white shadow-sm hover:shadow transition-all duration-300 hover:-translate-y-1 z-50"
                 >
                   <svg
                     viewBox="0 0 24 24"
@@ -103,11 +103,6 @@ export default function InfoSection() {
                   </svg>
                 </a>
               </div>
-            </div>
-
-            {/* Add a subtle indicator to show it's clickable */}
-            <div className="absolute bottom-3 right-3 flex items-center text-xs text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <span>Read more</span>
             </div>
           </div>
 
