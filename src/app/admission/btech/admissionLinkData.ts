@@ -57,8 +57,8 @@ export const eligibilityCriteria: LinkItem[] = [
     href: '/docs/undertaking_2023.pdf'
   },
   {
-    title: 'Cut-off JEE Ranks for 2023-24 admissions',
-    href: '/docs/JEE-CRL-CUT-OFF-RANKS-2023-24.pdf'
+    title: 'Previous Year Cut-off JEE Ranks',
+    href: '/docs/Cut-off.pdf'
   },
   {
     title:
