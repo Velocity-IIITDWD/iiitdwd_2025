@@ -14,22 +14,25 @@ export default [
     profiles: [
       {
         content: [
-          'Director - Finance, Department of Higher Education, MoE, GoI'
+          'Deputy Secretary - Finance, Department of Higher Education, MoE, GoI'
         ],
         imageURL: '',
-        title: ' Shri Mukesh Kumar'
+        title: 'Shri Narayan Singh Bisht'
       },
       {
-        content: ['Director, Department of ITBT & ST, GOK'],
-        imageURL: '/images/Shri_Darshan_H_V.jpg',
-        title: 'Shri Darshan H. V., IAS'
+        content: ['Director, Department of ITBT & ST, GoK'],
+        imageURL: '',
+        title: 'Shri Rahul Sharanappa Sankanur, IAS'
       },
       {
-        content: [
-          'Department of Science & Technology & Managing Director, KSTePS Government of Karnataka'
-        ],
+        content: ['Managing Director, Keonics, Bengaluru'],
         imageURL: '/images/pavan_kumar_malapati.jpg',
         title: 'Shri Pavan Kumar Malapati, IAS'
+      },
+      {
+        content: ['Director, IIIT Dharwad'],
+        imageURL: '/images/SRMahadevaPrasanna.jpg',
+        title: 'Prof. S. R. Mahadeva Prasanna'
       }
     ]
   },
@@ -48,7 +51,7 @@ export default [
     profiles: [
       {
         content: ['Officiating Registrar, IIIT Dharwad'],
-        imageURL: '',
+        imageURL: '/images/ravi_b_vitlapur.jpg',
         title: 'Mr. Ravi B. Vitlapur'
       }
     ]
