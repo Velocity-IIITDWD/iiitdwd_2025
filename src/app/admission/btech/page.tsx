@@ -7,6 +7,7 @@ import {
   programsOffered,
   quickLinks
 } from './admissionLinkData';
+import CutoffRanks from './CutoffRanks-component';
 import InstituteContent from './InstituteContent-component';
 import SeatMatrix from './seatMatrix-component';
 
@@ -147,6 +148,7 @@ export default function Page() {
               }}
             >
               <SeatMatrix />
+              <CutoffRanks />
             </div>
 
             {tabs.map((tab, index) => (
