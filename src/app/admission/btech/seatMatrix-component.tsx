@@ -10,7 +10,10 @@ import {
 
 export default function SeatMatrix() {
   return (
-    <div className="overflow-hidden shadow-md rounded-lg max-w-full flex-1 w-full max-h-[550px] mx-auto">
+    <div className="overflow-hidden rounded-lg max-w-full flex-1 w-full max-h-[550px] mx-auto">
+      <h3 className="text-body font-semibold text-main mb-4 flex items-center text-center text-xl">
+        CSAB Seat Matrix (Academic Year 2025-26)
+      </h3>
       <Table className="w-full">
         <TableHeader className="bg-main">
           <TableRow>
@@ -62,22 +65,22 @@ export default function SeatMatrix() {
               All India
             </TableCell>
             <TableCell className="text-center">Gender-Neutral</TableCell>
-            <TableCell className="text-center">62</TableCell>
+            <TableCell className="text-center">77</TableCell>
             <TableCell className="text-center">4</TableCell>
-            <TableCell className="text-center">16</TableCell>
+            <TableCell className="text-center">19</TableCell>
             <TableCell className="text-center">1</TableCell>
-            <TableCell className="text-center">24</TableCell>
-            <TableCell className="text-center">2</TableCell>
-            <TableCell className="text-center">12</TableCell>
-            <TableCell className="text-center">0</TableCell>
-            <TableCell className="text-center">42</TableCell>
-            <TableCell className="text-center">2</TableCell>
-            <TableCell className="text-center">165</TableCell>
+            <TableCell className="text-center">29</TableCell>
+            <TableCell className="text-center">1</TableCell>
+            <TableCell className="text-center">14</TableCell>
+            <TableCell className="text-center">1</TableCell>
+            <TableCell className="text-center">51</TableCell>
+            <TableCell className="text-center">3</TableCell>
+            <TableCell className="text-center">200</TableCell>
             <TableCell className="text-center" rowSpan={2}>
-              198
+              200
             </TableCell>
             <TableCell className="text-center" rowSpan={2}>
-              33
+              40
             </TableCell>
           </TableRow>
           {/* B.Tech in Computer Science and Engineering - Female Only */}
@@ -85,17 +88,17 @@ export default function SeatMatrix() {
             <TableCell className="text-center">
               Female-only (supernumerary)
             </TableCell>
-            <TableCell className="text-center">14</TableCell>
+            <TableCell className="text-center">16</TableCell>
+            <TableCell className="text-center">0</TableCell>
+            <TableCell className="text-center">4</TableCell>
+            <TableCell className="text-center">0</TableCell>
+            <TableCell className="text-center">6</TableCell>
             <TableCell className="text-center">0</TableCell>
             <TableCell className="text-center">3</TableCell>
             <TableCell className="text-center">0</TableCell>
-            <TableCell className="text-center">5</TableCell>
+            <TableCell className="text-center">11</TableCell>
             <TableCell className="text-center">0</TableCell>
-            <TableCell className="text-center">2</TableCell>
-            <TableCell className="text-center">0</TableCell>
-            <TableCell className="text-center">9</TableCell>
-            <TableCell className="text-center">0</TableCell>
-            <TableCell className="text-center">33</TableCell>
+            <TableCell className="text-center">40</TableCell>
           </TableRow>
 
           {/* B.Tech in Electronics and Communication Engineering - Gender Neutral */}
@@ -113,19 +116,19 @@ export default function SeatMatrix() {
               All India
             </TableCell>
             <TableCell className="text-center">Gender-Neutral</TableCell>
-            <TableCell className="text-center">32</TableCell>
+            <TableCell className="text-center">33</TableCell>
             <TableCell className="text-center">2</TableCell>
             <TableCell className="text-center">8</TableCell>
-            <TableCell className="text-center">0</TableCell>
+            <TableCell className="text-center">1</TableCell>
             <TableCell className="text-center">12</TableCell>
-            <TableCell className="text-center">1</TableCell>
+            <TableCell className="text-center">0</TableCell>
             <TableCell className="text-center">6</TableCell>
-            <TableCell className="text-center">1</TableCell>
+            <TableCell className="text-center">0</TableCell>
             <TableCell className="text-center">22</TableCell>
             <TableCell className="text-center">1</TableCell>
             <TableCell className="text-center">85</TableCell>
             <TableCell className="text-center" rowSpan={2}>
-              102
+              85
             </TableCell>
             <TableCell className="text-center" rowSpan={2}>
               17
@@ -164,22 +167,22 @@ export default function SeatMatrix() {
               All India
             </TableCell>
             <TableCell className="text-center">Gender-Neutral</TableCell>
-            <TableCell className="text-center">32</TableCell>
-            <TableCell className="text-center">2</TableCell>
-            <TableCell className="text-center">8</TableCell>
-            <TableCell className="text-center">1</TableCell>
-            <TableCell className="text-center">12</TableCell>
-            <TableCell className="text-center">1</TableCell>
-            <TableCell className="text-center">6</TableCell>
+            <TableCell className="text-center">46</TableCell>
+            <TableCell className="text-center">3</TableCell>
+            <TableCell className="text-center">11</TableCell>
             <TableCell className="text-center">0</TableCell>
-            <TableCell className="text-center">22</TableCell>
+            <TableCell className="text-center">17</TableCell>
             <TableCell className="text-center">1</TableCell>
-            <TableCell className="text-center">85</TableCell>
+            <TableCell className="text-center">9</TableCell>
+            <TableCell className="text-center">0</TableCell>
+            <TableCell className="text-center">31</TableCell>
+            <TableCell className="text-center">2</TableCell>
+            <TableCell className="text-center">120</TableCell>
             <TableCell className="text-center" rowSpan={2}>
-              102
+              120
             </TableCell>
             <TableCell className="text-center" rowSpan={2}>
-              17
+              24
             </TableCell>
           </TableRow>
           {/* B.Tech in Data Science and Artificial Intelligence - Female Only */}
@@ -187,17 +190,17 @@ export default function SeatMatrix() {
             <TableCell className="text-center">
               Female-only (supernumerary)
             </TableCell>
-            <TableCell className="text-center">6</TableCell>
+            <TableCell className="text-center">10</TableCell>
             <TableCell className="text-center">0</TableCell>
             <TableCell className="text-center">2</TableCell>
             <TableCell className="text-center">0</TableCell>
-            <TableCell className="text-center">3</TableCell>
+            <TableCell className="text-center">4</TableCell>
             <TableCell className="text-center">0</TableCell>
-            <TableCell className="text-center">1</TableCell>
+            <TableCell className="text-center">2</TableCell>
             <TableCell className="text-center">0</TableCell>
-            <TableCell className="text-center">5</TableCell>
+            <TableCell className="text-center">6</TableCell>
             <TableCell className="text-center">0</TableCell>
-            <TableCell className="text-center">17</TableCell>
+            <TableCell className="text-center">24</TableCell>
           </TableRow>
 
           {/* Total row */}
@@ -205,22 +208,28 @@ export default function SeatMatrix() {
             <TableCell className="text-center" colSpan={6}>
               Total
             </TableCell>
-            <TableCell className="text-center">152</TableCell>
-            <TableCell className="text-center">8</TableCell>
-            <TableCell className="text-center">39</TableCell>
+            <TableCell className="text-center">188</TableCell>
+            <TableCell className="text-center">9</TableCell>
+            <TableCell className="text-center">46</TableCell>
             <TableCell className="text-center">2</TableCell>
-            <TableCell className="text-center">59</TableCell>
-            <TableCell className="text-center">4</TableCell>
-            <TableCell className="text-center">28</TableCell>
+            <TableCell className="text-center">71</TableCell>
+            <TableCell className="text-center">2</TableCell>
+            <TableCell className="text-center">35</TableCell>
             <TableCell className="text-center">1</TableCell>
-            <TableCell className="text-center">105</TableCell>
-            <TableCell className="text-center">4</TableCell>
-            <TableCell className="text-center">402</TableCell>
-            <TableCell className="text-center">402</TableCell>
-            <TableCell className="text-center">67</TableCell>
+            <TableCell className="text-center">126</TableCell>
+            <TableCell className="text-center">6</TableCell>
+            <TableCell className="text-center">486</TableCell>
+            <TableCell className="text-center">405</TableCell>
+            <TableCell className="text-center">81</TableCell>
           </TableRow>
         </TableBody>
       </Table>
+
+      <div className="text-sm mt-4">
+        <p className="text-center text-gray-500">
+          Note: Scroll to the right to view the entire table.
+        </p>
+      </div>
     </div>
   );
 }
