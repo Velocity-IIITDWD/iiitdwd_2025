@@ -23,14 +23,29 @@ export default [
         title: 'Prof. S. R. Mahadeva Prasanna'
       },
       {
-        content: ['Non Member Secretary, IIIT Dharwad'],
+        content: ['Member'],
         imageURL: '',
-        title: 'Registrar, IIIT Dharwad'
+        title: 'Mr. Ravi B Vitlapur'
       },
       {
-        content: ['Executive Engineer'],
+        content: ['Member Secretary'],
         imageURL: '/images/mahesh_chandra_k_j.jpeg',
         title: 'Mr. Mahesh Chandra K J'
+      },
+      {
+        content: ['Member'],
+        imageURL: '',
+        title: 'Prof. Nagesh Iyer'
+      },
+      {
+        content: ['Architect/Invitee'],
+        imageURL: '',
+        title: 'Mr. Madhu De'
+      },
+      {
+        content: ['PMC/Invitee'],
+        imageURL: '',
+        title: 'Mr. Waheez Wahab'
       }
     ]
   }
