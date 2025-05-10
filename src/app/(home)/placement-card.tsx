@@ -24,7 +24,7 @@ ChartJS.register(
 
 export default function PlacementCard() {
   return (
-    <div className="[grid-area:10/2] md:[grid-area:7/2/span_1/span_2] lg:[grid-area:7/3/span_1/span_2] shadow-sm p-6">
+    <div className="[grid-area:7/2] md:[grid-area:5/2/span_1/span_2] lg:[grid-area:4/3/span_1/span_2] shadow-sm p-6">
       <div className="flex justify-between items-start mb-4">
         <div>
           <h3 className="text-title-1 font-semibold">Placement Highlights</h3>

@@ -152,7 +152,7 @@ function AnimatedNavbar() {
           }}
         >
           <motion.div
-            className="px-4 py-2"
+            className="px-4 py-2 z-[5]"
             layout
             transition={{
               type: 'spring',
