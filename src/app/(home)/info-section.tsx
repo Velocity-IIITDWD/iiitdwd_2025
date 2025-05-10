@@ -2,6 +2,7 @@ import director from '@/assets/director.jpg';
 import { IconArrowUpRight } from '@tabler/icons-react';
 import Image from 'next/image';
 import Link from 'next/link';
+import AppointmentDialog from './appointment-dialog';
 import EventsSection from './events';
 import NotificationSection from './notification';
 import PlacementCard from './placement-card';
@@ -70,11 +71,11 @@ export default function InfoSection() {
                 </p>
               </Link>
 
+              {/* Book an appointment button */}
+              <AppointmentDialog />
+
               {/* Social links with improved design */}
               <div className="flex items-center gap-3 mt-auto">
-                <span className="text-sm text-gray-500 font-medium">
-                  Follow:
-                </span>
                 <a
                   href="https://www.youtube.com/@profmahadevaprasanna"
                   target="_blank"
