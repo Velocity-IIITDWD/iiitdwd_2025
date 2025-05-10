@@ -34,7 +34,7 @@ export const data: TeamMember[] = [
     name: 'Nikhil Karthik',
     role: 'Lead',
     bio: 'Web and Game Developer',
-    skills: ['JS', 'Python', 'Java', 'OpenGL'],
+    skills: ['JS', 'Python', 'Java', 'OpenGL', 'Metal'],
     image: 'https://iiitdwd.ac.in/images/nikhil-karthik.jpg',
     social: {
       twitter: 'https://twitter.com/nikhilkarthik24',
@@ -78,6 +78,20 @@ export const data: TeamMember[] = [
     skills: ['UI'],
     image: 'https://iiitdwd.ac.in/images/ashitosh-sable.jpg',
     social: {}
+  },
+  {
+    id: 'vineeth',
+    name: 'Pj Vineeth Kumar',
+    role: 'Member',
+    bio: 'Designer and Developer',
+    skills: ['Figma', 'React', 'NextJS'],
+    image: 'https://iiitdwd.ac.in/images/pj-vineeth-kumar.jpg',
+    social: {
+      github: 'https://github.com/PjVineeth',
+      linkedin: 'https://www.linkedin.com/in/pj-vineeth-kumar-88610927b/',
+      email: 'pjkvm123@gmail.com',
+      twitter: 'https://x.com/Pj_Vineeth_'
+    }
   },
   {
     id: 'harsh',
