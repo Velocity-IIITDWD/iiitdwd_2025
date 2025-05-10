@@ -49,7 +49,7 @@ export default function Page() {
 
   const tabs = [
     {
-      title: 'B.Tech Admission 2024',
+      title: 'B.Tech Admission 2025',
       icon: (
         <svg
           className="w-5 h-5"
@@ -66,25 +66,6 @@ export default function Page() {
         </svg>
       ),
       links: bTechAdmissionLinks
-    },
-    {
-      title: 'Quick Links',
-      icon: (
-        <svg
-          className="w-5 h-5"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"
-          />
-        </svg>
-      ),
-      links: quickLinks
     },
     {
       title: 'Eligibility Criteria',
@@ -105,6 +86,26 @@ export default function Page() {
       ),
       links: eligibilityCriteria
     },
+    {
+      title: 'Quick Links',
+      icon: (
+        <svg
+          className="w-5 h-5"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"
+          />
+        </svg>
+      ),
+      links: quickLinks
+    },
+
     {
       title: 'Programs Offered',
       icon: (
@@ -131,7 +132,7 @@ export default function Page() {
       <div className="space-y-6">
         <div className="w-[87.5vw] max-w-[1680px] mx-auto p-6">
           <h1 className="text-large-title font-bold text-main">
-            B.Tech Admissions 2024
+            B.Tech Admissions 2025
           </h1>
           <p className="text-gray-500 mt-2">
             Explore admission details, eligibility, and programs offered
@@ -208,25 +209,25 @@ export default function Page() {
                   <span className="text-gray-600 flex items-center">
                     Application Start
                   </span>
-                  <span className="font-medium text-main">April 10, 2024</span>
+                  <span className="font-medium text-main">TBD</span>
                 </li>
                 <li className="flex justify-between items-center p-2 hover:bg-secondary/50 rounded-md">
                   <span className="text-gray-600 flex items-center">
                     Application End
                   </span>
-                  <span className="font-medium text-main">May 30, 2024</span>
+                  <span className="font-medium text-main">TBD</span>
                 </li>
                 <li className="flex justify-between items-center p-2 hover:bg-secondary/50 rounded-md">
                   <span className="text-gray-600 flex items-center">
                     Counseling Start
                   </span>
-                  <span className="font-medium text-main">June 15, 2024</span>
+                  <span className="font-medium text-main">TBD</span>
                 </li>
                 <li className="flex justify-between items-center p-2 hover:bg-secondary/50 rounded-md">
                   <span className="text-gray-600 flex items-center">
                     Classes Begin
                   </span>
-                  <span className="font-medium text-main">August 1, 2024</span>
+                  <span className="font-medium text-main">TBD</span>
                 </li>
               </ul>
             </div>

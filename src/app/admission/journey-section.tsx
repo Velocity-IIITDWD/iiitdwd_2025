@@ -56,11 +56,9 @@ const JourneySection = () => {
                       <SelectValue placeholder="B.Tech Students" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="btech">B.Tech Students</SelectItem>
-                      <SelectItem value="m-tech">
-                        M.Tech (Research) Students
-                      </SelectItem>
-                      <SelectItem value="phd">Ph.D. Students</SelectItem>
+                      <SelectItem value="btech">B.Tech</SelectItem>
+                      <SelectItem value="m-tech">M.Tech (Research)</SelectItem>
+                      <SelectItem value="phd">Ph.D.</SelectItem>
                     </SelectContent>
                   </Select>
 
