@@ -5,7 +5,7 @@ export interface LinkItem {
 
 export const bTechAdmissionLinks: LinkItem[] = [
   {
-    title: 'Guidelines for Admission 2024',
+    title: 'Guidelines for Admission 2024 | (2025 TBD)',
     href: '/docs/Guidelines%20for%20admission%202024-25.pdf'
   },
   {
@@ -16,29 +16,13 @@ export const bTechAdmissionLinks: LinkItem[] = [
 
 export const quickLinks: LinkItem[] = [
   {
-    title: 'Hostel Facility for 2024 batch students',
-    href: '/docs/Hostel%20Facility%20for%202024%20batch%20students.pdf'
-  },
-  {
-    title: 'Important Notice for Prospective Students of 2024 ',
-    href: '/docs/Important_Notice_For_Prospective_Students_22-07-24.pdf'
-  },
-  {
-    title: 'CSAB-2024 Special Rounds Schedule',
-    href: '/docs/CSAB_Schedule_2024.pdf'
-  },
-  {
-    title: 'JoSAA 2024 Schedule (Updated on 27-06-2024)',
-    href: '/docs/Josaa_Schedule-Updated_on_27thJune2024.pdf'
+    title: 'Hostel Facility for 2024 batch students (TBD)',
+    href: '#'
   },
   {
     title:
       'State wise List of Reporting Centers for Physical Verification of PwD Candidates [for NIT+ System Only] JoSAA/CSAB 2024',
     href: '/docs/State-wise-List-of-Reporting-Centers.pdf'
-  },
-  {
-    title: 'Fee Structure for the batch 2024-2025',
-    href: '/docs/FEE_2024-25_Sheet1.pdf'
   },
   {
     title: "FAQ's",
@@ -50,19 +34,15 @@ export const eligibilityCriteria: LinkItem[] = [
   {
     title:
       'Guidelines for students alloted through JoSAA/CSAB Counselling (will be updated soon)',
-    href: '/admission/btech/#'
+    href: '#'
   },
   {
     title: 'Undertaking to be signed by students and their parents',
     href: '/docs/undertaking_2023.pdf'
   },
   {
-    title: '2024-25 Year Cut-off JEE Ranks',
-    href: '/docs/JEE-CRL-CUT-OFF-RANKS-2024-25.pdf'
-  },
-  {
     title:
-      'Performance in Class XII for candidates seeking admission in IIIT Dharwad',
+      'Performance in Class XII for candidates seeking admission in IIIT Dharwad - 2024',
     href: '/docs/Performance_in%20Class_XII_2024.pdf'
   },
   {
