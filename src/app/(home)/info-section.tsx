@@ -30,11 +30,11 @@ export default function InfoSection() {
         >
           <div className="!h-[90px]"></div>
 
-          {Array.from({ length: 28 }, (_, i) => (
+          {Array.from({ length: 14 }, (_, i) => (
             <div key={i}></div>
           ))}
 
-          <div className="relative [grid-area:4/2] md:[grid-area:4/2] lg:[grid-area:3/2] group transition-all duration-300 flex flex-col justify-end p-6 overflow-hidden shadow-sm hover:shadow-md">
+          <div className="relative [grid-area:3/2] lg:[grid-area:2/2] group transition-all duration-300 flex flex-col justify-end p-6 overflow-hidden shadow-sm hover:shadow-md">
             {/* Background pattern */}
             <div className="absolute inset-0 opacity-5 bg-grid-pattern"></div>
 
@@ -107,7 +107,7 @@ export default function InfoSection() {
             </div>
           </div>
 
-          <div className="[grid-area:3/2] h-full md:[grid-area:3/2/span_1/span_2] lg:[grid-area:3/3/span_1/span_2] min-h-[400px] p-6 relative">
+          <div className="[grid-area:2/2] h-full md:[grid-area:2/2/span_1/span_2] lg:[grid-area:2/3/span_1/span_2] min-h-[400px] p-6 relative">
             <div
               className="absolute inset-0 flex items-center justify-center 
                 [background-image:radial-gradient(var(--color-gray-300)_0.8px,transparent_0)] 
@@ -118,7 +118,7 @@ export default function InfoSection() {
             <EventsSection />
           </div>
 
-          <div className="[grid-area:6/2] md:[grid-area:5/2/span_1/span_2] p-6 relative">
+          <div className="[grid-area:4/2] md:[grid-area:4/2/span_1/span_2] lg:[grid-area:3/2/span_1/span_2] p-6 relative">
             <div
               className="absolute inset-0 flex items-center justify-center 
                 [background-image:radial-gradient(var(--color-gray-300)_0.8px,transparent_0)] 
@@ -129,7 +129,7 @@ export default function InfoSection() {
             <NotificationSection />
           </div>
 
-          <div className="relative [grid-area:7/2] md:[grid-area:4/3] lg:[grid-area:5/4] hover:bg-secondary/30 group transition-all duration-300 flex flex-col justify-between p-6">
+          <div className="relative [grid-area:5/2] md:[grid-area:3/3] lg:[grid-area:3/4] hover:bg-secondary/30 group transition-all duration-300 flex flex-col justify-between p-6">
             <div className="">
               <div className="text-title-1 font-semibold">
                 IIIT Dharwad Socials
@@ -148,7 +148,7 @@ export default function InfoSection() {
 
           <Link
             href={'/placements'}
-            className="[grid-area:9/2] md:[grid-area:8/2/span_1/span_2] lg:[grid-area:7/2] flex flex-col p-6 justify-end relative hover:bg-secondary/30 group transition-all duration-300"
+            className="[grid-area:6/2] md:[grid-area:6/2/span_1/span_2] lg:[grid-area:4/2] flex flex-col p-6 justify-end relative hover:bg-secondary/30 group transition-all duration-300"
           >
             <IconArrowUpRight
               className="top-6 absolute right-6 transition-all group-hover:top-5 group-hover:right-5 text-gray-500 group-hover:text-black"

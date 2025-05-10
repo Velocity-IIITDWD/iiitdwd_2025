@@ -77,6 +77,7 @@ const navigationData: NavigationItem[] = [
         href: '/governing-bodies/building'
       },
       { title: 'Deans / PiC', href: '/deans' },
+      { title: 'Registrar', href: '/registrar' },
       { title: 'Head of Departments', href: '/hods' },
       {
         title: 'Faculty in Charge',
