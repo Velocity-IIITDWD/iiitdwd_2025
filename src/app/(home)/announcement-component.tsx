@@ -26,24 +26,11 @@ export default function AnnouncementComponent({
   ];
 
   // Improved date formatter that handles various formats and edge cases
+  // Fixed formatDate function for announcement-component.tsx
   const formatDate = (dateString: string | null | undefined) => {
     if (!dateString) return '';
 
-    // Try parsing as ISO date (for formats like 'Mon, 23 Dec 2024 12:46:44 GMT')
-    try {
-      const date = new Date(dateString);
-      if (!isNaN(date.getTime())) {
-        return new Intl.DateTimeFormat('en-US', {
-          day: 'numeric',
-          month: 'long',
-          year: 'numeric'
-        }).format(date);
-      }
-    } catch (e) {
-      // Continue to other parsing methods if this fails
-    }
-
-    // Try parsing DD-MM-YYYY format (like '13-02-2025')
+    // First: Try parsing known DD-MM-YYYY format *before* using new Date()
     const ddmmyyyyRegex = /^(\d{1,2})-(\d{1,2})-(\d{4})$/;
     const ddmmyyyyMatch = dateString.match(ddmmyyyyRegex);
 
@@ -64,14 +51,26 @@ export default function AnnouncementComponent({
       }
     }
 
-    // Handle partial dates with missing parts
+    // Then try native ISO or RFC 2822 formats
+    try {
+      const date = new Date(dateString);
+      if (!isNaN(date.getTime())) {
+        return new Intl.DateTimeFormat('en-US', {
+          day: 'numeric',
+          month: 'long',
+          year: 'numeric'
+        }).format(date);
+      }
+    } catch (e) {
+      // Skip to fallback
+    }
+
+    // Handle partial dates (month-year or just year)
     const parts = dateString.split('-').filter((part) => part !== '');
 
     if (parts.length === 1) {
-      // Only year is present
       return parts[0];
     } else if (parts.length === 2) {
-      // Month and year
       const monthNames = [
         'January',
         'February',
@@ -95,7 +94,6 @@ export default function AnnouncementComponent({
       }
     }
 
-    // Return original string if all parsing attempts fail
     return dateString;
   };
 
