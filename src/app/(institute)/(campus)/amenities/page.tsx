@@ -546,7 +546,7 @@ export default function Page() {
                     </p>
                     <p className="text-gray-700 ">
                       <span className="font-medium">Emergency Contact:</span>{' '}
-                      +91-836-XXXXXXX
+                      +91-836-2250879
                     </p>
                   </div>
                 </div>

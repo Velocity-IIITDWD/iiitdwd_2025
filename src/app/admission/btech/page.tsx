@@ -198,7 +198,7 @@ export default function Page() {
             ))}
           </div>
 
-          <div className="space-y-0 max-md:order-1 md:sticky md:top-4 md:h-fit">
+          <div className="space-y-0 max-md:order-1 md:sticky md:top-[6rem] md:h-fit">
             {/* Important dates section */}
             <div className="md:min-h-[300px] max-md:mb-6">
               <h3 className="text-body font-semibold text-main mb-4 flex items-center">
