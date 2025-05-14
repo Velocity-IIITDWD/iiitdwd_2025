@@ -142,7 +142,7 @@ const JourneySection = () => {
                 </p>
 
                 <Link
-                  href={'https://iiitdwd.ac.in/docs/FEE_2024-25_Sheet1.pdf'}
+                  href={'https://iiitdwd.ac.in/docs/Fee_Structure_2025-26.pdf'}
                   className="w-fit flex"
                 >
                   <Button

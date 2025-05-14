@@ -25,6 +25,14 @@ export const quickLinks: LinkItem[] = [
     href: '/docs/State-wise-List-of-Reporting-Centers.pdf'
   },
   {
+    title: 'Fee Structure for the batch 2025-2026',
+    href: '/docs/Fee_Structure_2025-26.pdf'
+  },
+  {
+    title: 'Fee Refund',
+    href: '/docs/Fee-Refund.pdf'
+  },
+  {
     title: "FAQ's",
     href: '/faq/'
   }
