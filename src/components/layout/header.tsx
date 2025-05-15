@@ -164,7 +164,7 @@ function AnimatedNavbar() {
           </motion.div>
         </div>
 
-        <div className="lg:hidden absolute right-2 ">
+        <div className="lg:hidden absolute right-2 z-[5]">
           <Button
             variant="ghost"
             size="icon"
