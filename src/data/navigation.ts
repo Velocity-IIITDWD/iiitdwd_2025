@@ -101,6 +101,18 @@ const navigationData: NavigationItem[] = [
           {
             title: 'ARIIA',
             href: 'https://iiitdwd.ac.in/docs/ARIIA.pdf'
+          },
+          {
+            title: 'ICC Committee',
+            href: 'https://iiitdwd.ac.in/docs/ICC_committee.pdf'
+          },
+          {
+            title: 'Sexual Harassment Act',
+            href: 'https://iiitdwd.ac.in/docs/sexual-harrassment-of-women-act-and-rules-2013.pdf'
+          },
+          {
+            title: 'IIIT Dharwad Statutes',
+            href: 'https://iiitdwd.ac.in/docs/IIIT_Dharwad_statutes.pdf'
           }
         ]
       }
@@ -183,6 +195,18 @@ const navigationData: NavigationItem[] = [
       {
         title: 'Anti ragging',
         href: 'https://iiitdwd.ac.in/docs/Anti_Ragging_Information.pdf'
+      },
+      {
+        title: 'ICC Committee',
+        href: 'https://iiitdwd.ac.in/docs/ICC_committee.pdf'
+      },
+      {
+        title: 'Sexual Harassment Act',
+        href: 'https://iiitdwd.ac.in/docs/sexual-harrassment-of-women-act-and-rules-2013.pdf'
+      },
+      {
+        title: 'IIIT Dharwad Statutes',
+        href: 'https://iiitdwd.ac.in/docs/IIIT_Dharwad_statutes.pdf'
       }
       // {
       //   title: 'Achievements',

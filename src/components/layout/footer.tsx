@@ -117,7 +117,7 @@ export default function Footer() {
               <div className="font-bold text-title-3 text-white">FOLLOW US</div>
               <div className="flex gap-6 flex-wrap">
                 <SocialLink
-                  href="https://www.instagram.com/iiitdharwad_"
+                  href="https://www.instagram.com/iiit.dharwad"
                   label="Instagram"
                   icon={Instagram}
                 />
