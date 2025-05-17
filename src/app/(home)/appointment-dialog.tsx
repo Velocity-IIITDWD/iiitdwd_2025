@@ -28,12 +28,12 @@ export default function AppointmentDialog() {
       </DialogTrigger>
       <DialogContent className=" min-w-5/6 max-h-[90vh] overflow-hidden">
         <DialogHeader>
-          <DialogTitle>Book an Appointment</DialogTitle>
+          <DialogTitle>Only JEE Mains qualified students</DialogTitle>
         </DialogHeader>
         <div className="h-[70vh] w-full">
           {isMounted && (
             <iframe
-              src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1K-pFrxKezeQpaUfa2DqGE-iBTx58KOBM4eRdrFVIHxwEiL94j5hPQDC8ki8p-TPF9eCYYc-hz"
+              src="https://forms.gle/J3ySV3VELwJrBuET6"
               frameBorder="0"
               scrolling="auto"
               className="w-full h-full"
