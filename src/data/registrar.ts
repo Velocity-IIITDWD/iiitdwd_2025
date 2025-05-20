@@ -6,7 +6,7 @@ export default [
         index: 1,
         content: [],
         title: 'Dr. Muruganatham Ponnusamy',
-        imageURL: null
+        imageURL: '/images/Muruganatham_Ponnusamy.jpeg'
       }
     ]
   },
