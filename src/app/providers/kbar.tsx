@@ -25,19 +25,22 @@ const generateActions = () => {
   const actions: Action[] = [];
 
   const processMenuItem = (item: NavigationItem, parentSection?: string) => {
-    actions.push({
-      id: item.href,
-      name: item.title,
-      section: parentSection || 'Main Menu',
-      perform: () => {
-        trackEvent({
-          action: 'kbar_navigation',
-          category: 'navigation',
-          label: `${parentSection ? `${parentSection} -> ` : ''}${item.title}`
-        });
-        window.location.pathname = item.href;
-      }
-    });
+    if (item.href != '#') {
+      actions.push({
+        id: item.href,
+        name: item.title,
+        section: parentSection || 'Main Menu',
+        perform: () => {
+          trackEvent({
+            action: 'kbar_navigation',
+            category: 'navigation',
+            label: `${parentSection ? `${parentSection} -> ` : ''}${item.title}`
+          });
+          if (item.href.startsWith('/')) window.location.pathname = item.href;
+          else window.open(item.href, '_blank');
+        }
+      });
+    }
 
     if (item.items) {
       item.items.forEach((subItem) => {

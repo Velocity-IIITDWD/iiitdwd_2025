@@ -55,7 +55,7 @@ const navigationData: NavigationItem[] = [
       },
       {
         title: 'Fees',
-        href: 'https://iiitdwd.ac.in/docs/docs/Fee_Structure_2025-26.pdf'
+        href: '/docs/docs/Fee_Structure_2025-26.pdf'
       }
     ]
   },
@@ -93,26 +93,26 @@ const navigationData: NavigationItem[] = [
         title: 'Public disclosures',
         href: '/disclosures',
         items: [
-          { title: 'RTI', href: 'https://iiitdwd.ac.in/docs/RTI.pdf' },
+          { title: 'RTI', href: '/docs/RTI.pdf' },
           {
             title: 'IIIT PPP Act',
-            href: 'https://iiitdwd.ac.in/docs/iiit_ppp_2017.pdf'
+            href: '/docs/iiit_ppp_2017.pdf'
           },
           {
             title: 'ARIIA',
-            href: 'https://iiitdwd.ac.in/docs/ARIIA.pdf'
+            href: '/docs/ARIIA.pdf'
           },
           {
             title: 'ICC Committee',
-            href: 'https://iiitdwd.ac.in/docs/ICC_committee.pdf'
+            href: '/docs/ICC_committee.pdf'
           },
           {
             title: 'Sexual Harassment Act',
-            href: 'https://iiitdwd.ac.in/docs/sexual-harrassment-of-women-act-and-rules-2013.pdf'
+            href: '/docs/sexual-harrassment-of-women-act-and-rules-2013.pdf'
           },
           {
             title: 'IIIT Dharwad Statutes',
-            href: 'https://iiitdwd.ac.in/docs/IIIT_Dharwad_statutes.pdf'
+            href: '/docs/IIIT_Dharwad_statutes.pdf'
           }
         ]
       }
@@ -133,7 +133,7 @@ const navigationData: NavigationItem[] = [
       { title: 'Research', href: '/academics/research' },
       // {
       //   title: 'Curriculum',
-      //   href: 'https://iiitdwd.ac.in/docs/Curricula_16May23.pdf'
+      //   href: '/docs/Curricula_16May23.pdf'
       // },
       {
         title: 'Convocation',
@@ -194,19 +194,19 @@ const navigationData: NavigationItem[] = [
       // { title: 'Sports and games', href: '/student-life/sports' },
       {
         title: 'Anti ragging',
-        href: 'https://iiitdwd.ac.in/docs/Anti_Ragging_Information.pdf'
+        href: '/docs/Anti_Ragging_Information.pdf'
       },
       {
         title: 'ICC Committee',
-        href: 'https://iiitdwd.ac.in/docs/ICC_committee.pdf'
+        href: '/docs/ICC_committee.pdf'
       },
       {
         title: 'Sexual Harassment Act',
-        href: 'https://iiitdwd.ac.in/docs/sexual-harrassment-of-women-act-and-rules-2013.pdf'
+        href: '/docs/sexual-harrassment-of-women-act-and-rules-2013.pdf'
       },
       {
         title: 'IIIT Dharwad Statutes',
-        href: 'https://iiitdwd.ac.in/docs/IIIT_Dharwad_statutes.pdf'
+        href: '/docs/IIIT_Dharwad_statutes.pdf'
       }
       // {
       //   title: 'Achievements',
@@ -222,7 +222,7 @@ const navigationData: NavigationItem[] = [
       // { title: 'Placement Procedures', href: '/placements/procedures' },
       {
         title: 'Placement Brochure',
-        href: 'https://iiitdwd.ac.in/docs/brochure_cgc.pdf'
+        href: '/docs/brochure_cgc.pdf'
       },
       {
         title: 'Placement Statistics',
