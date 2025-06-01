@@ -66,33 +66,7 @@ export default function ProgrammesPage() {
 
         <div className="flex flex-col gap-4 md:gap-6 w-full">
           <Link
-            href="https://iiitdwd.ac.in/docs/Academic_Calendar_year_1_2024-25.pdf"
-            className="relative focus:outline-none focus:border-none focus:ring-brand-600 focus:ring-2 hover:shadow-md cursor-pointer overflow-clip flex rounded-lg border w-full border-gray-400 bg-white hover:border-gray-500"
-          >
-            <div className="h-24 w-40 relative max-md:hidden">
-              <Image
-                src="https://www.iiitdwd.ac.in/images/calendar.JPG"
-                alt="First Year Academic Calendar"
-                fill
-                className="object-cover"
-                priority
-              />
-            </div>
-            <div className="w-full flex items-center p-4">
-              <div className="flex flex-col justify-center flex-1 gap-1">
-                <span className="text-title-1 text-main font-semibold">
-                  Academic Calendar (1st Year)
-                </span>
-                <span className="text-body font-normal">
-                  Stay on schedule and upto date throughout the year.
-                </span>
-              </div>
-              <ArrowRightCircle className="text-main" size={30} />
-            </div>
-          </Link>
-
-          <Link
-            href="https://iiitdwd.ac.in/docs/Academic_Calendar_year_234_2024-25.pdf"
+            href="https://iiitdwd.ac.in/docs/Academic_Calendar_2025-26_Aug-Nov_25.pdf"
             className="relative focus:outline-none focus:border-none focus:ring-brand-600 focus:ring-2 hover:shadow-md cursor-pointer overflow-clip flex rounded-lg border w-full border-gray-400 bg-white hover:border-gray-500"
           >
             <div className="h-24 w-40 relative max-md:hidden">
@@ -107,7 +81,7 @@ export default function ProgrammesPage() {
             <div className="w-full flex items-center p-4">
               <div className="flex flex-col justify-center flex-1 gap-1">
                 <span className="text-title-1 text-main font-semibold">
-                  Academic Calendar 2024-25
+                  Academic Calendar 2025-26 (August - November)
                 </span>
                 <span className="text-body font-normal">
                   Stay on schedule and upto date throughout the year.
@@ -136,7 +110,7 @@ export default function ProgrammesPage() {
                   Curriculum
                 </span>
                 <span className="text-body font-normal">
-                  Stay on schedule and upto date throughout the year.
+                  Explore the detailed curriculum for all programmes.
                 </span>
               </div>
               <ArrowRightCircle className="text-main" size={30} />
