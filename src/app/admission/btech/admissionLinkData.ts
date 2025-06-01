@@ -5,6 +5,14 @@ export interface LinkItem {
 
 export const bTechAdmissionLinks: LinkItem[] = [
   {
+    title: 'JoSAA Schedule 2025',
+    href: 'https://cdnbbsr.s3waas.gov.in/s313111c20aee51aeb480ecbd988cd8cc9/uploads/2025/05/2025052947.pdf'
+  },
+  {
+    title: 'CSAB timeline (Page 9-10)',
+    href: 'https://cdnbbsr.s3waas.gov.in/s305a70454516ecd9194c293b0e415777f/uploads/2025/05/2025052928.pdf'
+  },
+  {
     title: 'Guidelines for Admission 2024 | (2025 TBD)',
     href: '/docs/Guidelines%20for%20admission%202024-25.pdf'
   },
