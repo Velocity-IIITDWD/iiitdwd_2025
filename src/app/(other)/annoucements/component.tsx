@@ -54,8 +54,22 @@ export default function AnnouncementsComponents({
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 10;
 
+  // Sort announcements by date (most recent first)
+  const sortedAnnouncements = [...announcements].sort((a, b) => {
+    // If either announcement is missing date, year, or month, put it at the end
+    if (!a.date || !a.year || !a.month || !b.date || !b.year || !b.month) {
+      return 0;
+    }
+
+    // Create date strings in YYYY-MM-DD format for comparison
+    const dateA = `${a.year}-${a.month}-${a.date}`;
+    const dateB = `${b.year}-${b.month}-${b.date}`;
+
+    return dateB.localeCompare(dateA); // Descending order (newest first)
+  });
+
   // Filter announcements based on selected month and year
-  const filteredAnnouncements = announcements.filter((announcement) => {
+  const filteredAnnouncements = sortedAnnouncements.filter((announcement) => {
     if (selectedMonth !== 'all' && announcement.month !== selectedMonth) {
       return false;
     }
