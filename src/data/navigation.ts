@@ -55,7 +55,7 @@ const navigationData: NavigationItem[] = [
       },
       {
         title: 'Fees',
-        href: '/docs/docs/Fee_Structure_2025-26.pdf'
+        href: '/docs/Fee_Structure_2025-26.pdf'
       }
     ]
   },
