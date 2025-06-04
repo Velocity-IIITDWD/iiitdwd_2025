@@ -198,9 +198,9 @@ export default function Page() {
             ))}
           </div>
 
-          <div className="space-y-0 max-md:order-1 md:sticky md:top-[6rem] md:h-fit">
+          <div className="space-y-8 max-md:order-1 md:sticky md:top-[6rem] md:h-fit">
             {/* Important dates section */}
-            <div className="md:min-h-[300px] max-md:mb-6">
+            <div className="md:min-h-[300px]">
               <h3 className="text-body font-semibold text-main mb-4 flex items-center">
                 Important Dates
               </h3>
@@ -273,6 +273,29 @@ export default function Page() {
                   )}
                 </div>
               ))}
+            </div>
+
+            <div className="overflow-hidden">
+              <h3 className="font-semibold text-body uppercase text-main mb-3">
+                Student Helpline
+              </h3>
+              <div className="flex flex-col gap-2 text-title-3">
+                <p className="text-gray-700">
+                  <span className="font-medium">NIT+ System Support:</span>
+                </p>
+                <p className="text-gray-700">
+                  Email:{' '}
+                  <span className="text-primary">csab.dasa@nitrkl.ac.in</span>
+                </p>
+                <p className="text-gray-700">
+                  <span className="font-medium">Multilingual Helpdesk:</span>{' '}
+                  <span className="text-primary">+91 9124121003</span>
+                </p>
+                <p className="text-gray-600 text-sm">
+                  (Languages: Assamese, Bangla, English, Hindi, Kannada,
+                  Malayalam, Marathi, Odia, Tamil, and Telugu)
+                </p>
+              </div>
             </div>
           </div>
         </div>
