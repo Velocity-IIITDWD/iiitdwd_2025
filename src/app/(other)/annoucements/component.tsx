@@ -68,20 +68,44 @@ export default function AnnouncementsComponents({
     return dateB.localeCompare(dateA); // Descending order (newest first)
   });
 
-  // Filter announcements based on selected month and year
-  const filteredAnnouncements = sortedAnnouncements.filter((announcement) => {
-    if (selectedMonth !== 'all' && announcement.month !== selectedMonth) {
-      return false;
-    }
-    if (selectedYear && announcement.year !== selectedYear) {
-      return false;
-    }
-    return true;
-  });
+  // Separate rolling announcements
+  const rollingAnnouncements = sortedAnnouncements.filter((announcement) =>
+    announcement.text?.toLowerCase().startsWith('rolling')
+  );
+  const regularAnnouncements = sortedAnnouncements.filter(
+    (announcement) => !announcement.text?.toLowerCase().startsWith('rolling')
+  );
 
-  // Calculate pagination
-  const totalPages = Math.ceil(filteredAnnouncements.length / itemsPerPage);
-  const paginatedAnnouncements = filteredAnnouncements.slice(
+  // Filter announcements based on selected month and year
+  const filteredRollingAnnouncements = rollingAnnouncements.filter(
+    (announcement) => {
+      if (selectedMonth !== 'all' && announcement.month !== selectedMonth) {
+        return false;
+      }
+      if (selectedYear && announcement.year !== selectedYear) {
+        return false;
+      }
+      return true;
+    }
+  );
+
+  const filteredRegularAnnouncements = regularAnnouncements.filter(
+    (announcement) => {
+      if (selectedMonth !== 'all' && announcement.month !== selectedMonth) {
+        return false;
+      }
+      if (selectedYear && announcement.year !== selectedYear) {
+        return false;
+      }
+      return true;
+    }
+  );
+
+  // Calculate pagination for regular announcements only
+  const totalPages = Math.ceil(
+    filteredRegularAnnouncements.length / itemsPerPage
+  );
+  const paginatedRegularAnnouncements = filteredRegularAnnouncements.slice(
     (currentPage - 1) * itemsPerPage,
     currentPage * itemsPerPage
   );
@@ -150,14 +174,69 @@ export default function AnnouncementsComponents({
 
       {/* Results count */}
       <p className="text-gray-600 text-title-3 mb-4">
-        {filteredAnnouncements.length} announcement
-        {filteredAnnouncements.length !== 1 ? 's' : ''} found
+        {filteredRollingAnnouncements.length +
+          filteredRegularAnnouncements.length}{' '}
+        announcement
+        {filteredRollingAnnouncements.length +
+          filteredRegularAnnouncements.length !==
+        1
+          ? 's'
+          : ''}{' '}
+        found
       </p>
 
-      {/* Announcements list */}
+      {/* Rolling Announcements Section */}
+      {filteredRollingAnnouncements.length > 0 && (
+        <div className="mb-8">
+          <h2 className="text-xl font-semibold mb-4 text-gray-800">
+            Rolling Announcements
+          </h2>
+          <div className="space-y-4">
+            {filteredRollingAnnouncements.map((announcement) => (
+              <Card
+                key={announcement._id}
+                className="hover:shadow-md transition-shadow py-4 bg-blue-50"
+              >
+                <CardContent className="px-4">
+                  <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-2">
+                    <div>
+                      <h3 className="text-title-3 font-medium text-gray-600 hover:text-main cursor-pointer">
+                        {announcement.text}
+                      </h3>
+                      {announcement.link && (
+                        <a
+                          href={announcement.link}
+                          className="text-blue-500 hover:underline text-callout mt-1 inline-block"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          View details
+                        </a>
+                      )}
+                    </div>
+                    <div className="text-gray-500 text-callout md:text-right whitespace-nowrap">
+                      {announcement.date}
+                      {announcement.new && (
+                        <span className="ml-2 bg-green-100 text-green-800 text-xs px-2 py-0.5 rounded-full">
+                          New
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* Regular Announcements Section */}
       <div className="space-y-4 mb-8">
-        {paginatedAnnouncements.length > 0 ? (
-          paginatedAnnouncements.map((announcement) => (
+        <h2 className="text-xl font-semibold mb-4 text-gray-800">
+          Other Announcements
+        </h2>
+        {paginatedRegularAnnouncements.length > 0 ? (
+          paginatedRegularAnnouncements.map((announcement) => (
             <Card
               key={announcement._id}
               className="hover:shadow-md transition-shadow py-4"
@@ -200,7 +279,7 @@ export default function AnnouncementsComponents({
         )}
       </div>
 
-      {/* Pagination */}
+      {/* Pagination - Only show if there are regular announcements */}
       {totalPages > 1 && (
         <Pagination>
           <PaginationContent>
