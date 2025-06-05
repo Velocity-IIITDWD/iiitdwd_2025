@@ -46,7 +46,7 @@ export default function PlacementCard() {
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 my-4">
         <div className="bg-gray-50 rounded-lg p-3 text-center">
           <p className="text-sm text-gray-500">Companies</p>
-          <p className="text-lg font-bold">77</p>
+          <p className="text-lg font-bold">86</p>
         </div>
         <div className="bg-gray-50 rounded-lg p-3 text-center">
           <p className="text-sm text-gray-500">Offers</p>
@@ -54,12 +54,12 @@ export default function PlacementCard() {
         </div>
         <div className="bg-gray-50 rounded-lg p-3 text-center">
           <p className="text-sm text-gray-500">Placement</p>
-          <p className="text-lg font-bold">66%</p>
+          <p className="text-lg font-bold">77.23%</p>
           <p className="text-xs text-gray-500">ongoing</p>
         </div>
         <div className="bg-gray-50 rounded-lg p-3 text-center">
           <p className="text-sm text-gray-500">Highest CTC</p>
-          <p className="text-lg font-bold">61 LPA</p>
+          <p className="text-lg font-bold">71.94 LPA</p>
         </div>
       </div>
 
@@ -112,7 +112,7 @@ export default function PlacementCard() {
               },
               {
                 label: '2025',
-                data: [10, 8, 61],
+                data: [11.9, 9.34, 71.94],
                 backgroundColor: 'rgba(255, 198, 88, 0.8)'
               }
             ]
