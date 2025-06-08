@@ -15,7 +15,7 @@ import {
   TableHeader,
   TableRow
 } from '@/components/ui/table';
-import { FileText, Search, X } from 'lucide-react';
+import { ExternalLink, FileText, Search, X } from 'lucide-react';
 import Link from 'next/link';
 import { useCallback, useEffect, useRef, useState } from 'react';
 
@@ -26,7 +26,11 @@ export type Jobs = {
   lastDate: string;
   generalInstructions: string;
   application: string;
-  extraInfo: [text: string, link: string][];
+  extraInfo: {
+    _key: string;
+    link: string;
+    text: string;
+  }[];
 };
 
 const currDate = new Date();
@@ -146,16 +150,23 @@ export default function CareersPage({ Fulldata }: { Fulldata: Jobs[] }) {
         <Table>
           <TableHeader className="bg-main">
             <TableRow>
-              <TableHead className="text-title-3 text-white">No.</TableHead>
+              <TableHead className="text-title-3 text-white w-16">
+                No.
+              </TableHead>
               <TableHead className="text-white">
                 Title and Description
               </TableHead>
-              <TableHead className="text-white text-center">Deadline</TableHead>
-              <TableHead className="text-center text-white w-min">
-                General Instructions
+              <TableHead className="text-white text-center w-32">
+                Deadline
               </TableHead>
-              <TableHead className="text-white w-min">
-                Application Form
+              <TableHead className="text-center text-white w-20">
+                Instructions
+              </TableHead>
+              <TableHead className="text-white text-center w-24">
+                Apply
+              </TableHead>
+              <TableHead className="text-white text-center w-32">
+                Documents
               </TableHead>
             </TableRow>
           </TableHeader>
@@ -163,7 +174,9 @@ export default function CareersPage({ Fulldata }: { Fulldata: Jobs[] }) {
           <TableBody>
             {filteredJobs.map((job, index) => (
               <TableRow key={index} className="bg-white even:bg-gray-100">
-                <TableCell>{index + 1}.</TableCell>
+                <TableCell className="w-16 text-center font-medium">
+                  {index + 1}
+                </TableCell>
                 <TableCell>
                   <div className="flex flex-col gap-2 flex-1">
                     <span className="text-primary text-title-3 font-medium">
@@ -174,67 +187,82 @@ export default function CareersPage({ Fulldata }: { Fulldata: Jobs[] }) {
                         {job.details}
                       </div>
                     )}
-
-                    {/* <div className="flex gap-2">
-                    {job.extraInfo &&
-                      job.extraInfo.length > 0 &&
-                      job?.extraInfo?.map((item, index) => (
-                        <Link
-                          key={index}
-                          className="mt-8 px-4 py-2 border border-dwd-primary rounded-sm hover:bg-gray-100"
-                          target="_blank"
-                          href={item[1]}
-                        >
-                          {item[0]}
-                        </Link>
-                      ))}
-                  </div> */}
                   </div>
                 </TableCell>
-                <TableCell className="text-wrap text-center text-primary text-body font-normal">
+                <TableCell className="text-wrap text-center text-primary text-sm font-normal w-32">
                   {job?.lastDate ? (
-                    <>
-                      {new Date(job.lastDate).toLocaleDateString('en-US', {
-                        year: 'numeric',
-                        month: 'long',
-                        day: 'numeric'
-                      })}
-                      <br />
-                      {new Date(job.lastDate).toLocaleTimeString('en-US', {
-                        hour: '2-digit',
-                        minute: '2-digit',
-                        hour12: true // Ensures AM/PM format
-                      })}
-                    </>
+                    <div className="space-y-1">
+                      <div className="font-medium">
+                        {new Date(job.lastDate).toLocaleDateString('en-US', {
+                          month: 'short',
+                          day: 'numeric',
+                          year: 'numeric'
+                        })}
+                      </div>
+                      <div className="text-xs text-gray-600">
+                        {new Date(job.lastDate).toLocaleTimeString('en-US', {
+                          hour: '2-digit',
+                          minute: '2-digit',
+                          hour12: true
+                        })}
+                      </div>
+                    </div>
                   ) : (
                     'N/A'
                   )}
                 </TableCell>
 
-                <TableCell className="text-center">
+                <TableCell className="text-center w-20">
                   {job?.generalInstructions && (
-                    <span className="inline-block">
-                      <Link
-                        target="_blank"
-                        href={`https://iiitdwd.ac.in${job?.generalInstructions}`}
-                      >
-                        <FileText size={24} />
-                      </Link>
-                    </span>
+                    <Link
+                      target="_blank"
+                      href={`https://iiitdwd.ac.in${job?.generalInstructions}`}
+                      className="inline-flex items-center justify-center p-2 rounded-md hover:bg-gray-200 transition-colors"
+                      title="General Instructions"
+                    >
+                      <FileText size={20} className="text-primary" />
+                    </Link>
                   )}
                 </TableCell>
-                <TableCell className="text-center">
+
+                <TableCell className="text-center w-24">
                   {job?.application && (
-                    <span className="inline-block">
-                      <Link
-                        className="bg-gray-200 w-full px-4 py-2 rounded-sm hover:bg-gray-300"
-                        target="_blank"
-                        href={job.application}
-                      >
-                        {job.application != '#' ? 'Apply Now' : '  Closed  '}
-                        {/* Apply Now */}
-                      </Link>
-                    </span>
+                    <Link
+                      className={`inline-block px-3 py-2 rounded-sm text-sm font-medium transition-colors ${
+                        job.application !== '#'
+                          ? 'bg-main text-white hover:bg-main/90'
+                          : 'bg-gray-300 text-gray-600 cursor-not-allowed'
+                      }`}
+                      target="_blank"
+                      href={job.application}
+                    >
+                      {job.application !== '#' ? 'Apply' : 'Closed'}
+                    </Link>
+                  )}
+                </TableCell>
+
+                <TableCell className="w-32">
+                  {job?.extraInfo && job.extraInfo.length > 0 && (
+                    <div className="flex flex-col gap-1">
+                      {job.extraInfo.map((item) => (
+                        <Link
+                          key={item._key}
+                          target="_blank"
+                          href={`https://iiitdwd.ac.in${item.link}`}
+                          className="inline-flex items-center gap-1 px-2 py-1 text-xs border border-primary/20 hover:bg-primary/5 rounded transition-colors"
+                          title={item.text}
+                        >
+                          <FileText size={12} className="text-primary" />
+                          <span className="truncate max-w-20 text-main">
+                            {item.text}
+                          </span>
+                          <ExternalLink
+                            size={10}
+                            className="text-main/60 flex-shrink-0"
+                          />
+                        </Link>
+                      ))}
+                    </div>
                   )}
                 </TableCell>
               </TableRow>
