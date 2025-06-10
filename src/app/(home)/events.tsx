@@ -8,7 +8,10 @@ import Link from 'next/link';
 
 export default async function EventsSection() {
   let carouselData = await get<QueryCarouselResult>(queryCarousel);
-
+  carouselData = carouselData?.sort(
+    (a, b) =>
+      new Date(b._createdAt).getTime() - new Date(a._createdAt).getTime()
+  );
   return (
     <CommonCarousel>
       {carouselData?.slice(0, 5).map((item, index) => (
