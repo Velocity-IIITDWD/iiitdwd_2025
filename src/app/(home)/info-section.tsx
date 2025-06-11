@@ -147,18 +147,28 @@ export default function InfoSection() {
           <PlacementCard />
 
           <Link
-            href={'/placements'}
+            href={'/admission'}
             className="[grid-area:6/2] md:[grid-area:6/2/span_1/span_2] lg:[grid-area:4/2] flex flex-col p-6 justify-end relative hover:bg-secondary/30 group transition-all duration-300"
           >
             <IconArrowUpRight
-              className="top-6 absolute right-6 transition-all group-hover:top-5 group-hover:right-5 text-gray-500 group-hover:text-black"
+              className="top-6 absolute right-6 z-[2] transition-all group-hover:top-5 group-hover:right-5 text-gray-500 group-hover:text-black"
               size={20}
             />
-            <div className="text-title-1 font-semibold">Placements</div>
+
+            <Image
+              src={'https://iiitdwd.ac.in/images/admission_2025.jpeg'}
+              alt="Director of IIIT Dharwad"
+              width={220}
+              height={300}
+              className="object-contain mb-4 object-center rounded transition-transform duration-500 group-hover:scale-101"
+              style={{ width: 'auto', maxWidth: '100%' }}
+              priority
+            />
+            <div className="text-title-1 font-semibold">Admissions 2025</div>
             <div className="text-title-2 text-gray-600 mt-2">
-              Explore our strong placement record and discover how IIIT Dharwad
-              connects students with top recruiters and exciting career
-              opportunities.
+              Admissions for the 2025 batch are now open! Explore our programs
+              and apply today to be part of IIIT Dharwad's innovative learning
+              environment.
             </div>
           </Link>
 
