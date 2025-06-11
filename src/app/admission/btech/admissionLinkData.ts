@@ -63,8 +63,8 @@ export const eligibilityCriteria: LinkItem[] = [
   },
   {
     title:
-      'Category wise Top-20 percentile cut-off marks out-of total 500 marks for 2023 and 2024',
-    href: '/docs/Top_20_Percentil_2024.pdf'
+      'Category wise Top-20 percentile cut-off marks out-of total 500 marks for 2024',
+    href: 'https://cdnbbsr.s3waas.gov.in/s313111c20aee51aeb480ecbd988cd8cc9/uploads/2025/06/2025060941.pdf'
   }
 ];
 
