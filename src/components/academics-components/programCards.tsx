@@ -80,17 +80,17 @@ const ProgramCards: React.FC<ProgramCardsProps> = ({ programs }) => {
       imageSrc: 'https://iiitdwd.ac.in/images/online_programs.JPG'
     },
     {
-      title: 'Majors',
+      title: 'Major Programs',
       description:
-        'Choose from over 200 undergraduate programs that dive into your interests.',
-      link: '',
+        'Browse core degree programs with course details and requirements.',
+      link: 'https://iiitdwd.ac.in/docs/MajorPrograms.pdf',
       imageSrc: 'https://iiitdwd.ac.in/images/minors.JPG'
     },
     {
-      title: 'Course Catalog',
+      title: 'Minor Programs',
       description:
-        'Discover different classes, review degree requirements and more.',
-      link: '#',
+        'Explore minors that add depth or breadth to your main degree.',
+      link: 'https://iiitdwd.ac.in/docs/MinorPrograms.pdf',
       imageSrc: 'https://iiitdwd.ac.in/images/course_catalog.JPG'
     }
   ];
