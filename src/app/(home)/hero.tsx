@@ -66,7 +66,10 @@ export default function LandingSection({ data }: { data: string[] }) {
           <QuickLink href="/academics/programmes" label="Academics" />
           <QuickLink href="/admission" label="Admissions" />
           <QuickLink href="/amenities" label="Campus" />
-          <QuickLink href="/student-life/clubs/tech/" label="Culture" />
+          <QuickLink
+            href="/docs/List_of_Scholarship.pdf"
+            label="Scholarships"
+          />
         </div>
       </div>
     </div>
