@@ -63,7 +63,7 @@ export default function PlacementStatistics() {
     },
     '2025': {
       companies: 86,
-      offers: 130, // Estimated based on trend
+      offers: 203, // Estimated based on trend
       highestCTC: 71.94,
       averageCTC: 11.9,
       medianCTC: 9.34,

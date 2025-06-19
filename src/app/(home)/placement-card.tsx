@@ -50,7 +50,7 @@ export default function PlacementCard() {
         </div>
         <div className="bg-gray-50 rounded-lg p-3 text-center">
           <p className="text-sm text-gray-500">Offers</p>
-          <p className="text-lg font-bold">130</p>
+          <p className="text-lg font-bold">203</p>
         </div>
         <div className="bg-gray-50 rounded-lg p-3 text-center">
           <p className="text-sm text-gray-500">Placement</p>
