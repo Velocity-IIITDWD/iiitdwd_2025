@@ -55,7 +55,21 @@ const navigationData: NavigationItem[] = [
       },
       {
         title: 'Fees',
-        href: '/docs/Fee_Structure_2025-26.pdf'
+        href: '#',
+        items: [
+          {
+            title: 'B.Tech',
+            href: '/docs/Fee_Structure_2025-26.pdf'
+          },
+          {
+            title: 'M.Tech',
+            href: '/docs/MTech_Fees.pdf'
+          },
+          {
+            title: 'PhD',
+            href: '/docs/PhD_Fees.pdf'
+          }
+        ]
       }
     ]
   },
