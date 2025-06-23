@@ -38,6 +38,10 @@ export const quickLinks: LinkItem[] = [
     href: '/docs/Fee_Structure_2025-26.pdf'
   },
   {
+    title: 'Scholarships',
+    href: '/docs/List_of_Scholarship.pdf'
+  },
+  {
     title: 'Fee Refund',
     href: '/docs/Fee-Refund.pdf'
   },
