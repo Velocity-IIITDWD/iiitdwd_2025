@@ -5,8 +5,9 @@ export interface LinkItem {
 
 export const bTechAdmissionLinks: LinkItem[] = [
   {
-    title: 'JoSAA Schedule 2025',
-    href: 'https://cdnbbsr.s3waas.gov.in/s313111c20aee51aeb480ecbd988cd8cc9/uploads/2025/05/2025052947.pdf'
+    title:
+      'Revised Schedule of Events of JoSAA 2025 (ONLINE REPORTING) (as on June 19th 2025)',
+    href: 'https://drive.google.com/file/d/1vWaguAmsSruPI7yH8hXst5uJ-eCs3Ujg/view'
   },
   {
     title: 'CSAB timeline (Page 9-10)',
@@ -18,7 +19,7 @@ export const bTechAdmissionLinks: LinkItem[] = [
   },
   {
     title: 'For General Queries you can contact here',
-    href: '/contact/'
+    href: 'https://docs.google.com/document/d/1BNdjNk8k87dhHIWza4TMKPCq_YCCZgOG'
   }
 ];
 
